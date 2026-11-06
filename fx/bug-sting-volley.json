@@ -3,33 +3,34 @@
  "name": "Sting Volley",
  "element": "bug",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 6,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Three needles in formation.",
  "palette": [
-  "#263808",
-  "#4e6e10",
-  "#86a81c",
-  "#b8d43a",
-  "#e0f07c",
-  "#f8ffd0"
+  "#0d3802",
+  "#306e05",
+  "#7aa81c",
+  "#c1d43a",
+  "#f0eb7c",
+  "#fffad0"
  ],
  "refs": [],
  "sheet": {
   "image": "fx/bug-sting-volley.png",
   "columns": 6,
   "rows": 1,
-  "width": 384,
+  "width": 576,
   "height": 32
  },
  "gif": "fx/bug-sting-volley.gif",
- "durationMs": 400
+ "durationMs": 400,
+ "peakFrame": 2
 }

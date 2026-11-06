@@ -22,7 +22,7 @@ from pxfx.backdrop import make_backdrop, make_tile  # noqa: E402
 from pxfx.catalog import EFFECTS  # noqa: E402
 from pxfx.core import Canvas, make_rng  # noqa: E402
 from pxfx.creature import draw_creature  # noqa: E402
-from pxfx.palettes import RAMPS, ramp  # noqa: E402
+from pxfx.palettes import ramp, ramp_hex  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
 OUT = os.path.join(ROOT, "fx")
@@ -49,7 +49,10 @@ def sheet_layout(e):
 def render(e):
     S = State(e)
     e["render"](S)
-    return [c.img for c in S.frames]
+    frames = [c.img for c in S.frames]
+    cov = [f.width * f.height - f.getchannel("A").histogram()[0] for f in frames]
+    e["peakFrame"] = cov.index(max(cov))
+    return frames
 
 
 def write_sheet(e, frames):
@@ -96,12 +99,13 @@ def write_gif(e, frames):
 def entry_json(e, cols, rows):
     d = {k: e[k] for k in ("id", "name", "element", "kind", "frameW", "frameH", "frames", "fps", "loop",
                            "anchor", "layer", "notes")}
-    d["palette"] = RAMPS[e["ramp"]]
+    d["palette"] = ramp_hex(e["ramp"])
     d["refs"] = REFS.get(e["id"], [])
     d["sheet"] = {"image": "fx/%s.png" % e["id"], "columns": cols, "rows": rows,
                   "width": cols * e["frameW"], "height": rows * e["frameH"]}
     d["gif"] = "fx/%s.gif" % e["id"]
     d["durationMs"] = int(round(e["frames"] * 1000 / e["fps"]))
+    d["peakFrame"] = e.get("peakFrame", 0)
     battle = {}
     if e["hit"] is not None:
         battle["hitFrame"] = e["hit"]

@@ -301,3 +301,139 @@ def make_rng(seed_text):
     for ch in seed_text:
         s = (s * 131 + ord(ch)) & 0xFFFFFFFF
     return random.Random(s)
+
+
+# ---------------------------------------------------------------- v2 helpers: ordered dither + shading
+BAYER4 = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]]
+
+
+def bayer(x, y):
+    """Ordered-dither threshold in (0, 1) for pixel (x, y)."""
+    return (BAYER4[int(y) & 3][int(x) & 3] + 0.5) / 16.0
+
+
+def _glow(self, cx, cy, r0, r1, c, density=0.75, squash=1.0, under=True):
+    """Soft glow without alpha: pixels between r0 and r1 are lit by a Bayer pattern whose density falls off
+    linearly to 0 at r1. Painted behind existing pixels by default."""
+    if r1 <= r0:
+        return
+    ri = int(math.ceil(r1)) + 1
+    cx, cy = int(round(cx)), int(round(cy))
+    for dy in range(-ri, ri + 1):
+        for dx in range(-ri, ri + 1):
+            d = math.hypot(dx, dy / squash)
+            if d > r1 or d < r0:
+                continue
+            k = density * (1 - (d - r0) / (r1 - r0))
+            if bayer(cx + dx, cy + dy) < k:
+                (self.under if under else self.px)(cx + dx, cy + dy, c)
+
+
+def _shaded(self, cx, cy, rx, ry, pal, lo=1, hi=5, light=(-0.45, -0.55), rim=True, dither_edge=False):
+    """Volumetric blob: rim (pal[lo]) -> body -> lit side -> highlight -> hot spot (pal[hi]).
+    Tones are picked from a lit-sphere term so one call gives 4-5 tones."""
+    if rx < 0.6 or ry < 0.6:
+        self.px(cx, cy, pal[hi])
+        return
+    cx_i, cy_i = int(round(cx)), int(round(cy))
+    ix, iy = int(math.ceil(rx)) + 1, int(math.ceil(ry)) + 1
+    lx, ly = light
+    span = hi - lo
+    for dy in range(-iy, iy + 1):
+        for dx in range(-ix, ix + 1):
+            nx, ny = dx / (rx + 0.35), dy / (ry + 0.35)
+            d2 = nx * nx + ny * ny
+            if d2 > 1:
+                continue
+            nz = math.sqrt(1 - d2)
+            lum = clamp(0.5 + 0.55 * (-(nx * lx + ny * ly) + nz * 0.6) - 0.15)
+            if rim and d2 > 0.78:
+                lum = min(lum, 0.12)
+            idx = lo + int(lum * span + bayer(cx_i + dx, cy_i + dy) * 0.9 - 0.2)
+            idx = max(lo, min(hi, idx))
+            self.px(cx_i + dx, cy_i + dy, pal[idx])
+
+
+def _dissolve(self, amount, seed=0):
+    """Remove pixels with an ordered pattern (amount 0 keeps all, 1 removes all) - fades without alpha."""
+    if amount <= 0:
+        return
+    for y in range(self.h):
+        for x in range(self.w):
+            if self.pa[x, y][3] and bayer(x + seed, y + seed * 3) < amount:
+                self.pa[x, y] = (0, 0, 0, 0)
+
+
+def _stroke(self, pts, w, pal, lo=1, hi=5, glow=0):
+    """Thick polyline with a rim, body and 1 px hot core (bolts, beams, ribbons)."""
+    for a, b in zip(pts, pts[1:]):
+        self.line(a[0], a[1], b[0], b[1], pal[lo], w=w + 2)
+    for a, b in zip(pts, pts[1:]):
+        self.line(a[0], a[1], b[0], b[1], pal[max(lo, hi - 2)], w=w)
+    if w >= 3:
+        for a, b in zip(pts, pts[1:]):
+            self.line(a[0], a[1], b[0], b[1], pal[hi - 1], w=max(1, w - 2))
+    for a, b in zip(pts, pts[1:]):
+        self.line(a[0], a[1], b[0], b[1], pal[hi], w=1)
+    if glow:
+        for a in pts[::2]:
+            self.glow(a[0], a[1], w / 2 + 1, w / 2 + glow, pal[lo + 1], density=0.5)
+
+
+def _tri_ray(self, cx, cy, ang, r0, r1, width, c):
+    """Tapered ray (a thin triangle) from r0 to r1 along ang."""
+    ca, sa = math.cos(ang), math.sin(ang)
+    nx, ny = -sa * width / 2, ca * width / 2
+    self.poly([(cx + ca * r0 + nx, cy + sa * r0 + ny), (cx + ca * r1, cy + sa * r1),
+               (cx + ca * r0 - nx, cy + sa * r0 - ny)], c)
+
+
+def _band(self, cx, cy, r, thick, pal, squash=1.0, lo=2, hi=5, front_lit=False, gaps=0, phase=0.0, dens=1.0):
+    """Thick ring with a gradient across its width: outer edge dark, inner bright edge hot.
+    front_lit brightens the lower (front) half - for squashed rings seen from above."""
+    if r <= 0 or thick <= 0:
+        return
+    cx_i, cy_i = int(round(cx)), int(round(cy))
+    ri = int(math.ceil(r)) + 1
+    inner = max(0.0, r - thick)
+    for dy in range(-ri, ri + 1):
+        for dx in range(-ri, ri + 1):
+            yy = dy / squash
+            d = math.hypot(dx, yy)
+            if not (inner < d <= r + 0.5):
+                continue
+            if gaps:
+                a = (math.atan2(yy, dx) / TAU + phase) % 1.0
+                if (a * gaps) % 1.0 > 0.66:
+                    continue
+            if dens < 1 and bayer(cx_i + dx, cy_i + dy) > dens:
+                continue
+            k = (r + 0.5 - d) / (thick + 0.5)          # 0 outer edge -> 1 inner edge
+            if front_lit:
+                k = k * 0.7 + (0.3 if dy > 0 else -0.1)
+            idx = lo + int(clamp(k) * (hi - lo) + 0.25)
+            self.px(cx_i + dx, cy_i + dy, pal[max(lo, min(hi, idx))])
+
+
+def _star(self, cx, cy, r, inner, points, pal, rot=0.0, lo=2, hi=5):
+    """Filled N-point star with a shaded body: outline-ish edge, mid body, bright centre."""
+    pts = []
+    for k in range(points * 2):
+        a = rot + k * math.pi / points
+        rr = r if k % 2 == 0 else r * inner
+        pts.append((cx + math.cos(a) * rr, cy + math.sin(a) * rr))
+    self.poly(pts, pal[lo])
+    pts2 = [(cx + (x - cx) * 0.72, cy + (y - cy) * 0.72) for x, y in pts]
+    self.poly(pts2, pal[min(hi, lo + 1)])
+    pts3 = [(cx + (x - cx) * 0.45, cy + (y - cy) * 0.45) for x, y in pts]
+    self.poly(pts3, pal[min(hi, lo + 2)])
+    self.disc(cx, cy, max(0.6, r * 0.18), pal[hi])
+
+
+Canvas.glow = _glow
+Canvas.shaded = _shaded
+Canvas.dissolve = _dissolve
+Canvas.stroke = _stroke
+Canvas.tri_ray = _tri_ray
+Canvas.band = _band
+Canvas.star = _star

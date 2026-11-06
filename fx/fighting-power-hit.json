@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Wide 8-point star, 12 rays: the heavy punch.",
  "palette": [
-  "#4a1410",
-  "#922a18",
-  "#d24e22",
-  "#f28c3c",
-  "#ffc878",
-  "#fff0d0"
+  "#4a0920",
+  "#920918",
+  "#d23f22",
+  "#f2973c",
+  "#ffe078",
+  "#fffad0"
  ],
  "refs": [
   "NG-07",
@@ -35,6 +35,7 @@
  },
  "gif": "fx/fighting-power-hit.gif",
  "durationMs": 600,
+ "peakFrame": 1,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 100,

@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Random sparks with an off-beat every third frame.",
  "palette": [
-  "#4a3208",
-  "#b07a0c",
-  "#f2c414",
-  "#ffe94a",
-  "#fff7a8",
+  "#4a1000",
+  "#b04a00",
+  "#f2b114",
+  "#ffed4a",
+  "#fff6a8",
   "#ffffff"
  ],
  "refs": [],
@@ -31,5 +31,6 @@
   "height": 64
  },
  "gif": "fx/status-paralysis.gif",
- "durationMs": 600
+ "durationMs": 600,
+ "peakFrame": 1
 }

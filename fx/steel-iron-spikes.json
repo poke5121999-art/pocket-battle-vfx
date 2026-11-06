@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Polished spikes rise in sequence.",
  "palette": [
-  "#262c38",
-  "#4a5466",
-  "#7a8698",
-  "#aeb8c8",
-  "#dce4ee",
+  "#262438",
+  "#474a66",
+  "#7a8398",
+  "#aebac8",
+  "#eee9dc",
   "#ffffff"
  ],
  "refs": [
@@ -34,6 +34,7 @@
  },
  "gif": "fx/steel-iron-spikes.gif",
  "durationMs": 1067,
+ "peakFrame": 6,
  "battle": {
   "hitFrame": 2,
   "hitStopMs": 60,

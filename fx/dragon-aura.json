@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Blue flame tongues.",
  "palette": [
-  "#141e4a",
-  "#2a3c9c",
-  "#4a64e0",
-  "#6aa0ff",
-  "#a8f0f0",
+  "#1a0e4a",
+  "#281c9c",
+  "#4a57e0",
+  "#6aa9ff",
+  "#a8f0e3",
   "#ffffff"
  ],
  "refs": [
@@ -34,5 +34,6 @@
   "height": 64
  },
  "gif": "fx/dragon-aura.gif",
- "durationMs": 667
+ "durationMs": 667,
+ "peakFrame": 2
 }

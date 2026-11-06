@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Green flash, leaves burst out and drift down.",
  "palette": [
-  "#12381c",
-  "#23702c",
-  "#47a83a",
-  "#8dd54b",
-  "#d2f27a",
-  "#f8ffd8"
+  "#0d382b",
+  "#1a703a",
+  "#3ea83a",
+  "#95d54b",
+  "#e8f27a",
+  "#fffbd8"
  ],
  "refs": [
   "BS-14",
@@ -36,6 +36,7 @@
  },
  "gif": "fx/grass-petal-burst.gif",
  "durationMs": 800,
+ "peakFrame": 0,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 50,

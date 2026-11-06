@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Thick dark rings radiate from a black core.",
  "palette": [
-  "#0c0a12",
-  "#241c2c",
-  "#3e3048",
-  "#6a4c70",
-  "#a07890",
-  "#e0c8d0"
+  "#0b0912",
+  "#1f1a2c",
+  "#3c3048",
+  "#6c4c70",
+  "#a07889",
+  "#e0c8c9"
  ],
  "refs": [
   "RB-10",
@@ -35,5 +35,6 @@
   "height": 96
  },
  "gif": "fx/dark-pulse.gif",
- "durationMs": 833
+ "durationMs": 833,
+ "peakFrame": 3
 }

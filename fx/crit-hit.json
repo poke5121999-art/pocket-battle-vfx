@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Two-beat crit: white block, jagged starburst, broken ring, long rays.",
  "palette": [
-  "#4a300a",
-  "#9a6410",
-  "#e0a020",
-  "#ffd040",
-  "#fff090",
+  "#4a0f02",
+  "#9a3700",
+  "#e09020",
+  "#ffdb40",
+  "#fff490",
   "#ffffff"
  ],
  "refs": [
@@ -36,6 +36,7 @@
  },
  "gif": "fx/crit-hit.gif",
  "durationMs": 700,
+ "peakFrame": 1,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 120,

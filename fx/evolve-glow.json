@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Silhouette blinks white in quickening beats, then a flash hides the swap.",
  "palette": [
-  "#3a3a4a",
-  "#7a7a8e",
-  "#b4b4c4",
-  "#dedeea",
-  "#f4f4fa",
+  "#3c384a",
+  "#7c788e",
+  "#b5b4c4",
+  "#eae7de",
+  "#faf7f1",
   "#ffffff"
  ],
  "refs": [
@@ -35,5 +35,6 @@
   "height": 128
  },
  "gif": "fx/evolve-glow.gif",
- "durationMs": 1333
+ "durationMs": 1333,
+ "peakFrame": 17
 }

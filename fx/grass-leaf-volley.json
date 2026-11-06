@@ -3,24 +3,24 @@
  "name": "Leaf Volley",
  "element": "grass",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Three tumbling two-tone leaves.",
  "palette": [
-  "#12381c",
-  "#23702c",
-  "#47a83a",
-  "#8dd54b",
-  "#d2f27a",
-  "#f8ffd8"
+  "#0d382b",
+  "#1a703a",
+  "#3ea83a",
+  "#95d54b",
+  "#e8f27a",
+  "#fffbd8"
  ],
  "refs": [
   "RC-04",
@@ -31,9 +31,10 @@
   "image": "fx/grass-leaf-volley.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/grass-leaf-volley.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 4
 }

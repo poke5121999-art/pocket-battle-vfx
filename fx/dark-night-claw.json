@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Three diagonal rakes, white edge cools to plum.",
  "palette": [
-  "#0c0a12",
-  "#241c2c",
-  "#3e3048",
-  "#6a4c70",
-  "#a07890",
-  "#e0c8d0"
+  "#0b0912",
+  "#1f1a2c",
+  "#3c3048",
+  "#6c4c70",
+  "#a07889",
+  "#e0c8c9"
  ],
  "refs": [
   "OG-10"
@@ -34,6 +34,7 @@
  },
  "gif": "fx/dark-night-claw.gif",
  "durationMs": 500,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 1,
   "hitStopMs": 60,

@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Airy hit: no star, ring and rays only.",
  "palette": [
-  "#2a3a6a",
-  "#5068b0",
-  "#84a4e8",
-  "#b8d0ff",
-  "#e4eeff",
+  "#2f226a",
+  "#4544b0",
+  "#849ce8",
+  "#b8d4ff",
+  "#e4f3ff",
   "#ffffff"
  ],
  "refs": [
@@ -34,6 +34,7 @@
  },
  "gif": "fx/flying-gust-burst.gif",
  "durationMs": 667,
+ "peakFrame": 0,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 40,

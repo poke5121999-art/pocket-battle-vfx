@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Hex-lattice dome with a sweeping highlight.",
  "palette": [
-  "#0c2a48",
-  "#1a5a8a",
-  "#2e9ad0",
-  "#68d8f0",
-  "#bcf6ff",
+  "#050a48",
+  "#0d358a",
+  "#2e8cd0",
+  "#68e0f0",
+  "#bcfffc",
   "#ffffff"
  ],
  "refs": [
@@ -33,5 +33,6 @@
   "height": 64
  },
  "gif": "fx/shield.gif",
- "durationMs": 800
+ "durationMs": 800,
+ "peakFrame": 3
 }

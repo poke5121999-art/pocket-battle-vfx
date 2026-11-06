@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Broken rings spiralling up with wind ticks.",
  "palette": [
-  "#2a3a6a",
-  "#5068b0",
-  "#84a4e8",
-  "#b8d0ff",
-  "#e4eeff",
+  "#2f226a",
+  "#4544b0",
+  "#849ce8",
+  "#b8d4ff",
+  "#e4f3ff",
   "#ffffff"
  ],
  "refs": [
@@ -33,5 +33,6 @@
   "height": 96
  },
  "gif": "fx/flying-tornado.gif",
- "durationMs": 833
+ "durationMs": 833,
+ "peakFrame": 9
 }

@@ -3,23 +3,23 @@
  "name": "Moon Orb",
  "element": "fairy",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Pink orb leaving twinkling sparkles.",
  "palette": [
-  "#4a1438",
-  "#a83a78",
-  "#f070b0",
-  "#ff9cd0",
-  "#ffd0ea",
+  "#450e4a",
+  "#a82d91",
+  "#f070bb",
+  "#ff9cca",
+  "#ffd0e2",
   "#ffffff"
  ],
  "refs": [
@@ -30,9 +30,10 @@
   "image": "fx/fairy-moon-orb.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/fairy-moon-orb.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 7
 }

@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Charge 6f, shoots across in 3f, wavy body holds 8f, thins out.",
  "palette": [
-  "#0f2a5c",
-  "#1e5cb8",
-  "#3497e6",
-  "#6ccdfc",
-  "#b6efff",
+  "#0c065c",
+  "#0c25b8",
+  "#3488e6",
+  "#6cd6fc",
+  "#b6fcff",
   "#ffffff"
  ],
  "refs": [
@@ -34,6 +34,7 @@
  },
  "gif": "fx/water-jet.gif",
  "durationMs": 1333,
+ "peakFrame": 11,
  "battle": {
   "hitFrame": 9,
   "hitStopMs": 40,

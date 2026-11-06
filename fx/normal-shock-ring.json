@@ -15,11 +15,11 @@
  "layer": "ground",
  "notes": "Ground shockwave: three squashed rings leave the caster's feet (roar / stomp).",
  "palette": [
-  "#33313d",
-  "#686676",
-  "#a3a1b1",
-  "#d2d0dc",
-  "#efeef5",
+  "#32303d",
+  "#686476",
+  "#a4a1b1",
+  "#dcd9d0",
+  "#f5f3ec",
   "#ffffff"
  ],
  "refs": [
@@ -34,5 +34,6 @@
   "height": 128
  },
  "gif": "fx/normal-shock-ring.gif",
- "durationMs": 800
+ "durationMs": 800,
+ "peakFrame": 5
 }

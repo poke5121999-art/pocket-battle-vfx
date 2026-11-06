@@ -3,23 +3,23 @@
  "name": "Air Blade",
  "element": "flying",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 6,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Crescent of wind with streaks behind.",
  "palette": [
-  "#2a3a6a",
-  "#5068b0",
-  "#84a4e8",
-  "#b8d0ff",
-  "#e4eeff",
+  "#2f226a",
+  "#4544b0",
+  "#849ce8",
+  "#b8d4ff",
+  "#e4f3ff",
   "#ffffff"
  ],
  "refs": [
@@ -30,9 +30,10 @@
   "image": "fx/flying-air-blade.png",
   "columns": 6,
   "rows": 1,
-  "width": 384,
+  "width": 576,
   "height": 32
  },
  "gif": "fx/flying-air-blade.gif",
- "durationMs": 400
+ "durationMs": 400,
+ "peakFrame": 3
 }

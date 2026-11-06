@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Clang: many sparks that arc down.",
  "palette": [
-  "#262c38",
-  "#4a5466",
-  "#7a8698",
-  "#aeb8c8",
-  "#dce4ee",
+  "#262438",
+  "#474a66",
+  "#7a8398",
+  "#aebac8",
+  "#eee9dc",
   "#ffffff"
  ],
  "refs": [
@@ -36,6 +36,7 @@
  },
  "gif": "fx/steel-metal-spark.gif",
  "durationMs": 500,
+ "peakFrame": 1,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

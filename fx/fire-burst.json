@@ -13,14 +13,14 @@
   48
  ],
  "layer": "front",
- "notes": "Flash, puff cluster expands, cools to dark red and rises; embers fall.",
+ "notes": "Flash, shaded fireball cluster, cools into grey-violet smoke that rises; embers fall, scorch decal.",
  "palette": [
-  "#4a1310",
-  "#a8291a",
-  "#e8571c",
-  "#ff9a2e",
-  "#ffd65c",
-  "#fff6c9"
+  "#4a0921",
+  "#a80920",
+  "#e8461c",
+  "#ffa72e",
+  "#ffef5c",
+  "#fffac9"
  ],
  "refs": [
   "NG-02",
@@ -36,6 +36,7 @@
  },
  "gif": "fx/fire-burst.gif",
  "durationMs": 933,
+ "peakFrame": 3,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 80,

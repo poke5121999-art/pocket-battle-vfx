@@ -3,24 +3,24 @@
  "name": "Fire Ball",
  "element": "fire",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Hot white core, flame puffs that cool down the ramp along the trail.",
  "palette": [
-  "#4a1310",
-  "#a8291a",
-  "#e8571c",
-  "#ff9a2e",
-  "#ffd65c",
-  "#fff6c9"
+  "#4a0921",
+  "#a80920",
+  "#e8461c",
+  "#ffa72e",
+  "#ffef5c",
+  "#fffac9"
  ],
  "refs": [
   "BS-11",
@@ -30,9 +30,10 @@
   "image": "fx/fire-fireball.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/fire-fireball.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 3
 }

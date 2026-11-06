@@ -3,24 +3,24 @@
  "name": "Sludge Glob",
  "element": "poison",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Heavy glob dripping blobs that fall away.",
  "palette": [
-  "#2a1238",
-  "#5c2378",
-  "#9440b8",
-  "#c46ee0",
-  "#e8a8f8",
-  "#fbe8ff"
+  "#160d38",
+  "#411978",
+  "#8a40b8",
+  "#cb6ee0",
+  "#f6a8f8",
+  "#ffe8fc"
  ],
  "refs": [
   "SG-02"
@@ -29,9 +29,10 @@
   "image": "fx/poison-sludge-glob.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/poison-sludge-glob.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 5
 }

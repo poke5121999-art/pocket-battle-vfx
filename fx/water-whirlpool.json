@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Stacked squashed rings spiralling up with orbiting droplets.",
  "palette": [
-  "#0f2a5c",
-  "#1e5cb8",
-  "#3497e6",
-  "#6ccdfc",
-  "#b6efff",
+  "#0c065c",
+  "#0c25b8",
+  "#3488e6",
+  "#6cd6fc",
+  "#b6fcff",
   "#ffffff"
  ],
  "refs": [
@@ -35,5 +35,6 @@
   "height": 96
  },
  "gif": "fx/water-whirlpool.gif",
- "durationMs": 833
+ "durationMs": 833,
+ "peakFrame": 7
 }

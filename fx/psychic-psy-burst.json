@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Concentric rings blow outwards from the target.",
  "palette": [
-  "#4a1040",
-  "#a02878",
-  "#e8508c",
-  "#ff8cb8",
-  "#ffc8e0",
+  "#3a094a",
+  "#a01a95",
+  "#e85099",
+  "#ff8cb1",
+  "#ffc8d6",
   "#fff0f8"
  ],
  "refs": [
@@ -36,6 +36,7 @@
  },
  "gif": "fx/psychic-psy-burst.gif",
  "durationMs": 800,
+ "peakFrame": 6,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

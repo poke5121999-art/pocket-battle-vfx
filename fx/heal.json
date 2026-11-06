@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Plus signs and sparkles rise; soft ring pulse.",
  "palette": [
-  "#0e3a2a",
-  "#1c7a4a",
-  "#3cc06a",
-  "#7ef08c",
-  "#c8ffc0",
+  "#09373a",
+  "#117a5f",
+  "#3cc075",
+  "#7ef085",
+  "#d3ffc0",
   "#ffffff"
  ],
  "refs": [
@@ -35,5 +35,6 @@
   "height": 64
  },
  "gif": "fx/heal.gif",
- "durationMs": 833
+ "durationMs": 833,
+ "peakFrame": 8
 }

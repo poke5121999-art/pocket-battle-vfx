@@ -33,6 +33,9 @@ RAMPS = {
     "blue":     ["#0c1a48", "#1c3a9a", "#3464e0", "#6a9cff", "#b4d0ff", "#ffffff"],
     "white":    ["#3a3a4a", "#7a7a8e", "#b4b4c4", "#dedeea", "#f4f4fa", "#ffffff"],
     "shield":   ["#0c2a48", "#1a5a8a", "#2e9ad0", "#68d8f0", "#bcf6ff", "#ffffff"],
+    "smoke":    ["#1e1a26", "#38323f", "#565061", "#7a7486", "#a29cad", "#cfcad6"],
+    "scorch":   ["#140f12", "#231a1c", "#33282a", "#4a3a36", "#6a5448", "#8c735e"],
+    "dust":     ["#2a2018", "#4a3a2a", "#6e5a42", "#94805e", "#bba880", "#e0d2b0"],
     "creature": ["#1c1a24", "#4a4858", "#77758a", "#a7a5b8", "#d4d2e0", "#f4f3f8"],
 }
 
@@ -40,5 +43,39 @@ ELEMENTS = ["normal", "fire", "water", "grass", "electric", "ice", "fighting", "
             "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"]
 
 
+import colorsys
+
+
+def _shift(rgba, i, n):
+    """Hue-shift a ramp step: shadows lean toward blue-violet, highlights toward warm yellow, and dark steps
+    gain a little saturation, so a ramp reads as lit material instead of one hue getting darker."""
+    r, g, b, a = rgba
+    h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
+    t = i / (n - 1)
+    if s > 0.08:
+        if t < 0.5:
+            target, amt = 0.70, (0.5 - t) * 2 * 0.07   # ~25 deg toward violet at the darkest step
+        else:
+            target, amt = 0.15, (t - 0.5) * 2 * 0.05   # ~18 deg toward yellow at the brightest step
+        d = ((target - h + 0.5) % 1.0) - 0.5
+        h = (h + max(-amt, min(amt, d))) % 1.0
+        if t < 0.4:
+            s = min(1.0, s * 1.12)
+    else:  # greys: cool shadows, warm highlights
+        if t < 0.5:
+            h, s = 0.69, max(s, 0.18 * (0.5 - t) * 2)
+        elif t < 1:
+            h, s = 0.12, max(s, 0.06 * (t - 0.5) * 2)
+    r, g, b = colorsys.hsv_to_rgb(h, s, v)
+    return (int(round(r * 255)), int(round(g * 255)), int(round(b * 255)), a)
+
+
 def ramp(name):
-    return [hexrgb(h) for h in RAMPS[name]]
+    base = [hexrgb(h) for h in RAMPS[name]]
+    if name in ("creature",):
+        return base
+    return [_shift(c, i, len(base)) for i, c in enumerate(base)]
+
+
+def ramp_hex(name):
+    return ["#%02x%02x%02x" % c[:3] for c in ramp(name)]

@@ -3,24 +3,24 @@
  "name": "Shadow Orb",
  "element": "ghost",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Dark orb with a smoky, dithered tail.",
  "palette": [
-  "#1a1030",
-  "#3c2468",
-  "#6a44a8",
-  "#9a78d8",
-  "#c8b0f8",
-  "#f0e8ff"
+  "#130c30",
+  "#2b1c68",
+  "#6244a8",
+  "#a078d8",
+  "#d5b0f8",
+  "#f7e8ff"
  ],
  "refs": [
   "RC-08",
@@ -31,9 +31,10 @@
   "image": "fx/ghost-shadow-orb.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/ghost-shadow-orb.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 7
 }

@@ -3,23 +3,23 @@
  "name": "Bubble Shot",
  "element": "water",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Glossy orb shedding ring bubbles.",
  "palette": [
-  "#0f2a5c",
-  "#1e5cb8",
-  "#3497e6",
-  "#6ccdfc",
-  "#b6efff",
+  "#0c065c",
+  "#0c25b8",
+  "#3488e6",
+  "#6cd6fc",
+  "#b6fcff",
   "#ffffff"
  ],
  "refs": [
@@ -31,9 +31,10 @@
   "image": "fx/water-bubble-shot.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/water-bubble-shot.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 1
 }

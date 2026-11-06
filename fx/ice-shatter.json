@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Crystal fragments fly and fall; ring breaks into arcs.",
  "palette": [
-  "#1b3d5e",
-  "#3a7bb0",
-  "#6fc0e8",
-  "#a8e8ff",
-  "#dcfaff",
+  "#131a5e",
+  "#2c53b0",
+  "#6fb6e8",
+  "#a8edff",
+  "#dcfffe",
   "#ffffff"
  ],
  "refs": [
@@ -34,6 +34,7 @@
  },
  "gif": "fx/ice-shatter.gif",
  "durationMs": 800,
+ "peakFrame": 0,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

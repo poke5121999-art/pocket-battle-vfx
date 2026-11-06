@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Tiny bugs on noisy orbits with wing flicker.",
  "palette": [
-  "#263808",
-  "#4e6e10",
-  "#86a81c",
-  "#b8d43a",
-  "#e0f07c",
-  "#f8ffd0"
+  "#0d3802",
+  "#306e05",
+  "#7aa81c",
+  "#c1d43a",
+  "#f0eb7c",
+  "#fffad0"
  ],
  "refs": [],
  "sheet": {
@@ -31,5 +31,6 @@
   "height": 64
  },
  "gif": "fx/bug-swarm.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 3
 }

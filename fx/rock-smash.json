@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Heavy chunks bounce twice.",
  "palette": [
-  "#2e2418",
-  "#5a4a32",
-  "#8c7652",
-  "#b8a07a",
-  "#ddc9a4",
-  "#f4ead6"
+  "#2e1815",
+  "#5a3d2d",
+  "#8c7152",
+  "#b8a47a",
+  "#ddd3a4",
+  "#f4f1d6"
  ],
  "refs": [
   "DA-04"
@@ -34,6 +34,7 @@
  },
  "gif": "fx/rock-smash.gif",
  "durationMs": 933,
+ "peakFrame": 9,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 80,

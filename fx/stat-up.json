@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Warm arrows stream up.",
  "palette": [
-  "#3a0a10",
-  "#8a1420",
-  "#d82838",
-  "#ff5a5a",
-  "#ffa8a0",
+  "#3a0422",
+  "#8a0635",
+  "#d82847",
+  "#ff645a",
+  "#ffb9a0",
   "#ffffff"
  ],
  "refs": [
@@ -35,5 +35,6 @@
   "height": 64
  },
  "gif": "fx/stat-up.gif",
- "durationMs": 667
+ "durationMs": 667,
+ "peakFrame": 3
 }

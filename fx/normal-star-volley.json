@@ -3,23 +3,23 @@
  "name": "Star Volley",
  "element": "normal",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Three spinning stars with dithered streaks; loop, move it with the engine.",
  "palette": [
-  "#33313d",
-  "#686676",
-  "#a3a1b1",
-  "#d2d0dc",
-  "#efeef5",
+  "#32303d",
+  "#686476",
+  "#a4a1b1",
+  "#dcd9d0",
+  "#f5f3ec",
   "#ffffff"
  ],
  "refs": [
@@ -31,9 +31,10 @@
   "image": "fx/normal-star-volley.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/normal-star-volley.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 1
 }

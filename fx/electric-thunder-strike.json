@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "1 pre-strike frame, bolt flickers 4 + 2 frames, ground ring.",
  "palette": [
-  "#4a3208",
-  "#b07a0c",
-  "#f2c414",
-  "#ffe94a",
-  "#fff7a8",
+  "#4a1000",
+  "#b04a00",
+  "#f2b114",
+  "#ffed4a",
+  "#fff6a8",
   "#ffffff"
  ],
  "refs": [
@@ -34,6 +34,7 @@
  },
  "gif": "fx/electric-thunder-strike.gif",
  "durationMs": 800,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 1,
   "hitStopMs": 80,

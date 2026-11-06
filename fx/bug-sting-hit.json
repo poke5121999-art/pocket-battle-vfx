@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Small sharp hit: 4 rays.",
  "palette": [
-  "#263808",
-  "#4e6e10",
-  "#86a81c",
-  "#b8d43a",
-  "#e0f07c",
-  "#f8ffd0"
+  "#0d3802",
+  "#306e05",
+  "#7aa81c",
+  "#c1d43a",
+  "#f0eb7c",
+  "#fffad0"
  ],
  "refs": [],
  "sheet": {
@@ -32,6 +32,7 @@
  },
  "gif": "fx/bug-sting-hit.gif",
  "durationMs": 500,
+ "peakFrame": 1,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 40,

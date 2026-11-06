@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Tornado of rings with orbiting leaves (spiral-ring language from the reference clips).",
  "palette": [
-  "#12381c",
-  "#23702c",
-  "#47a83a",
-  "#8dd54b",
-  "#d2f27a",
-  "#f8ffd8"
+  "#0d382b",
+  "#1a703a",
+  "#3ea83a",
+  "#95d54b",
+  "#e8f27a",
+  "#fffbd8"
  ],
  "refs": [
   "RC-01"
@@ -33,5 +33,6 @@
   "height": 96
  },
  "gif": "fx/grass-leaf-spiral.gif",
- "durationMs": 833
+ "durationMs": 833,
+ "peakFrame": 6
 }

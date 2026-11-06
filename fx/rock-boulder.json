@@ -3,24 +3,24 @@
  "name": "Boulder Throw",
  "element": "rock",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Faceted rock tumbling in 8 steps with an outline, dust trail.",
  "palette": [
-  "#2e2418",
-  "#5a4a32",
-  "#8c7652",
-  "#b8a07a",
-  "#ddc9a4",
-  "#f4ead6"
+  "#2e1815",
+  "#5a3d2d",
+  "#8c7152",
+  "#b8a47a",
+  "#ddd3a4",
+  "#f4f1d6"
  ],
  "refs": [
   "RB-03",
@@ -30,9 +30,10 @@
   "image": "fx/rock-boulder.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/rock-boulder.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 7
 }

@@ -3,23 +3,23 @@
  "name": "Ice Shards",
  "element": "ice",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Three faceted shards, light side up, white tips.",
  "palette": [
-  "#1b3d5e",
-  "#3a7bb0",
-  "#6fc0e8",
-  "#a8e8ff",
-  "#dcfaff",
+  "#131a5e",
+  "#2c53b0",
+  "#6fb6e8",
+  "#a8edff",
+  "#dcfffe",
   "#ffffff"
  ],
  "refs": [
@@ -31,9 +31,10 @@
   "image": "fx/ice-shards.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/ice-shards.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 7
 }

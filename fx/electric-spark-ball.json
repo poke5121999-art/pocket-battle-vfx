@@ -3,23 +3,23 @@
  "name": "Spark Ball",
  "element": "electric",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Yellow orb with a jittering bolt tail, redrawn every frame.",
  "palette": [
-  "#4a3208",
-  "#b07a0c",
-  "#f2c414",
-  "#ffe94a",
-  "#fff7a8",
+  "#4a1000",
+  "#b04a00",
+  "#f2b114",
+  "#ffed4a",
+  "#fff6a8",
   "#ffffff"
  ],
  "refs": [
@@ -31,9 +31,10 @@
   "image": "fx/electric-spark-ball.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/electric-spark-ball.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 6
 }

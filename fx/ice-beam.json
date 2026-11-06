@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Pale beam with crystals budding off both edges.",
  "palette": [
-  "#1b3d5e",
-  "#3a7bb0",
-  "#6fc0e8",
-  "#a8e8ff",
-  "#dcfaff",
+  "#131a5e",
+  "#2c53b0",
+  "#6fb6e8",
+  "#a8edff",
+  "#dcfffe",
   "#ffffff"
  ],
  "refs": [
@@ -35,6 +35,7 @@
  },
  "gif": "fx/ice-beam.gif",
  "durationMs": 1333,
+ "peakFrame": 9,
  "battle": {
   "hitFrame": 9,
   "hitStopMs": 40,

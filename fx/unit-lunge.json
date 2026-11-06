@@ -35,5 +35,6 @@
   "height": 128
  },
  "gif": "fx/unit-lunge.gif",
- "durationMs": 800
+ "durationMs": 800,
+ "peakFrame": 4
 }

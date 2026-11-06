@@ -85,6 +85,8 @@
       this.oy = d.kind === "impact" ? Math.round((this.h - d.frameH) / 2) : this.h - d.frameH;
       canvas.width = this.w; canvas.height = this.h;
       this.img = null;
+      // until it plays (off-screen, or before the first tick) a card shows its fullest frame, never an empty one
+      this.forced = opts.idlePeak ? (d.peakFrame || 0) : null;
       loadImg(d.sheet.image).then((i) => { this.img = i; this.draw(); });
     }
     get frame() {
@@ -100,7 +102,7 @@
       const dur = this.d.frames / this.fps;
       if (!this.loop && this.t >= dur) {
         this.hold += dt;
-        if (this.hold > 0.7) this.restart();
+        if (this.hold > 0.35) this.restart();
       }
       if (this.travel && this.t > 1e6) this.t = 0;
       this.draw();
@@ -192,7 +194,7 @@
       fig.addEventListener("click", () => openDetail(d));
       fig.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDetail(d); } });
       grid.append(fig);
-      const card = { d, fig, player: new Player(cv, d), visible: !io };
+      const card = { d, fig, player: new Player(cv, d, { idlePeak: true }), visible: !io };
       fig._card = card;
       if (io) io.observe(fig);
       cards.push(card);

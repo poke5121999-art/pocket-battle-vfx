@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Crown splash, droplets on gravity arcs, flat ripple rings.",
  "palette": [
-  "#0f2a5c",
-  "#1e5cb8",
-  "#3497e6",
-  "#6ccdfc",
-  "#b6efff",
+  "#0c065c",
+  "#0c25b8",
+  "#3488e6",
+  "#6cd6fc",
+  "#b6fcff",
   "#ffffff"
  ],
  "refs": [
@@ -36,6 +36,7 @@
  },
  "gif": "fx/water-splash.gif",
  "durationMs": 800,
+ "peakFrame": 5,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 50,

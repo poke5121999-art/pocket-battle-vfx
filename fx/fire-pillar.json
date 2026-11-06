@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Column erupts from a ground glow, overshoots, holds, collapses.",
  "palette": [
-  "#4a1310",
-  "#a8291a",
-  "#e8571c",
-  "#ff9a2e",
-  "#ffd65c",
-  "#fff6c9"
+  "#4a0921",
+  "#a80920",
+  "#e8461c",
+  "#ffa72e",
+  "#ffef5c",
+  "#fffac9"
  ],
  "refs": [
   "RC-16",
@@ -35,5 +35,6 @@
   "height": 128
  },
  "gif": "fx/fire-pillar.gif",
- "durationMs": 933
+ "durationMs": 933,
+ "peakFrame": 4
 }

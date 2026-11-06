@@ -28,23 +28,23 @@
    "name": "Star Volley",
    "element": "normal",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Three spinning stars with dithered streaks; loop, move it with the engine.",
    "palette": [
-    "#33313d",
-    "#686676",
-    "#a3a1b1",
-    "#d2d0dc",
-    "#efeef5",
+    "#32303d",
+    "#686476",
+    "#a4a1b1",
+    "#dcd9d0",
+    "#f5f3ec",
     "#ffffff"
    ],
    "refs": [
@@ -56,11 +56,12 @@
     "image": "fx/normal-star-volley.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/normal-star-volley.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 1
   },
   {
    "id": "normal-impact-burst",
@@ -79,11 +80,11 @@
    "layer": "front",
    "notes": "The default hit: white frame 0, 8-point star, ring, rays, sparks cooling.",
    "palette": [
-    "#33313d",
-    "#686676",
-    "#a3a1b1",
-    "#d2d0dc",
-    "#efeef5",
+    "#32303d",
+    "#686476",
+    "#a4a1b1",
+    "#dcd9d0",
+    "#f5f3ec",
     "#ffffff"
    ],
    "refs": [
@@ -100,6 +101,7 @@
    },
    "gif": "fx/normal-impact-burst.gif",
    "durationMs": 500,
+   "peakFrame": 1,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -123,11 +125,11 @@
    "layer": "ground",
    "notes": "Ground shockwave: three squashed rings leave the caster's feet (roar / stomp).",
    "palette": [
-    "#33313d",
-    "#686676",
-    "#a3a1b1",
-    "#d2d0dc",
-    "#efeef5",
+    "#32303d",
+    "#686476",
+    "#a4a1b1",
+    "#dcd9d0",
+    "#f5f3ec",
     "#ffffff"
    ],
    "refs": [
@@ -142,31 +144,32 @@
     "height": 128
    },
    "gif": "fx/normal-shock-ring.gif",
-   "durationMs": 800
+   "durationMs": 800,
+   "peakFrame": 5
   },
   {
    "id": "fire-fireball",
    "name": "Fire Ball",
    "element": "fire",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Hot white core, flame puffs that cool down the ramp along the trail.",
    "palette": [
-    "#4a1310",
-    "#a8291a",
-    "#e8571c",
-    "#ff9a2e",
-    "#ffd65c",
-    "#fff6c9"
+    "#4a0921",
+    "#a80920",
+    "#e8461c",
+    "#ffa72e",
+    "#ffef5c",
+    "#fffac9"
    ],
    "refs": [
     "BS-11",
@@ -176,11 +179,12 @@
     "image": "fx/fire-fireball.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/fire-fireball.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 3
   },
   {
    "id": "fire-burst",
@@ -197,14 +201,14 @@
     48
    ],
    "layer": "front",
-   "notes": "Flash, puff cluster expands, cools to dark red and rises; embers fall.",
+   "notes": "Flash, shaded fireball cluster, cools into grey-violet smoke that rises; embers fall, scorch decal.",
    "palette": [
-    "#4a1310",
-    "#a8291a",
-    "#e8571c",
-    "#ff9a2e",
-    "#ffd65c",
-    "#fff6c9"
+    "#4a0921",
+    "#a80920",
+    "#e8461c",
+    "#ffa72e",
+    "#ffef5c",
+    "#fffac9"
    ],
    "refs": [
     "NG-02",
@@ -220,6 +224,7 @@
    },
    "gif": "fx/fire-burst.gif",
    "durationMs": 933,
+   "peakFrame": 3,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 80,
@@ -243,12 +248,12 @@
    "layer": "front",
    "notes": "Column erupts from a ground glow, overshoots, holds, collapses.",
    "palette": [
-    "#4a1310",
-    "#a8291a",
-    "#e8571c",
-    "#ff9a2e",
-    "#ffd65c",
-    "#fff6c9"
+    "#4a0921",
+    "#a80920",
+    "#e8461c",
+    "#ffa72e",
+    "#ffef5c",
+    "#fffac9"
    ],
    "refs": [
     "RC-16",
@@ -263,7 +268,8 @@
     "height": 128
    },
    "gif": "fx/fire-pillar.gif",
-   "durationMs": 933
+   "durationMs": 933,
+   "peakFrame": 4
   },
   {
    "id": "fire-aura",
@@ -282,12 +288,12 @@
    "layer": "front",
    "notes": "Rising flame tongues around the unit; ground ring pulse.",
    "palette": [
-    "#4a1310",
-    "#a8291a",
-    "#e8571c",
-    "#ff9a2e",
-    "#ffd65c",
-    "#fff6c9"
+    "#4a0921",
+    "#a80920",
+    "#e8461c",
+    "#ffa72e",
+    "#ffef5c",
+    "#fffac9"
    ],
    "refs": [
     "RC-16",
@@ -302,7 +308,8 @@
     "height": 64
    },
    "gif": "fx/fire-aura.gif",
-   "durationMs": 667
+   "durationMs": 667,
+   "peakFrame": 7
   },
   {
    "id": "water-jet",
@@ -321,11 +328,11 @@
    "layer": "front",
    "notes": "Charge 6f, shoots across in 3f, wavy body holds 8f, thins out.",
    "palette": [
-    "#0f2a5c",
-    "#1e5cb8",
-    "#3497e6",
-    "#6ccdfc",
-    "#b6efff",
+    "#0c065c",
+    "#0c25b8",
+    "#3488e6",
+    "#6cd6fc",
+    "#b6fcff",
     "#ffffff"
    ],
    "refs": [
@@ -340,6 +347,7 @@
    },
    "gif": "fx/water-jet.gif",
    "durationMs": 1333,
+   "peakFrame": 11,
    "battle": {
     "hitFrame": 9,
     "hitStopMs": 40,
@@ -351,23 +359,23 @@
    "name": "Bubble Shot",
    "element": "water",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Glossy orb shedding ring bubbles.",
    "palette": [
-    "#0f2a5c",
-    "#1e5cb8",
-    "#3497e6",
-    "#6ccdfc",
-    "#b6efff",
+    "#0c065c",
+    "#0c25b8",
+    "#3488e6",
+    "#6cd6fc",
+    "#b6fcff",
     "#ffffff"
    ],
    "refs": [
@@ -379,11 +387,12 @@
     "image": "fx/water-bubble-shot.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/water-bubble-shot.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 1
   },
   {
    "id": "water-splash",
@@ -402,11 +411,11 @@
    "layer": "front",
    "notes": "Crown splash, droplets on gravity arcs, flat ripple rings.",
    "palette": [
-    "#0f2a5c",
-    "#1e5cb8",
-    "#3497e6",
-    "#6ccdfc",
-    "#b6efff",
+    "#0c065c",
+    "#0c25b8",
+    "#3488e6",
+    "#6cd6fc",
+    "#b6fcff",
     "#ffffff"
    ],
    "refs": [
@@ -423,6 +432,7 @@
    },
    "gif": "fx/water-splash.gif",
    "durationMs": 800,
+   "peakFrame": 5,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 50,
@@ -446,11 +456,11 @@
    "layer": "front",
    "notes": "Stacked squashed rings spiralling up with orbiting droplets.",
    "palette": [
-    "#0f2a5c",
-    "#1e5cb8",
-    "#3497e6",
-    "#6ccdfc",
-    "#b6efff",
+    "#0c065c",
+    "#0c25b8",
+    "#3488e6",
+    "#6cd6fc",
+    "#b6fcff",
     "#ffffff"
    ],
    "refs": [
@@ -466,31 +476,32 @@
     "height": 96
    },
    "gif": "fx/water-whirlpool.gif",
-   "durationMs": 833
+   "durationMs": 833,
+   "peakFrame": 7
   },
   {
    "id": "grass-leaf-volley",
    "name": "Leaf Volley",
    "element": "grass",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Three tumbling two-tone leaves.",
    "palette": [
-    "#12381c",
-    "#23702c",
-    "#47a83a",
-    "#8dd54b",
-    "#d2f27a",
-    "#f8ffd8"
+    "#0d382b",
+    "#1a703a",
+    "#3ea83a",
+    "#95d54b",
+    "#e8f27a",
+    "#fffbd8"
    ],
    "refs": [
     "RC-04",
@@ -501,11 +512,12 @@
     "image": "fx/grass-leaf-volley.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/grass-leaf-volley.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 4
   },
   {
    "id": "grass-petal-burst",
@@ -524,12 +536,12 @@
    "layer": "front",
    "notes": "Green flash, leaves burst out and drift down.",
    "palette": [
-    "#12381c",
-    "#23702c",
-    "#47a83a",
-    "#8dd54b",
-    "#d2f27a",
-    "#f8ffd8"
+    "#0d382b",
+    "#1a703a",
+    "#3ea83a",
+    "#95d54b",
+    "#e8f27a",
+    "#fffbd8"
    ],
    "refs": [
     "BS-14",
@@ -545,6 +557,7 @@
    },
    "gif": "fx/grass-petal-burst.gif",
    "durationMs": 800,
+   "peakFrame": 0,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 50,
@@ -568,12 +581,12 @@
    "layer": "front",
    "notes": "Tornado of rings with orbiting leaves (spiral-ring language from the reference clips).",
    "palette": [
-    "#12381c",
-    "#23702c",
-    "#47a83a",
-    "#8dd54b",
-    "#d2f27a",
-    "#f8ffd8"
+    "#0d382b",
+    "#1a703a",
+    "#3ea83a",
+    "#95d54b",
+    "#e8f27a",
+    "#fffbd8"
    ],
    "refs": [
     "RC-01"
@@ -586,30 +599,31 @@
     "height": 96
    },
    "gif": "fx/grass-leaf-spiral.gif",
-   "durationMs": 833
+   "durationMs": 833,
+   "peakFrame": 6
   },
   {
    "id": "electric-spark-ball",
    "name": "Spark Ball",
    "element": "electric",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Yellow orb with a jittering bolt tail, redrawn every frame.",
    "palette": [
-    "#4a3208",
-    "#b07a0c",
-    "#f2c414",
-    "#ffe94a",
-    "#fff7a8",
+    "#4a1000",
+    "#b04a00",
+    "#f2b114",
+    "#ffed4a",
+    "#fff6a8",
     "#ffffff"
    ],
    "refs": [
@@ -621,11 +635,12 @@
     "image": "fx/electric-spark-ball.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/electric-spark-ball.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 6
   },
   {
    "id": "electric-thunder-strike",
@@ -644,11 +659,11 @@
    "layer": "front",
    "notes": "1 pre-strike frame, bolt flickers 4 + 2 frames, ground ring.",
    "palette": [
-    "#4a3208",
-    "#b07a0c",
-    "#f2c414",
-    "#ffe94a",
-    "#fff7a8",
+    "#4a1000",
+    "#b04a00",
+    "#f2b114",
+    "#ffed4a",
+    "#fff6a8",
     "#ffffff"
    ],
    "refs": [
@@ -663,6 +678,7 @@
    },
    "gif": "fx/electric-thunder-strike.gif",
    "durationMs": 800,
+   "peakFrame": 2,
    "battle": {
     "hitFrame": 1,
     "hitStopMs": 80,
@@ -686,11 +702,11 @@
    "layer": "front",
    "notes": "Crackling sparks climbing the unit; flicker by skipping beats.",
    "palette": [
-    "#4a3208",
-    "#b07a0c",
-    "#f2c414",
-    "#ffe94a",
-    "#fff7a8",
+    "#4a1000",
+    "#b04a00",
+    "#f2b114",
+    "#ffed4a",
+    "#fff6a8",
     "#ffffff"
    ],
    "refs": [
@@ -705,30 +721,31 @@
     "height": 64
    },
    "gif": "fx/electric-static-aura.gif",
-   "durationMs": 667
+   "durationMs": 667,
+   "peakFrame": 7
   },
   {
    "id": "ice-shards",
    "name": "Ice Shards",
    "element": "ice",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Three faceted shards, light side up, white tips.",
    "palette": [
-    "#1b3d5e",
-    "#3a7bb0",
-    "#6fc0e8",
-    "#a8e8ff",
-    "#dcfaff",
+    "#131a5e",
+    "#2c53b0",
+    "#6fb6e8",
+    "#a8edff",
+    "#dcfffe",
     "#ffffff"
    ],
    "refs": [
@@ -740,11 +757,12 @@
     "image": "fx/ice-shards.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/ice-shards.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 7
   },
   {
    "id": "ice-beam",
@@ -763,11 +781,11 @@
    "layer": "front",
    "notes": "Pale beam with crystals budding off both edges.",
    "palette": [
-    "#1b3d5e",
-    "#3a7bb0",
-    "#6fc0e8",
-    "#a8e8ff",
-    "#dcfaff",
+    "#131a5e",
+    "#2c53b0",
+    "#6fb6e8",
+    "#a8edff",
+    "#dcfffe",
     "#ffffff"
    ],
    "refs": [
@@ -783,6 +801,7 @@
    },
    "gif": "fx/ice-beam.gif",
    "durationMs": 1333,
+   "peakFrame": 9,
    "battle": {
     "hitFrame": 9,
     "hitStopMs": 40,
@@ -806,11 +825,11 @@
    "layer": "front",
    "notes": "Crystal fragments fly and fall; ring breaks into arcs.",
    "palette": [
-    "#1b3d5e",
-    "#3a7bb0",
-    "#6fc0e8",
-    "#a8e8ff",
-    "#dcfaff",
+    "#131a5e",
+    "#2c53b0",
+    "#6fb6e8",
+    "#a8edff",
+    "#dcfffe",
     "#ffffff"
    ],
    "refs": [
@@ -825,6 +844,7 @@
    },
    "gif": "fx/ice-shatter.gif",
    "durationMs": 800,
+   "peakFrame": 0,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -848,11 +868,11 @@
    "layer": "front",
    "notes": "Diagonal snow over a frosted ground ellipse with wind streaks.",
    "palette": [
-    "#1b3d5e",
-    "#3a7bb0",
-    "#6fc0e8",
-    "#a8e8ff",
-    "#dcfaff",
+    "#131a5e",
+    "#2c53b0",
+    "#6fb6e8",
+    "#a8edff",
+    "#dcfffe",
     "#ffffff"
    ],
    "refs": [
@@ -868,7 +888,8 @@
     "height": 192
    },
    "gif": "fx/ice-blizzard.gif",
-   "durationMs": 1000
+   "durationMs": 1000,
+   "peakFrame": 6
   },
   {
    "id": "fighting-force-wave",
@@ -887,12 +908,12 @@
    "layer": "front",
    "notes": "Thick arcs pushed forward from the fist.",
    "palette": [
-    "#4a1410",
-    "#922a18",
-    "#d24e22",
-    "#f28c3c",
-    "#ffc878",
-    "#fff0d0"
+    "#4a0920",
+    "#920918",
+    "#d23f22",
+    "#f2973c",
+    "#ffe078",
+    "#fffad0"
    ],
    "refs": [
     "RC-05",
@@ -907,7 +928,8 @@
     "height": 64
    },
    "gif": "fx/fighting-force-wave.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 5
   },
   {
    "id": "fighting-power-hit",
@@ -926,12 +948,12 @@
    "layer": "front",
    "notes": "Wide 8-point star, 12 rays: the heavy punch.",
    "palette": [
-    "#4a1410",
-    "#922a18",
-    "#d24e22",
-    "#f28c3c",
-    "#ffc878",
-    "#fff0d0"
+    "#4a0920",
+    "#920918",
+    "#d23f22",
+    "#f2973c",
+    "#ffe078",
+    "#fffad0"
    ],
    "refs": [
     "NG-07",
@@ -946,6 +968,7 @@
    },
    "gif": "fx/fighting-power-hit.gif",
    "durationMs": 600,
+   "peakFrame": 1,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 100,
@@ -969,12 +992,12 @@
    "layer": "front",
    "notes": "Fast vertical speed-lines rising (power-up).",
    "palette": [
-    "#4a1410",
-    "#922a18",
-    "#d24e22",
-    "#f28c3c",
-    "#ffc878",
-    "#fff0d0"
+    "#4a0920",
+    "#920918",
+    "#d23f22",
+    "#f2973c",
+    "#ffe078",
+    "#fffad0"
    ],
    "refs": [
     "RC-05",
@@ -989,31 +1012,32 @@
     "height": 64
    },
    "gif": "fx/fighting-power-aura.gif",
-   "durationMs": 667
+   "durationMs": 667,
+   "peakFrame": 7
   },
   {
    "id": "poison-sludge-glob",
    "name": "Sludge Glob",
    "element": "poison",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Heavy glob dripping blobs that fall away.",
    "palette": [
-    "#2a1238",
-    "#5c2378",
-    "#9440b8",
-    "#c46ee0",
-    "#e8a8f8",
-    "#fbe8ff"
+    "#160d38",
+    "#411978",
+    "#8a40b8",
+    "#cb6ee0",
+    "#f6a8f8",
+    "#ffe8fc"
    ],
    "refs": [
     "SG-02"
@@ -1022,11 +1046,12 @@
     "image": "fx/poison-sludge-glob.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/poison-sludge-glob.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 5
   },
   {
    "id": "poison-toxic-splash",
@@ -1045,12 +1070,12 @@
    "layer": "front",
    "notes": "The splash archetype in purple; reads as goo.",
    "palette": [
-    "#2a1238",
-    "#5c2378",
-    "#9440b8",
-    "#c46ee0",
-    "#e8a8f8",
-    "#fbe8ff"
+    "#160d38",
+    "#411978",
+    "#8a40b8",
+    "#cb6ee0",
+    "#f6a8f8",
+    "#ffe8fc"
    ],
    "refs": [
     "NG-03",
@@ -1065,6 +1090,7 @@
    },
    "gif": "fx/poison-toxic-splash.gif",
    "durationMs": 800,
+   "peakFrame": 0,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 50,
@@ -1088,12 +1114,12 @@
    "layer": "front",
    "notes": "Lumpy dithered gas that churns; bubbles pop at the rim.",
    "palette": [
-    "#2a1238",
-    "#5c2378",
-    "#9440b8",
-    "#c46ee0",
-    "#e8a8f8",
-    "#fbe8ff"
+    "#160d38",
+    "#411978",
+    "#8a40b8",
+    "#cb6ee0",
+    "#f6a8f8",
+    "#ffe8fc"
    ],
    "refs": [
     "NG-03",
@@ -1108,31 +1134,32 @@
     "height": 64
    },
    "gif": "fx/poison-cloud.gif",
-   "durationMs": 1000
+   "durationMs": 1000,
+   "peakFrame": 8
   },
   {
    "id": "ground-mud-ball",
    "name": "Mud Ball",
    "element": "ground",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Earth orb with a dust trail.",
    "palette": [
-    "#3a2410",
-    "#6e4a22",
-    "#a8783c",
-    "#d4a85c",
-    "#f0d494",
-    "#fff4d8"
+    "#3a0e0b",
+    "#6e3019",
+    "#a86f3c",
+    "#d4af5c",
+    "#f0e594",
+    "#fffbd8"
    ],
    "refs": [
     "RC-18",
@@ -1143,11 +1170,12 @@
     "image": "fx/ground-mud-ball.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/ground-mud-ball.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 4
   },
   {
    "id": "ground-quake",
@@ -1166,12 +1194,12 @@
    "layer": "ground",
    "notes": "Cracks race out, rocks heave, dust; ground layer under units.",
    "palette": [
-    "#3a2410",
-    "#6e4a22",
-    "#a8783c",
-    "#d4a85c",
-    "#f0d494",
-    "#fff4d8"
+    "#3a0e0b",
+    "#6e3019",
+    "#a86f3c",
+    "#d4af5c",
+    "#f0e594",
+    "#fffbd8"
    ],
    "refs": [
     "RC-18",
@@ -1187,6 +1215,7 @@
    },
    "gif": "fx/ground-quake.gif",
    "durationMs": 933,
+   "peakFrame": 0,
    "battle": {
     "hitFrame": 3,
     "shakePx": 4
@@ -1209,12 +1238,12 @@
    "layer": "front",
    "notes": "Chunks bounce, dust rolls outward.",
    "palette": [
-    "#3a2410",
-    "#6e4a22",
-    "#a8783c",
-    "#d4a85c",
-    "#f0d494",
-    "#fff4d8"
+    "#3a0e0b",
+    "#6e3019",
+    "#a86f3c",
+    "#d4af5c",
+    "#f0e594",
+    "#fffbd8"
    ],
    "refs": [
     "RC-18",
@@ -1230,6 +1259,7 @@
    },
    "gif": "fx/ground-dust-burst.gif",
    "durationMs": 800,
+   "peakFrame": 8,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -1241,23 +1271,23 @@
    "name": "Air Blade",
    "element": "flying",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 6,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Crescent of wind with streaks behind.",
    "palette": [
-    "#2a3a6a",
-    "#5068b0",
-    "#84a4e8",
-    "#b8d0ff",
-    "#e4eeff",
+    "#2f226a",
+    "#4544b0",
+    "#849ce8",
+    "#b8d4ff",
+    "#e4f3ff",
     "#ffffff"
    ],
    "refs": [
@@ -1268,11 +1298,12 @@
     "image": "fx/flying-air-blade.png",
     "columns": 6,
     "rows": 1,
-    "width": 384,
+    "width": 576,
     "height": 32
    },
    "gif": "fx/flying-air-blade.gif",
-   "durationMs": 400
+   "durationMs": 400,
+   "peakFrame": 3
   },
   {
    "id": "flying-gust-burst",
@@ -1291,11 +1322,11 @@
    "layer": "front",
    "notes": "Airy hit: no star, ring and rays only.",
    "palette": [
-    "#2a3a6a",
-    "#5068b0",
-    "#84a4e8",
-    "#b8d0ff",
-    "#e4eeff",
+    "#2f226a",
+    "#4544b0",
+    "#849ce8",
+    "#b8d4ff",
+    "#e4f3ff",
     "#ffffff"
    ],
    "refs": [
@@ -1310,6 +1341,7 @@
    },
    "gif": "fx/flying-gust-burst.gif",
    "durationMs": 667,
+   "peakFrame": 0,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 40,
@@ -1333,11 +1365,11 @@
    "layer": "front",
    "notes": "Broken rings spiralling up with wind ticks.",
    "palette": [
-    "#2a3a6a",
-    "#5068b0",
-    "#84a4e8",
-    "#b8d0ff",
-    "#e4eeff",
+    "#2f226a",
+    "#4544b0",
+    "#849ce8",
+    "#b8d4ff",
+    "#e4f3ff",
     "#ffffff"
    ],
    "refs": [
@@ -1351,7 +1383,8 @@
     "height": 96
    },
    "gif": "fx/flying-tornado.gif",
-   "durationMs": 833
+   "durationMs": 833,
+   "peakFrame": 9
   },
   {
    "id": "psychic-psy-beam",
@@ -1370,11 +1403,11 @@
    "layer": "front",
    "notes": "Pink beam with rings travelling along it.",
    "palette": [
-    "#4a1040",
-    "#a02878",
-    "#e8508c",
-    "#ff8cb8",
-    "#ffc8e0",
+    "#3a094a",
+    "#a01a95",
+    "#e85099",
+    "#ff8cb1",
+    "#ffc8d6",
     "#fff0f8"
    ],
    "refs": [
@@ -1389,6 +1422,7 @@
    },
    "gif": "fx/psychic-psy-beam.gif",
    "durationMs": 1333,
+   "peakFrame": 15,
    "battle": {
     "hitFrame": 9,
     "hitStopMs": 40,
@@ -1412,11 +1446,11 @@
    "layer": "front",
    "notes": "Concentric rings blow outwards from the target.",
    "palette": [
-    "#4a1040",
-    "#a02878",
-    "#e8508c",
-    "#ff8cb8",
-    "#ffc8e0",
+    "#3a094a",
+    "#a01a95",
+    "#e85099",
+    "#ff8cb1",
+    "#ffc8d6",
     "#fff0f8"
    ],
    "refs": [
@@ -1433,6 +1467,7 @@
    },
    "gif": "fx/psychic-psy-burst.gif",
    "durationMs": 800,
+   "peakFrame": 6,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -1456,11 +1491,11 @@
    "layer": "ground",
    "notes": "Ground rings pulsing under the unit (status-room / mind control).",
    "palette": [
-    "#4a1040",
-    "#a02878",
-    "#e8508c",
-    "#ff8cb8",
-    "#ffc8e0",
+    "#3a094a",
+    "#a01a95",
+    "#e85099",
+    "#ff8cb1",
+    "#ffc8d6",
     "#fff0f8"
    ],
    "refs": [
@@ -1476,7 +1511,8 @@
     "height": 64
    },
    "gif": "fx/psychic-mind-field.gif",
-   "durationMs": 800
+   "durationMs": 800,
+   "peakFrame": 5
   },
   {
    "id": "bug-buzz-wave",
@@ -1495,12 +1531,12 @@
    "layer": "front",
    "notes": "Thin sound arcs.",
    "palette": [
-    "#263808",
-    "#4e6e10",
-    "#86a81c",
-    "#b8d43a",
-    "#e0f07c",
-    "#f8ffd0"
+    "#0d3802",
+    "#306e05",
+    "#7aa81c",
+    "#c1d43a",
+    "#f0eb7c",
+    "#fffad0"
    ],
    "refs": [],
    "sheet": {
@@ -1511,42 +1547,44 @@
     "height": 64
    },
    "gif": "fx/bug-buzz-wave.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 5
   },
   {
    "id": "bug-sting-volley",
    "name": "Sting Volley",
    "element": "bug",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 6,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Three needles in formation.",
    "palette": [
-    "#263808",
-    "#4e6e10",
-    "#86a81c",
-    "#b8d43a",
-    "#e0f07c",
-    "#f8ffd0"
+    "#0d3802",
+    "#306e05",
+    "#7aa81c",
+    "#c1d43a",
+    "#f0eb7c",
+    "#fffad0"
    ],
    "refs": [],
    "sheet": {
     "image": "fx/bug-sting-volley.png",
     "columns": 6,
     "rows": 1,
-    "width": 384,
+    "width": 576,
     "height": 32
    },
    "gif": "fx/bug-sting-volley.gif",
-   "durationMs": 400
+   "durationMs": 400,
+   "peakFrame": 2
   },
   {
    "id": "bug-sting-hit",
@@ -1565,12 +1603,12 @@
    "layer": "front",
    "notes": "Small sharp hit: 4 rays.",
    "palette": [
-    "#263808",
-    "#4e6e10",
-    "#86a81c",
-    "#b8d43a",
-    "#e0f07c",
-    "#f8ffd0"
+    "#0d3802",
+    "#306e05",
+    "#7aa81c",
+    "#c1d43a",
+    "#f0eb7c",
+    "#fffad0"
    ],
    "refs": [],
    "sheet": {
@@ -1582,6 +1620,7 @@
    },
    "gif": "fx/bug-sting-hit.gif",
    "durationMs": 500,
+   "peakFrame": 1,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 40,
@@ -1605,12 +1644,12 @@
    "layer": "front",
    "notes": "Tiny bugs on noisy orbits with wing flicker.",
    "palette": [
-    "#263808",
-    "#4e6e10",
-    "#86a81c",
-    "#b8d43a",
-    "#e0f07c",
-    "#f8ffd0"
+    "#0d3802",
+    "#306e05",
+    "#7aa81c",
+    "#c1d43a",
+    "#f0eb7c",
+    "#fffad0"
    ],
    "refs": [],
    "sheet": {
@@ -1621,31 +1660,32 @@
     "height": 64
    },
    "gif": "fx/bug-swarm.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 3
   },
   {
    "id": "rock-boulder",
    "name": "Boulder Throw",
    "element": "rock",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Faceted rock tumbling in 8 steps with an outline, dust trail.",
    "palette": [
-    "#2e2418",
-    "#5a4a32",
-    "#8c7652",
-    "#b8a07a",
-    "#ddc9a4",
-    "#f4ead6"
+    "#2e1815",
+    "#5a3d2d",
+    "#8c7152",
+    "#b8a47a",
+    "#ddd3a4",
+    "#f4f1d6"
    ],
    "refs": [
     "RB-03",
@@ -1655,11 +1695,12 @@
     "image": "fx/rock-boulder.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/rock-boulder.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 7
   },
   {
    "id": "rock-smash",
@@ -1678,12 +1719,12 @@
    "layer": "front",
    "notes": "Heavy chunks bounce twice.",
    "palette": [
-    "#2e2418",
-    "#5a4a32",
-    "#8c7652",
-    "#b8a07a",
-    "#ddc9a4",
-    "#f4ead6"
+    "#2e1815",
+    "#5a3d2d",
+    "#8c7152",
+    "#b8a47a",
+    "#ddd3a4",
+    "#f4f1d6"
    ],
    "refs": [
     "DA-04"
@@ -1697,6 +1738,7 @@
    },
    "gif": "fx/rock-smash.gif",
    "durationMs": 933,
+   "peakFrame": 9,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 80,
@@ -1720,12 +1762,12 @@
    "layer": "front",
    "notes": "Spikes stab up left to right, hold, sink.",
    "palette": [
-    "#2e2418",
-    "#5a4a32",
-    "#8c7652",
-    "#b8a07a",
-    "#ddc9a4",
-    "#f4ead6"
+    "#2e1815",
+    "#5a3d2d",
+    "#8c7152",
+    "#b8a47a",
+    "#ddd3a4",
+    "#f4f1d6"
    ],
    "refs": [
     "LG-06"
@@ -1739,6 +1781,7 @@
    },
    "gif": "fx/rock-stone-spikes.gif",
    "durationMs": 1067,
+   "peakFrame": 10,
    "battle": {
     "hitFrame": 2,
     "hitStopMs": 60,
@@ -1750,24 +1793,24 @@
    "name": "Shadow Orb",
    "element": "ghost",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Dark orb with a smoky, dithered tail.",
    "palette": [
-    "#1a1030",
-    "#3c2468",
-    "#6a44a8",
-    "#9a78d8",
-    "#c8b0f8",
-    "#f0e8ff"
+    "#130c30",
+    "#2b1c68",
+    "#6244a8",
+    "#a078d8",
+    "#d5b0f8",
+    "#f7e8ff"
    ],
    "refs": [
     "RC-08",
@@ -1778,11 +1821,12 @@
     "image": "fx/ghost-shadow-orb.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/ghost-shadow-orb.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 7
   },
   {
    "id": "ghost-hex-burst",
@@ -1801,12 +1845,12 @@
    "layer": "front",
    "notes": "Dark core, purple rings.",
    "palette": [
-    "#1a1030",
-    "#3c2468",
-    "#6a44a8",
-    "#9a78d8",
-    "#c8b0f8",
-    "#f0e8ff"
+    "#130c30",
+    "#2b1c68",
+    "#6244a8",
+    "#a078d8",
+    "#d5b0f8",
+    "#f7e8ff"
    ],
    "refs": [
     "RC-08",
@@ -1822,6 +1866,7 @@
    },
    "gif": "fx/ghost-hex-burst.gif",
    "durationMs": 800,
+   "peakFrame": 5,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -1845,12 +1890,12 @@
    "layer": "front",
    "notes": "Wisps with dithered tails drift up.",
    "palette": [
-    "#1a1030",
-    "#3c2468",
-    "#6a44a8",
-    "#9a78d8",
-    "#c8b0f8",
-    "#f0e8ff"
+    "#130c30",
+    "#2b1c68",
+    "#6244a8",
+    "#a078d8",
+    "#d5b0f8",
+    "#f7e8ff"
    ],
    "refs": [
     "RC-08",
@@ -1865,7 +1910,8 @@
     "height": 64
    },
    "gif": "fx/ghost-spirit-wisps.gif",
-   "durationMs": 1000
+   "durationMs": 1000,
+   "peakFrame": 2
   },
   {
    "id": "dragon-pulse-beam",
@@ -1884,11 +1930,11 @@
    "layer": "front",
    "notes": "Thick blue-teal beam with a white helix (beam language from the reference clips).",
    "palette": [
-    "#141e4a",
-    "#2a3c9c",
-    "#4a64e0",
-    "#6aa0ff",
-    "#a8f0f0",
+    "#1a0e4a",
+    "#281c9c",
+    "#4a57e0",
+    "#6aa9ff",
+    "#a8f0e3",
     "#ffffff"
    ],
    "refs": [
@@ -1903,6 +1949,7 @@
    },
    "gif": "fx/dragon-pulse-beam.gif",
    "durationMs": 1333,
+   "peakFrame": 9,
    "battle": {
     "hitFrame": 9,
     "hitStopMs": 60,
@@ -1924,13 +1971,13 @@
     48
    ],
    "layer": "front",
-   "notes": "The explosion archetype in cold colours.",
+   "notes": "The explosion archetype in cold colours: shaded cluster, smoke, embers, scorch decal.",
    "palette": [
-    "#141e4a",
-    "#2a3c9c",
-    "#4a64e0",
-    "#6aa0ff",
-    "#a8f0f0",
+    "#1a0e4a",
+    "#281c9c",
+    "#4a57e0",
+    "#6aa9ff",
+    "#a8f0e3",
     "#ffffff"
    ],
    "refs": [
@@ -1945,6 +1992,7 @@
    },
    "gif": "fx/dragon-burst.gif",
    "durationMs": 933,
+   "peakFrame": 3,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 80,
@@ -1968,11 +2016,11 @@
    "layer": "front",
    "notes": "Blue flame tongues.",
    "palette": [
-    "#141e4a",
-    "#2a3c9c",
-    "#4a64e0",
-    "#6aa0ff",
-    "#a8f0f0",
+    "#1a0e4a",
+    "#281c9c",
+    "#4a57e0",
+    "#6aa9ff",
+    "#a8f0e3",
     "#ffffff"
    ],
    "refs": [
@@ -1987,7 +2035,8 @@
     "height": 64
    },
    "gif": "fx/dragon-aura.gif",
-   "durationMs": 667
+   "durationMs": 667,
+   "peakFrame": 2
   },
   {
    "id": "dark-night-claw",
@@ -2006,12 +2055,12 @@
    "layer": "front",
    "notes": "Three diagonal rakes, white edge cools to plum.",
    "palette": [
-    "#0c0a12",
-    "#241c2c",
-    "#3e3048",
-    "#6a4c70",
-    "#a07890",
-    "#e0c8d0"
+    "#0b0912",
+    "#1f1a2c",
+    "#3c3048",
+    "#6c4c70",
+    "#a07889",
+    "#e0c8c9"
    ],
    "refs": [
     "OG-10"
@@ -2025,6 +2074,7 @@
    },
    "gif": "fx/dark-night-claw.gif",
    "durationMs": 500,
+   "peakFrame": 2,
    "battle": {
     "hitFrame": 1,
     "hitStopMs": 60,
@@ -2048,12 +2098,12 @@
    "layer": "front",
    "notes": "Thick dark rings radiate from a black core.",
    "palette": [
-    "#0c0a12",
-    "#241c2c",
-    "#3e3048",
-    "#6a4c70",
-    "#a07890",
-    "#e0c8d0"
+    "#0b0912",
+    "#1f1a2c",
+    "#3c3048",
+    "#6c4c70",
+    "#a07889",
+    "#e0c8c9"
    ],
    "refs": [
     "RB-10",
@@ -2068,31 +2118,32 @@
     "height": 96
    },
    "gif": "fx/dark-pulse.gif",
-   "durationMs": 833
+   "durationMs": 833,
+   "peakFrame": 3
   },
   {
    "id": "dark-orb",
    "name": "Dark Orb",
    "element": "dark",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Black-plum orb with a tilted ring.",
    "palette": [
-    "#0c0a12",
-    "#241c2c",
-    "#3e3048",
-    "#6a4c70",
-    "#a07890",
-    "#e0c8d0"
+    "#0b0912",
+    "#1f1a2c",
+    "#3c3048",
+    "#6c4c70",
+    "#a07889",
+    "#e0c8c9"
    ],
    "refs": [
     "RB-10",
@@ -2103,11 +2154,12 @@
     "image": "fx/dark-orb.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/dark-orb.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 4
   },
   {
    "id": "steel-beam",
@@ -2126,11 +2178,11 @@
    "layer": "front",
    "notes": "Silver beam with a white helix.",
    "palette": [
-    "#262c38",
-    "#4a5466",
-    "#7a8698",
-    "#aeb8c8",
-    "#dce4ee",
+    "#262438",
+    "#474a66",
+    "#7a8398",
+    "#aebac8",
+    "#eee9dc",
     "#ffffff"
    ],
    "refs": [
@@ -2145,6 +2197,7 @@
    },
    "gif": "fx/steel-beam.gif",
    "durationMs": 1333,
+   "peakFrame": 11,
    "battle": {
     "hitFrame": 9,
     "hitStopMs": 60,
@@ -2168,11 +2221,11 @@
    "layer": "front",
    "notes": "Clang: many sparks that arc down.",
    "palette": [
-    "#262c38",
-    "#4a5466",
-    "#7a8698",
-    "#aeb8c8",
-    "#dce4ee",
+    "#262438",
+    "#474a66",
+    "#7a8398",
+    "#aebac8",
+    "#eee9dc",
     "#ffffff"
    ],
    "refs": [
@@ -2189,6 +2242,7 @@
    },
    "gif": "fx/steel-metal-spark.gif",
    "durationMs": 500,
+   "peakFrame": 1,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -2212,11 +2266,11 @@
    "layer": "front",
    "notes": "Polished spikes rise in sequence.",
    "palette": [
-    "#262c38",
-    "#4a5466",
-    "#7a8698",
-    "#aeb8c8",
-    "#dce4ee",
+    "#262438",
+    "#474a66",
+    "#7a8398",
+    "#aebac8",
+    "#eee9dc",
     "#ffffff"
    ],
    "refs": [
@@ -2231,6 +2285,7 @@
    },
    "gif": "fx/steel-iron-spikes.gif",
    "durationMs": 1067,
+   "peakFrame": 6,
    "battle": {
     "hitFrame": 2,
     "hitStopMs": 60,
@@ -2254,11 +2309,11 @@
    "layer": "front",
    "notes": "Single crescent sweep, two-frame whip.",
    "palette": [
-    "#262c38",
-    "#4a5466",
-    "#7a8698",
-    "#aeb8c8",
-    "#dce4ee",
+    "#262438",
+    "#474a66",
+    "#7a8398",
+    "#aebac8",
+    "#eee9dc",
     "#ffffff"
    ],
    "refs": [
@@ -2275,6 +2330,7 @@
    },
    "gif": "fx/steel-slash.gif",
    "durationMs": 500,
+   "peakFrame": 2,
    "battle": {
     "hitFrame": 1,
     "hitStopMs": 60,
@@ -2286,23 +2342,23 @@
    "name": "Moon Orb",
    "element": "fairy",
    "kind": "projectile",
-   "frameW": 64,
+   "frameW": 96,
    "frameH": 32,
    "frames": 8,
    "fps": 15,
    "loop": true,
    "anchor": [
-    53,
+    81,
     16
    ],
    "layer": "front",
    "notes": "Pink orb leaving twinkling sparkles.",
    "palette": [
-    "#4a1438",
-    "#a83a78",
-    "#f070b0",
-    "#ff9cd0",
-    "#ffd0ea",
+    "#450e4a",
+    "#a82d91",
+    "#f070bb",
+    "#ff9cca",
+    "#ffd0e2",
     "#ffffff"
    ],
    "refs": [
@@ -2313,11 +2369,12 @@
     "image": "fx/fairy-moon-orb.png",
     "columns": 8,
     "rows": 1,
-    "width": 512,
+    "width": 768,
     "height": 32
    },
    "gif": "fx/fairy-moon-orb.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 7
   },
   {
    "id": "fairy-sparkle-burst",
@@ -2336,11 +2393,11 @@
    "layer": "front",
    "notes": "Hearts and stars fly out of a soft star.",
    "palette": [
-    "#4a1438",
-    "#a83a78",
-    "#f070b0",
-    "#ff9cd0",
-    "#ffd0ea",
+    "#450e4a",
+    "#a82d91",
+    "#f070bb",
+    "#ff9cca",
+    "#ffd0e2",
     "#ffffff"
    ],
    "refs": [
@@ -2357,6 +2414,7 @@
    },
    "gif": "fx/fairy-sparkle-burst.gif",
    "durationMs": 800,
+   "peakFrame": 0,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 50,
@@ -2380,11 +2438,11 @@
    "layer": "front",
    "notes": "Sparkles rise inside a pink ground ring.",
    "palette": [
-    "#4a1438",
-    "#a83a78",
-    "#f070b0",
-    "#ff9cd0",
-    "#ffd0ea",
+    "#450e4a",
+    "#a82d91",
+    "#f070bb",
+    "#ff9cca",
+    "#ffd0e2",
     "#ffffff"
    ],
    "refs": [
@@ -2398,7 +2456,8 @@
     "height": 64
    },
    "gif": "fx/fairy-ring-aura.gif",
-   "durationMs": 833
+   "durationMs": 833,
+   "peakFrame": 8
   },
   {
    "id": "hit-spark",
@@ -2417,11 +2476,11 @@
    "layer": "front",
    "notes": "Smallest hit, 300 ms: use on every contact.",
    "palette": [
-    "#3a3a4a",
-    "#7a7a8e",
-    "#b4b4c4",
-    "#dedeea",
-    "#f4f4fa",
+    "#3c384a",
+    "#7c788e",
+    "#b5b4c4",
+    "#eae7de",
+    "#faf7f1",
     "#ffffff"
    ],
    "refs": [
@@ -2438,6 +2497,7 @@
    },
    "gif": "fx/hit-spark.gif",
    "durationMs": 300,
+   "peakFrame": 1,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 40,
@@ -2461,11 +2521,11 @@
    "layer": "front",
    "notes": "Two-beat crit: white block, jagged starburst, broken ring, long rays.",
    "palette": [
-    "#4a300a",
-    "#9a6410",
-    "#e0a020",
-    "#ffd040",
-    "#fff090",
+    "#4a0f02",
+    "#9a3700",
+    "#e09020",
+    "#ffdb40",
+    "#fff490",
     "#ffffff"
    ],
    "refs": [
@@ -2482,6 +2542,7 @@
    },
    "gif": "fx/crit-hit.gif",
    "durationMs": 700,
+   "peakFrame": 1,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 120,
@@ -2505,11 +2566,11 @@
    "layer": "screen",
    "notes": "Opaque screen plate with radial speed lines for 4-6 frames on crits and K.O.s (reference clips).",
    "palette": [
-    "#3a3a4a",
-    "#7a7a8e",
-    "#b4b4c4",
-    "#dedeea",
-    "#f4f4fa",
+    "#3c384a",
+    "#7c788e",
+    "#b5b4c4",
+    "#eae7de",
+    "#faf7f1",
     "#ffffff"
    ],
    "refs": [
@@ -2525,7 +2586,8 @@
     "height": 64
    },
    "gif": "fx/crit-cutin.gif",
-   "durationMs": 400
+   "durationMs": 400,
+   "peakFrame": 0
   },
   {
    "id": "miss",
@@ -2544,11 +2606,11 @@
    "layer": "front",
    "notes": "After-images slide off and MISS pops.",
    "palette": [
-    "#3a3a4a",
-    "#7a7a8e",
-    "#b4b4c4",
-    "#dedeea",
-    "#f4f4fa",
+    "#3c384a",
+    "#7c788e",
+    "#b5b4c4",
+    "#eae7de",
+    "#faf7f1",
     "#ffffff"
    ],
    "refs": [
@@ -2564,7 +2626,8 @@
     "height": 64
    },
    "gif": "fx/miss.gif",
-   "durationMs": 800
+   "durationMs": 800,
+   "peakFrame": 1
   },
   {
    "id": "shield",
@@ -2583,11 +2646,11 @@
    "layer": "front",
    "notes": "Hex-lattice dome with a sweeping highlight.",
    "palette": [
-    "#0c2a48",
-    "#1a5a8a",
-    "#2e9ad0",
-    "#68d8f0",
-    "#bcf6ff",
+    "#050a48",
+    "#0d358a",
+    "#2e8cd0",
+    "#68e0f0",
+    "#bcfffc",
     "#ffffff"
    ],
    "refs": [
@@ -2601,7 +2664,8 @@
     "height": 64
    },
    "gif": "fx/shield.gif",
-   "durationMs": 800
+   "durationMs": 800,
+   "peakFrame": 3
   },
   {
    "id": "heal",
@@ -2620,11 +2684,11 @@
    "layer": "front",
    "notes": "Plus signs and sparkles rise; soft ring pulse.",
    "palette": [
-    "#0e3a2a",
-    "#1c7a4a",
-    "#3cc06a",
-    "#7ef08c",
-    "#c8ffc0",
+    "#09373a",
+    "#117a5f",
+    "#3cc075",
+    "#7ef085",
+    "#d3ffc0",
     "#ffffff"
    ],
    "refs": [
@@ -2640,7 +2704,8 @@
     "height": 64
    },
    "gif": "fx/heal.gif",
-   "durationMs": 833
+   "durationMs": 833,
+   "peakFrame": 8
   },
   {
    "id": "stat-up",
@@ -2659,11 +2724,11 @@
    "layer": "front",
    "notes": "Warm arrows stream up.",
    "palette": [
-    "#3a0a10",
-    "#8a1420",
-    "#d82838",
-    "#ff5a5a",
-    "#ffa8a0",
+    "#3a0422",
+    "#8a0635",
+    "#d82847",
+    "#ff645a",
+    "#ffb9a0",
     "#ffffff"
    ],
    "refs": [
@@ -2679,7 +2744,8 @@
     "height": 64
    },
    "gif": "fx/stat-up.gif",
-   "durationMs": 667
+   "durationMs": 667,
+   "peakFrame": 3
   },
   {
    "id": "stat-down",
@@ -2698,11 +2764,11 @@
    "layer": "front",
    "notes": "Cold arrows sink.",
    "palette": [
-    "#0c1a48",
-    "#1c3a9a",
-    "#3464e0",
-    "#6a9cff",
-    "#b4d0ff",
+    "#110548",
+    "#0f0d9a",
+    "#3456e0",
+    "#6aa5ff",
+    "#b4deff",
     "#ffffff"
    ],
    "refs": [
@@ -2718,7 +2784,8 @@
     "height": 64
    },
    "gif": "fx/stat-down.gif",
-   "durationMs": 667
+   "durationMs": 667,
+   "peakFrame": 1
   },
   {
    "id": "status-burn",
@@ -2737,12 +2804,12 @@
    "layer": "front",
    "notes": "Small flames lick up the body.",
    "palette": [
-    "#4a1310",
-    "#a8291a",
-    "#e8571c",
-    "#ff9a2e",
-    "#ffd65c",
-    "#fff6c9"
+    "#4a0921",
+    "#a80920",
+    "#e8461c",
+    "#ffa72e",
+    "#ffef5c",
+    "#fffac9"
    ],
    "refs": [
     "BS-07",
@@ -2756,7 +2823,8 @@
     "height": 64
    },
    "gif": "fx/status-burn.gif",
-   "durationMs": 667
+   "durationMs": 667,
+   "peakFrame": 4
   },
   {
    "id": "status-poison",
@@ -2775,12 +2843,12 @@
    "layer": "front",
    "notes": "Bubbles rise and pop.",
    "palette": [
-    "#2a1238",
-    "#5c2378",
-    "#9440b8",
-    "#c46ee0",
-    "#e8a8f8",
-    "#fbe8ff"
+    "#160d38",
+    "#411978",
+    "#8a40b8",
+    "#cb6ee0",
+    "#f6a8f8",
+    "#ffe8fc"
    ],
    "refs": [
     "NG-01",
@@ -2795,7 +2863,8 @@
     "height": 64
    },
    "gif": "fx/status-poison.gif",
-   "durationMs": 800
+   "durationMs": 800,
+   "peakFrame": 0
   },
   {
    "id": "status-paralysis",
@@ -2814,11 +2883,11 @@
    "layer": "front",
    "notes": "Random sparks with an off-beat every third frame.",
    "palette": [
-    "#4a3208",
-    "#b07a0c",
-    "#f2c414",
-    "#ffe94a",
-    "#fff7a8",
+    "#4a1000",
+    "#b04a00",
+    "#f2b114",
+    "#ffed4a",
+    "#fff6a8",
     "#ffffff"
    ],
    "refs": [],
@@ -2830,7 +2899,8 @@
     "height": 64
    },
    "gif": "fx/status-paralysis.gif",
-   "durationMs": 600
+   "durationMs": 600,
+   "peakFrame": 1
   },
   {
    "id": "status-sleep",
@@ -2849,11 +2919,11 @@
    "layer": "front",
    "notes": "Z letters drift up and grow.",
    "palette": [
-    "#0c1a48",
-    "#1c3a9a",
-    "#3464e0",
-    "#6a9cff",
-    "#b4d0ff",
+    "#110548",
+    "#0f0d9a",
+    "#3456e0",
+    "#6aa5ff",
+    "#b4deff",
     "#ffffff"
    ],
    "refs": [
@@ -2869,7 +2939,8 @@
     "height": 64
    },
    "gif": "fx/status-sleep.gif",
-   "durationMs": 1500
+   "durationMs": 1500,
+   "peakFrame": 11
   },
   {
    "id": "status-freeze",
@@ -2888,11 +2959,11 @@
    "layer": "front",
    "notes": "Ice crust with a glint sweeping across.",
    "palette": [
-    "#1b3d5e",
-    "#3a7bb0",
-    "#6fc0e8",
-    "#a8e8ff",
-    "#dcfaff",
+    "#131a5e",
+    "#2c53b0",
+    "#6fb6e8",
+    "#a8edff",
+    "#dcfffe",
     "#ffffff"
    ],
    "refs": [
@@ -2908,7 +2979,8 @@
     "height": 64
    },
    "gif": "fx/status-freeze.gif",
-   "durationMs": 1000
+   "durationMs": 1000,
+   "peakFrame": 0
   },
   {
    "id": "status-confusion",
@@ -2927,11 +2999,11 @@
    "layer": "front",
    "notes": "Three stars orbit above the head, front ones bigger.",
    "palette": [
-    "#4a300a",
-    "#9a6410",
-    "#e0a020",
-    "#ffd040",
-    "#fff090",
+    "#4a0f02",
+    "#9a3700",
+    "#e09020",
+    "#ffdb40",
+    "#fff490",
     "#ffffff"
    ],
    "refs": [
@@ -2945,7 +3017,8 @@
     "height": 64
    },
    "gif": "fx/status-confusion.gif",
-   "durationMs": 750
+   "durationMs": 750,
+   "peakFrame": 7
   },
   {
    "id": "faint-vanish",
@@ -2964,11 +3037,11 @@
    "layer": "front",
    "notes": "Dust ring and rising motes; play over the faint unit animation.",
    "palette": [
-    "#3a3a4a",
-    "#7a7a8e",
-    "#b4b4c4",
-    "#dedeea",
-    "#f4f4fa",
+    "#3c384a",
+    "#7c788e",
+    "#b5b4c4",
+    "#eae7de",
+    "#faf7f1",
     "#ffffff"
    ],
    "refs": [
@@ -2984,7 +3057,8 @@
     "height": 64
    },
    "gif": "fx/faint-vanish.gif",
-   "durationMs": 933
+   "durationMs": 933,
+   "peakFrame": 2
   },
   {
    "id": "level-up",
@@ -3003,11 +3077,11 @@
    "layer": "front",
    "notes": "Gold column, sparkles, chevron and LV UP stamp.",
    "palette": [
-    "#4a300a",
-    "#9a6410",
-    "#e0a020",
-    "#ffd040",
-    "#fff090",
+    "#4a0f02",
+    "#9a3700",
+    "#e09020",
+    "#ffdb40",
+    "#fff490",
     "#ffffff"
    ],
    "refs": [
@@ -3023,7 +3097,8 @@
     "height": 64
    },
    "gif": "fx/level-up.gif",
-   "durationMs": 1067
+   "durationMs": 1067,
+   "peakFrame": 8
   },
   {
    "id": "evolve-glow",
@@ -3042,11 +3117,11 @@
    "layer": "front",
    "notes": "Silhouette blinks white in quickening beats, then a flash hides the swap.",
    "palette": [
-    "#3a3a4a",
-    "#7a7a8e",
-    "#b4b4c4",
-    "#dedeea",
-    "#f4f4fa",
+    "#3c384a",
+    "#7c788e",
+    "#b5b4c4",
+    "#eae7de",
+    "#faf7f1",
     "#ffffff"
    ],
    "refs": [
@@ -3062,7 +3137,8 @@
     "height": 128
    },
    "gif": "fx/evolve-glow.gif",
-   "durationMs": 1333
+   "durationMs": 1333,
+   "peakFrame": 17
   },
   {
    "id": "recall-beam",
@@ -3081,11 +3157,11 @@
    "layer": "front",
    "notes": "Thin red beam appears at full length; unit shrinks into it.",
    "palette": [
-    "#3a0a10",
-    "#8a1420",
-    "#d82838",
-    "#ff5a5a",
-    "#ffa8a0",
+    "#3a0422",
+    "#8a0635",
+    "#d82847",
+    "#ff645a",
+    "#ffb9a0",
     "#ffffff"
    ],
    "refs": [
@@ -3101,7 +3177,8 @@
     "height": 64
    },
    "gif": "fx/recall-beam.gif",
-   "durationMs": 933
+   "durationMs": 933,
+   "peakFrame": 2
   },
   {
    "id": "send-out",
@@ -3120,11 +3197,11 @@
    "layer": "front",
    "notes": "Floor flash ring and sparkles as a unit appears.",
    "palette": [
-    "#3a3a4a",
-    "#7a7a8e",
-    "#b4b4c4",
-    "#dedeea",
-    "#f4f4fa",
+    "#3c384a",
+    "#7c788e",
+    "#b5b4c4",
+    "#eae7de",
+    "#faf7f1",
     "#ffffff"
    ],
    "refs": [
@@ -3140,7 +3217,8 @@
     "height": 64
    },
    "gif": "fx/send-out.gif",
-   "durationMs": 800
+   "durationMs": 800,
+   "peakFrame": 0
   },
   {
    "id": "charge-up",
@@ -3159,11 +3237,11 @@
    "layer": "front",
    "notes": "Generic wind-up: particles stream into a pulsing core.",
    "palette": [
-    "#4a300a",
-    "#9a6410",
-    "#e0a020",
-    "#ffd040",
-    "#fff090",
+    "#4a0f02",
+    "#9a3700",
+    "#e09020",
+    "#ffdb40",
+    "#fff490",
     "#ffffff"
    ],
    "refs": [
@@ -3179,7 +3257,8 @@
     "height": 64
    },
    "gif": "fx/charge-up.gif",
-   "durationMs": 533
+   "durationMs": 533,
+   "peakFrame": 1
   },
   {
    "id": "unit-idle",
@@ -3218,7 +3297,8 @@
     "height": 64
    },
    "gif": "fx/unit-idle.gif",
-   "durationMs": 1000
+   "durationMs": 1000,
+   "peakFrame": 0
   },
   {
    "id": "unit-lunge",
@@ -3257,7 +3337,8 @@
     "height": 128
    },
    "gif": "fx/unit-lunge.gif",
-   "durationMs": 800
+   "durationMs": 800,
+   "peakFrame": 4
   },
   {
    "id": "unit-recoil",
@@ -3296,7 +3377,8 @@
     "height": 64
    },
    "gif": "fx/unit-recoil.gif",
-   "durationMs": 667
+   "durationMs": 667,
+   "peakFrame": 6
   },
   {
    "id": "unit-faint",
@@ -3335,7 +3417,8 @@
     "height": 64
    },
    "gif": "fx/unit-faint.gif",
-   "durationMs": 1167
+   "durationMs": 1167,
+   "peakFrame": 0
   }
  ]
 }

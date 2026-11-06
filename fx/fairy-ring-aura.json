@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Sparkles rise inside a pink ground ring.",
  "palette": [
-  "#4a1438",
-  "#a83a78",
-  "#f070b0",
-  "#ff9cd0",
-  "#ffd0ea",
+  "#450e4a",
+  "#a82d91",
+  "#f070bb",
+  "#ff9cca",
+  "#ffd0e2",
   "#ffffff"
  ],
  "refs": [
@@ -33,5 +33,6 @@
   "height": 64
  },
  "gif": "fx/fairy-ring-aura.gif",
- "durationMs": 833
+ "durationMs": 833,
+ "peakFrame": 8
 }

@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Smallest hit, 300 ms: use on every contact.",
  "palette": [
-  "#3a3a4a",
-  "#7a7a8e",
-  "#b4b4c4",
-  "#dedeea",
-  "#f4f4fa",
+  "#3c384a",
+  "#7c788e",
+  "#b5b4c4",
+  "#eae7de",
+  "#faf7f1",
   "#ffffff"
  ],
  "refs": [
@@ -36,6 +36,7 @@
  },
  "gif": "fx/hit-spark.gif",
  "durationMs": 300,
+ "peakFrame": 1,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 40,

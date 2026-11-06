@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Wisps with dithered tails drift up.",
  "palette": [
-  "#1a1030",
-  "#3c2468",
-  "#6a44a8",
-  "#9a78d8",
-  "#c8b0f8",
-  "#f0e8ff"
+  "#130c30",
+  "#2b1c68",
+  "#6244a8",
+  "#a078d8",
+  "#d5b0f8",
+  "#f7e8ff"
  ],
  "refs": [
   "RC-08",
@@ -35,5 +35,6 @@
   "height": 64
  },
  "gif": "fx/ghost-spirit-wisps.gif",
- "durationMs": 1000
+ "durationMs": 1000,
+ "peakFrame": 2
 }

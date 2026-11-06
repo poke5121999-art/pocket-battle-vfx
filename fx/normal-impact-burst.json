@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "The default hit: white frame 0, 8-point star, ring, rays, sparks cooling.",
  "palette": [
-  "#33313d",
-  "#686676",
-  "#a3a1b1",
-  "#d2d0dc",
-  "#efeef5",
+  "#32303d",
+  "#686476",
+  "#a4a1b1",
+  "#dcd9d0",
+  "#f5f3ec",
   "#ffffff"
  ],
  "refs": [
@@ -36,6 +36,7 @@
  },
  "gif": "fx/normal-impact-burst.gif",
  "durationMs": 500,
+ "peakFrame": 1,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

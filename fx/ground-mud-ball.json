@@ -3,24 +3,24 @@
  "name": "Mud Ball",
  "element": "ground",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Earth orb with a dust trail.",
  "palette": [
-  "#3a2410",
-  "#6e4a22",
-  "#a8783c",
-  "#d4a85c",
-  "#f0d494",
-  "#fff4d8"
+  "#3a0e0b",
+  "#6e3019",
+  "#a86f3c",
+  "#d4af5c",
+  "#f0e594",
+  "#fffbd8"
  ],
  "refs": [
   "RC-18",
@@ -31,9 +31,10 @@
   "image": "fx/ground-mud-ball.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/ground-mud-ball.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 4
 }

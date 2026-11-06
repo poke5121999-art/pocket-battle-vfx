@@ -15,11 +15,11 @@
  "layer": "front",
  "notes": "Pink beam with rings travelling along it.",
  "palette": [
-  "#4a1040",
-  "#a02878",
-  "#e8508c",
-  "#ff8cb8",
-  "#ffc8e0",
+  "#3a094a",
+  "#a01a95",
+  "#e85099",
+  "#ff8cb1",
+  "#ffc8d6",
   "#fff0f8"
  ],
  "refs": [
@@ -34,6 +34,7 @@
  },
  "gif": "fx/psychic-psy-beam.gif",
  "durationMs": 1333,
+ "peakFrame": 15,
  "battle": {
   "hitFrame": 9,
   "hitStopMs": 40,

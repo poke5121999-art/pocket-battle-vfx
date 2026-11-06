@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Chunks bounce, dust rolls outward.",
  "palette": [
-  "#3a2410",
-  "#6e4a22",
-  "#a8783c",
-  "#d4a85c",
-  "#f0d494",
-  "#fff4d8"
+  "#3a0e0b",
+  "#6e3019",
+  "#a86f3c",
+  "#d4af5c",
+  "#f0e594",
+  "#fffbd8"
  ],
  "refs": [
   "RC-18",
@@ -36,6 +36,7 @@
  },
  "gif": "fx/ground-dust-burst.gif",
  "durationMs": 800,
+ "peakFrame": 8,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

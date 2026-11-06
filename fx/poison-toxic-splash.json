@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "The splash archetype in purple; reads as goo.",
  "palette": [
-  "#2a1238",
-  "#5c2378",
-  "#9440b8",
-  "#c46ee0",
-  "#e8a8f8",
-  "#fbe8ff"
+  "#160d38",
+  "#411978",
+  "#8a40b8",
+  "#cb6ee0",
+  "#f6a8f8",
+  "#ffe8fc"
  ],
  "refs": [
   "NG-03",
@@ -35,6 +35,7 @@
  },
  "gif": "fx/poison-toxic-splash.gif",
  "durationMs": 800,
+ "peakFrame": 0,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 50,

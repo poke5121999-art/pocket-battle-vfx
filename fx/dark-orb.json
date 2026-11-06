@@ -3,24 +3,24 @@
  "name": "Dark Orb",
  "element": "dark",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 32,
  "frames": 8,
  "fps": 15,
  "loop": true,
  "anchor": [
-  53,
+  81,
   16
  ],
  "layer": "front",
  "notes": "Black-plum orb with a tilted ring.",
  "palette": [
-  "#0c0a12",
-  "#241c2c",
-  "#3e3048",
-  "#6a4c70",
-  "#a07890",
-  "#e0c8d0"
+  "#0b0912",
+  "#1f1a2c",
+  "#3c3048",
+  "#6c4c70",
+  "#a07889",
+  "#e0c8c9"
  ],
  "refs": [
   "RB-10",
@@ -31,9 +31,10 @@
   "image": "fx/dark-orb.png",
   "columns": 8,
   "rows": 1,
-  "width": 512,
+  "width": 768,
   "height": 32
  },
  "gif": "fx/dark-orb.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 4
 }

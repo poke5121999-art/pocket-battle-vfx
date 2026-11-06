@@ -15,12 +15,12 @@
  "layer": "front",
  "notes": "Thick arcs pushed forward from the fist.",
  "palette": [
-  "#4a1410",
-  "#922a18",
-  "#d24e22",
-  "#f28c3c",
-  "#ffc878",
-  "#fff0d0"
+  "#4a0920",
+  "#920918",
+  "#d23f22",
+  "#f2973c",
+  "#ffe078",
+  "#fffad0"
  ],
  "refs": [
   "RC-05",
@@ -35,5 +35,6 @@
   "height": 64
  },
  "gif": "fx/fighting-force-wave.gif",
- "durationMs": 533
+ "durationMs": 533,
+ "peakFrame": 5
 }
