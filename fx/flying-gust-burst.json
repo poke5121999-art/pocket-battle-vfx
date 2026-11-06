@@ -1,0 +1,42 @@
+{
+ "id": "flying-gust-burst",
+ "name": "Gust Burst",
+ "element": "flying",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "Airy hit: no star, ring and rays only.",
+ "palette": [
+  "#2a3a6a",
+  "#5068b0",
+  "#84a4e8",
+  "#b8d0ff",
+  "#e4eeff",
+  "#ffffff"
+ ],
+ "refs": [
+  "BS-06"
+ ],
+ "sheet": {
+  "image": "fx/flying-gust-burst.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 64
+ },
+ "gif": "fx/flying-gust-burst.gif",
+ "durationMs": 667,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 40,
+  "shakePx": 1
+ }
+}

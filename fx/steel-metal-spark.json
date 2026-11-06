@@ -1,0 +1,44 @@
+{
+ "id": "steel-metal-spark",
+ "name": "Metal Spark",
+ "element": "steel",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 20,
+ "loop": false,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "Clang: many sparks that arc down.",
+ "palette": [
+  "#262c38",
+  "#4a5466",
+  "#7a8698",
+  "#aeb8c8",
+  "#dce4ee",
+  "#ffffff"
+ ],
+ "refs": [
+  "NG-10",
+  "LG-15",
+  "OG-16"
+ ],
+ "sheet": {
+  "image": "fx/steel-metal-spark.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 64
+ },
+ "gif": "fx/steel-metal-spark.gif",
+ "durationMs": 500,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "id": "electric-thunder-strike",
+ "name": "Thunder Strike",
+ "element": "electric",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 128,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  114
+ ],
+ "layer": "front",
+ "notes": "1 pre-strike frame, bolt flickers 4 + 2 frames, ground ring.",
+ "palette": [
+  "#4a3208",
+  "#b07a0c",
+  "#f2c414",
+  "#ffe94a",
+  "#fff7a8",
+  "#ffffff"
+ ],
+ "refs": [
+  "RB-02"
+ ],
+ "sheet": {
+  "image": "fx/electric-thunder-strike.png",
+  "columns": 12,
+  "rows": 1,
+  "width": 768,
+  "height": 128
+ },
+ "gif": "fx/electric-thunder-strike.gif",
+ "durationMs": 800,
+ "battle": {
+  "hitFrame": 1,
+  "hitStopMs": 80,
+  "shakePx": 3
+ }
+}

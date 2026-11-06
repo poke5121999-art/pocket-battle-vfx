@@ -1,0 +1,44 @@
+{
+ "id": "ground-dust-burst",
+ "name": "Dust Burst",
+ "element": "ground",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  50
+ ],
+ "layer": "front",
+ "notes": "Chunks bounce, dust rolls outward.",
+ "palette": [
+  "#3a2410",
+  "#6e4a22",
+  "#a8783c",
+  "#d4a85c",
+  "#f0d494",
+  "#fff4d8"
+ ],
+ "refs": [
+  "RC-18",
+  "BS-03",
+  "DA-09"
+ ],
+ "sheet": {
+  "image": "fx/ground-dust-burst.png",
+  "columns": 12,
+  "rows": 1,
+  "width": 768,
+  "height": 64
+ },
+ "gif": "fx/ground-dust-burst.gif",
+ "durationMs": 800,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

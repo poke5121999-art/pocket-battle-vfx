@@ -1,0 +1,42 @@
+{
+ "id": "dragon-pulse-beam",
+ "name": "Dragon Beam",
+ "element": "dragon",
+ "kind": "beam",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 20,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  10,
+  32
+ ],
+ "layer": "front",
+ "notes": "Thick blue-teal beam with a white helix (beam language from the reference clips).",
+ "palette": [
+  "#141e4a",
+  "#2a3c9c",
+  "#4a64e0",
+  "#6aa0ff",
+  "#a8f0f0",
+  "#ffffff"
+ ],
+ "refs": [
+  "OG-05"
+ ],
+ "sheet": {
+  "image": "fx/dragon-pulse-beam.png",
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 192
+ },
+ "gif": "fx/dragon-pulse-beam.gif",
+ "durationMs": 1333,
+ "battle": {
+  "hitFrame": 9,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

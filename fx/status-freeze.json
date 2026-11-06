@@ -1,0 +1,39 @@
+{
+ "id": "status-freeze",
+ "name": "Freeze",
+ "element": "ice",
+ "kind": "status",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 8,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Ice crust with a glint sweeping across.",
+ "palette": [
+  "#1b3d5e",
+  "#3a7bb0",
+  "#6fc0e8",
+  "#a8e8ff",
+  "#dcfaff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-08",
+  "RC-12",
+  "RC-13"
+ ],
+ "sheet": {
+  "image": "fx/status-freeze.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/status-freeze.gif",
+ "durationMs": 1000
+}

@@ -1,0 +1,37 @@
+{
+ "id": "flying-tornado",
+ "name": "Tornado",
+ "element": "flying",
+ "kind": "area",
+ "frameW": 64,
+ "frameH": 96,
+ "frames": 10,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  88
+ ],
+ "layer": "front",
+ "notes": "Broken rings spiralling up with wind ticks.",
+ "palette": [
+  "#2a3a6a",
+  "#5068b0",
+  "#84a4e8",
+  "#b8d0ff",
+  "#e4eeff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RB-01"
+ ],
+ "sheet": {
+  "image": "fx/flying-tornado.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 96
+ },
+ "gif": "fx/flying-tornado.gif",
+ "durationMs": 833
+}

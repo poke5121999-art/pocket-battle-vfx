@@ -1,0 +1,39 @@
+{
+ "id": "send-out",
+ "name": "Send-out Burst",
+ "element": "normal",
+ "kind": "system",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Floor flash ring and sparkles as a unit appears.",
+ "palette": [
+  "#3a3a4a",
+  "#7a7a8e",
+  "#b4b4c4",
+  "#dedeea",
+  "#f4f4fa",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-02",
+  "RC-10",
+  "BS-08"
+ ],
+ "sheet": {
+  "image": "fx/send-out.png",
+  "columns": 12,
+  "rows": 1,
+  "width": 768,
+  "height": 64
+ },
+ "gif": "fx/send-out.gif",
+ "durationMs": 800
+}

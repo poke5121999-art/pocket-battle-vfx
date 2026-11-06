@@ -1,0 +1,43 @@
+{
+ "id": "fighting-power-hit",
+ "name": "Power Hit",
+ "element": "fighting",
+ "kind": "impact",
+ "frameW": 96,
+ "frameH": 96,
+ "frames": 12,
+ "fps": 20,
+ "loop": false,
+ "anchor": [
+  48,
+  48
+ ],
+ "layer": "front",
+ "notes": "Wide 8-point star, 12 rays: the heavy punch.",
+ "palette": [
+  "#4a1410",
+  "#922a18",
+  "#d24e22",
+  "#f28c3c",
+  "#ffc878",
+  "#fff0d0"
+ ],
+ "refs": [
+  "NG-07",
+  "DA-10"
+ ],
+ "sheet": {
+  "image": "fx/fighting-power-hit.png",
+  "columns": 10,
+  "rows": 2,
+  "width": 960,
+  "height": 192
+ },
+ "gif": "fx/fighting-power-hit.gif",
+ "durationMs": 600,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 100,
+  "shakePx": 4
+ }
+}

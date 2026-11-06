@@ -1,0 +1,39 @@
+{
+ "id": "unit-recoil",
+ "name": "Hit Recoil",
+ "element": "normal",
+ "kind": "unit",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "2 white frames, knockback 7px with jitter, 2 blinks, settle.",
+ "palette": [
+  "#1c1a24",
+  "#4a4858",
+  "#77758a",
+  "#a7a5b8",
+  "#d4d2e0",
+  "#f4f3f8"
+ ],
+ "refs": [
+  "RC-03",
+  "RC-08",
+  "RB-01"
+ ],
+ "sheet": {
+  "image": "fx/unit-recoil.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 64
+ },
+ "gif": "fx/unit-recoil.gif",
+ "durationMs": 667
+}

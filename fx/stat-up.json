@@ -1,0 +1,39 @@
+{
+ "id": "stat-up",
+ "name": "Stat Up",
+ "element": "normal",
+ "kind": "buff",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Warm arrows stream up.",
+ "palette": [
+  "#3a0a10",
+  "#8a1420",
+  "#d82838",
+  "#ff5a5a",
+  "#ffa8a0",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-01",
+  "RC-02",
+  "RC-17"
+ ],
+ "sheet": {
+  "image": "fx/stat-up.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/stat-up.gif",
+ "durationMs": 667
+}

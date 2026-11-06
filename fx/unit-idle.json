@@ -1,0 +1,39 @@
+{
+ "id": "unit-idle",
+ "name": "Idle Bob",
+ "element": "normal",
+ "kind": "unit",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 6,
+ "fps": 6,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Squash/stretch bob, blink on frame 2.",
+ "palette": [
+  "#1c1a24",
+  "#4a4858",
+  "#77758a",
+  "#a7a5b8",
+  "#d4d2e0",
+  "#f4f3f8"
+ ],
+ "refs": [
+  "RC-11",
+  "RB-01",
+  "RB-08"
+ ],
+ "sheet": {
+  "image": "fx/unit-idle.png",
+  "columns": 6,
+  "rows": 1,
+  "width": 384,
+  "height": 64
+ },
+ "gif": "fx/unit-idle.gif",
+ "durationMs": 1000
+}

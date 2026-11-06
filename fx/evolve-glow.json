@@ -1,0 +1,39 @@
+{
+ "id": "evolve-glow",
+ "name": "Evolve Glow",
+ "element": "normal",
+ "kind": "system",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 20,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Silhouette blinks white in quickening beats, then a flash hides the swap.",
+ "palette": [
+  "#3a3a4a",
+  "#7a7a8e",
+  "#b4b4c4",
+  "#dedeea",
+  "#f4f4fa",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-15",
+  "RB-13",
+  "BS-13"
+ ],
+ "sheet": {
+  "image": "fx/evolve-glow.png",
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 128
+ },
+ "gif": "fx/evolve-glow.gif",
+ "durationMs": 1333
+}

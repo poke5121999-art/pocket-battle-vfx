@@ -1,0 +1,42 @@
+{
+ "id": "steel-beam",
+ "name": "Steel Beam",
+ "element": "steel",
+ "kind": "beam",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 20,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  10,
+  32
+ ],
+ "layer": "front",
+ "notes": "Silver beam with a white helix.",
+ "palette": [
+  "#262c38",
+  "#4a5466",
+  "#7a8698",
+  "#aeb8c8",
+  "#dce4ee",
+  "#ffffff"
+ ],
+ "refs": [
+  "LG-15"
+ ],
+ "sheet": {
+  "image": "fx/steel-beam.png",
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 192
+ },
+ "gif": "fx/steel-beam.gif",
+ "durationMs": 1333,
+ "battle": {
+  "hitFrame": 9,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

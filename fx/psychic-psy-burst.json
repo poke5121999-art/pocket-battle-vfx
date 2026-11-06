@@ -1,0 +1,44 @@
+{
+ "id": "psychic-psy-burst",
+ "name": "Psy Burst",
+ "element": "psychic",
+ "kind": "impact",
+ "frameW": 96,
+ "frameH": 96,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  48,
+  48
+ ],
+ "layer": "front",
+ "notes": "Concentric rings blow outwards from the target.",
+ "palette": [
+  "#4a1040",
+  "#a02878",
+  "#e8508c",
+  "#ff8cb8",
+  "#ffc8e0",
+  "#fff0f8"
+ ],
+ "refs": [
+  "RB-08",
+  "SG-05",
+  "OG-12"
+ ],
+ "sheet": {
+  "image": "fx/psychic-psy-burst.png",
+  "columns": 10,
+  "rows": 2,
+  "width": 960,
+  "height": 192
+ },
+ "gif": "fx/psychic-psy-burst.gif",
+ "durationMs": 800,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "id": "ghost-hex-burst",
+ "name": "Hex Burst",
+ "element": "ghost",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "Dark core, purple rings.",
+ "palette": [
+  "#1a1030",
+  "#3c2468",
+  "#6a44a8",
+  "#9a78d8",
+  "#c8b0f8",
+  "#f0e8ff"
+ ],
+ "refs": [
+  "RC-08",
+  "RB-06",
+  "SG-03"
+ ],
+ "sheet": {
+  "image": "fx/ghost-hex-burst.png",
+  "columns": 12,
+  "rows": 1,
+  "width": 768,
+  "height": 64
+ },
+ "gif": "fx/ghost-hex-burst.gif",
+ "durationMs": 800,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 60,
+  "shakePx": 1
+ }
+}

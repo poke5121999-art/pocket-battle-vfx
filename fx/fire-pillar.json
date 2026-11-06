@@ -1,0 +1,39 @@
+{
+ "id": "fire-pillar",
+ "name": "Flame Pillar",
+ "element": "fire",
+ "kind": "area",
+ "frameW": 64,
+ "frameH": 128,
+ "frames": 14,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  120
+ ],
+ "layer": "front",
+ "notes": "Column erupts from a ground glow, overshoots, holds, collapses.",
+ "palette": [
+  "#4a1310",
+  "#a8291a",
+  "#e8571c",
+  "#ff9a2e",
+  "#ffd65c",
+  "#fff6c9"
+ ],
+ "refs": [
+  "RC-16",
+  "DA-01",
+  "DA-02"
+ ],
+ "sheet": {
+  "image": "fx/fire-pillar.png",
+  "columns": 14,
+  "rows": 1,
+  "width": 896,
+  "height": 128
+ },
+ "gif": "fx/fire-pillar.gif",
+ "durationMs": 933
+}

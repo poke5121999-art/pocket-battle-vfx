@@ -1,0 +1,44 @@
+{
+ "id": "fairy-sparkle-burst",
+ "name": "Sparkle Burst",
+ "element": "fairy",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "Hearts and stars fly out of a soft star.",
+ "palette": [
+  "#4a1438",
+  "#a83a78",
+  "#f070b0",
+  "#ff9cd0",
+  "#ffd0ea",
+  "#ffffff"
+ ],
+ "refs": [
+  "LG-07",
+  "LG-08",
+  "DA-14"
+ ],
+ "sheet": {
+  "image": "fx/fairy-sparkle-burst.png",
+  "columns": 12,
+  "rows": 1,
+  "width": 768,
+  "height": 64
+ },
+ "gif": "fx/fairy-sparkle-burst.gif",
+ "durationMs": 800,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 50,
+  "shakePx": 1
+ }
+}

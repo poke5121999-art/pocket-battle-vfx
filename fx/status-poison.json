@@ -1,0 +1,39 @@
+{
+ "id": "status-poison",
+ "name": "Poison",
+ "element": "poison",
+ "kind": "status",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 10,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Bubbles rise and pop.",
+ "palette": [
+  "#2a1238",
+  "#5c2378",
+  "#9440b8",
+  "#c46ee0",
+  "#e8a8f8",
+  "#fbe8ff"
+ ],
+ "refs": [
+  "NG-01",
+  "NG-03",
+  "NG-16"
+ ],
+ "sheet": {
+  "image": "fx/status-poison.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/status-poison.gif",
+ "durationMs": 800
+}

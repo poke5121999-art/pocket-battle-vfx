@@ -1,0 +1,39 @@
+{
+ "id": "ghost-spirit-wisps",
+ "name": "Spirit Wisps",
+ "element": "ghost",
+ "kind": "aura",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 10,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Wisps with dithered tails drift up.",
+ "palette": [
+  "#1a1030",
+  "#3c2468",
+  "#6a44a8",
+  "#9a78d8",
+  "#c8b0f8",
+  "#f0e8ff"
+ ],
+ "refs": [
+  "RC-08",
+  "RB-06",
+  "SG-03"
+ ],
+ "sheet": {
+  "image": "fx/ghost-spirit-wisps.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 64
+ },
+ "gif": "fx/ghost-spirit-wisps.gif",
+ "durationMs": 1000
+}

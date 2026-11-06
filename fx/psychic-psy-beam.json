@@ -1,0 +1,42 @@
+{
+ "id": "psychic-psy-beam",
+ "name": "Psy Beam",
+ "element": "psychic",
+ "kind": "beam",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 20,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  10,
+  32
+ ],
+ "layer": "front",
+ "notes": "Pink beam with rings travelling along it.",
+ "palette": [
+  "#4a1040",
+  "#a02878",
+  "#e8508c",
+  "#ff8cb8",
+  "#ffc8e0",
+  "#fff0f8"
+ ],
+ "refs": [
+  "OG-17"
+ ],
+ "sheet": {
+  "image": "fx/psychic-psy-beam.png",
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 192
+ },
+ "gif": "fx/psychic-psy-beam.gif",
+ "durationMs": 1333,
+ "battle": {
+  "hitFrame": 9,
+  "hitStopMs": 40,
+  "shakePx": 1
+ }
+}

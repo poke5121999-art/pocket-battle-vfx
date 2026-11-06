@@ -1,0 +1,39 @@
+{
+ "id": "fighting-force-wave",
+ "name": "Force Wave",
+ "element": "fighting",
+ "kind": "projectile",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 15,
+ "loop": true,
+ "anchor": [
+  6,
+  32
+ ],
+ "layer": "front",
+ "notes": "Thick arcs pushed forward from the fist.",
+ "palette": [
+  "#4a1410",
+  "#922a18",
+  "#d24e22",
+  "#f28c3c",
+  "#ffc878",
+  "#fff0d0"
+ ],
+ "refs": [
+  "RC-05",
+  "RB-05",
+  "LG-16"
+ ],
+ "sheet": {
+  "image": "fx/fighting-force-wave.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/fighting-force-wave.gif",
+ "durationMs": 533
+}

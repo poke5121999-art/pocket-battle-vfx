@@ -1,0 +1,38 @@
+{
+ "id": "status-burn",
+ "name": "Burn",
+ "element": "fire",
+ "kind": "status",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Small flames lick up the body.",
+ "palette": [
+  "#4a1310",
+  "#a8291a",
+  "#e8571c",
+  "#ff9a2e",
+  "#ffd65c",
+  "#fff6c9"
+ ],
+ "refs": [
+  "BS-07",
+  "LG-03"
+ ],
+ "sheet": {
+  "image": "fx/status-burn.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/status-burn.gif",
+ "durationMs": 667
+}

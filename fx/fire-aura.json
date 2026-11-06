@@ -1,0 +1,39 @@
+{
+ "id": "fire-aura",
+ "name": "Flame Aura",
+ "element": "fire",
+ "kind": "aura",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Rising flame tongues around the unit; ground ring pulse.",
+ "palette": [
+  "#4a1310",
+  "#a8291a",
+  "#e8571c",
+  "#ff9a2e",
+  "#ffd65c",
+  "#fff6c9"
+ ],
+ "refs": [
+  "RC-16",
+  "DA-01",
+  "DA-02"
+ ],
+ "sheet": {
+  "image": "fx/fire-aura.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/fire-aura.gif",
+ "durationMs": 667
+}

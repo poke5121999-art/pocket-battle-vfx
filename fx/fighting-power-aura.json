@@ -1,0 +1,39 @@
+{
+ "id": "fighting-power-aura",
+ "name": "Power Aura",
+ "element": "fighting",
+ "kind": "aura",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Fast vertical speed-lines rising (power-up).",
+ "palette": [
+  "#4a1410",
+  "#922a18",
+  "#d24e22",
+  "#f28c3c",
+  "#ffc878",
+  "#fff0d0"
+ ],
+ "refs": [
+  "RC-05",
+  "RB-05",
+  "NG-07"
+ ],
+ "sheet": {
+  "image": "fx/fighting-power-aura.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/fighting-power-aura.gif",
+ "durationMs": 667
+}

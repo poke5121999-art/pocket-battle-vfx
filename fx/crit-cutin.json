@@ -1,0 +1,39 @@
+{
+ "id": "crit-cutin",
+ "name": "Crit Cut-in",
+ "element": "normal",
+ "kind": "system",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 6,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  64,
+  32
+ ],
+ "layer": "screen",
+ "notes": "Opaque screen plate with radial speed lines for 4-6 frames on crits and K.O.s (reference clips).",
+ "palette": [
+  "#3a3a4a",
+  "#7a7a8e",
+  "#b4b4c4",
+  "#dedeea",
+  "#f4f4fa",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-01",
+  "RC-05",
+  "RC-06"
+ ],
+ "sheet": {
+  "image": "fx/crit-cutin.png",
+  "columns": 6,
+  "rows": 1,
+  "width": 768,
+  "height": 64
+ },
+ "gif": "fx/crit-cutin.gif",
+ "durationMs": 400
+}

@@ -1,0 +1,37 @@
+{
+ "id": "shield",
+ "name": "Shield Dome",
+ "element": "steel",
+ "kind": "buff",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 10,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Hex-lattice dome with a sweeping highlight.",
+ "palette": [
+  "#0c2a48",
+  "#1a5a8a",
+  "#2e9ad0",
+  "#68d8f0",
+  "#bcf6ff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-13"
+ ],
+ "sheet": {
+  "image": "fx/shield.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/shield.gif",
+ "durationMs": 800
+}

@@ -1,0 +1,39 @@
+{
+ "id": "level-up",
+ "name": "Level Up",
+ "element": "normal",
+ "kind": "system",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 16,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Gold column, sparkles, chevron and LV UP stamp.",
+ "palette": [
+  "#4a300a",
+  "#9a6410",
+  "#e0a020",
+  "#ffd040",
+  "#fff090",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-15",
+  "RB-01",
+  "RB-13"
+ ],
+ "sheet": {
+  "image": "fx/level-up.png",
+  "columns": 16,
+  "rows": 1,
+  "width": 1024,
+  "height": 64
+ },
+ "gif": "fx/level-up.gif",
+ "durationMs": 1067
+}

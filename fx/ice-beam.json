@@ -1,0 +1,43 @@
+{
+ "id": "ice-beam",
+ "name": "Ice Beam",
+ "element": "ice",
+ "kind": "beam",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 20,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  10,
+  32
+ ],
+ "layer": "front",
+ "notes": "Pale beam with crystals budding off both edges.",
+ "palette": [
+  "#1b3d5e",
+  "#3a7bb0",
+  "#6fc0e8",
+  "#a8e8ff",
+  "#dcfaff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-13",
+  "RB-04"
+ ],
+ "sheet": {
+  "image": "fx/ice-beam.png",
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 192
+ },
+ "gif": "fx/ice-beam.gif",
+ "durationMs": 1333,
+ "battle": {
+  "hitFrame": 9,
+  "hitStopMs": 40,
+  "shakePx": 1
+ }
+}

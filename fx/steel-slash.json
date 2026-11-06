@@ -1,0 +1,44 @@
+{
+ "id": "steel-slash",
+ "name": "Steel Slash",
+ "element": "steel",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 20,
+ "loop": false,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "Single crescent sweep, two-frame whip.",
+ "palette": [
+  "#262c38",
+  "#4a5466",
+  "#7a8698",
+  "#aeb8c8",
+  "#dce4ee",
+  "#ffffff"
+ ],
+ "refs": [
+  "NG-10",
+  "LG-15",
+  "OG-16"
+ ],
+ "sheet": {
+  "image": "fx/steel-slash.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 64
+ },
+ "gif": "fx/steel-slash.gif",
+ "durationMs": 500,
+ "battle": {
+  "hitFrame": 1,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

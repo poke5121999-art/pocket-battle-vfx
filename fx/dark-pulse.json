@@ -1,0 +1,39 @@
+{
+ "id": "dark-pulse",
+ "name": "Dark Pulse",
+ "element": "dark",
+ "kind": "area",
+ "frameW": 96,
+ "frameH": 96,
+ "frames": 10,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  48,
+  48
+ ],
+ "layer": "front",
+ "notes": "Thick dark rings radiate from a black core.",
+ "palette": [
+  "#0c0a12",
+  "#241c2c",
+  "#3e3048",
+  "#6a4c70",
+  "#a07890",
+  "#e0c8d0"
+ ],
+ "refs": [
+  "RB-10",
+  "NG-09",
+  "LG-04"
+ ],
+ "sheet": {
+  "image": "fx/dark-pulse.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 960,
+  "height": 96
+ },
+ "gif": "fx/dark-pulse.gif",
+ "durationMs": 833
+}

@@ -1,0 +1,44 @@
+{
+ "id": "normal-impact-burst",
+ "name": "Impact Burst",
+ "element": "normal",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 20,
+ "loop": false,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "The default hit: white frame 0, 8-point star, ring, rays, sparks cooling.",
+ "palette": [
+  "#33313d",
+  "#686676",
+  "#a3a1b1",
+  "#d2d0dc",
+  "#efeef5",
+  "#ffffff"
+ ],
+ "refs": [
+  "DA-06",
+  "OG-01",
+  "OG-09"
+ ],
+ "sheet": {
+  "image": "fx/normal-impact-burst.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 64
+ },
+ "gif": "fx/normal-impact-burst.gif",
+ "durationMs": 500,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

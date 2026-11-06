@@ -1,0 +1,39 @@
+{
+ "id": "stat-down",
+ "name": "Stat Down",
+ "element": "normal",
+ "kind": "debuff",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Cold arrows sink.",
+ "palette": [
+  "#0c1a48",
+  "#1c3a9a",
+  "#3464e0",
+  "#6a9cff",
+  "#b4d0ff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-14",
+  "LG-11",
+  "DA-17"
+ ],
+ "sheet": {
+  "image": "fx/stat-down.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/stat-down.gif",
+ "durationMs": 667
+}

@@ -1,0 +1,39 @@
+{
+ "id": "charge-up",
+ "name": "Charge Up",
+ "element": "normal",
+ "kind": "buff",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 15,
+ "loop": true,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "Generic wind-up: particles stream into a pulsing core.",
+ "palette": [
+  "#4a300a",
+  "#9a6410",
+  "#e0a020",
+  "#ffd040",
+  "#fff090",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-03",
+  "RC-14",
+  "RB-11"
+ ],
+ "sheet": {
+  "image": "fx/charge-up.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/charge-up.gif",
+ "durationMs": 533
+}

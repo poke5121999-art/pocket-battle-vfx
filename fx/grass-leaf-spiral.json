@@ -1,0 +1,37 @@
+{
+ "id": "grass-leaf-spiral",
+ "name": "Leaf Spiral",
+ "element": "grass",
+ "kind": "area",
+ "frameW": 64,
+ "frameH": 96,
+ "frames": 10,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  88
+ ],
+ "layer": "front",
+ "notes": "Tornado of rings with orbiting leaves (spiral-ring language from the reference clips).",
+ "palette": [
+  "#12381c",
+  "#23702c",
+  "#47a83a",
+  "#8dd54b",
+  "#d2f27a",
+  "#f8ffd8"
+ ],
+ "refs": [
+  "RC-01"
+ ],
+ "sheet": {
+  "image": "fx/grass-leaf-spiral.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 96
+ },
+ "gif": "fx/grass-leaf-spiral.gif",
+ "durationMs": 833
+}

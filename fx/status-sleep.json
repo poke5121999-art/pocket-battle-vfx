@@ -1,0 +1,39 @@
+{
+ "id": "status-sleep",
+ "name": "Sleep",
+ "element": "normal",
+ "kind": "status",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 8,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Z letters drift up and grow.",
+ "palette": [
+  "#0c1a48",
+  "#1c3a9a",
+  "#3464e0",
+  "#6a9cff",
+  "#b4d0ff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-06",
+  "RC-09",
+  "RC-11"
+ ],
+ "sheet": {
+  "image": "fx/status-sleep.png",
+  "columns": 12,
+  "rows": 1,
+  "width": 768,
+  "height": 64
+ },
+ "gif": "fx/status-sleep.gif",
+ "durationMs": 1500
+}

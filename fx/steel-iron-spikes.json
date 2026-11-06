@@ -1,0 +1,42 @@
+{
+ "id": "steel-iron-spikes",
+ "name": "Iron Spikes",
+ "element": "steel",
+ "kind": "area",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 16,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  64,
+  56
+ ],
+ "layer": "front",
+ "notes": "Polished spikes rise in sequence.",
+ "palette": [
+  "#262c38",
+  "#4a5466",
+  "#7a8698",
+  "#aeb8c8",
+  "#dce4ee",
+  "#ffffff"
+ ],
+ "refs": [
+  "OG-16"
+ ],
+ "sheet": {
+  "image": "fx/steel-iron-spikes.png",
+  "columns": 8,
+  "rows": 2,
+  "width": 1024,
+  "height": 128
+ },
+ "gif": "fx/steel-iron-spikes.gif",
+ "durationMs": 1067,
+ "battle": {
+  "hitFrame": 2,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

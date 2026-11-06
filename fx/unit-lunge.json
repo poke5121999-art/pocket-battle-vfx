@@ -1,0 +1,39 @@
+{
+ "id": "unit-lunge",
+ "name": "Attack Lunge",
+ "element": "normal",
+ "kind": "unit",
+ "frameW": 96,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  20,
+  56
+ ],
+ "layer": "front",
+ "notes": "Lean back 3f, dash 2f with after-image, hold 2f, return.",
+ "palette": [
+  "#1c1a24",
+  "#4a4858",
+  "#77758a",
+  "#a7a5b8",
+  "#d4d2e0",
+  "#f4f3f8"
+ ],
+ "refs": [
+  "RB-02",
+  "RB-06",
+  "RB-10"
+ ],
+ "sheet": {
+  "image": "fx/unit-lunge.png",
+  "columns": 10,
+  "rows": 2,
+  "width": 960,
+  "height": 128
+ },
+ "gif": "fx/unit-lunge.gif",
+ "durationMs": 800
+}

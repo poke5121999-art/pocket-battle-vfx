@@ -1,0 +1,39 @@
+{
+ "id": "poison-cloud",
+ "name": "Poison Cloud",
+ "element": "poison",
+ "kind": "area",
+ "frameW": 96,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 10,
+ "loop": true,
+ "anchor": [
+  48,
+  32
+ ],
+ "layer": "front",
+ "notes": "Lumpy dithered gas that churns; bubbles pop at the rim.",
+ "palette": [
+  "#2a1238",
+  "#5c2378",
+  "#9440b8",
+  "#c46ee0",
+  "#e8a8f8",
+  "#fbe8ff"
+ ],
+ "refs": [
+  "NG-03",
+  "LG-02",
+  "SG-02"
+ ],
+ "sheet": {
+  "image": "fx/poison-cloud.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 960,
+  "height": 64
+ },
+ "gif": "fx/poison-cloud.gif",
+ "durationMs": 1000
+}

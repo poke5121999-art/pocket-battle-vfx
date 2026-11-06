@@ -1,0 +1,933 @@
+{
+"RC-01": {
+"video": "PEEjX3buY6Q",
+"t": "0:16",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=16s",
+"element": "grass",
+"kind": "area"
+},
+"RC-02": {
+"video": "PEEjX3buY6Q",
+"t": "0:18",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=18s",
+"element": "system",
+"kind": "beam"
+},
+"RC-03": {
+"video": "PEEjX3buY6Q",
+"t": "0:20",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=20s",
+"element": "normal",
+"kind": "beam"
+},
+"RC-04": {
+"video": "PEEjX3buY6Q",
+"t": "0:22",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=22s",
+"element": "grass",
+"kind": "projectile"
+},
+"RC-05": {
+"video": "PEEjX3buY6Q",
+"t": "0:28",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=28s",
+"element": "fighting",
+"kind": "projectile"
+},
+"RC-06": {
+"video": "PEEjX3buY6Q",
+"t": "0:55",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=55s",
+"element": "system",
+"kind": "system"
+},
+"RC-07": {
+"video": "PEEjX3buY6Q",
+"t": "0:04",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=4s",
+"element": "normal",
+"kind": "ui"
+},
+"RC-08": {
+"video": "PEEjX3buY6Q",
+"t": "0:08",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=8s",
+"element": "ghost",
+"kind": "projectile"
+},
+"RC-09": {
+"video": "PEEjX3buY6Q",
+"t": "0:09",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=9s",
+"element": "electric",
+"kind": "beam"
+},
+"RC-10": {
+"video": "PEEjX3buY6Q",
+"t": "0:10",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=10s",
+"element": "system",
+"kind": "system"
+},
+"RC-11": {
+"video": "PEEjX3buY6Q",
+"t": "1:01",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=61s",
+"element": "normal",
+"kind": "status"
+},
+"RC-12": {
+"video": "PEEjX3buY6Q",
+"t": "1:06.5",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=66s",
+"element": "water",
+"kind": "area"
+},
+"RC-13": {
+"video": "PEEjX3buY6Q",
+"t": "1:14.7",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=74s",
+"element": "ice",
+"kind": "beam"
+},
+"RC-14": {
+"video": "PEEjX3buY6Q",
+"t": "1:49",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=109s",
+"element": "grass",
+"kind": "beam"
+},
+"RC-15": {
+"video": "PEEjX3buY6Q",
+"t": "2:24",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=144s",
+"element": "normal",
+"kind": "buff"
+},
+"RC-16": {
+"video": "PEEjX3buY6Q",
+"t": "2:13",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=133s",
+"element": "fire",
+"kind": "area"
+},
+"RC-17": {
+"video": "PEEjX3buY6Q",
+"t": "2:20",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=140s",
+"element": "electric",
+"kind": "beam"
+},
+"RC-18": {
+"video": "PEEjX3buY6Q",
+"t": "2:37",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=157s",
+"element": "ground",
+"kind": "area"
+},
+"RC-19": {
+"video": "PEEjX3buY6Q",
+"t": "0:00",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=0s",
+"element": "system",
+"kind": "ui"
+},
+"RC-20": {
+"video": "PEEjX3buY6Q",
+"t": "2:40",
+"url": "https://www.youtube.com/watch?v=PEEjX3buY6Q&t=160s",
+"element": "system",
+"kind": "ui"
+},
+"RB-01": {
+"video": "ZEx28isJo_8",
+"t": "0:18",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=18s",
+"element": "flying",
+"kind": "area"
+},
+"RB-02": {
+"video": "ZEx28isJo_8",
+"t": "0:22",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=22s",
+"element": "electric",
+"kind": "melee"
+},
+"RB-03": {
+"video": "ZEx28isJo_8",
+"t": "0:37",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=37s",
+"element": "rock",
+"kind": "projectile"
+},
+"RB-04": {
+"video": "ZEx28isJo_8",
+"t": "0:40",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=40s",
+"element": "ice",
+"kind": "beam"
+},
+"RB-05": {
+"video": "ZEx28isJo_8",
+"t": "0:50",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=50s",
+"element": "fighting",
+"kind": "projectile"
+},
+"RB-06": {
+"video": "ZEx28isJo_8",
+"t": "0:56",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=56s",
+"element": "ghost",
+"kind": "projectile"
+},
+"RB-07": {
+"video": "ZEx28isJo_8",
+"t": "1:34",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=94s",
+"element": "grass",
+"kind": "projectile"
+},
+"RB-08": {
+"video": "ZEx28isJo_8",
+"t": "1:37",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=97s",
+"element": "psychic",
+"kind": "area"
+},
+"RB-09": {
+"video": "ZEx28isJo_8",
+"t": "1:41",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=101s",
+"element": "fire",
+"kind": "beam"
+},
+"RB-10": {
+"video": "ZEx28isJo_8",
+"t": "2:22",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=142s",
+"element": "dark",
+"kind": "area"
+},
+"RB-11": {
+"video": "ZEx28isJo_8",
+"t": "2:44",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=164s",
+"element": "water",
+"kind": "beam"
+},
+"RB-12": {
+"video": "ZEx28isJo_8",
+"t": "0:44",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=44s",
+"element": "water",
+"kind": "area"
+},
+"RB-13": {
+"video": "ZEx28isJo_8",
+"t": "2:25",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=145s",
+"element": "system",
+"kind": "aura"
+},
+"RB-14": {
+"video": "ZEx28isJo_8",
+"t": "0:26",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=26s",
+"element": "system",
+"kind": "system"
+},
+"RB-15": {
+"video": "ZEx28isJo_8",
+"t": "3:20",
+"url": "https://www.youtube.com/watch?v=ZEx28isJo_8&t=200s",
+"element": "system",
+"kind": "ui"
+},
+"BS-01": {
+"video": "J_CxwaMNjmk",
+"t": "0:04",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=4s",
+"element": "rock",
+"kind": "projectile"
+},
+"BS-02": {
+"video": "J_CxwaMNjmk",
+"t": "0:07",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=7s",
+"element": "normal",
+"kind": "buff"
+},
+"BS-03": {
+"video": "J_CxwaMNjmk",
+"t": "0:38",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=38s",
+"element": "ground",
+"kind": "area"
+},
+"BS-04": {
+"video": "J_CxwaMNjmk",
+"t": "0:40",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=40s",
+"element": "dragon",
+"kind": "area"
+},
+"BS-05": {
+"video": "J_CxwaMNjmk",
+"t": "0:28",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=28s",
+"element": "dragon",
+"kind": "area"
+},
+"BS-06": {
+"video": "J_CxwaMNjmk",
+"t": "0:50",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=50s",
+"element": "flying",
+"kind": "melee"
+},
+"BS-07": {
+"video": "J_CxwaMNjmk",
+"t": "1:01",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=61s",
+"element": "normal",
+"kind": "beam"
+},
+"BS-08": {
+"video": "J_CxwaMNjmk",
+"t": "1:09",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=69s",
+"element": "water",
+"kind": "unit"
+},
+"BS-09": {
+"video": "J_CxwaMNjmk",
+"t": "1:17",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=77s",
+"element": "water",
+"kind": "area"
+},
+"BS-10": {
+"video": "J_CxwaMNjmk",
+"t": "1:28",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=88s",
+"element": "normal",
+"kind": "area"
+},
+"BS-11": {
+"video": "J_CxwaMNjmk",
+"t": "0:22",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=22s",
+"element": "fire",
+"kind": "projectile"
+},
+"BS-12": {
+"video": "J_CxwaMNjmk",
+"t": "2:09",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=129s",
+"element": "grass",
+"kind": "beam"
+},
+"BS-13": {
+"video": "J_CxwaMNjmk",
+"t": "2:20",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=140s",
+"element": "system",
+"kind": "aura"
+},
+"BS-14": {
+"video": "J_CxwaMNjmk",
+"t": "2:52",
+"url": "https://www.youtube.com/watch?v=J_CxwaMNjmk&t=172s",
+"element": "grass",
+"kind": "melee"
+},
+"NG-01": {
+"video": "mBycJaMtpJo",
+"t": "0:06",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=6s",
+"element": "fire",
+"kind": "projectile"
+},
+"NG-02": {
+"video": "mBycJaMtpJo",
+"t": "0:07",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=7s",
+"element": "fire",
+"kind": "impact"
+},
+"NG-03": {
+"video": "mBycJaMtpJo",
+"t": "0:06",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=6s",
+"element": "poison",
+"kind": "impact"
+},
+"NG-04": {
+"video": "mBycJaMtpJo",
+"t": "0:14",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=14s",
+"element": "system",
+"kind": "system"
+},
+"NG-05": {
+"video": "mBycJaMtpJo",
+"t": "0:30",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=30s",
+"element": "ice",
+"kind": "area"
+},
+"NG-06": {
+"video": "mBycJaMtpJo",
+"t": "0:43",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=43s",
+"element": "system",
+"kind": "system"
+},
+"NG-07": {
+"video": "mBycJaMtpJo",
+"t": "0:53",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=53s",
+"element": "fighting",
+"kind": "melee"
+},
+"NG-08": {
+"video": "mBycJaMtpJo",
+"t": "1:11",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=71s",
+"element": "fire",
+"kind": "beam"
+},
+"NG-09": {
+"video": "mBycJaMtpJo",
+"t": "1:17",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=77s",
+"element": "dark",
+"kind": "area"
+},
+"NG-10": {
+"video": "mBycJaMtpJo",
+"t": "1:18",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=78s",
+"element": "steel",
+"kind": "projectile"
+},
+"NG-11": {
+"video": "mBycJaMtpJo",
+"t": "2:36",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=156s",
+"element": "ice",
+"kind": "melee"
+},
+"NG-12": {
+"video": "mBycJaMtpJo",
+"t": "2:42",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=162s",
+"element": "electric",
+"kind": "area"
+},
+"NG-13": {
+"video": "mBycJaMtpJo",
+"t": "2:47",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=167s",
+"element": "system",
+"kind": "beam"
+},
+"NG-14": {
+"video": "mBycJaMtpJo",
+"t": "2:52",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=172s",
+"element": "system",
+"kind": "ui"
+},
+"NG-15": {
+"video": "mBycJaMtpJo",
+"t": "1:02",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=62s",
+"element": "system",
+"kind": "system"
+},
+"NG-16": {
+"video": "mBycJaMtpJo",
+"t": "0:16",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=16s",
+"element": "grass",
+"kind": "impact"
+},
+"NG-17": {
+"video": "mBycJaMtpJo",
+"t": "2:24",
+"url": "https://www.youtube.com/watch?v=mBycJaMtpJo&t=144s",
+"element": "system",
+"kind": "ui"
+},
+"LG-01": {
+"video": "79N48wEIz5w",
+"t": "0:03",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=3s",
+"element": "fire",
+"kind": "melee"
+},
+"LG-02": {
+"video": "79N48wEIz5w",
+"t": "0:06",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=6s",
+"element": "poison",
+"kind": "impact"
+},
+"LG-03": {
+"video": "79N48wEIz5w",
+"t": "0:18",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=18s",
+"element": "ice",
+"kind": "area"
+},
+"LG-04": {
+"video": "79N48wEIz5w",
+"t": "0:41",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=41s",
+"element": "dark",
+"kind": "area"
+},
+"LG-05": {
+"video": "79N48wEIz5w",
+"t": "0:42",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=42s",
+"element": "dark",
+"kind": "area"
+},
+"LG-06": {
+"video": "79N48wEIz5w",
+"t": "0:47",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=47s",
+"element": "rock",
+"kind": "area"
+},
+"LG-07": {
+"video": "79N48wEIz5w",
+"t": "0:48",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=48s",
+"element": "fairy",
+"kind": "projectile"
+},
+"LG-08": {
+"video": "79N48wEIz5w",
+"t": "1:49",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=109s",
+"element": "fairy",
+"kind": "beam"
+},
+"LG-09": {
+"video": "79N48wEIz5w",
+"t": "2:11",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=131s",
+"element": "dark",
+"kind": "beam"
+},
+"LG-10": {
+"video": "79N48wEIz5w",
+"t": "3:03",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=183s",
+"element": "ice",
+"kind": "area"
+},
+"LG-11": {
+"video": "79N48wEIz5w",
+"t": "3:09",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=189s",
+"element": "normal",
+"kind": "beam"
+},
+"LG-12": {
+"video": "79N48wEIz5w",
+"t": "3:01",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=181s",
+"element": "system",
+"kind": "ui"
+},
+"LG-13": {
+"video": "79N48wEIz5w",
+"t": "1:32",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=92s",
+"element": "system",
+"kind": "system"
+},
+"LG-14": {
+"video": "79N48wEIz5w",
+"t": "0:34",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=34s",
+"element": "system",
+"kind": "ui"
+},
+"LG-15": {
+"video": "79N48wEIz5w",
+"t": "1:27",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=87s",
+"element": "steel",
+"kind": "beam"
+},
+"LG-16": {
+"video": "79N48wEIz5w",
+"t": "1:47",
+"url": "https://www.youtube.com/watch?v=79N48wEIz5w&t=107s",
+"element": "fighting",
+"kind": "projectile"
+},
+"SG-01": {
+"video": "Fq1z0wXktLE",
+"t": "0:01",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=1s",
+"element": "grass",
+"kind": "projectile"
+},
+"SG-02": {
+"video": "Fq1z0wXktLE",
+"t": "0:01",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=1s",
+"element": "poison",
+"kind": "projectile"
+},
+"SG-03": {
+"video": "Fq1z0wXktLE",
+"t": "0:04",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=4s",
+"element": "ghost",
+"kind": "projectile"
+},
+"SG-04": {
+"video": "Fq1z0wXktLE",
+"t": "0:08",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=8s",
+"element": "dragon",
+"kind": "melee"
+},
+"SG-05": {
+"video": "Fq1z0wXktLE",
+"t": "0:10",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=10s",
+"element": "psychic",
+"kind": "status"
+},
+"SG-06": {
+"video": "Fq1z0wXktLE",
+"t": "0:21",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=21s",
+"element": "system",
+"kind": "system"
+},
+"SG-07": {
+"video": "Fq1z0wXktLE",
+"t": "0:47",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=47s",
+"element": "grass",
+"kind": "melee"
+},
+"SG-08": {
+"video": "Fq1z0wXktLE",
+"t": "0:49",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=49s",
+"element": "system",
+"kind": "system"
+},
+"SG-09": {
+"video": "Fq1z0wXktLE",
+"t": "0:52",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=52s",
+"element": "system",
+"kind": "ui"
+},
+"SG-10": {
+"video": "Fq1z0wXktLE",
+"t": "0:01",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=1s",
+"element": "system",
+"kind": "ui"
+},
+"SG-11": {
+"video": "Fq1z0wXktLE",
+"t": "0:23",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=23s",
+"element": "system",
+"kind": "ui"
+},
+"SG-12": {
+"video": "Fq1z0wXktLE",
+"t": "0:37",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=37s",
+"element": "ghost",
+"kind": "projectile"
+},
+"SG-13": {
+"video": "Fq1z0wXktLE",
+"t": "0:49",
+"url": "https://www.youtube.com/watch?v=Fq1z0wXktLE&t=49s",
+"element": "system",
+"kind": "status"
+},
+"DA-01": {
+"video": "oSic6KQo5Ho",
+"t": "0:05",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=5s",
+"element": "fire",
+"kind": "area"
+},
+"DA-02": {
+"video": "oSic6KQo5Ho",
+"t": "0:11",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=11s",
+"element": "fire",
+"kind": "area"
+},
+"DA-03": {
+"video": "oSic6KQo5Ho",
+"t": "0:21",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=21s",
+"element": "normal",
+"kind": "system"
+},
+"DA-04": {
+"video": "oSic6KQo5Ho",
+"t": "0:27",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=27s",
+"element": "rock",
+"kind": "impact"
+},
+"DA-05": {
+"video": "oSic6KQo5Ho",
+"t": "0:30",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=30s",
+"element": "fire",
+"kind": "beam"
+},
+"DA-06": {
+"video": "oSic6KQo5Ho",
+"t": "0:32",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=32s",
+"element": "normal",
+"kind": "impact"
+},
+"DA-07": {
+"video": "oSic6KQo5Ho",
+"t": "0:36",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=36s",
+"element": "normal",
+"kind": "ui"
+},
+"DA-08": {
+"video": "oSic6KQo5Ho",
+"t": "0:40",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=40s",
+"element": "ghost",
+"kind": "projectile"
+},
+"DA-09": {
+"video": "oSic6KQo5Ho",
+"t": "1:08",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=68s",
+"element": "ground",
+"kind": "area"
+},
+"DA-10": {
+"video": "oSic6KQo5Ho",
+"t": "1:31",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=91s",
+"element": "fighting",
+"kind": "melee"
+},
+"DA-11": {
+"video": "oSic6KQo5Ho",
+"t": "1:41",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=101s",
+"element": "ice",
+"kind": "area"
+},
+"DA-12": {
+"video": "oSic6KQo5Ho",
+"t": "1:44",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=104s",
+"element": "electric",
+"kind": "area"
+},
+"DA-13": {
+"video": "oSic6KQo5Ho",
+"t": "2:08",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=128s",
+"element": "normal",
+"kind": "area"
+},
+"DA-14": {
+"video": "oSic6KQo5Ho",
+"t": "2:11",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=131s",
+"element": "fairy",
+"kind": "buff"
+},
+"DA-15": {
+"video": "oSic6KQo5Ho",
+"t": "2:35",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=155s",
+"element": "fairy",
+"kind": "projectile"
+},
+"DA-16": {
+"video": "oSic6KQo5Ho",
+"t": "2:37",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=157s",
+"element": "fairy",
+"kind": "beam"
+},
+"DA-17": {
+"video": "oSic6KQo5Ho",
+"t": "2:38",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=158s",
+"element": "system",
+"kind": "system"
+},
+"DA-18": {
+"video": "oSic6KQo5Ho",
+"t": "0:05",
+"url": "https://www.youtube.com/watch?v=oSic6KQo5Ho&t=5s",
+"element": "normal",
+"kind": "system"
+},
+"OG-01": {
+"video": "5rDomy8OOXk",
+"t": "0:04",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=4s",
+"element": "normal",
+"kind": "melee"
+},
+"OG-02": {
+"video": "5rDomy8OOXk",
+"t": "0:07",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=7s",
+"element": "ground",
+"kind": "area"
+},
+"OG-03": {
+"video": "5rDomy8OOXk",
+"t": "0:14",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=14s",
+"element": "fire",
+"kind": "impact"
+},
+"OG-04": {
+"video": "5rDomy8OOXk",
+"t": "0:21",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=21s",
+"element": "normal",
+"kind": "debuff"
+},
+"OG-05": {
+"video": "5rDomy8OOXk",
+"t": "0:23",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=23s",
+"element": "dragon",
+"kind": "beam"
+},
+"OG-06": {
+"video": "5rDomy8OOXk",
+"t": "0:46",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=46s",
+"element": "normal",
+"kind": "system"
+},
+"OG-07": {
+"video": "5rDomy8OOXk",
+"t": "1:04",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=64s",
+"element": "grass",
+"kind": "beam"
+},
+"OG-08": {
+"video": "5rDomy8OOXk",
+"t": "1:22",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=82s",
+"element": "grass",
+"kind": "impact"
+},
+"OG-09": {
+"video": "5rDomy8OOXk",
+"t": "1:33",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=93s",
+"element": "normal",
+"kind": "melee"
+},
+"OG-10": {
+"video": "5rDomy8OOXk",
+"t": "1:34",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=94s",
+"element": "dark",
+"kind": "impact"
+},
+"OG-11": {
+"video": "5rDomy8OOXk",
+"t": "1:34",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=94s",
+"element": "ground",
+"kind": "area"
+},
+"OG-12": {
+"video": "5rDomy8OOXk",
+"t": "1:49",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=109s",
+"element": "psychic",
+"kind": "buff"
+},
+"OG-13": {
+"video": "5rDomy8OOXk",
+"t": "2:03",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=123s",
+"element": "psychic",
+"kind": "area"
+},
+"OG-14": {
+"video": "5rDomy8OOXk",
+"t": "2:13",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=133s",
+"element": "psychic",
+"kind": "ui"
+},
+"OG-15": {
+"video": "5rDomy8OOXk",
+"t": "2:15",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=135s",
+"element": "psychic",
+"kind": "aura"
+},
+"OG-16": {
+"video": "5rDomy8OOXk",
+"t": "2:29",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=149s",
+"element": "steel",
+"kind": "area"
+},
+"OG-17": {
+"video": "5rDomy8OOXk",
+"t": "2:44",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=164s",
+"element": "psychic",
+"kind": "beam"
+},
+"OG-18": {
+"video": "5rDomy8OOXk",
+"t": "2:51",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=171s",
+"element": "system",
+"kind": "system"
+},
+"OG-19": {
+"video": "5rDomy8OOXk",
+"t": "0:20",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=20s",
+"element": "normal",
+"kind": "ui"
+},
+"OG-20": {
+"video": "5rDomy8OOXk",
+"t": "0:04",
+"url": "https://www.youtube.com/watch?v=5rDomy8OOXk&t=4s",
+"element": "normal",
+"kind": "system"
+}
+}

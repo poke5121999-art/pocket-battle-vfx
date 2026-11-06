@@ -1,0 +1,38 @@
+{
+ "id": "electric-static-aura",
+ "name": "Static Aura",
+ "element": "electric",
+ "kind": "aura",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Crackling sparks climbing the unit; flicker by skipping beats.",
+ "palette": [
+  "#4a3208",
+  "#b07a0c",
+  "#f2c414",
+  "#ffe94a",
+  "#fff7a8",
+  "#ffffff"
+ ],
+ "refs": [
+  "NG-12",
+  "DA-12"
+ ],
+ "sheet": {
+  "image": "fx/electric-static-aura.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/electric-static-aura.gif",
+ "durationMs": 667
+}

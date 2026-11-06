@@ -1,0 +1,42 @@
+{
+ "id": "water-jet",
+ "name": "Water Jet",
+ "element": "water",
+ "kind": "beam",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 20,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  10,
+  32
+ ],
+ "layer": "front",
+ "notes": "Charge 6f, shoots across in 3f, wavy body holds 8f, thins out.",
+ "palette": [
+  "#0f2a5c",
+  "#1e5cb8",
+  "#3497e6",
+  "#6ccdfc",
+  "#b6efff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RB-11"
+ ],
+ "sheet": {
+  "image": "fx/water-jet.png",
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 192
+ },
+ "gif": "fx/water-jet.gif",
+ "durationMs": 1333,
+ "battle": {
+  "hitFrame": 9,
+  "hitStopMs": 40,
+  "shakePx": 1
+ }
+}

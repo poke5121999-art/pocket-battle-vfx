@@ -1,0 +1,44 @@
+{
+ "id": "grass-petal-burst",
+ "name": "Petal Burst",
+ "element": "grass",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "Green flash, leaves burst out and drift down.",
+ "palette": [
+  "#12381c",
+  "#23702c",
+  "#47a83a",
+  "#8dd54b",
+  "#d2f27a",
+  "#f8ffd8"
+ ],
+ "refs": [
+  "BS-14",
+  "NG-16",
+  "SG-07"
+ ],
+ "sheet": {
+  "image": "fx/grass-petal-burst.png",
+  "columns": 12,
+  "rows": 1,
+  "width": 768,
+  "height": 64
+ },
+ "gif": "fx/grass-petal-burst.gif",
+ "durationMs": 800,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 50,
+  "shakePx": 1
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "id": "status-paralysis",
+ "name": "Paralysis",
+ "element": "electric",
+ "kind": "status",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 9,
+ "fps": 15,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Random sparks with an off-beat every third frame.",
+ "palette": [
+  "#4a3208",
+  "#b07a0c",
+  "#f2c414",
+  "#ffe94a",
+  "#fff7a8",
+  "#ffffff"
+ ],
+ "refs": [],
+ "sheet": {
+  "image": "fx/status-paralysis.png",
+  "columns": 9,
+  "rows": 1,
+  "width": 576,
+  "height": 64
+ },
+ "gif": "fx/status-paralysis.gif",
+ "durationMs": 600
+}

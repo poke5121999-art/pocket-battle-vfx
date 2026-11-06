@@ -1,0 +1,350 @@
+{
+"normal-star-volley": [
+"RC-03",
+"RC-07",
+"RC-11"
+],
+"normal-impact-burst": [
+"DA-06",
+"OG-01",
+"OG-09"
+],
+"normal-shock-ring": [
+"BS-10",
+"DA-13"
+],
+"fire-fireball": [
+"BS-11",
+"NG-01"
+],
+"fire-burst": [
+"NG-02",
+"LG-01",
+"OG-03"
+],
+"fire-pillar": [
+"RC-16",
+"DA-01",
+"DA-02"
+],
+"fire-aura": [
+"RC-16",
+"DA-01",
+"DA-02"
+],
+"water-jet": [
+"RB-11"
+],
+"water-bubble-shot": [
+"RC-12",
+"RB-11",
+"RB-12"
+],
+"water-splash": [
+"RC-12",
+"RB-11",
+"RB-12"
+],
+"water-whirlpool": [
+"RC-12",
+"RB-12",
+"BS-09"
+],
+"grass-leaf-volley": [
+"RC-04",
+"RB-07",
+"SG-01"
+],
+"grass-petal-burst": [
+"BS-14",
+"NG-16",
+"SG-07"
+],
+"grass-leaf-spiral": [
+"RC-01"
+],
+"electric-spark-ball": [
+"RC-09",
+"RC-17",
+"RB-02"
+],
+"electric-thunder-strike": [
+"RB-02"
+],
+"electric-static-aura": [
+"NG-12",
+"DA-12"
+],
+"ice-shards": [
+"RC-13",
+"RB-04",
+"NG-05"
+],
+"ice-beam": [
+"RC-13",
+"RB-04"
+],
+"ice-shatter": [
+"NG-11"
+],
+"ice-blizzard": [
+"NG-05",
+"LG-03",
+"LG-10"
+],
+"fighting-force-wave": [
+"RC-05",
+"RB-05",
+"LG-16"
+],
+"fighting-power-hit": [
+"NG-07",
+"DA-10"
+],
+"fighting-power-aura": [
+"RC-05",
+"RB-05",
+"NG-07"
+],
+"poison-sludge-glob": [
+"SG-02"
+],
+"poison-toxic-splash": [
+"NG-03",
+"LG-02"
+],
+"poison-cloud": [
+"NG-03",
+"LG-02",
+"SG-02"
+],
+"ground-mud-ball": [
+"RC-18",
+"BS-03",
+"DA-09"
+],
+"ground-quake": [
+"RC-18",
+"BS-03",
+"DA-09"
+],
+"ground-dust-burst": [
+"RC-18",
+"BS-03",
+"DA-09"
+],
+"flying-air-blade": [
+"RB-01",
+"BS-06"
+],
+"flying-gust-burst": [
+"BS-06"
+],
+"flying-tornado": [
+"RB-01"
+],
+"psychic-psy-beam": [
+"OG-17"
+],
+"psychic-psy-burst": [
+"RB-08",
+"SG-05",
+"OG-12"
+],
+"psychic-mind-field": [
+"RB-08",
+"OG-12",
+"OG-13"
+],
+"bug-buzz-wave": [],
+"bug-sting-volley": [],
+"bug-sting-hit": [],
+"bug-swarm": [],
+"rock-boulder": [
+"RB-03",
+"BS-01"
+],
+"rock-smash": [
+"DA-04"
+],
+"rock-stone-spikes": [
+"LG-06"
+],
+"ghost-shadow-orb": [
+"RC-08",
+"RB-06",
+"SG-03"
+],
+"ghost-hex-burst": [
+"RC-08",
+"RB-06",
+"SG-03"
+],
+"ghost-spirit-wisps": [
+"RC-08",
+"RB-06",
+"SG-03"
+],
+"dragon-pulse-beam": [
+"OG-05"
+],
+"dragon-burst": [
+"SG-04"
+],
+"dragon-aura": [
+"BS-04",
+"BS-05"
+],
+"dark-night-claw": [
+"OG-10"
+],
+"dark-pulse": [
+"RB-10",
+"NG-09",
+"LG-04"
+],
+"dark-orb": [
+"RB-10",
+"NG-09",
+"LG-04"
+],
+"steel-beam": [
+"LG-15"
+],
+"steel-metal-spark": [
+"NG-10",
+"LG-15",
+"OG-16"
+],
+"steel-iron-spikes": [
+"OG-16"
+],
+"steel-slash": [
+"NG-10",
+"LG-15",
+"OG-16"
+],
+"fairy-moon-orb": [
+"LG-07",
+"DA-15"
+],
+"fairy-sparkle-burst": [
+"LG-07",
+"LG-08",
+"DA-14"
+],
+"fairy-ring-aura": [
+"DA-14"
+],
+"hit-spark": [
+"RC-01",
+"RC-02",
+"RC-03"
+],
+"crit-hit": [
+"RC-01",
+"RC-05",
+"RC-06"
+],
+"crit-cutin": [
+"RC-01",
+"RC-05",
+"RC-06"
+],
+"miss": [
+"RB-05",
+"RB-10",
+"BS-02"
+],
+"shield": [
+"RC-13"
+],
+"heal": [
+"RC-03",
+"RB-12",
+"BS-09"
+],
+"stat-up": [
+"RC-01",
+"RC-02",
+"RC-17"
+],
+"stat-down": [
+"RC-14",
+"LG-11",
+"DA-17"
+],
+"status-burn": [
+"BS-07",
+"LG-03"
+],
+"status-poison": [
+"NG-01",
+"NG-03",
+"NG-16"
+],
+"status-paralysis": [],
+"status-sleep": [
+"RC-06",
+"RC-09",
+"RC-11"
+],
+"status-freeze": [
+"RC-08",
+"RC-12",
+"RC-13"
+],
+"status-confusion": [
+"RB-08"
+],
+"faint-vanish": [
+"RC-01",
+"RC-03",
+"RC-06"
+],
+"level-up": [
+"RC-15",
+"RB-01",
+"RB-13"
+],
+"evolve-glow": [
+"RC-15",
+"RB-13",
+"BS-13"
+],
+"recall-beam": [
+"RC-02",
+"RB-14",
+"NG-06"
+],
+"send-out": [
+"RC-02",
+"RC-10",
+"BS-08"
+],
+"charge-up": [
+"RC-03",
+"RC-14",
+"RB-11"
+],
+"unit-idle": [
+"RC-11",
+"RB-01",
+"RB-08"
+],
+"unit-lunge": [
+"RB-02",
+"RB-06",
+"RB-10"
+],
+"unit-recoil": [
+"RC-03",
+"RC-08",
+"RB-01"
+],
+"unit-faint": [
+"RC-01",
+"RC-03",
+"RC-06"
+]
+}

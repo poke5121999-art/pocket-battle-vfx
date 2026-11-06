@@ -1,0 +1,44 @@
+{
+ "id": "hit-spark",
+ "name": "Hit Spark",
+ "element": "normal",
+ "kind": "impact",
+ "frameW": 32,
+ "frameH": 32,
+ "frames": 6,
+ "fps": 20,
+ "loop": false,
+ "anchor": [
+  16,
+  16
+ ],
+ "layer": "front",
+ "notes": "Smallest hit, 300 ms: use on every contact.",
+ "palette": [
+  "#3a3a4a",
+  "#7a7a8e",
+  "#b4b4c4",
+  "#dedeea",
+  "#f4f4fa",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-01",
+  "RC-02",
+  "RC-03"
+ ],
+ "sheet": {
+  "image": "fx/hit-spark.png",
+  "columns": 6,
+  "rows": 1,
+  "width": 192,
+  "height": 32
+ },
+ "gif": "fx/hit-spark.gif",
+ "durationMs": 300,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 40,
+  "shakePx": 1
+ }
+}

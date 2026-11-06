@@ -1,0 +1,39 @@
+{
+ "id": "faint-vanish",
+ "name": "Faint Vanish",
+ "element": "normal",
+ "kind": "system",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 14,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Dust ring and rising motes; play over the faint unit animation.",
+ "palette": [
+  "#3a3a4a",
+  "#7a7a8e",
+  "#b4b4c4",
+  "#dedeea",
+  "#f4f4fa",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-01",
+  "RC-03",
+  "RC-06"
+ ],
+ "sheet": {
+  "image": "fx/faint-vanish.png",
+  "columns": 14,
+  "rows": 1,
+  "width": 896,
+  "height": 64
+ },
+ "gif": "fx/faint-vanish.gif",
+ "durationMs": 933
+}

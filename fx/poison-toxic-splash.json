@@ -1,0 +1,43 @@
+{
+ "id": "poison-toxic-splash",
+ "name": "Toxic Splash",
+ "element": "poison",
+ "kind": "impact",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  32,
+  52
+ ],
+ "layer": "front",
+ "notes": "The splash archetype in purple; reads as goo.",
+ "palette": [
+  "#2a1238",
+  "#5c2378",
+  "#9440b8",
+  "#c46ee0",
+  "#e8a8f8",
+  "#fbe8ff"
+ ],
+ "refs": [
+  "NG-03",
+  "LG-02"
+ ],
+ "sheet": {
+  "image": "fx/poison-toxic-splash.png",
+  "columns": 12,
+  "rows": 1,
+  "width": 768,
+  "height": 64
+ },
+ "gif": "fx/poison-toxic-splash.gif",
+ "durationMs": 800,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 50,
+  "shakePx": 1
+ }
+}

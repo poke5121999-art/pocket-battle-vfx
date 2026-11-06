@@ -1,0 +1,39 @@
+{
+ "id": "ground-mud-ball",
+ "name": "Mud Ball",
+ "element": "ground",
+ "kind": "projectile",
+ "frameW": 64,
+ "frameH": 32,
+ "frames": 8,
+ "fps": 15,
+ "loop": true,
+ "anchor": [
+  53,
+  16
+ ],
+ "layer": "front",
+ "notes": "Earth orb with a dust trail.",
+ "palette": [
+  "#3a2410",
+  "#6e4a22",
+  "#a8783c",
+  "#d4a85c",
+  "#f0d494",
+  "#fff4d8"
+ ],
+ "refs": [
+  "RC-18",
+  "BS-03",
+  "DA-09"
+ ],
+ "sheet": {
+  "image": "fx/ground-mud-ball.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 32
+ },
+ "gif": "fx/ground-mud-ball.gif",
+ "durationMs": 533
+}

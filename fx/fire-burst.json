@@ -1,0 +1,44 @@
+{
+ "id": "fire-burst",
+ "name": "Fire Burst",
+ "element": "fire",
+ "kind": "impact",
+ "frameW": 96,
+ "frameH": 96,
+ "frames": 14,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  48,
+  48
+ ],
+ "layer": "front",
+ "notes": "Flash, puff cluster expands, cools to dark red and rises; embers fall.",
+ "palette": [
+  "#4a1310",
+  "#a8291a",
+  "#e8571c",
+  "#ff9a2e",
+  "#ffd65c",
+  "#fff6c9"
+ ],
+ "refs": [
+  "NG-02",
+  "LG-01",
+  "OG-03"
+ ],
+ "sheet": {
+  "image": "fx/fire-burst.png",
+  "columns": 10,
+  "rows": 2,
+  "width": 960,
+  "height": 192
+ },
+ "gif": "fx/fire-burst.gif",
+ "durationMs": 933,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 80,
+  "shakePx": 3
+ }
+}

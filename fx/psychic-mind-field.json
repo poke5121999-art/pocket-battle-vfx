@@ -1,0 +1,39 @@
+{
+ "id": "psychic-mind-field",
+ "name": "Mind Field",
+ "element": "psychic",
+ "kind": "aura",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 10,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "ground",
+ "notes": "Ground rings pulsing under the unit (status-room / mind control).",
+ "palette": [
+  "#4a1040",
+  "#a02878",
+  "#e8508c",
+  "#ff8cb8",
+  "#ffc8e0",
+  "#fff0f8"
+ ],
+ "refs": [
+  "RB-08",
+  "OG-12",
+  "OG-13"
+ ],
+ "sheet": {
+  "image": "fx/psychic-mind-field.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/psychic-mind-field.gif",
+ "durationMs": 800
+}

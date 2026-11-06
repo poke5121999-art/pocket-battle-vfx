@@ -1,0 +1,35 @@
+{
+ "id": "bug-swarm",
+ "name": "Swarm",
+ "element": "bug",
+ "kind": "area",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 8,
+ "fps": 15,
+ "loop": true,
+ "anchor": [
+  32,
+  32
+ ],
+ "layer": "front",
+ "notes": "Tiny bugs on noisy orbits with wing flicker.",
+ "palette": [
+  "#263808",
+  "#4e6e10",
+  "#86a81c",
+  "#b8d43a",
+  "#e0f07c",
+  "#f8ffd0"
+ ],
+ "refs": [],
+ "sheet": {
+  "image": "fx/bug-swarm.png",
+  "columns": 8,
+  "rows": 1,
+  "width": 512,
+  "height": 64
+ },
+ "gif": "fx/bug-swarm.gif",
+ "durationMs": 533
+}

@@ -1,0 +1,44 @@
+{
+ "id": "crit-hit",
+ "name": "Critical Hit",
+ "element": "normal",
+ "kind": "impact",
+ "frameW": 96,
+ "frameH": 96,
+ "frames": 14,
+ "fps": 20,
+ "loop": false,
+ "anchor": [
+  48,
+  48
+ ],
+ "layer": "front",
+ "notes": "Two-beat crit: white block, jagged starburst, broken ring, long rays.",
+ "palette": [
+  "#4a300a",
+  "#9a6410",
+  "#e0a020",
+  "#ffd040",
+  "#fff090",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-01",
+  "RC-05",
+  "RC-06"
+ ],
+ "sheet": {
+  "image": "fx/crit-hit.png",
+  "columns": 10,
+  "rows": 2,
+  "width": 960,
+  "height": 192
+ },
+ "gif": "fx/crit-hit.gif",
+ "durationMs": 700,
+ "battle": {
+  "hitFrame": 0,
+  "hitStopMs": 120,
+  "shakePx": 4
+ }
+}

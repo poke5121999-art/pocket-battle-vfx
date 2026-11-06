@@ -1,0 +1,43 @@
+{
+ "id": "ground-quake",
+ "name": "Quake Cracks",
+ "element": "ground",
+ "kind": "area",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 14,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  64,
+  32
+ ],
+ "layer": "ground",
+ "notes": "Cracks race out, rocks heave, dust; ground layer under units.",
+ "palette": [
+  "#3a2410",
+  "#6e4a22",
+  "#a8783c",
+  "#d4a85c",
+  "#f0d494",
+  "#fff4d8"
+ ],
+ "refs": [
+  "RC-18",
+  "BS-03",
+  "DA-09"
+ ],
+ "sheet": {
+  "image": "fx/ground-quake.png",
+  "columns": 8,
+  "rows": 2,
+  "width": 1024,
+  "height": 128
+ },
+ "gif": "fx/ground-quake.gif",
+ "durationMs": 933,
+ "battle": {
+  "hitFrame": 3,
+  "shakePx": 4
+ }
+}

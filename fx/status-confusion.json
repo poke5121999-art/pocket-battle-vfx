@@ -1,0 +1,37 @@
+{
+ "id": "status-confusion",
+ "name": "Confusion",
+ "element": "normal",
+ "kind": "status",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 9,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Three stars orbit above the head, front ones bigger.",
+ "palette": [
+  "#4a300a",
+  "#9a6410",
+  "#e0a020",
+  "#ffd040",
+  "#fff090",
+  "#ffffff"
+ ],
+ "refs": [
+  "RB-08"
+ ],
+ "sheet": {
+  "image": "fx/status-confusion.png",
+  "columns": 9,
+  "rows": 1,
+  "width": 576,
+  "height": 64
+ },
+ "gif": "fx/status-confusion.gif",
+ "durationMs": 750
+}

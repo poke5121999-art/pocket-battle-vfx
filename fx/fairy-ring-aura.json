@@ -1,0 +1,37 @@
+{
+ "id": "fairy-ring-aura",
+ "name": "Fairy Ring",
+ "element": "fairy",
+ "kind": "aura",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Sparkles rise inside a pink ground ring.",
+ "palette": [
+  "#4a1438",
+  "#a83a78",
+  "#f070b0",
+  "#ff9cd0",
+  "#ffd0ea",
+  "#ffffff"
+ ],
+ "refs": [
+  "DA-14"
+ ],
+ "sheet": {
+  "image": "fx/fairy-ring-aura.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 64
+ },
+ "gif": "fx/fairy-ring-aura.gif",
+ "durationMs": 833
+}

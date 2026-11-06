@@ -1,0 +1,39 @@
+{
+ "id": "heal",
+ "name": "Heal",
+ "element": "grass",
+ "kind": "buff",
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 10,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  56
+ ],
+ "layer": "front",
+ "notes": "Plus signs and sparkles rise; soft ring pulse.",
+ "palette": [
+  "#0e3a2a",
+  "#1c7a4a",
+  "#3cc06a",
+  "#7ef08c",
+  "#c8ffc0",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-03",
+  "RB-12",
+  "BS-09"
+ ],
+ "sheet": {
+  "image": "fx/heal.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 64
+ },
+ "gif": "fx/heal.gif",
+ "durationMs": 833
+}

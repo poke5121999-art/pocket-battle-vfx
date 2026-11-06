@@ -1,0 +1,39 @@
+{
+ "id": "water-whirlpool",
+ "name": "Whirlpool",
+ "element": "water",
+ "kind": "area",
+ "frameW": 64,
+ "frameH": 96,
+ "frames": 10,
+ "fps": 12,
+ "loop": true,
+ "anchor": [
+  32,
+  88
+ ],
+ "layer": "front",
+ "notes": "Stacked squashed rings spiralling up with orbiting droplets.",
+ "palette": [
+  "#0f2a5c",
+  "#1e5cb8",
+  "#3497e6",
+  "#6ccdfc",
+  "#b6efff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-12",
+  "RB-12",
+  "BS-09"
+ ],
+ "sheet": {
+  "image": "fx/water-whirlpool.png",
+  "columns": 10,
+  "rows": 1,
+  "width": 640,
+  "height": 96
+ },
+ "gif": "fx/water-whirlpool.gif",
+ "durationMs": 833
+}

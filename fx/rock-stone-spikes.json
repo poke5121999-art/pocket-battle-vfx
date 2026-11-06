@@ -1,0 +1,42 @@
+{
+ "id": "rock-stone-spikes",
+ "name": "Stone Spikes",
+ "element": "rock",
+ "kind": "area",
+ "frameW": 128,
+ "frameH": 64,
+ "frames": 16,
+ "fps": 15,
+ "loop": false,
+ "anchor": [
+  64,
+  56
+ ],
+ "layer": "front",
+ "notes": "Spikes stab up left to right, hold, sink.",
+ "palette": [
+  "#2e2418",
+  "#5a4a32",
+  "#8c7652",
+  "#b8a07a",
+  "#ddc9a4",
+  "#f4ead6"
+ ],
+ "refs": [
+  "LG-06"
+ ],
+ "sheet": {
+  "image": "fx/rock-stone-spikes.png",
+  "columns": 8,
+  "rows": 2,
+  "width": 1024,
+  "height": 128
+ },
+ "gif": "fx/rock-stone-spikes.gif",
+ "durationMs": 1067,
+ "battle": {
+  "hitFrame": 2,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}
