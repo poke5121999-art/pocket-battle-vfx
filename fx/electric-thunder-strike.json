@@ -48,5 +48,8 @@
   "hitFrame": 8,
   "hitStopMs": 100,
   "shakePx": 4
- }
+ },
+ "moves": [
+  "Thunder"
+ ]
 }

@@ -49,5 +49,15 @@
   "hitFrame": 5,
   "hitStopMs": 100,
   "shakePx": 4
+ },
+ "moves": [
+  "Mega Punch"
+ ],
+ "contact": {
+  "windupFrames": 3,
+  "dashFrames": 5,
+  "returnFrames": 8,
+  "arcPx": 0,
+  "contactFrame": 5
  }
 }

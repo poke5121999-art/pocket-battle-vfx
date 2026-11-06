@@ -50,5 +50,17 @@
   "hitFrame": 0,
   "hitStopMs": 40,
   "shakePx": 1
+ },
+ "moves": [
+  "Tackle",
+  "Scratch",
+  "Pound"
+ ],
+ "contact": {
+  "windupFrames": 3,
+  "dashFrames": 5,
+  "returnFrames": 8,
+  "arcPx": 0,
+  "contactFrame": 0
  }
 }

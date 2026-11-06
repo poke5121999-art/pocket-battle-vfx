@@ -1,6 +1,6 @@
 {
  "id": "flying-tornado",
- "name": "Whirlwind",
+ "name": "Twister",
  "element": "flying",
  "kind": "area",
  "frameW": 96,
@@ -43,5 +43,8 @@
  },
  "gif": "fx/flying-tornado.gif",
  "durationMs": 1000,
- "peakFrame": 2
+ "peakFrame": 2,
+ "moves": [
+  "Twister"
+ ]
 }

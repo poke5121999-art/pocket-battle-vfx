@@ -44,5 +44,8 @@
  },
  "gif": "fx/fairy-moon-orb.gif",
  "durationMs": 800,
- "peakFrame": 12
+ "peakFrame": 12,
+ "moves": [
+  "Moonblast"
+ ]
 }

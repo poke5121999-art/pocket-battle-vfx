@@ -45,5 +45,9 @@
  },
  "gif": "fx/ground-mud-ball.gif",
  "durationMs": 800,
- "peakFrame": 1
+ "peakFrame": 1,
+ "moves": [
+  "Mud-Slap",
+  "Mud Bomb"
+ ]
 }

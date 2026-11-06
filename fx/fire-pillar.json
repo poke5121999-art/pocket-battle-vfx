@@ -45,5 +45,8 @@
  },
  "gif": "fx/fire-pillar.gif",
  "durationMs": 1000,
- "peakFrame": 3
+ "peakFrame": 3,
+ "moves": [
+  "Fire Spin"
+ ]
 }

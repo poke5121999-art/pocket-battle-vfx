@@ -1,6 +1,6 @@
 {
  "id": "status-confusion",
- "name": "Confusion",
+ "name": "Confused",
  "element": "normal",
  "kind": "status",
  "frameW": 64,
@@ -43,5 +43,8 @@
  },
  "gif": "fx/status-confusion.gif",
  "durationMs": 1000,
- "peakFrame": 2
+ "peakFrame": 2,
+ "moves": [
+  "confusion status"
+ ]
 }

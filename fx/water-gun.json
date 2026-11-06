@@ -48,5 +48,8 @@
  "battle": {
   "hitFrame": 7,
   "hitStopMs": 30
- }
+ },
+ "moves": [
+  "Water Gun"
+ ]
 }

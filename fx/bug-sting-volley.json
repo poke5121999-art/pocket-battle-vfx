@@ -41,5 +41,8 @@
  },
  "gif": "fx/bug-sting-volley.gif",
  "durationMs": 800,
- "peakFrame": 10
+ "peakFrame": 10,
+ "moves": [
+  "Pin Missile"
+ ]
 }

@@ -41,5 +41,8 @@
  },
  "gif": "fx/status-paralysis.gif",
  "durationMs": 1000,
- "peakFrame": 21
+ "peakFrame": 21,
+ "moves": [
+  "paralysis status"
+ ]
 }

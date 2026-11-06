@@ -45,5 +45,8 @@
  },
  "gif": "fx/level-up.gif",
  "durationMs": 1500,
- "peakFrame": 17
+ "peakFrame": 17,
+ "moves": [
+  "level up (not a move)"
+ ]
 }

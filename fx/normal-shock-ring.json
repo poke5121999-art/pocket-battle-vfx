@@ -44,5 +44,10 @@
  },
  "gif": "fx/normal-shock-ring.gif",
  "durationMs": 1000,
- "peakFrame": 11
+ "peakFrame": 11,
+ "moves": [
+  "Screech",
+  "Supersonic",
+  "Sonic Boom"
+ ]
 }

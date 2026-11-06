@@ -45,5 +45,9 @@
  },
  "gif": "fx/dark-orb.gif",
  "durationMs": 800,
- "peakFrame": 3
+ "peakFrame": 3,
+ "moves": [
+  "Dark Pulse (orb)",
+  "Shadow-style orb"
+ ]
 }

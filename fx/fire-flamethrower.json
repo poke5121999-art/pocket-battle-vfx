@@ -50,5 +50,8 @@
   "hitFrame": 7,
   "hitStopMs": 40,
   "shakePx": 1
- }
+ },
+ "moves": [
+  "Flamethrower"
+ ]
 }

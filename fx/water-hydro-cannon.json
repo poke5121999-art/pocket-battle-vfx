@@ -1,0 +1,57 @@
+{
+ "id": "water-hydro-cannon",
+ "name": "Hydro Cannon",
+ "element": "water",
+ "kind": "beam",
+ "frameW": 192,
+ "frameH": 64,
+ "frames": 40,
+ "fps": 30,
+ "loop": false,
+ "anchor": [
+  10,
+  32
+ ],
+ "layer": "front",
+ "notes": "Hydro Pump: pressure build, then a thick translucent stream (8-14 px) with foam running along the top, droplets peeling off, splash crown and water running down at the target; breaks into falling drops.",
+ "ground": 54,
+ "material": "material",
+ "palette": [
+  "#0c065c",
+  "#0c25b8",
+  "#3488e6",
+  "#6cd6fc",
+  "#b6fcff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RB-11",
+  "RC-12"
+ ],
+ "sheet": {
+  "image": "fx/water-hydro-cannon.png",
+  "columns": 5,
+  "rows": 8,
+  "width": 960,
+  "height": 512
+ },
+ "light": {
+  "image": "fx/water-hydro-cannon.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 5,
+  "rows": 8
+ },
+ "gif": "fx/water-hydro-cannon.gif",
+ "durationMs": 1333,
+ "peakFrame": 30,
+ "battle": {
+  "hitFrame": 13,
+  "hitStopMs": 40,
+  "shakePx": 1
+ },
+ "moves": [
+  "Hydro Pump",
+  "Hydro Cannon"
+ ]
+}

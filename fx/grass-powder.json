@@ -48,5 +48,10 @@
  "peakFrame": 14,
  "battle": {
   "hitFrame": 12
- }
+ },
+ "moves": [
+  "Sleep Powder",
+  "Stun Spore",
+  "Poison Powder"
+ ]
 }

@@ -1,6 +1,6 @@
 # Pocket Battle VFX
 
-90 pixel-art battle effects for top-down monster-battle / auto-battle games: projectiles, beams, impacts, areas
+91 pixel-art battle effects for top-down monster-battle / auto-battle games: projectiles, beams, impacts, areas
 and auras for 18 elements, plus hit sparks, crits, a crit cut-in, miss, shield, heal, stat up/down, six status
 loops, faint, level up, evolve glow, recall beam, send-out, and four unit animations on a neutral dummy creature.
 
@@ -12,7 +12,7 @@ Every frame is **drawn by code** (`src/`). Nothing is traced or cropped from any
 
 Static, relative paths, no build step. `index.html` is the gallery (filters by element and kind, search, detail
 view with frame strip, play/pause, fps slider, ×1–×4 scale, loop toggle, PNG/JSON/GIF downloads) with a combo
-preview (caster lunge → projectile or beam → impact with hit-stop, shake and flash → target recoil → status loop
+preview (caster lunge → projectile, beam, rush or dash-in → impact with hit-stop, shake and flash → target recoil → status loop
 and damage number). `how.html` explains the rules and timing and cites the reference clips by timestamp.
 
 Run locally (fetch() needs http, not file://):
@@ -70,7 +70,7 @@ src/refs-index.json         reference id → YouTube link with timestamp (used b
 |---|---|
 | `id`, `name` | stable id (file name) and display name (element + shape) |
 | `element` | one of the 18 elements; generic effects use the closest one |
-| `kind` | projectile, beam, impact, area, aura, buff, debuff, status, system, unit |
+| `kind` | projectile, beam, rush, impact, area, aura, buff, debuff, status, system, unit |
 | `frameW`, `frameH`, `frames`, `fps`, `loop` | frame size (multiples of 32), count, playback |
 | `anchor` | pixel inside a frame that you place on the world point: projectile head, beam origin, impact centre, or unit feet |
 | `layer` | `ground` (under units), `front` (over units), `screen` (full-screen plate) |
@@ -83,9 +83,13 @@ src/refs-index.json         reference id → YouTube link with timestamp (used b
 | `ground` | y of the floor line inside a frame (units stand on it, debris bounces on it) |
 | `material` | `material` (water, rock, leaves, metal...: no glow, only contact glints in the light layer) or `emissive` (fire, lightning, energy) |
 | `peakFrame` | the frame with the most pixels (used for thumbnails) |
+| `moves` | the real moves the effect stands for (shown as "stands for" in the detail view) |
+| `rush` | rush effects only (e.g. Water Jet = Aqua Jet, Flame Wheel): the sheet is drawn in the caster's own frame; move the caster `dashPx` px toward the target: wind-up `windupFrames`, dash `dashFrames` (ease-in, `dashPx * ((k - windup + 1) / dash) ^ 1.5`), touching the target on `contactFrame`, then bring it back over `returnFrames` after the sheet ends |
+| `contact` | contact hits drawn on the target (Tackle, Body Slam, Karate Chop, Mega Punch, Night Slash): the caster dashes in over `dashFrames` (leaping `arcPx` high if set) so that it arrives on the impact's `contactFrame`, holds 4 frames and returns over `returnFrames` |
 | `battle` | optional `hitFrame`, `hitStopMs`, `shakePx` for wiring the hit |
 
-Projectiles are short loops facing right: move them with your engine and rotate to the travel direction. Beams
+Rush effects are attached to the caster: anchor = the caster's feet, the effect faces right, and the trail and
+contact splash are already in the sheet. Projectiles are short loops facing right: move them with your engine and rotate to the travel direction. Beams
 start at `anchor` and reach the right edge; stretch them horizontally to the target. Aura/status effects use the
 unit's feet as anchor (feet at y = 56 in a 64 px frame).
 

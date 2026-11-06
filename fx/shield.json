@@ -43,5 +43,10 @@
  },
  "gif": "fx/shield.gif",
  "durationMs": 1000,
- "peakFrame": 16
+ "peakFrame": 16,
+ "moves": [
+  "Light Screen",
+  "Reflect",
+  "Protect"
+ ]
 }

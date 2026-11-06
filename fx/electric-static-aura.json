@@ -2,19 +2,19 @@
  "id": "electric-static-aura",
  "name": "Thunder Wave",
  "element": "electric",
- "kind": "aura",
- "frameW": 64,
- "frameH": 96,
- "frames": 30,
+ "kind": "beam",
+ "frameW": 240,
+ "frameH": 64,
+ "frames": 40,
  "fps": 30,
- "loop": true,
+ "loop": false,
  "anchor": [
-  32,
-  86
+  10,
+  32
  ],
  "layer": "front",
- "notes": "Jagged electric rings squeeze around the unit's middle with arcs jumping to the body (Thunder Wave / static).",
- "ground": 86,
+ "notes": "Thin gold hoops and a small crackle fly from the user to the target, then jagged static rings close around the target and squeeze (paralysis).",
+ "ground": 54,
  "material": "emissive",
  "palette": [
   "#4a1000",
@@ -30,19 +30,27 @@
  ],
  "sheet": {
   "image": "fx/electric-static-aura.png",
-  "columns": 16,
-  "rows": 2,
-  "width": 1024,
-  "height": 192
+  "columns": 4,
+  "rows": 10,
+  "width": 960,
+  "height": 640
  },
  "light": {
   "image": "fx/electric-static-aura.light.png",
   "blend": "additive",
   "premultiplied": true,
-  "columns": 16,
-  "rows": 2
+  "columns": 4,
+  "rows": 10
  },
  "gif": "fx/electric-static-aura.gif",
- "durationMs": 1000,
- "peakFrame": 15
+ "durationMs": 1333,
+ "peakFrame": 10,
+ "battle": {
+  "hitFrame": 9,
+  "hitStopMs": 40,
+  "shakePx": 1
+ },
+ "moves": [
+  "Thunder Wave"
+ ]
 }

@@ -45,5 +45,9 @@
  },
  "gif": "fx/psychic-mind-field.gif",
  "durationMs": 1000,
- "peakFrame": 17
+ "peakFrame": 17,
+ "moves": [
+  "Psychic (held)",
+  "Kinesis"
+ ]
 }

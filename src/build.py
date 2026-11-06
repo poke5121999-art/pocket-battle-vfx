@@ -11,6 +11,7 @@ rgb = light, alpha = max channel - draw it with additive blending), fx/<id>.gif,
 img/backdrop.png, img/dummy.png.
 """
 import json
+import math
 import os
 import sys
 import time
@@ -91,9 +92,88 @@ def wants_dummy(e):
     return e["kind"] in DUMMY_KINDS and e["layer"] != "screen" and e["id"] not in NO_DUMMY
 
 
+def _ease_dash(u):
+    return u ** 1.5
+
+
+def motion_track(e):
+    """For rush / contact effects: a list of (effect frame or None, caster dx, caster dy) per GIF/preview step,
+    mirroring what the site engine does (assets/app.js)."""
+    n = e["frames"]
+    if e.get("rush"):
+        R = e["rush"]
+        w, d, ret = R["windupFrames"], R["dashFrames"], R["returnFrames"]
+        out = []
+        for k in range(n + 4 + ret):
+            if k < n:
+                if k < w:
+                    u = 0.0
+                elif k >= w + d - 1:
+                    u = 1.0
+                else:
+                    u = ((k - w + 1) / d) ** 1.5
+                out.append((k, R["dashPx"] * u, 0))
+            elif k < n + 4:
+                out.append((None, R["dashPx"], 0))
+            else:
+                v = (k - n - 4 + 1) / ret
+                out.append((None, R["dashPx"] * (1 - v), 0))
+        return out
+    C = e["contact"]
+    hit = e["hit"] or 0
+    w, d, ret, arc = C["windupFrames"], C["dashFrames"], C["returnFrames"], C["arcPx"]
+    start = hit - d - w                      # effect-frame index when the caster starts its wind-up
+    out = []
+    for k in range(min(0, start), n + ret + 2):
+        if k < hit - d:
+            u = 0.0
+        elif k < hit:
+            u = _ease_dash((k - (hit - d) + 1) / d)
+        elif k < hit + 4:
+            u = 1.0
+        else:
+            u = max(0.0, 1 - (k - hit - 4 + 1) / ret)
+        dy = -arc * math.sin(math.pi * u) if k < hit else 0
+        out.append((k if 0 <= k < n else None, 64 * u, dy))
+    return out
+
+
 def write_gif(e, colour, light):
-    """Preview on the dark stage: dummy where a unit belongs, colour layer, then light added on top."""
+    """Preview on the dark stage: dummy where a unit belongs, colour layer, then light added on top. Rush and
+    contact effects show the caster dummy actually travelling to a target dummy."""
     w, h = e["frameW"], e["frameH"]
+    moving = e.get("rush") or e.get("contact")
+    if moving:
+        rush = bool(e.get("rush"))
+        dash = e["rush"]["dashPx"] if rush else 64
+        W = ((w + dash + 15) // 16) * 16
+        stage = make_stage(W, h, e["ground"])
+        out = []
+        for (k, dx, dy) in motion_track(e):
+            bg = stage.copy()
+            cv = Canvas(W, h)
+            if rush:
+                draw_creature(cv, e["anchor"][0] + dash + 22, e["ground"], flip=True)
+                draw_creature(cv, e["anchor"][0] + dx, e["ground"] + dy)
+                ex = int(round(dx))
+            else:
+                draw_creature(cv, dash + e["anchor"][0], e["ground"], flip=True)
+                draw_creature(cv, e["anchor"][0] + 42 - 64 + dx + 0, e["ground"] + dy)
+                ex = dash
+            bg.alpha_composite(cv.img)
+            Lf = Image.new("RGBA", (W, h), (0, 0, 0, 0))
+            if k is not None:
+                bg.alpha_composite(colour[k], (ex, 0))
+                Lf.paste(light[k], (ex, 0))
+            rgb = add_light(bg.convert("RGB"), Lf)
+            out.append(rgb.resize((W * GIF_SCALE, h * GIF_SCALE), Image.NEAREST)
+                       .quantize(colors=200, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE))
+        dur = int(round(1000 / e["fps"]))
+        hold = [dur] * len(out)
+        hold[-1] = dur + 400
+        out[0].save(os.path.join(OUT, e["id"] + ".gif"), save_all=True, append_images=out[1:], duration=hold,
+                    loop=0, optimize=False, disposal=1)
+        return
     stage = make_stage(w, h, e["ground"])
     out = []
     for f, L in zip(colour, light):
@@ -143,6 +223,13 @@ def entry_json(e, cols, rows):
         battle["shakePx"] = e["shake"]
     if battle:
         d["battle"] = battle
+    d["moves"] = e.get("moves", [])
+    if e.get("rush"):
+        d["rush"] = dict(e["rush"])
+    if e.get("contact"):
+        c = dict(e["contact"])
+        c["contactFrame"] = e["hit"] if e["hit"] is not None else 0
+        d["contact"] = c
     return d
 
 

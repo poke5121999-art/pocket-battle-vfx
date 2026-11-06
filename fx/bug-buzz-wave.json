@@ -41,5 +41,9 @@
  },
  "gif": "fx/bug-buzz-wave.gif",
  "durationMs": 800,
- "peakFrame": 5
+ "peakFrame": 5,
+ "moves": [
+  "Bug Buzz",
+  "Supersonic"
+ ]
 }

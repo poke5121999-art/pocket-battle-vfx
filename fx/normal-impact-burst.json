@@ -50,5 +50,16 @@
   "hitFrame": 4,
   "hitStopMs": 80,
   "shakePx": 3
+ },
+ "moves": [
+  "Body Slam",
+  "Take Down"
+ ],
+ "contact": {
+  "windupFrames": 4,
+  "dashFrames": 7,
+  "returnFrames": 9,
+  "arcPx": 24,
+  "contactFrame": 4
  }
 }

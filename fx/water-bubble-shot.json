@@ -45,5 +45,9 @@
  },
  "gif": "fx/water-bubble-shot.gif",
  "durationMs": 800,
- "peakFrame": 14
+ "peakFrame": 14,
+ "moves": [
+  "Bubble",
+  "Bubble Beam"
+ ]
 }

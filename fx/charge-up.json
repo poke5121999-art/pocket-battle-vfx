@@ -45,5 +45,8 @@
  },
  "gif": "fx/charge-up.gif",
  "durationMs": 800,
- "peakFrame": 20
+ "peakFrame": 20,
+ "moves": [
+  "Solar Beam / Sky Attack / Skull Bash charge"
+ ]
 }

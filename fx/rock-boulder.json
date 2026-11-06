@@ -44,5 +44,8 @@
  },
  "gif": "fx/rock-boulder.gif",
  "durationMs": 800,
- "peakFrame": 0
+ "peakFrame": 0,
+ "moves": [
+  "Rock Throw"
+ ]
 }

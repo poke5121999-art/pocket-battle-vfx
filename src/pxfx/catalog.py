@@ -15,8 +15,103 @@ EMISSIVE_IDS = {"ice-beam", "steel-beam", "hit-spark", "crit-hit", "crit-cutin",
                 "steel-metal-spark"}
 
 
+MOVES = {
+    'normal-star-volley': ['Swift'],
+    'normal-impact-burst': ['Body Slam', 'Take Down'],
+    'normal-shock-ring': ['Screech', 'Supersonic', 'Sonic Boom'],
+    'fire-fireball': ['Fire Blast (thrown)', 'Ember'],
+    'fire-embers': ['Ember'],
+    'fire-flamethrower': ['Flamethrower'],
+    'fire-burst': ['Fire Blast'],
+    'fire-pillar': ['Fire Spin'],
+    'fire-aura': ['Flame Wheel'],
+    'water-jet': ['Aqua Jet'],
+    'water-hydro-cannon': ['Hydro Pump', 'Hydro Cannon'],
+    'water-gun': ['Water Gun'],
+    'water-bubble-shot': ['Bubble', 'Bubble Beam'],
+    'water-bubble-pop': ['Bubble (hit)', 'Bubble Beam (hit)'],
+    'water-splash': ['Surf'],
+    'water-whirlpool': ['Whirlpool'],
+    'grass-leaf-volley': ['Razor Leaf'],
+    'grass-petal-burst': ['Petal Dance'],
+    'grass-powder': ['Sleep Powder', 'Stun Spore', 'Poison Powder'],
+    'grass-leaf-spiral': ['Petal Dance', 'Leaf Storm'],
+    'electric-spark-ball': ['Electro Ball', 'Thunder Shock'],
+    'electric-thunderbolt': ['Thunderbolt'],
+    'electric-thunder-strike': ['Thunder'],
+    'electric-static-aura': ['Thunder Wave'],
+    'ice-shards': ['Ice Shard', 'Icy Wind'],
+    'ice-beam': ['Ice Beam', 'Aurora Beam'],
+    'ice-shatter': ['freeze breaking (Ice Beam / Blizzard hit)'],
+    'ice-blizzard': ['Blizzard'],
+    'fighting-force-wave': ['Vacuum Wave'],
+    'fighting-power-hit': ['Mega Punch'],
+    'fighting-chop': ['Karate Chop'],
+    'fighting-power-aura': ['Focus Energy'],
+    'poison-sludge-glob': ['Sludge'],
+    'poison-toxic-splash': ['Acid', 'Sludge (hit)'],
+    'poison-cloud': ['Poison Gas', 'Smog'],
+    'ground-mud-ball': ['Mud-Slap', 'Mud Bomb'],
+    'ground-quake': ['Earthquake', 'Fissure'],
+    'ground-dust-burst': ['Dig', 'Sand Attack'],
+    'flying-air-blade': ['Air Slash', 'Razor Wind'],
+    'flying-gust-burst': ['Gust'],
+    'flying-tornado': ['Twister'],
+    'psychic-psy-beam': ['Psybeam'],
+    'psychic-psy-burst': ['Psychic', 'Confusion'],
+    'psychic-mind-field': ['Psychic (held)', 'Kinesis'],
+    'bug-buzz-wave': ['Bug Buzz', 'Supersonic'],
+    'bug-sting-volley': ['Pin Missile'],
+    'bug-sting-hit': ['Twineedle', 'Poison Sting'],
+    'bug-swarm': ['Infestation'],
+    'rock-boulder': ['Rock Throw'],
+    'rock-smash': ['Rock Slide'],
+    'rock-stone-spikes': ['Stone Edge', 'Rock Tomb'],
+    'ghost-shadow-orb': ['Shadow Ball'],
+    'ghost-hex-burst': ['Night Shade', 'Hex', 'Lick'],
+    'ghost-spirit-wisps': ['Confuse Ray', 'Curse'],
+    'dragon-pulse-beam': ['Dragon Rage', 'Dragon Pulse'],
+    'dragon-burst': ['Dragon Rage (hit)', 'Outrage (hit)'],
+    'dragon-aura': ['Dragon Dance'],
+    'dark-night-claw': ['Night Slash', 'Feint Attack'],
+    'dark-pulse': ['Dark Pulse'],
+    'dark-orb': ['Dark Pulse (orb)', 'Shadow-style orb'],
+    'steel-beam': ['Flash Cannon'],
+    'steel-metal-spark': ['Metal Claw (hit)'],
+    'steel-iron-spikes': ['Steelsurge (G-Max)', 'steel spikes from the ground'],
+    'steel-slash': ['Iron Tail'],
+    'fairy-moon-orb': ['Moonblast'],
+    'fairy-sparkle-burst': ['Disarming Voice', 'Charm'],
+    'fairy-ring-aura': ['Moonlight', 'Fairy Wind'],
+    'hit-spark': ['Tackle', 'Scratch', 'Pound'],
+    'crit-hit': ['critical hit'],
+    'crit-cutin': ['critical hit (cut-in)'],
+    'miss': ['miss / dodge'],
+    'shield': ['Light Screen', 'Reflect', 'Protect'],
+    'heal': ['Recover', 'Synthesis', 'Softboiled'],
+    'stat-up': ['Swords Dance', 'Growth', 'Agility'],
+    'stat-down': ['Growl', 'Tail Whip', 'Leer'],
+    'status-burn': ['burn status'],
+    'status-poison': ['poison status'],
+    'status-paralysis': ['paralysis status'],
+    'status-sleep': ['sleep status'],
+    'status-freeze': ['freeze status'],
+    'status-confusion': ['confusion status'],
+    'faint-vanish': ['fainting'],
+    'level-up': ['level up (not a move)'],
+    'evolve-glow': ['evolution (not a move)'],
+    'recall-beam': ['return to the ball (not a move)'],
+    'send-out': ['send-out (not a move)'],
+    'charge-up': ['Solar Beam / Sky Attack / Skull Bash charge'],
+    'unit-idle': ['idle (not a move)'],
+    'unit-lunge': ['Tackle', 'Take Down (the user dashes)'],
+    'unit-recoil': ['being hit'],
+    'unit-faint': ['fainting'],
+}
+
+
 def E(id, name, element, kind, size, frames, render, loop=False, anchor=None, ground=None, layer="front",
-      ramp=None, notes="", hit=None, hitstop=0, shake=0, material=None):
+      ramp=None, notes="", hit=None, hitstop=0, shake=0, material=None, rush=None, contact=None):
     w, h = size
     g = ground if ground is not None else h - 10
     if anchor is None:
@@ -26,6 +121,8 @@ def E(id, name, element, kind, size, frames, render, loop=False, anchor=None, gr
             anchor = [10, h // 2]
         elif kind == "impact":
             anchor = [w // 2, g - 22]
+        elif kind == "rush":
+            anchor = [w - 40, g]
         else:
             anchor = [w // 2, g]
     if material is None:
@@ -34,11 +131,14 @@ def E(id, name, element, kind, size, frames, render, loop=False, anchor=None, gr
     return dict(id=id, name=name, element=element, kind=kind, frameW=w, frameH=h, frames=frames, fps=FPS,
                 material=material,
                 loop=loop, anchor=anchor, ground=g, layer=layer, ramp=ramp or element, render=render, notes=notes,
-                hit=hit, hitstopMs=hitstop, shake=shake,
-                feet=g if kind in ("aura", "status", "buff", "debuff", "unit", "system", "impact") else None)
+                hit=hit, hitstopMs=hitstop, shake=shake, rush=rush, contact=contact, moves=MOVES.get(id, []),
+                feet=g if kind in ("aura", "status", "buff", "debuff", "unit", "system", "impact", "rush") else None)
 
 
 PRJ, BEAM, IMP, AURA = (96, 48), (192, 64), (128, 96), (64, 96)
+RUSHF = (176, 80)
+CONTACT = dict(windupFrames=3, dashFrames=5, returnFrames=8, arcPx=0)
+LEAP = dict(windupFrames=4, dashFrames=7, returnFrames=9, arcPx=24)
 
 
 def proj(el, **k):
@@ -55,7 +155,7 @@ EFFECTS = [
       notes="Five five-pointed stars in a loose spread, each spinning at its own rate, tiny sparkle trails."),
     E("normal-impact-burst", "Body Slam", "normal", "impact", IMP, 40, X.body_slam,
       notes="Downward speed lines, a big squashed comic impact star, impact lines, dust billows thrown out both sides.",
-      hit=4, hitstop=80, shake=3),
+      hit=4, hitstop=80, shake=3, contact=LEAP),
     E("normal-shock-ring", "Shock Ring", "normal", "area", IMP, 30, lambda S: X.shockwave(S, "normal"), layer="ground",
       notes="Two broken, uneven shock rings on the floor kicking up dust (a ring by design)."),
     # fire
@@ -71,10 +171,14 @@ EFFECTS = [
       hit=0, hitstop=80, shake=3),
     E("fire-pillar", "Fire Spin", "fire", "area", (96, 96), 30, X.fire_spin, loop=True,
       notes="Flame tongues circle the target on a tilted ellipse and rise, front half over the body (trap loop)."),
-    E("fire-aura", "Flame Wheel", "fire", "aura", AURA, 30, X.flame_wheel, loop=True,
-      notes="The unit wrapped in a spinning wheel of fire, tongues trailing against the spin (Flame Wheel / Fire Punch charge)."),
+    E("fire-aura", "Flame Wheel", "fire", "rush", RUSHF, 32, X.flame_wheel_rush, ground=72, rush=X.FLAME_RUSH,
+      notes="Flame Wheel: a wheel of fire forms around the caster, which charges into the target leaving a fire trail, then bursts into flame with embers. Caster-attached: move the caster by rush.dashPx.",
+      hit=15, hitstop=60, shake=2),
     # water
-    E("water-jet", "Water Jet", "water", "beam", BEAM, 40, X.water_jet,
+    E("water-jet", "Water Jet", "water", "rush", RUSHF, 26, X.aqua_jet, ground=72, rush=X.RUSH,
+      notes="Aqua Jet: the caster wraps itself in water and lunges at the target - 4-frame wind-up, dash with a water stream and droplets behind it, splash and spray fan on contact. Caster-attached: move the caster by rush.dashPx.",
+      hit=9, hitstop=50, shake=2),
+    E("water-hydro-cannon", "Hydro Cannon", "water", "beam", BEAM, 40, X.water_jet,
       notes="Hydro Pump: pressure build, then a thick translucent stream (8-14 px) with foam running along the top, droplets peeling off, splash crown and water running down at the target; breaks into falling drops.",
       hit=13, hitstop=40, shake=1),
     E("water-gun", "Water Gun", "water", "beam", BEAM, 24, X.water_gun,
@@ -102,7 +206,7 @@ EFFECTS = [
     E("grass-leaf-spiral", "Leaf Storm", "grass", "area", (96, 128), 30, X.leaf_tornado, loop=True,
       ground=120, notes="Real leaf shapes (and a few petals) ride a rising helix around the target, tumbling."),
     # electric
-    E("electric-spark-ball", "Spark Ball", "electric", "projectile", PRJ, 24, X.spark_ball, loop=True,
+    E("electric-spark-ball", "Electro Ball", "electric", "projectile", PRJ, 24, X.spark_ball, loop=True,
       notes="Thunder Shock shot: small round crackling ball, short jagged arcs leaping off it every frame, sparks hop behind."),
     E("electric-thunderbolt", "Thunderbolt", "electric", "impact", IMP, 24, X.thunderbolt,
       notes="Thin zig-zag bolts thrown at the target from the upper left, three quick strikes with flashes, then crackle on the body.",
@@ -110,8 +214,9 @@ EFFECTS = [
     E("electric-thunder-strike", "Thunder", "electric", "impact", (96, 128), 45, X.thunder, ground=118,
       notes="Storm cloud darkens the top, a thick branching bolt falls from above and re-strikes, a disc of light and ground arcs spread.",
       hit=8, hitstop=100, shake=4),
-    E("electric-static-aura", "Thunder Wave", "electric", "aura", AURA, 30, X.thunder_wave, loop=True,
-      notes="Jagged electric rings squeeze around the unit's middle with arcs jumping to the body (Thunder Wave / static)."),
+    E("electric-static-aura", "Thunder Wave", "electric", "beam", (240, 64), 40, X.thunder_wave_beam,
+      notes="Thin gold hoops and a small crackle fly from the user to the target, then jagged static rings close around the target and squeeze (paralysis).",
+      hit=9, hitstop=40, shake=1),
     # ice
     E("ice-shards", "Ice Shards", "ice", "projectile", PRJ, 24, X.ice_shards, loop=True,
       notes="Icy Wind: four faceted crystals in a loose wedge, spinning so the facets swap light and dark; snow specks peel off."),
@@ -124,14 +229,14 @@ EFFECTS = [
     E("ice-blizzard", "Blizzard", "ice", "area", IMP, 30, X.blizzard, loop=True,
       notes="Driving snow in three depth layers on a hard diagonal wind, wind streaks, gust bands, frost on the floor."),
     # fighting
-    E("fighting-force-wave", "Force Wave", "fighting", "projectile", (96, 64), 24, X.force_wave,
+    E("fighting-force-wave", "Vacuum Wave", "fighting", "projectile", (96, 64), 24, X.force_wave,
       loop=True, anchor=[4, 32], notes="Punch of compressed air: rigid edge-on pressure rings growing as they travel, speed lines, dust."),
     E("fighting-power-hit", "Mega Punch", "fighting", "impact", IMP, 36, X.mega_punch,
       notes="A big glove drives in with speed lines, lands with a white comic contact star and hit-lines, pulls back; dust at the feet.",
-      hit=5, hitstop=100, shake=4),
+      hit=5, hitstop=100, shake=4, contact=CONTACT),
     E("fighting-chop", "Karate Chop", "fighting", "impact", IMP, 20, X.karate_chop,
       notes="An open hand sweeps down across the target, leaves a curved white slash line for 2 frames, then a small contact star.",
-      hit=4, hitstop=60, shake=2),
+      hit=4, hitstop=60, shake=2, contact=CONTACT),
     E("fighting-power-aura", "Focus Energy", "fighting", "aura", AURA, 30, X.focus_energy, loop=True,
       notes="Upward flame-shaped energy shell hugging the body, inward rush lines in pulses, ring at the feet."),
     # poison
@@ -151,12 +256,12 @@ EFFECTS = [
       notes="The floor bursts open: hole with a dirt rim, a fountain of clods, a dust cloud with form rolling out and up.",
       hit=0, hitstop=60, shake=2),
     # flying
-    E("flying-air-blade", "Wing Blade", "flying", "projectile", PRJ, 24, X.air_blade, loop=True,
+    E("flying-air-blade", "Air Slash", "flying", "projectile", PRJ, 24, X.air_blade, loop=True,
       notes="Wing Attack / Razor Wind: two pale crescent air blades, wind curls off the tips, a feather tumbling behind."),
     E("flying-gust-burst", "Gust", "flying", "impact", IMP, 36, X.gust,
       notes="Wind curls sweep in from the attacker side and wrap around the target, carrying leaves and dust; dust at the base.",
       hit=6, hitstop=40, shake=1),
-    E("flying-tornado", "Whirlwind", "flying", "area", (96, 128), 30, X.whirlwind, loop=True,
+    E("flying-tornado", "Twister", "flying", "area", (96, 128), 30, X.whirlwind, loop=True,
       ground=120, notes="Funnel of broken wind lines widening upward, rocks, leaves and dust orbiting, dust churning at the base."),
     # psychic
     E("psychic-psy-beam", "Psybeam", "psychic", "beam", BEAM, 40, X.psybeam,
@@ -175,7 +280,7 @@ EFFECTS = [
     E("bug-sting-hit", "Twineedle Hit", "bug", "impact", IMP, 36, X.twineedle_hit,
       notes="Two needles jab in and quiver, white contact puffs, a small purple poison puff bubbles up; needles drop.",
       hit=2, hitstop=40, shake=1),
-    E("bug-swarm", "Swarm", "bug", "area", (96, 96), 30, X.bug_swarm, loop=True,
+    E("bug-swarm", "Infestation", "bug", "area", (96, 96), 30, X.bug_swarm, loop=True,
       notes="Little insects with flicking wings circle the target on looping paths, in front and behind."),
     # rock
     E("rock-boulder", "Rock Throw", "rock", "projectile", PRJ, 24, X.boulder_throw, loop=True,
@@ -206,9 +311,10 @@ EFFECTS = [
     # dark
     E("dark-night-claw", "Night Slash", "dark", "impact", IMP, 24, X.night_slash,
       notes="A dark band flicks across, then three black claw gashes with pale lilac rims rake the target and shrink away.",
-      hit=2, hitstop=60, shake=2),
-    E("dark-pulse", "Dark Pulse", "dark", "area", IMP, 30, X.dark_pulse, layer="ground",
-      notes="Black core swells, thick black rings with spiky pale rims spread on the floor, dark wisps peel up."),
+      hit=2, hitstop=60, shake=2, contact=CONTACT),
+    E("dark-pulse", "Dark Pulse", "dark", "beam", BEAM, 36, X.dark_pulse_beam,
+      notes="Rings of malice travel from the user to the target: dark bands with pale spiky leading rims, growing; a dark spiky burst at the target.",
+      hit=15, hitstop=60, shake=2),
     E("dark-orb", "Malice Orb", "dark", "projectile", PRJ, 24, X.malice_orb, loop=True,
       notes="Spiky black ball whose spikes grow and retract, pale lilac rim, tight pulsing ring, dark shreds trailing."),
     # steel
@@ -234,7 +340,7 @@ EFFECTS = [
       notes="Crescent moon above the unit, a see-through column of moonlight, sparkles circling the feet."),
     # generic
     E("hit-spark", "Hit Spark", "normal", "impact", (64, 64), 12, X.tackle_spark, ramp="white",
-      anchor=[32, 32], ground=56, notes="Tackle contact: small white-yellow 5-point star, 4 flick lines, 400 ms.", hit=0, hitstop=40, shake=1),
+      anchor=[32, 32], ground=56, notes="Tackle contact: small white-yellow 5-point star, 4 flick lines, 400 ms.", hit=0, hitstop=40, shake=1, contact=CONTACT),
     E("crit-hit", "Critical Hit", "normal", "impact", IMP, 24, lambda S: X.burst_generic(S, 1.4, second=True),
       ramp="gold", notes="Two-beat crit: big jagged burst, then a second pop.", hit=0, hitstop=120, shake=4),
     E("crit-cutin", "Crit Cut-in", "normal", "system", (160, 96), 8, X.cutin_v3, ramp="white", layer="screen",
@@ -257,7 +363,7 @@ EFFECTS = [
       notes="Z glyphs drift up and grow."),
     E("status-freeze", "Freeze", "ice", "status", AURA, 30, X.frozen_coat, loop=True,
       notes="A faceted see-through ice shell over the lower body, a glint sweeping across, frost specks."),
-    E("status-confusion", "Confusion", "normal", "status", AURA, 30, lambda S: X.status_v3(S, "confusion"), loop=True,
+    E("status-confusion", "Confused", "normal", "status", AURA, 30, lambda S: X.status_v3(S, "confusion"), loop=True,
       ramp="gold", notes="Three tiny stars circle above the head with trails."),
     E("faint-vanish", "Faint Vanish", "normal", "system", AURA, 36, X.faint_v3, ramp="white",
       notes="Dust puff and rising motes; play over the faint animation."),

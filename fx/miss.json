@@ -45,5 +45,8 @@
  },
  "gif": "fx/miss.gif",
  "durationMs": 800,
- "peakFrame": 6
+ "peakFrame": 6,
+ "moves": [
+  "miss / dodge"
+ ]
 }

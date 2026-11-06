@@ -45,5 +45,8 @@
  },
  "gif": "fx/water-whirlpool.gif",
  "durationMs": 1000,
- "peakFrame": 17
+ "peakFrame": 17,
+ "moves": [
+  "Whirlpool"
+ ]
 }

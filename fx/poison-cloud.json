@@ -45,5 +45,9 @@
  },
  "gif": "fx/poison-cloud.gif",
  "durationMs": 1000,
- "peakFrame": 11
+ "peakFrame": 11,
+ "moves": [
+  "Poison Gas",
+  "Smog"
+ ]
 }

@@ -45,5 +45,8 @@
  },
  "gif": "fx/status-sleep.gif",
  "durationMs": 933,
- "peakFrame": 11
+ "peakFrame": 11,
+ "moves": [
+  "sleep status"
+ ]
 }

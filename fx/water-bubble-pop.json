@@ -49,5 +49,9 @@
  "battle": {
   "hitFrame": 2,
   "hitStopMs": 30
- }
+ },
+ "moves": [
+  "Bubble (hit)",
+  "Bubble Beam (hit)"
+ ]
 }

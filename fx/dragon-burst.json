@@ -48,5 +48,9 @@
   "hitFrame": 0,
   "hitStopMs": 80,
   "shakePx": 3
- }
+ },
+ "moves": [
+  "Dragon Rage (hit)",
+  "Outrage (hit)"
+ ]
 }

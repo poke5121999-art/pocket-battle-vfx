@@ -32,10 +32,7 @@
 "DA-01",
 "DA-02"
 ],
-"water-jet": [
-"RB-11",
-"RC-12"
-],
+"water-jet": [],
 "water-bubble-shot": [
 "RB-12",
 "RC-12",
@@ -377,5 +374,9 @@
 "fighting-chop": [
 "NG-07",
 "DA-10"
+],
+"water-hydro-cannon": [
+"RB-11",
+"RC-12"
 ]
 }

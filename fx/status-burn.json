@@ -44,5 +44,8 @@
  },
  "gif": "fx/status-burn.gif",
  "durationMs": 1000,
- "peakFrame": 26
+ "peakFrame": 26,
+ "moves": [
+  "burn status"
+ ]
 }

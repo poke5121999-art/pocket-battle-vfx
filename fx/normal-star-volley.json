@@ -45,5 +45,8 @@
  },
  "gif": "fx/normal-star-volley.gif",
  "durationMs": 800,
- "peakFrame": 7
+ "peakFrame": 7,
+ "moves": [
+  "Swift"
+ ]
 }

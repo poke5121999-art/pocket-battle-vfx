@@ -60,7 +60,7 @@
   const DUMMY_KINDS = new Set(["aura", "status", "buff", "debuff", "impact", "system"]);
   const ELEMENT_ORDER = ["normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison", "ground", "flying",
     "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"];
-  const KIND_ORDER = ["projectile", "beam", "impact", "area", "aura", "buff", "debuff", "status", "system", "unit"];
+  const KIND_ORDER = ["projectile", "beam", "rush", "impact", "area", "aura", "buff", "debuff", "status", "system", "unit"];
 
   let FX = [], BYID = {}, backdrop = null, dummy = null, dummyFlip = null;
   const state = { el: "all", kind: "all", q: "" };
@@ -102,6 +102,37 @@
     return c;
   }
 
+  // Rush effects (caster-attached, e.g. Aqua Jet) and contact hits (e.g. Body Slam) move the caster: this mirrors
+  // motion_track() in src/build.py. Returns {f (effect frame or null), dx, dy, n (track length)} for step k.
+  function motionTrack(d) {
+    const out = [];
+    const n = d.frames;
+    if (d.rush) {
+      const R = d.rush;
+      for (let k = 0; k < n + 4 + R.returnFrames; k++) {
+        let u;
+        if (k < n) {
+          u = k < R.windupFrames ? 0 : k >= R.windupFrames + R.dashFrames - 1 ? 1 : Math.pow((k - R.windupFrames + 1) / R.dashFrames, 1.5);
+          out.push({ f: k, dx: R.dashPx * u, dy: 0 });
+        } else if (k < n + 4) out.push({ f: null, dx: R.dashPx, dy: 0 });
+        else out.push({ f: null, dx: R.dashPx * (1 - (k - n - 4 + 1) / R.returnFrames), dy: 0 });
+      }
+      return out;
+    }
+    const C = d.contact, hit = C.contactFrame || 0;
+    const start = hit - C.dashFrames - C.windupFrames;
+    for (let k = Math.min(0, start); k < n + C.returnFrames + 2; k++) {
+      let u;
+      if (k < hit - C.dashFrames) u = 0;
+      else if (k < hit) u = Math.pow((k - (hit - C.dashFrames) + 1) / C.dashFrames, 1.5);
+      else if (k < hit + 4) u = 1;
+      else u = Math.max(0, 1 - (k - hit - 4 + 1) / C.returnFrames);
+      out.push({ f: k >= 0 && k < n ? k : null, dx: CONTACT_DASH * u, dy: k < hit ? -C.arcPx * Math.sin(Math.PI * u) : 0 });
+    }
+    return out;
+  }
+  const CONTACT_DASH = 64; // px the preview caster travels for contact hits (the engine uses the real distance)
+
   // A player renders one effect into a canvas at native resolution (CSS scales it, pixelated).
   class Player {
     constructor(canvas, d, opts = {}) {
@@ -111,10 +142,17 @@
       this.showBg = opts.bg !== false; this.showDummy = opts.dummy !== false;
       this.t = 0; this.hold = 0; this.forced = null;
       this.travel = d.kind === "projectile";
+      this.moving = !!(d.rush || d.contact);
+      if (this.moving) {
+        this.track = motionTrack(d);
+        this.dash = d.rush ? d.rush.dashPx : CONTACT_DASH;
+        this.loop = true; // the track ends with the caster back home; repeat it
+      }
       // normalise the stage: wide things 2:1, everything else square, so grid rows line up
-      if (this.travel || d.frameW >= 128) { this.w = Math.max(128, d.frameW); this.h = Math.max(this.w / 2, d.frameH); }
+      if (this.moving) { this.w = Math.ceil((d.frameW + this.dash) / 16) * 16; this.h = Math.max(this.w / 2, d.frameH); }
+      else if (this.travel || d.frameW >= 128) { this.w = Math.max(128, d.frameW); this.h = Math.max(this.w / 2, d.frameH); }
       else { this.w = this.h = Math.max(d.frameW, d.frameH); }
-      this.ox = Math.round((this.w - d.frameW) / 2);
+      this.ox = this.moving ? (d.rush ? 0 : this.dash) : Math.round((this.w - d.frameW) / 2);
       this.oy = this.h - d.frameH;
       this.k = 2; // internal resolution: colour stays nearest-neighbour, light is smoothed
       canvas.width = this.w * this.k; canvas.height = this.h * this.k;
@@ -124,7 +162,14 @@
       this.forced = opts.idlePeak ? (d.peakFrame || 0) : null;
       loadImg(d.sheet.image).then((i) => { this.img = i; this.draw(); });
     }
+    get step() {
+      const n = this.track.length;
+      if (this.forced !== null) return this.track.findIndex((s) => s.f === this.forced);
+      const k = Math.floor(this.t * this.fps);
+      return this.loop ? k % n : Math.min(n - 1, k);
+    }
     get frame() {
+      if (this.moving) { const s = this.track[this.step]; return s ? s.f : null; }
       if (this.forced !== null) return this.forced;
       const n = this.d.frames, f = Math.floor(this.t * this.fps);
       return this.loop ? f % n : Math.min(n - 1, f);
@@ -135,7 +180,7 @@
       this.forced = null;
       this.t += dt;
       const dur = this.d.frames / this.fps;
-      if (!this.loop && this.t >= dur) {
+      if (!this.loop && this.t >= (this.moving ? this.track.length / this.fps : dur)) {
         this.hold += dt;
         if (this.hold > 0.35) this.restart();
       }
@@ -150,6 +195,23 @@
       const g = (d.ground !== undefined ? d.ground : d.frameH - 10) + this.oy;
       if (this.showBg) drawStage(ctx, this.w, this.h, this.travel ? this.h - 8 : g);
       if (!this.img) return;
+      if (this.moving) {
+        const st = this.track[Math.max(0, this.step)];
+        const g0 = d.ground !== undefined ? d.ground : d.frameH - 10;
+        const ox = this.ox, oy = this.oy;
+        if (this.showDummy) {
+          const tfx = d.rush ? d.anchor[0] + this.dash + 22 : this.dash + d.anchor[0];
+          drawDummy(ctx, tfx, g0 + oy, true);
+          const cfx = d.rush ? d.anchor[0] + st.dx : d.anchor[0] - 22 + st.dx;
+          drawDummy(ctx, cfx, g0 + oy + st.dy, false);
+        }
+        if (st.f !== null) {
+          const ex = d.rush ? Math.round(st.dx) : ox;
+          drawFrame(ctx, d, this.img, st.f, ex, oy);
+          if (this.limg && this.showBg) lighter(ctx, () => drawFrame(ctx, d, this.limg, st.f, ex, oy));
+        }
+        return;
+      }
       if (this.travel) {
         const speed = 90; // px per second across the card
         const span = this.w + d.frameW;
@@ -231,7 +293,7 @@
       const fig = el("figure", { className: "card", tabIndex: 0 }, [cv, el("figcaption", {}, [
         el("b", {}, [el("i", { className: "tag", style: `background:${d.palette[3]}` }), d.name]),
         el("span", { textContent: `${d.frames}f · ${dur}` })])]);
-      if (d.frameW >= 128 || d.kind === "projectile") fig.classList.add("wide");
+      if (d.frameW >= 128 || d.kind === "projectile" || d.rush || d.contact) fig.classList.add("wide");
       fig.addEventListener("click", () => openDetail(d));
       fig.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDetail(d); } });
       grid.append(fig);
@@ -246,7 +308,7 @@
     let shown = 0;
     for (const c of cards) {
       const d = c.d;
-      const hay = [d.id, d.name, d.element, d.kind, d.notes, d.loop ? "loop" : "one-shot", d.layer].join(" ").toLowerCase();
+      const hay = [d.id, d.name, d.element, d.kind, d.notes, (d.moves || []).join(" "), d.loop ? "loop" : "one-shot", d.layer].join(" ").toLowerCase();
       const ok = (state.el === "all" || d.element === state.el) && (state.kind === "all" || d.kind === state.kind) &&
         (!q || q.split(/\s+/).every((w) => hay.includes(w)));
       c.fig.hidden = !ok;
@@ -268,6 +330,7 @@
     $("#d-id").textContent = `fx/${d.id} · ${d.element} · ${d.kind}`;
     $("#d-notes").textContent = d.notes;
     const facts = [
+      ["stands for", (d.moves && d.moves.length) ? d.moves.join(", ") : "—"],
       ["frames", `${d.frames} × ${d.frameW}×${d.frameH} px`],
       ["timing", `${d.fps} fps · ${d.durationMs} ms · ${d.loop ? "loops" : "plays once"}`],
       ["anchor", `[${d.anchor.join(", ")}] (px in frame)`],
@@ -281,6 +344,8 @@
       if (b.shakePx) parts.push(`${b.shakePx} px shake`);
       facts.push(["battle", parts.join(" · ")]);
     }
+    if (d.rush) facts.push(["rush", `caster dashes ${d.rush.dashPx} px: wind-up ${d.rush.windupFrames} f, dash ${d.rush.dashFrames} f, contact on frame ${d.rush.contactFrame}, return ${d.rush.returnFrames} f`]);
+    if (d.contact) facts.push(["contact", `caster dashes in (${d.contact.dashFrames} f${d.contact.arcPx ? ", leaps " + d.contact.arcPx + " px" : ""}) and lands on frame ${d.contact.contactFrame}`]);
     const dl = $("#d-facts");
     dl.replaceChildren();
     for (const [k, v] of facts) dl.append(el("dt", { textContent: k }), el("dd", { textContent: v }));
@@ -289,8 +354,9 @@
     dl.append(el("dt", { textContent: "palette" }), sw);
     $("#d-fps").value = d.fps; $("#d-fps-o").textContent = d.fps + " fps";
     setPressed("#d-loop", p.loop); setPressed("#d-play", true); $("#d-play").textContent = "pause";
-    setPressed("#d-bg", true); setPressed("#d-dummy", wantsDummy(d));
-    $("#d-dummy").disabled = !wantsDummy(d);
+    const dum = wantsDummy(d) || p.moving;
+    setPressed("#d-bg", true); setPressed("#d-dummy", dum);
+    $("#d-dummy").disabled = !dum;
     const sc = $("#d-scale");
     sc.replaceChildren(el("span", { className: "k", textContent: "scale" }));
     for (const s of [1, 2, 3, 4]) {
@@ -386,42 +452,69 @@
   function step(name) {
     for (const li of document.querySelectorAll("#c-steps li")) li.classList.toggle("on", li.dataset.s === name);
   }
+  const DASH_DEFAULT = { windupFrames: 3, dashFrames: 5, returnFrames: 8, arcPx: 0, contactFrame: 0 };
   function playCombo() {
-    const atk = BYID[$("#c-attack").value], imp = BYID[$("#c-impact").value], st = BYID[$("#c-status").value];
+    const atkId = $("#c-attack").value;
+    const dashIn = atkId === "__dash";
+    const atk = dashIn ? null : BYID[atkId], imp = BYID[$("#c-impact").value], st = BYID[$("#c-status").value];
     Object.assign(combo, { clock: 0, freeze: 0, actors: [], events: [], shake: 0, flash: 0, dmg: null, running: true });
     const casterIdle = addActor("unit-idle", CASTER[0] - 32, CASTER[1] - 56, { until: 0 });
     const targetIdle = addActor("unit-idle", TARGET[0] - 32, TARGET[1] - 56, { flip: true });
-    const lungeD = BYID["unit-lunge"];
-    // 1. caster wind-up + lunge
-    step("lunge");
-    const lunge = addActor("unit-lunge", CASTER[0] - lungeD.anchor[0] - 6, CASTER[1] - 56);
-    lunge.until = lungeD.frames / lungeD.fps;
-    at(lunge.until, () => addActor("unit-idle", CASTER[0] - 32, CASTER[1] - 56));
-    const release = ((lungeD.battle && lungeD.battle.hitFrame) || 8) / lungeD.fps; // dash frame
-    const sx = CASTER[0] + 14, sy = CASTER[1] - 18, tx = TARGET[0] - 4, ty = TARGET[1] - 18;
-    const dist = Math.hypot(tx - sx, ty - sy), ang = Math.atan2(ty - sy, tx - sx);
-    let hitAt;
-    at(release, () => step("attack"));
-    if (atk.kind === "beam") {
-      const hf = (atk.battle && atk.battle.hitFrame) || 9;
-      hitAt = release + hf / atk.fps;
-      const reach = atk.frameW - atk.anchor[0];
-      at(release, () => addActor(atk.id, sx, sy, { beam: { ang, sx: (dist + 6) / reach }, until: atk.frames / atk.fps }));
+    const reach = TARGET[0] - 22 - CASTER[0]; // a dashing caster stops when it touches the target
+    let hitAt, impLead = 0;
+    if (atk && atk.rush) {
+      // rush: the effect is attached to the caster, which travels to the target and back (no separate lunge)
+      step("lunge");
+      const track = motionTrack(atk);
+      const a = addActor(atk.id, 0, 0, { rushTrack: track, scale: reach / atk.rush.dashPx, until: track.length / atk.fps });
+      at(a.until, () => addActor("unit-idle", CASTER[0] - 32, CASTER[1] - 56));
+      at(atk.rush.windupFrames / atk.fps, () => step("attack"));
+      hitAt = atk.rush.contactFrame / atk.fps;
+    } else if (dashIn) {
+      // contact hit: the caster itself dashes in (Tackle, Body Slam, Karate Chop ...); the impact lands on contact
+      step("lunge");
+      const C = (imp && imp.contact) ? imp.contact : DASH_DEFAULT;
+      const pseudo = { frames: Math.max(1, (C.contactFrame || 0) + 1), contact: C };
+      const track = motionTrack(pseudo);
+      const k0 = track.findIndex((s) => s.f === (C.contactFrame || 0));
+      const a = addActor("unit-idle", 0, 0, { dashTrack: track, scale: reach / CONTACT_DASH, until: track.length / 30, fps: 30 });
+      at(a.until, () => addActor("unit-idle", CASTER[0] - 32, CASTER[1] - 56));
+      at(C.windupFrames / 30, () => step("attack"));
+      hitAt = k0 / 30;
+      impLead = imp && imp.contact ? (imp.contact.contactFrame || 0) / imp.fps : 0;
     } else {
-      const speed = 200; // px/s
-      const travel = dist / speed;
-      hitAt = release + travel;
-      at(release, () => addActor(atk.id, sx, sy, { path: { sx, sy, tx, ty, dur: travel }, until: travel }));
+      const lungeD = BYID["unit-lunge"];
+      // 1. caster wind-up + lunge
+      step("lunge");
+      const lunge = addActor("unit-lunge", CASTER[0] - lungeD.anchor[0] - 6, CASTER[1] - 56);
+      lunge.until = lungeD.frames / lungeD.fps;
+      at(lunge.until, () => addActor("unit-idle", CASTER[0] - 32, CASTER[1] - 56));
+      const release = ((lungeD.battle && lungeD.battle.hitFrame) || 8) / lungeD.fps; // dash frame
+      const sx = CASTER[0] + 14, sy = CASTER[1] - 18, tx = TARGET[0] - 4, ty = TARGET[1] - 18;
+      const dist = Math.hypot(tx - sx, ty - sy), ang = Math.atan2(ty - sy, tx - sx);
+      at(release, () => step("attack"));
+      if (atk.kind === "beam") {
+        const hf = (atk.battle && atk.battle.hitFrame) || 9;
+        hitAt = release + hf / atk.fps;
+        const rch = atk.frameW - atk.anchor[0];
+        at(release, () => addActor(atk.id, sx, sy, { beam: { ang, sx: (dist + 6) / rch }, until: atk.frames / atk.fps }));
+      } else {
+        const speed = 200; // px/s
+        const travel = dist / speed;
+        hitAt = release + travel;
+        at(release, () => addActor(atk.id, sx, sy, { path: { sx, sy, tx, ty, dur: travel }, until: travel }));
+      }
     }
-    const stop = ((imp.battle && imp.battle.hitStopMs) || 60) / 1000 + (combo.crit ? 0.12 : 0);
-    const shake = ((imp.battle && imp.battle.shakePx) || 2) + (combo.crit ? 2 : 0);
+    const stop = (((imp && imp.battle && imp.battle.hitStopMs) || (atk && atk.battle && atk.battle.hitStopMs) || 60) / 1000) + (combo.crit ? 0.12 : 0);
+    const shake = ((imp && imp.battle && imp.battle.shakePx) || (atk && atk.battle && atk.battle.shakePx) || 2) + (combo.crit ? 2 : 0);
+    const gl = (d) => (d.ground !== undefined ? d.ground : d.frameH - 10);
+    if (imp && impLead > 0) at(Math.max(0, hitAt - impLead), () => addActor(imp.id, TARGET[0] - imp.anchor[0], TARGET[1] - gl(imp), { until: imp.frames / imp.fps }));
     // 2. contact: crit cut-in plate, freeze, shake, flash
     at(hitAt, () => {
       step("hit");
       if (combo.crit) addActor("crit-cutin", 0, 0, { screen: true, fps: 24, until: 0.24 });
       combo.freeze = stop; combo.shake = shake; combo.flash = 2;
-      const gl = (d) => (d.ground !== undefined ? d.ground : d.frameH - 10);
-      addActor(imp.id, TARGET[0] - imp.anchor[0], TARGET[1] - gl(imp), { until: imp.frames / imp.fps });
+      if (imp && impLead === 0) addActor(imp.id, TARGET[0] - imp.anchor[0], TARGET[1] - gl(imp), { until: imp.frames / imp.fps });
       if (combo.crit) { const c = BYID["crit-hit"]; addActor(c.id, TARGET[0] - c.anchor[0], TARGET[1] - gl(c), { until: c.frames / c.fps }); }
       targetIdle.until = combo.clock;
       const rec = BYID["unit-recoil"];
@@ -481,6 +574,19 @@
         ctx.restore();
         continue;
       }
+      if (a.rushTrack || a.dashTrack) {
+        const tr = a.rushTrack || a.dashTrack;
+        const k = Math.min(tr.length - 1, Math.floor(t * (a.fps || d.fps)));
+        const s = tr[k];
+        const fx = CASTER[0] + s.dx * a.scale, fy = CASTER[1] + s.dy;
+        drawDummy(ctx, fx, fy, false);
+        if (a.rushTrack && s.f !== null) {
+          const ex = fx - d.anchor[0], ey = CASTER[1] - (d.ground !== undefined ? d.ground : d.anchor[1]);
+          drawFrame(ctx, d, a.img, s.f, ex, ey);
+          if (a.limg) lighter(ctx, () => drawFrame(ctx, d, a.limg, s.f, ex, ey));
+        }
+        continue;
+      }
       if (a.beam) {
         ctx.save();
         ctx.translate(Math.round(a.x), Math.round(a.y));
@@ -532,24 +638,34 @@
   }
   let backdropFull = null;
   function wireCombo() {
-    const atk = FX.filter((d) => d.kind === "projectile" || d.kind === "beam");
+    const atk = FX.filter((d) => d.kind === "projectile" || d.kind === "beam" || d.kind === "rush");
     const imp = FX.filter((d) => d.kind === "impact");
     const st = FX.filter((d) => ["status", "debuff", "buff"].includes(d.kind) || (d.kind === "aura" && d.loop));
     fillSelect("#c-attack", atk, "fire-fireball");
-    fillSelect("#c-impact", imp, "fire-burst");
+    $("#c-attack").append(el("option", { value: "__dash", textContent: "Dash in (contact hit: Tackle, Body Slam, Karate Chop…)" }));
+    fillSelect("#c-impact", imp, "fire-burst", true);
     fillSelect("#c-status", st, "status-burn", true);
     $("#c-play").addEventListener("click", playCombo);
     $("#c-crit").addEventListener("click", (e) => { combo.crit = !combo.crit; setPressed(e.target, combo.crit); });
     $("#c-slow").addEventListener("click", (e) => { combo.slow = !combo.slow; setPressed(e.target, combo.slow); });
-    // keep impact element in step with the attack element, unless the user picked one
+    // keep the impact in step with the attack, unless the user picked one: a rush brings its own contact splash,
+    // a dash-in uses a contact hit, anything else the impact of the same element
     $("#c-attack").addEventListener("change", (e) => {
+      if (e.target.value === "__dash") {
+        if (!(BYID[$("#c-impact").value] || {}).contact) $("#c-impact").value = "normal-impact-burst";
+        return;
+      }
       const d = BYID[e.target.value];
-      const m = imp.find((x) => x.element === d.element);
+      if (d.rush) { $("#c-impact").value = ""; return; }
+      const m = imp.find((x) => x.element === d.element && !x.contact) || imp.find((x) => x.element === d.element);
       if (m) $("#c-impact").value = m.id;
     });
+    // picking a contact hit as the impact switches the attack to the caster dashing in
+    $("#c-impact").addEventListener("change", (e) => {
+      const d = BYID[e.target.value];
+      if (d && d.contact) $("#c-attack").value = "__dash";
+    });
   }
-
-  // ------------------------------------------------------------------ logo
   function drawLogo() {
     const c = $("#logo").getContext("2d");
     const px = (x, y, col) => { c.fillStyle = col; c.fillRect(x, y, 1, 1); };

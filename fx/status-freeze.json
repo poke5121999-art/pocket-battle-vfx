@@ -45,5 +45,8 @@
  },
  "gif": "fx/status-freeze.gif",
  "durationMs": 1000,
- "peakFrame": 1
+ "peakFrame": 1,
+ "moves": [
+  "freeze status"
+ ]
 }

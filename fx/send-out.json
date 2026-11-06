@@ -45,5 +45,8 @@
  },
  "gif": "fx/send-out.gif",
  "durationMs": 1000,
- "peakFrame": 5
+ "peakFrame": 5,
+ "moves": [
+  "send-out (not a move)"
+ ]
 }

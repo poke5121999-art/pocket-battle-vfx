@@ -45,5 +45,10 @@
  },
  "gif": "fx/stat-down.gif",
  "durationMs": 1000,
- "peakFrame": 12
+ "peakFrame": 12,
+ "moves": [
+  "Growl",
+  "Tail Whip",
+  "Leer"
+ ]
 }

@@ -45,5 +45,8 @@
  },
  "gif": "fx/fighting-power-aura.gif",
  "durationMs": 1000,
- "peakFrame": 20
+ "peakFrame": 20,
+ "moves": [
+  "Focus Energy"
+ ]
 }

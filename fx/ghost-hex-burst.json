@@ -50,5 +50,10 @@
   "hitFrame": 3,
   "hitStopMs": 60,
   "shakePx": 1
- }
+ },
+ "moves": [
+  "Night Shade",
+  "Hex",
+  "Lick"
+ ]
 }

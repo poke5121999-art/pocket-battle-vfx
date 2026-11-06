@@ -50,5 +50,8 @@
   "hitFrame": 0,
   "hitStopMs": 80,
   "shakePx": 3
- }
+ },
+ "moves": [
+  "Fire Blast"
+ ]
 }

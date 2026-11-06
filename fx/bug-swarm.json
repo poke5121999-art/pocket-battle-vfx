@@ -1,6 +1,6 @@
 {
  "id": "bug-swarm",
- "name": "Swarm",
+ "name": "Infestation",
  "element": "bug",
  "kind": "area",
  "frameW": 96,
@@ -41,5 +41,8 @@
  },
  "gif": "fx/bug-swarm.gif",
  "durationMs": 1000,
- "peakFrame": 0
+ "peakFrame": 0,
+ "moves": [
+  "Infestation"
+ ]
 }

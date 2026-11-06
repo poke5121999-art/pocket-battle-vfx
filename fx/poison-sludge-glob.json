@@ -43,5 +43,8 @@
  },
  "gif": "fx/poison-sludge-glob.gif",
  "durationMs": 800,
- "peakFrame": 1
+ "peakFrame": 1,
+ "moves": [
+  "Sludge"
+ ]
 }

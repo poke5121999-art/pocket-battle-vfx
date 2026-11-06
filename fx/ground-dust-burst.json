@@ -50,5 +50,9 @@
   "hitFrame": 0,
   "hitStopMs": 60,
   "shakePx": 2
- }
+ },
+ "moves": [
+  "Dig",
+  "Sand Attack"
+ ]
 }

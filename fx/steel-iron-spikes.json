@@ -48,5 +48,9 @@
   "hitFrame": 2,
   "hitStopMs": 60,
   "shakePx": 2
- }
+ },
+ "moves": [
+  "Steelsurge (G-Max)",
+  "steel spikes from the ground"
+ ]
 }

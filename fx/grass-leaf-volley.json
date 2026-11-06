@@ -45,5 +45,8 @@
  },
  "gif": "fx/grass-leaf-volley.gif",
  "durationMs": 800,
- "peakFrame": 0
+ "peakFrame": 0,
+ "moves": [
+  "Razor Leaf"
+ ]
 }

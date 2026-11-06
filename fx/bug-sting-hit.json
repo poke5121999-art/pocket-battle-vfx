@@ -46,5 +46,9 @@
   "hitFrame": 2,
   "hitStopMs": 40,
   "shakePx": 1
- }
+ },
+ "moves": [
+  "Twineedle",
+  "Poison Sting"
+ ]
 }

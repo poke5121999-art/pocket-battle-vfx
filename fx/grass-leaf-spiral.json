@@ -43,5 +43,9 @@
  },
  "gif": "fx/grass-leaf-spiral.gif",
  "durationMs": 1000,
- "peakFrame": 28
+ "peakFrame": 28,
+ "moves": [
+  "Petal Dance",
+  "Leaf Storm"
+ ]
 }

@@ -1,6 +1,6 @@
 {
  "id": "electric-spark-ball",
- "name": "Spark Ball",
+ "name": "Electro Ball",
  "element": "electric",
  "kind": "projectile",
  "frameW": 96,
@@ -45,5 +45,9 @@
  },
  "gif": "fx/electric-spark-ball.gif",
  "durationMs": 800,
- "peakFrame": 15
+ "peakFrame": 15,
+ "moves": [
+  "Electro Ball",
+  "Thunder Shock"
+ ]
 }

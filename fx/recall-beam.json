@@ -45,5 +45,8 @@
  },
  "gif": "fx/recall-beam.gif",
  "durationMs": 1200,
- "peakFrame": 0
+ "peakFrame": 0,
+ "moves": [
+  "return to the ball (not a move)"
+ ]
 }

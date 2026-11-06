@@ -45,5 +45,9 @@
  },
  "gif": "fx/ghost-spirit-wisps.gif",
  "durationMs": 1000,
- "peakFrame": 18
+ "peakFrame": 18,
+ "moves": [
+  "Confuse Ray",
+  "Curse"
+ ]
 }

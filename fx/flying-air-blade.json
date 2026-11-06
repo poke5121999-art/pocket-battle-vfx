@@ -1,6 +1,6 @@
 {
  "id": "flying-air-blade",
- "name": "Wing Blade",
+ "name": "Air Slash",
  "element": "flying",
  "kind": "projectile",
  "frameW": 96,
@@ -44,5 +44,9 @@
  },
  "gif": "fx/flying-air-blade.gif",
  "durationMs": 800,
- "peakFrame": 0
+ "peakFrame": 0,
+ "moves": [
+  "Air Slash",
+  "Razor Wind"
+ ]
 }

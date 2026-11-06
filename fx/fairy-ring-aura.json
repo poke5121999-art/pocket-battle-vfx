@@ -43,5 +43,9 @@
  },
  "gif": "fx/fairy-ring-aura.gif",
  "durationMs": 1000,
- "peakFrame": 3
+ "peakFrame": 3,
+ "moves": [
+  "Moonlight",
+  "Fairy Wind"
+ ]
 }

@@ -50,5 +50,9 @@
   "hitFrame": 0,
   "hitStopMs": 50,
   "shakePx": 1
- }
+ },
+ "moves": [
+  "Disarming Voice",
+  "Charm"
+ ]
 }

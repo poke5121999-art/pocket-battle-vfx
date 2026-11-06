@@ -45,5 +45,8 @@
  },
  "gif": "fx/unit-idle.gif",
  "durationMs": 800,
- "peakFrame": 14
+ "peakFrame": 14,
+ "moves": [
+  "idle (not a move)"
+ ]
 }

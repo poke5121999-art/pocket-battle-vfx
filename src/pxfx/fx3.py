@@ -4782,3 +4782,304 @@ def frozen_coat(S):
             cv.px(cx - 12 + k * 8, top - 4 - f * 10, pal[5] if f < 0.5 else pal[3])
 
     run(S, lambda *a: None, draw, loop=True, ground=fy, warm=0)
+
+
+# ------------------------------------------------------------------ rush (caster-attached contact moves), art pass 5
+RUSH = dict(windupFrames=4, dashFrames=6, contactFrame=9, dashPx=120, returnFrames=8)
+# Flame Wheel holds the burning wheel face-on for a beat before it rolls (movref/fire.md: ~0.5 s ring, ~0.25 s dash)
+FLAME_RUSH = dict(windupFrames=10, dashFrames=6, contactFrame=15, dashPx=120, returnFrames=8)
+
+
+def rush_u(i, R=RUSH):
+    """How far along the dash the caster is at frame i (0 = start, 1 = touching the target). The engine moves the
+    caster by dashPx * rush_u; the sheet is drawn in the caster's own frame."""
+    w, d = R["windupFrames"], R["dashFrames"]
+    if i < w:
+        return 0.0
+    if i >= w + d - 1:
+        return 1.0
+    return ((i - w + 1) / d) ** 1.5
+
+
+def _shell(cv, x, y, rx, ry, cols, i, front_col):
+    """Translucent shell around the body (dithered), with a bright rim on the leading (right) side."""
+    for dy in range(-int(ry) - 1, int(ry) + 2):
+        for dx in range(-int(rx) - 1, int(rx) + 2):
+            d = (dx / rx) ** 2 + (dy / ry) ** 2
+            if d > 1:
+                continue
+            if d > 0.72:
+                c = front_col if dx > rx * 0.3 else cols[1] if dy < 0 else cols[0]
+                cv.px(x + dx, y + dy, c)
+            elif (dx + dy + i) % 3 == 0:
+                cv.px(x + dx, y + dy, cols[1] if dy < 0 else cols[0])
+
+
+def aqua_jet(S):
+    """Aqua Jet (rush, caster-attached): water ribbons spiral up around the body (4-frame wind-up), the caster is
+    wrapped in a see-through water shell with a white foam front and shoots forward, a tapering water stream and
+    droplets stream behind it with speed lines; on contact a white-blue splash bursts on the target with a spray
+    fan and a curved water arc, then the trail breaks into drops that fall. Material: no glow, glint at contact."""
+    pal = S.pal
+    ax, gy = S.anchor
+    bx, by = ax, gy - 13
+    R = RUSH
+    C = R["contactFrame"]
+    rr = random.Random(151)
+    trail_drops = [(rr.uniform(0.05, 1.0), rr.uniform(-6, 6), rr.uniform(1, 2.2)) for _ in range(18)]
+    spray = [dict(vx=rr.uniform(30, 150), vy=rr.uniform(-170, -30), r=rr.uniform(1, 2.6)) for _ in range(18)]
+    G = 520
+
+    def draw(cv, L, sim, i, t, rng):
+        u = rush_u(i)
+        off = R["dashPx"] * u                      # world distance travelled; world x = local x + off
+        sx_local = bx - off                         # where the dash started, in local coords
+        # trail: a tapering stream from the start point to the back of the body, while dashing
+        if i >= R["windupFrames"]:
+            brk = max(0.0, (i - C) / 10)           # after contact the stream breaks up and falls
+            tail = sx_local + 4
+            head = bx - 10
+            for x in range(int(tail), int(head) + 1):
+                f = (x - tail) / max(1.0, head - tail)
+                seg = int(x) // 6
+                if brk > 0 and ((seg * 7) % 11) / 11 < brk * 1.4 + 0.15:
+                    continue
+                th = 1 + f * 6 * (1 - brk)
+                yc = by + 2 + math.sin(x * 0.25 - i * 1.3) * (1 - f) * 2 + brk * brk * (30 + (seg * 13) % 20)
+                for yy in range(int(yc - th), int(yc + th) + 1):
+                    d = (yy - yc) / max(th, 0.5)
+                    c = pal[4] if d < -0.55 else pal[2] if d < 0.45 else pal[1]
+                    if f < 0.3 and (x + yy) % 2:
+                        continue
+                    cv.px(x, yy, c)
+                if (x + i) % 9 == 0 and brk == 0:
+                    cv.px(x, yc - th - 1, pal[5])
+            for (fu, oy, r) in trail_drops:
+                wx = R["dashPx"] * fu                # world x along the path where the drop was shed
+                if u < fu:
+                    continue
+                age = (i - (R["windupFrames"] + fu * R["dashFrames"])) / 30
+                lx = sx_local + wx - age * 10
+                ly = by + oy + 120 * age * age
+                if ly < gy - 1:
+                    cv.disc(lx, ly, r, pal[3]) if r > 1.6 else cv.px(lx, ly, pal[4])
+                    if r > 1.6:
+                        cv.px(lx - 0.5, ly - 0.5, pal[5])
+        # speed lines while dashing
+        if R["windupFrames"] <= i < C:
+            for k in range(5):
+                yy = by - 12 + k * 6
+                x0 = bx - 18 - (k * 13 + i * 9) % 30
+                cv.line(x0, yy, x0 - 10 - (k % 3) * 4, yy, (230, 244, 255) if k % 2 else pal[4])
+        # wind-up: ribbons spiral up the body
+        if i < R["windupFrames"] + 2:
+            g = (i + 1) / R["windupFrames"]
+            for k in range(3):
+                a0 = i * 1.2 + k * TAU / 3
+                crescent(cv, bx, by + 6 - k * 6 * min(1, g), 13, a0, a0 + 2.2, 2.2, [pal[1], pal[3], pal[5]],
+                         squash=0.45)
+            for k in range(4):
+                cv.px(bx - 10 + k * 7, gy - 2 - g * 10 - (k % 2) * 4, pal[4])
+        # the water shell around the body until contact
+        if R["windupFrames"] - 1 <= i <= C:
+            stretch = 1.0 + 0.35 * (R["windupFrames"] <= i < C)
+            _shell(cv, bx - 2, by, 15 * stretch, 14 / stretch ** 0.5, [pal[1], pal[2]], i, pal[5])
+            for k in range(3):
+                a = i * 1.7 + k * 2.1
+                cv.px(bx + math.cos(a) * 12, by + math.sin(a) * 10, pal[5])
+        # contact: splash on the target, spray fan, curved arc
+        if i >= C:
+            d = i - C
+            cx, cy = bx + 17, by
+            if d < 3:
+                rag_blob(cv, cx, cy, 9 - d * 2, (255, 255, 255), 160 + d, t=t, rough=0.4, edge=pal[4])
+                L.add(cx, cy, 6, pal[5], 0.6, glint=True)
+            if d < 7:
+                crescent(cv, cx - 6, cy, 14 + d * 2.5, -1.2, 1.2, 3 - d * 0.35, [pal[1], pal[3], pal[5]], squash=1.0)
+            tt = d / 30
+            for k, s in enumerate(spray):
+                x = cx + s["vx"] * tt
+                y = cy + s["vy"] * tt + 0.5 * G * tt * tt
+                if y > gy - 1:
+                    if tt < 0.6:
+                        cv.line(x - 1.5, gy - 1, x + 1.5, gy - 1, pal[3])
+                    continue
+                if s["r"] > 1.8:
+                    cv.disc(x, y, s["r"], pal[3]); cv.px(x - 0.5, y - 0.5, pal[5])
+                else:
+                    cv.px(x, y, pal[4])
+
+    run(S, lambda *a: None, draw, ground=gy)
+
+
+def flame_wheel_rush(S):
+    """Flame Wheel (rush, caster-attached): a wheel of flame tongues forms around the body (wind-up), the burning
+    wheel spins fast as the caster charges forward leaving a trail of fire and embers, then bursts into a fan of
+    flame on the target with embers falling. Emissive."""
+    pal = S.pal
+    ax, gy = S.anchor
+    bx, by = ax, gy - 14
+    R = FLAME_RUSH
+    C = R["contactFrame"]
+    rr = random.Random(157)
+    embers = [dict(vx=rr.uniform(-20, 120), vy=rr.uniform(-150, -40)) for _ in range(16)]
+
+    def draw(cv, L, sim, i, t, rng):
+        u = rush_u(i, R)
+        off = R["dashPx"] * u
+        sx_local = bx - off
+        if i >= R["windupFrames"]:
+            fade = max(0.0, (i - C) / 8)
+            for k in range(14):
+                f = k / 14
+                x = sx_local + (bx - 14 - sx_local) * f
+                if x > bx - 12 or fade > f + 0.2:
+                    continue
+                h = (5 + 9 * f) * (1 - fade)
+                tongue_dir(cv, x, by + 6, -math.pi / 2 - 0.5, 2.4 + f * 1.5, h, _fcols(pal), 300 + k, t, bend=2)
+                if k % 3 == 0:
+                    L.add(x, by + 2, 6 + f * 5, pal[3], 0.25 * (1 - fade))
+        if i <= C:
+            g = min(1.0, (i + 1) / R["windupFrames"])
+            spin = i * (0.25 if i < R["windupFrames"] else 0.6)
+            n = int(4 + 10 * g)
+            for k in range(n):
+                a = k / 14 * TAU + spin
+                x, y = bx + math.cos(a) * 17 * 0.9, by + math.sin(a) * 17
+                tongue_dir(cv, x, y, a - math.pi / 2, 3.2, 10 + 3 * noise2(t * 8, k, 3), _fcols(pal), 320 + k, t, bend=2)
+            L.add(bx, by, 22, pal[3], 0.5 * g)
+        if i >= C:
+            d = i - C
+            cx, cy = bx + 16, by
+            gg = max(0.0, 1 - d / 9)
+            if gg > 0:
+                for j in range(6):
+                    a = (j - 2.5) * 0.45
+                    tongue_dir(cv, cx - 4, cy, a, 4 * gg + 1, (14 + 5 * noise2(t * 8, j, 9)) * gg, _fcols(pal),
+                               340 + j, t, bend=3)
+                rag_blob(cv, cx, cy, 6 * gg + 1, pal[4], 350, t=t, rough=0.3, edge=pal[3])
+                if d < 2:
+                    rag_blob(cv, cx, cy, 3, pal[5], 351, t=t)
+                L.add(cx, cy, 18 * gg + 4, pal[4], 0.8 * gg)
+            tt = d / 30
+            for k, e in enumerate(embers):
+                x = cx + e["vx"] * tt
+                y = cy + e["vy"] * tt + 0.5 * 420 * tt * tt
+                if y < gy - 1 and tt < 0.6:
+                    cv.px(x, y, pal[5] if tt < 0.15 else pal[4] if tt < 0.35 else pal[2])
+
+    run(S, lambda *a: None, draw, ground=gy)
+
+
+def dark_pulse_beam(S):
+    """Dark Pulse (art pass 5): the user releases rings of malice that travel FROM THE USER to the target - each
+    ring a tall dark band (dithered black-plum) with a pale spiky rim on its leading edge, growing as it travels;
+    a dark core pulses at the user; at the target the rings pile into a dark spiky burst."""
+    pal = S.pal
+    ox, oy = S.anchor
+    tx = S.w - 10
+    SP = 11.0                   # px per frame
+    emits = [1, 4, 7, 10, 13]
+
+    def draw(cv, L, sim, i, t, rng):
+        if i < 16:
+            r = 4 + 2 * math.sin(i * 0.9)
+            cv.disc(ox + 2, oy, r + 1, pal[3])
+            cv.disc(ox + 2, oy, r, pal[0])
+        for e in emits:
+            d = i - e
+            if d < 0:
+                continue
+            x = ox + 6 + d * SP
+            if x > tx:
+                continue
+            f = (x - ox) / (tx - ox)
+            ry = 6 + f * 12
+            rx = 2 + f * 2
+            for j in range(int(ry * 7)):
+                a = j / (ry * 7) * TAU
+                px_, py_ = x + math.cos(a) * rx, oy + math.sin(a) * ry
+                front = math.cos(a) > 0
+                if front:
+                    spike = 2.5 * max(0.0, math.sin(a * 6 + e)) ** 3
+                    cv.px(px_ + 1 + spike, py_, pal[5] if f < 0.6 else pal[4])
+                    cv.px(px_ + 2 + spike, py_, pal[4] if f < 0.6 else pal[3])
+                    cv.px(px_, py_, pal[2])
+                else:
+                    if (j + i) % 2 == 0:
+                        cv.px(px_, py_, pal[1])
+                cv.px(px_ - 1, py_, pal[0] if front else pal[1])
+            L.add(x, oy, ry * 0.6, pal[3], 0.12)
+        first = (tx - ox - 6) / SP + emits[0]
+        d = i - first
+        if 0 <= d < 18:
+            g = math.sin(math.pi * min(1.0, d / 18)) if d > 3 else d / 3
+            n = 9
+            pts = []
+            for k in range(n * 2):
+                a = k * math.pi / n + d * 0.1
+                rad = (13 if k % 2 == 0 else 6) * (0.4 + g)
+                pts.append((tx - 4 + math.cos(a) * rad, oy + math.sin(a) * rad))
+            for yy in range(int(oy - 20), int(oy + 21)):
+                for xx in range(int(tx - 26), int(tx + 18)):
+                    if _inpoly(xx + 0.5013, yy + 0.4987, pts):
+                        cv.px(xx, yy, pal[0] if math.hypot(xx - tx + 4, yy - oy) < 6 * (0.4 + g) else pal[1])
+            for a_, b_ in zip(pts, pts[1:] + pts[:1]):
+                cv.line(a_[0], a_[1], b_[0], b_[1], pal[4])
+            L.add(tx - 4, oy, 14, pal[3], 0.35 * g)
+
+    run(S, lambda *a: None, draw, ground=S.ground)
+
+
+def thunder_wave_beam(S):
+    """Thunder Wave (art pass 5, per movref/electric.md): a weak jolt is sent TO THE TARGET - thin gold hoops fly
+    from the user with a small crackle skipping along, then jagged static rings close around the target's body and
+    squeeze, with tiny arcs jumping to it: the target is held by electricity (paralysis)."""
+    pal = S.pal
+    ox, oy = S.anchor
+    tx = S.w - 18
+    ARR = 10
+
+    def draw(cv, L, sim, i, t, rng):
+        if i < ARR:
+            # thin gold hoops fly from the user to the target, a crackle skipping between them
+            for k in range(4):
+                u = (i + 1 - k * 1.5) / ARR
+                if not 0 < u <= 1:
+                    continue
+                hx = ox + (tx - ox) * u
+                ry = 7 + 3 * u
+                for j in range(int(ry * 6)):
+                    a_ = j / (ry * 6) * TAU
+                    cv.px(hx + math.cos(a_) * 2.2, oy + math.sin(a_) * ry, pal[5] if math.cos(a_) > 0 else pal[3])
+                L.add(hx, oy, 6, pal[4], 0.25)
+            lead = ox + (tx - ox) * min(1.0, (i + 1) / ARR)
+            _arc(cv, rng, lead - 16, oy + rng.uniform(-3, 3), lead, oy, pal, segs=4, amp=3, width=1)
+            if i < 3:
+                cv.disc(ox + 2, oy, 3, pal[5])
+                L.add(ox, oy, 10, pal[4], 0.5)
+        else:
+            d = i - ARR
+            for ring in range(2):
+                u = ((d / 20) + ring * 0.5) % 1
+                rw = 15 - u * 7
+                yc = oy - 9 + u * 18
+                pts = []
+                for k in range(41):
+                    a = k / 40 * TAU
+                    j = rng.uniform(-2.2, 2.2) if k % 2 else 0
+                    pts.append((tx + math.cos(a) * (rw + j), yc + math.sin(a) * rw * 0.3 + j * 0.6, math.sin(a)))
+                for a_, b_ in zip(pts, pts[1:]):
+                    if rng.random() < 0.12:
+                        continue
+                    cv.line(a_[0], a_[1], b_[0], b_[1], (pal[5] if u < 0.5 else pal[4]) if a_[2] > 0 else pal[2])
+                L.add(tx, yc, rw, pal[4], 0.2 * (1 - u))
+            if d % 3 != 2:
+                a = rng.uniform(0, TAU)
+                _arc(cv, rng, tx + math.cos(a) * 7, oy + math.sin(a) * 16, tx + rng.uniform(-3, 3), oy + rng.uniform(-8, 8),
+                     pal, segs=3, amp=2)
+            if d < 3:
+                cv.disc(tx, oy, 5 - d, pal[5])
+                L.add(tx, oy, 14, pal[5], 0.6)
+
+    run(S, lambda *a: None, draw, ground=S.ground)

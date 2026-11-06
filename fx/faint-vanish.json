@@ -45,5 +45,8 @@
  },
  "gif": "fx/faint-vanish.gif",
  "durationMs": 1200,
- "peakFrame": 16
+ "peakFrame": 16,
+ "moves": [
+  "fainting"
+ ]
 }

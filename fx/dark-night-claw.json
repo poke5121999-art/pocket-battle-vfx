@@ -48,5 +48,16 @@
   "hitFrame": 2,
   "hitStopMs": 60,
   "shakePx": 2
+ },
+ "moves": [
+  "Night Slash",
+  "Feint Attack"
+ ],
+ "contact": {
+  "windupFrames": 3,
+  "dashFrames": 5,
+  "returnFrames": 8,
+  "arcPx": 0,
+  "contactFrame": 2
  }
 }

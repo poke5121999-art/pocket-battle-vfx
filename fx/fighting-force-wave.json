@@ -1,6 +1,6 @@
 {
  "id": "fighting-force-wave",
- "name": "Force Wave",
+ "name": "Vacuum Wave",
  "element": "fighting",
  "kind": "projectile",
  "frameW": 96,
@@ -45,5 +45,8 @@
  },
  "gif": "fx/fighting-force-wave.gif",
  "durationMs": 800,
- "peakFrame": 23
+ "peakFrame": 23,
+ "moves": [
+  "Vacuum Wave"
+ ]
 }

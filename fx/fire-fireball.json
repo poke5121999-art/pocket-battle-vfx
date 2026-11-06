@@ -44,5 +44,9 @@
  },
  "gif": "fx/fire-fireball.gif",
  "durationMs": 800,
- "peakFrame": 15
+ "peakFrame": 15,
+ "moves": [
+  "Fire Blast (thrown)",
+  "Ember"
+ ]
 }

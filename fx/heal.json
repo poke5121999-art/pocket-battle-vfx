@@ -45,5 +45,10 @@
  },
  "gif": "fx/heal.gif",
  "durationMs": 1000,
- "peakFrame": 29
+ "peakFrame": 29,
+ "moves": [
+  "Recover",
+  "Synthesis",
+  "Softboiled"
+ ]
 }

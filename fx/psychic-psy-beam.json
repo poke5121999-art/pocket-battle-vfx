@@ -48,5 +48,8 @@
   "hitFrame": 12,
   "hitStopMs": 40,
   "shakePx": 1
- }
+ },
+ "moves": [
+  "Psybeam"
+ ]
 }

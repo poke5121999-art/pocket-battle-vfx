@@ -45,5 +45,10 @@
  },
  "gif": "fx/stat-up.gif",
  "durationMs": 1000,
- "peakFrame": 25
+ "peakFrame": 25,
+ "moves": [
+  "Swords Dance",
+  "Growth",
+  "Agility"
+ ]
 }

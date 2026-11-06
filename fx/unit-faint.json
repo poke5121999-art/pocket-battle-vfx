@@ -45,5 +45,8 @@
  },
  "gif": "fx/unit-faint.gif",
  "durationMs": 1200,
- "peakFrame": 0
+ "peakFrame": 0,
+ "moves": [
+  "fainting"
+ ]
 }

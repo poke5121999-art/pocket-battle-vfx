@@ -48,5 +48,8 @@
  "peakFrame": 12,
  "battle": {
   "hitFrame": 0
- }
+ },
+ "moves": [
+  "being hit"
+ ]
 }

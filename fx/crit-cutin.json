@@ -45,5 +45,8 @@
  },
  "gif": "fx/crit-cutin.gif",
  "durationMs": 267,
- "peakFrame": 1
+ "peakFrame": 1,
+ "moves": [
+  "critical hit (cut-in)"
+ ]
 }

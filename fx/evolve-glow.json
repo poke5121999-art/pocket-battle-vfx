@@ -45,5 +45,8 @@
  },
  "gif": "fx/evolve-glow.gif",
  "durationMs": 2000,
- "peakFrame": 32
+ "peakFrame": 32,
+ "moves": [
+  "evolution (not a move)"
+ ]
 }

@@ -45,5 +45,8 @@
  },
  "gif": "fx/ice-blizzard.gif",
  "durationMs": 1000,
- "peakFrame": 19
+ "peakFrame": 19,
+ "moves": [
+  "Blizzard"
+ ]
 }

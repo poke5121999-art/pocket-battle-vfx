@@ -44,5 +44,8 @@
  },
  "gif": "fx/dragon-aura.gif",
  "durationMs": 1000,
- "peakFrame": 24
+ "peakFrame": 24,
+ "moves": [
+  "Dragon Dance"
+ ]
 }

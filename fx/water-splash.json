@@ -50,5 +50,8 @@
   "hitFrame": 13,
   "hitStopMs": 50,
   "shakePx": 2
- }
+ },
+ "moves": [
+  "Surf"
+ ]
 }

@@ -2,19 +2,19 @@
  "id": "dark-pulse",
  "name": "Dark Pulse",
  "element": "dark",
- "kind": "area",
- "frameW": 128,
- "frameH": 96,
- "frames": 30,
+ "kind": "beam",
+ "frameW": 192,
+ "frameH": 64,
+ "frames": 36,
  "fps": 30,
  "loop": false,
  "anchor": [
-  64,
-  86
+  10,
+  32
  ],
- "layer": "ground",
- "notes": "Black core swells, thick black rings with spiky pale rims spread on the floor, dark wisps peel up.",
- "ground": 86,
+ "layer": "front",
+ "notes": "Rings of malice travel from the user to the target: dark bands with pale spiky leading rims, growing; a dark spiky burst at the target.",
+ "ground": 54,
  "material": "emissive",
  "palette": [
   "#0b0912",
@@ -31,19 +31,27 @@
  ],
  "sheet": {
   "image": "fx/dark-pulse.png",
-  "columns": 8,
-  "rows": 4,
-  "width": 1024,
-  "height": 384
+  "columns": 5,
+  "rows": 8,
+  "width": 960,
+  "height": 512
  },
  "light": {
   "image": "fx/dark-pulse.light.png",
   "blend": "additive",
   "premultiplied": true,
-  "columns": 8,
-  "rows": 4
+  "columns": 5,
+  "rows": 8
  },
  "gif": "fx/dark-pulse.gif",
- "durationMs": 1000,
- "peakFrame": 21
+ "durationMs": 1200,
+ "peakFrame": 19,
+ "battle": {
+  "hitFrame": 15,
+  "hitStopMs": 60,
+  "shakePx": 2
+ },
+ "moves": [
+  "Dark Pulse"
+ ]
 }

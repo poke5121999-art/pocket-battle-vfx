@@ -48,5 +48,9 @@
  "peakFrame": 8,
  "battle": {
   "hitFrame": 9
- }
+ },
+ "moves": [
+  "Tackle",
+  "Take Down (the user dashes)"
+ ]
 }

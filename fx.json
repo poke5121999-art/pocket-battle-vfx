@@ -1,7 +1,7 @@
 {
  "name": "Pocket Battle VFX",
  "license": "CC0-1.0",
- "count": 90,
+ "count": 91,
  "fps": 30,
  "elements": [
   "bug",
@@ -71,7 +71,10 @@
    },
    "gif": "fx/normal-star-volley.gif",
    "durationMs": 800,
-   "peakFrame": 7
+   "peakFrame": 7,
+   "moves": [
+    "Swift"
+   ]
   },
   {
    "id": "normal-impact-burst",
@@ -125,6 +128,17 @@
     "hitFrame": 4,
     "hitStopMs": 80,
     "shakePx": 3
+   },
+   "moves": [
+    "Body Slam",
+    "Take Down"
+   ],
+   "contact": {
+    "windupFrames": 4,
+    "dashFrames": 7,
+    "returnFrames": 9,
+    "arcPx": 24,
+    "contactFrame": 4
    }
   },
   {
@@ -173,7 +187,12 @@
    },
    "gif": "fx/normal-shock-ring.gif",
    "durationMs": 1000,
-   "peakFrame": 11
+   "peakFrame": 11,
+   "moves": [
+    "Screech",
+    "Supersonic",
+    "Sonic Boom"
+   ]
   },
   {
    "id": "fire-fireball",
@@ -221,7 +240,11 @@
    },
    "gif": "fx/fire-fireball.gif",
    "durationMs": 800,
-   "peakFrame": 15
+   "peakFrame": 15,
+   "moves": [
+    "Fire Blast (thrown)",
+    "Ember"
+   ]
   },
   {
    "id": "fire-embers",
@@ -269,7 +292,10 @@
    },
    "gif": "fx/fire-embers.gif",
    "durationMs": 800,
-   "peakFrame": 0
+   "peakFrame": 0,
+   "moves": [
+    "Ember"
+   ]
   },
   {
    "id": "fire-flamethrower",
@@ -323,7 +349,10 @@
     "hitFrame": 7,
     "hitStopMs": 40,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Flamethrower"
+   ]
   },
   {
    "id": "fire-burst",
@@ -377,7 +406,10 @@
     "hitFrame": 0,
     "hitStopMs": 80,
     "shakePx": 3
-   }
+   },
+   "moves": [
+    "Fire Blast"
+   ]
   },
   {
    "id": "fire-pillar",
@@ -426,25 +458,28 @@
    },
    "gif": "fx/fire-pillar.gif",
    "durationMs": 1000,
-   "peakFrame": 3
+   "peakFrame": 3,
+   "moves": [
+    "Fire Spin"
+   ]
   },
   {
    "id": "fire-aura",
    "name": "Flame Wheel",
    "element": "fire",
-   "kind": "aura",
-   "frameW": 64,
-   "frameH": 96,
-   "frames": 30,
+   "kind": "rush",
+   "frameW": 176,
+   "frameH": 80,
+   "frames": 32,
    "fps": 30,
-   "loop": true,
+   "loop": false,
    "anchor": [
-    32,
-    86
+    136,
+    72
    ],
    "layer": "front",
-   "notes": "The unit wrapped in a spinning wheel of fire, tongues trailing against the spin (Flame Wheel / Fire Punch charge).",
-   "ground": 86,
+   "notes": "Flame Wheel: a wheel of fire forms around the caster, which charges into the target leaving a fire trail, then bursts into flame with embers. Caster-attached: move the caster by rush.dashPx.",
+   "ground": 72,
    "material": "emissive",
    "palette": [
     "#4a0921",
@@ -461,25 +496,100 @@
    ],
    "sheet": {
     "image": "fx/fire-aura.png",
-    "columns": 16,
-    "rows": 2,
-    "width": 1024,
-    "height": 192
+    "columns": 5,
+    "rows": 7,
+    "width": 880,
+    "height": 560
    },
    "light": {
     "image": "fx/fire-aura.light.png",
     "blend": "additive",
     "premultiplied": true,
-    "columns": 16,
-    "rows": 2
+    "columns": 5,
+    "rows": 7
    },
    "gif": "fx/fire-aura.gif",
-   "durationMs": 1000,
-   "peakFrame": 26
+   "durationMs": 1067,
+   "peakFrame": 15,
+   "battle": {
+    "hitFrame": 15,
+    "hitStopMs": 60,
+    "shakePx": 2
+   },
+   "moves": [
+    "Flame Wheel"
+   ],
+   "rush": {
+    "windupFrames": 10,
+    "dashFrames": 6,
+    "contactFrame": 15,
+    "dashPx": 120,
+    "returnFrames": 8
+   }
   },
   {
    "id": "water-jet",
    "name": "Water Jet",
+   "element": "water",
+   "kind": "rush",
+   "frameW": 176,
+   "frameH": 80,
+   "frames": 26,
+   "fps": 30,
+   "loop": false,
+   "anchor": [
+    136,
+    72
+   ],
+   "layer": "front",
+   "notes": "Aqua Jet: the caster wraps itself in water and lunges at the target - 4-frame wind-up, dash with a water stream and droplets behind it, splash and spray fan on contact. Caster-attached: move the caster by rush.dashPx.",
+   "ground": 72,
+   "material": "material",
+   "palette": [
+    "#0c065c",
+    "#0c25b8",
+    "#3488e6",
+    "#6cd6fc",
+    "#b6fcff",
+    "#ffffff"
+   ],
+   "refs": [],
+   "sheet": {
+    "image": "fx/water-jet.png",
+    "columns": 5,
+    "rows": 6,
+    "width": 880,
+    "height": 480
+   },
+   "light": {
+    "image": "fx/water-jet.light.png",
+    "blend": "additive",
+    "premultiplied": true,
+    "columns": 5,
+    "rows": 6
+   },
+   "gif": "fx/water-jet.gif",
+   "durationMs": 867,
+   "peakFrame": 9,
+   "battle": {
+    "hitFrame": 9,
+    "hitStopMs": 50,
+    "shakePx": 2
+   },
+   "moves": [
+    "Aqua Jet"
+   ],
+   "rush": {
+    "windupFrames": 4,
+    "dashFrames": 6,
+    "contactFrame": 9,
+    "dashPx": 120,
+    "returnFrames": 8
+   }
+  },
+  {
+   "id": "water-hydro-cannon",
+   "name": "Hydro Cannon",
    "element": "water",
    "kind": "beam",
    "frameW": 192,
@@ -508,27 +618,31 @@
     "RC-12"
    ],
    "sheet": {
-    "image": "fx/water-jet.png",
+    "image": "fx/water-hydro-cannon.png",
     "columns": 5,
     "rows": 8,
     "width": 960,
     "height": 512
    },
    "light": {
-    "image": "fx/water-jet.light.png",
+    "image": "fx/water-hydro-cannon.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 5,
     "rows": 8
    },
-   "gif": "fx/water-jet.gif",
+   "gif": "fx/water-hydro-cannon.gif",
    "durationMs": 1333,
    "peakFrame": 30,
    "battle": {
     "hitFrame": 13,
     "hitStopMs": 40,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Hydro Pump",
+    "Hydro Cannon"
+   ]
   },
   {
    "id": "water-gun",
@@ -580,7 +694,10 @@
    "battle": {
     "hitFrame": 7,
     "hitStopMs": 30
-   }
+   },
+   "moves": [
+    "Water Gun"
+   ]
   },
   {
    "id": "water-bubble-shot",
@@ -629,7 +746,11 @@
    },
    "gif": "fx/water-bubble-shot.gif",
    "durationMs": 800,
-   "peakFrame": 14
+   "peakFrame": 14,
+   "moves": [
+    "Bubble",
+    "Bubble Beam"
+   ]
   },
   {
    "id": "water-bubble-pop",
@@ -682,7 +803,11 @@
    "battle": {
     "hitFrame": 2,
     "hitStopMs": 30
-   }
+   },
+   "moves": [
+    "Bubble (hit)",
+    "Bubble Beam (hit)"
+   ]
   },
   {
    "id": "water-splash",
@@ -736,7 +861,10 @@
     "hitFrame": 13,
     "hitStopMs": 50,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Surf"
+   ]
   },
   {
    "id": "water-whirlpool",
@@ -785,7 +913,10 @@
    },
    "gif": "fx/water-whirlpool.gif",
    "durationMs": 1000,
-   "peakFrame": 17
+   "peakFrame": 17,
+   "moves": [
+    "Whirlpool"
+   ]
   },
   {
    "id": "grass-leaf-volley",
@@ -834,7 +965,10 @@
    },
    "gif": "fx/grass-leaf-volley.gif",
    "durationMs": 800,
-   "peakFrame": 0
+   "peakFrame": 0,
+   "moves": [
+    "Razor Leaf"
+   ]
   },
   {
    "id": "grass-petal-burst",
@@ -888,7 +1022,10 @@
     "hitFrame": 0,
     "hitStopMs": 50,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Petal Dance"
+   ]
   },
   {
    "id": "grass-powder",
@@ -940,7 +1077,12 @@
    "peakFrame": 14,
    "battle": {
     "hitFrame": 12
-   }
+   },
+   "moves": [
+    "Sleep Powder",
+    "Stun Spore",
+    "Poison Powder"
+   ]
   },
   {
    "id": "grass-leaf-spiral",
@@ -987,11 +1129,15 @@
    },
    "gif": "fx/grass-leaf-spiral.gif",
    "durationMs": 1000,
-   "peakFrame": 28
+   "peakFrame": 28,
+   "moves": [
+    "Petal Dance",
+    "Leaf Storm"
+   ]
   },
   {
    "id": "electric-spark-ball",
-   "name": "Spark Ball",
+   "name": "Electro Ball",
    "element": "electric",
    "kind": "projectile",
    "frameW": 96,
@@ -1036,7 +1182,11 @@
    },
    "gif": "fx/electric-spark-ball.gif",
    "durationMs": 800,
-   "peakFrame": 15
+   "peakFrame": 15,
+   "moves": [
+    "Electro Ball",
+    "Thunder Shock"
+   ]
   },
   {
    "id": "electric-thunderbolt",
@@ -1088,7 +1238,10 @@
     "hitFrame": 2,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Thunderbolt"
+   ]
   },
   {
    "id": "electric-thunder-strike",
@@ -1140,25 +1293,28 @@
     "hitFrame": 8,
     "hitStopMs": 100,
     "shakePx": 4
-   }
+   },
+   "moves": [
+    "Thunder"
+   ]
   },
   {
    "id": "electric-static-aura",
    "name": "Thunder Wave",
    "element": "electric",
-   "kind": "aura",
-   "frameW": 64,
-   "frameH": 96,
-   "frames": 30,
+   "kind": "beam",
+   "frameW": 240,
+   "frameH": 64,
+   "frames": 40,
    "fps": 30,
-   "loop": true,
+   "loop": false,
    "anchor": [
-    32,
-    86
+    10,
+    32
    ],
    "layer": "front",
-   "notes": "Jagged electric rings squeeze around the unit's middle with arcs jumping to the body (Thunder Wave / static).",
-   "ground": 86,
+   "notes": "Thin gold hoops and a small crackle fly from the user to the target, then jagged static rings close around the target and squeeze (paralysis).",
+   "ground": 54,
    "material": "emissive",
    "palette": [
     "#4a1000",
@@ -1174,21 +1330,29 @@
    ],
    "sheet": {
     "image": "fx/electric-static-aura.png",
-    "columns": 16,
-    "rows": 2,
-    "width": 1024,
-    "height": 192
+    "columns": 4,
+    "rows": 10,
+    "width": 960,
+    "height": 640
    },
    "light": {
     "image": "fx/electric-static-aura.light.png",
     "blend": "additive",
     "premultiplied": true,
-    "columns": 16,
-    "rows": 2
+    "columns": 4,
+    "rows": 10
    },
    "gif": "fx/electric-static-aura.gif",
-   "durationMs": 1000,
-   "peakFrame": 15
+   "durationMs": 1333,
+   "peakFrame": 10,
+   "battle": {
+    "hitFrame": 9,
+    "hitStopMs": 40,
+    "shakePx": 1
+   },
+   "moves": [
+    "Thunder Wave"
+   ]
   },
   {
    "id": "ice-shards",
@@ -1237,7 +1401,11 @@
    },
    "gif": "fx/ice-shards.gif",
    "durationMs": 800,
-   "peakFrame": 0
+   "peakFrame": 0,
+   "moves": [
+    "Ice Shard",
+    "Icy Wind"
+   ]
   },
   {
    "id": "ice-beam",
@@ -1290,7 +1458,11 @@
     "hitFrame": 11,
     "hitStopMs": 40,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Ice Beam",
+    "Aurora Beam"
+   ]
   },
   {
    "id": "ice-shatter",
@@ -1342,7 +1514,10 @@
     "hitFrame": 0,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "freeze breaking (Ice Beam / Blizzard hit)"
+   ]
   },
   {
    "id": "ice-blizzard",
@@ -1391,11 +1566,14 @@
    },
    "gif": "fx/ice-blizzard.gif",
    "durationMs": 1000,
-   "peakFrame": 19
+   "peakFrame": 19,
+   "moves": [
+    "Blizzard"
+   ]
   },
   {
    "id": "fighting-force-wave",
-   "name": "Force Wave",
+   "name": "Vacuum Wave",
    "element": "fighting",
    "kind": "projectile",
    "frameW": 96,
@@ -1440,7 +1618,10 @@
    },
    "gif": "fx/fighting-force-wave.gif",
    "durationMs": 800,
-   "peakFrame": 23
+   "peakFrame": 23,
+   "moves": [
+    "Vacuum Wave"
+   ]
   },
   {
    "id": "fighting-power-hit",
@@ -1493,6 +1674,16 @@
     "hitFrame": 5,
     "hitStopMs": 100,
     "shakePx": 4
+   },
+   "moves": [
+    "Mega Punch"
+   ],
+   "contact": {
+    "windupFrames": 3,
+    "dashFrames": 5,
+    "returnFrames": 8,
+    "arcPx": 0,
+    "contactFrame": 5
    }
   },
   {
@@ -1546,6 +1737,16 @@
     "hitFrame": 4,
     "hitStopMs": 60,
     "shakePx": 2
+   },
+   "moves": [
+    "Karate Chop"
+   ],
+   "contact": {
+    "windupFrames": 3,
+    "dashFrames": 5,
+    "returnFrames": 8,
+    "arcPx": 0,
+    "contactFrame": 4
    }
   },
   {
@@ -1595,7 +1796,10 @@
    },
    "gif": "fx/fighting-power-aura.gif",
    "durationMs": 1000,
-   "peakFrame": 20
+   "peakFrame": 20,
+   "moves": [
+    "Focus Energy"
+   ]
   },
   {
    "id": "poison-sludge-glob",
@@ -1642,7 +1846,10 @@
    },
    "gif": "fx/poison-sludge-glob.gif",
    "durationMs": 800,
-   "peakFrame": 1
+   "peakFrame": 1,
+   "moves": [
+    "Sludge"
+   ]
   },
   {
    "id": "poison-toxic-splash",
@@ -1695,7 +1902,11 @@
     "hitFrame": 0,
     "hitStopMs": 50,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Acid",
+    "Sludge (hit)"
+   ]
   },
   {
    "id": "poison-cloud",
@@ -1744,7 +1955,11 @@
    },
    "gif": "fx/poison-cloud.gif",
    "durationMs": 1000,
-   "peakFrame": 11
+   "peakFrame": 11,
+   "moves": [
+    "Poison Gas",
+    "Smog"
+   ]
   },
   {
    "id": "ground-mud-ball",
@@ -1793,7 +2008,11 @@
    },
    "gif": "fx/ground-mud-ball.gif",
    "durationMs": 800,
-   "peakFrame": 1
+   "peakFrame": 1,
+   "moves": [
+    "Mud-Slap",
+    "Mud Bomb"
+   ]
   },
   {
    "id": "ground-quake",
@@ -1846,7 +2065,11 @@
    "battle": {
     "hitFrame": 0,
     "shakePx": 4
-   }
+   },
+   "moves": [
+    "Earthquake",
+    "Fissure"
+   ]
   },
   {
    "id": "ground-dust-burst",
@@ -1900,11 +2123,15 @@
     "hitFrame": 0,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Dig",
+    "Sand Attack"
+   ]
   },
   {
    "id": "flying-air-blade",
-   "name": "Wing Blade",
+   "name": "Air Slash",
    "element": "flying",
    "kind": "projectile",
    "frameW": 96,
@@ -1948,7 +2175,11 @@
    },
    "gif": "fx/flying-air-blade.gif",
    "durationMs": 800,
-   "peakFrame": 0
+   "peakFrame": 0,
+   "moves": [
+    "Air Slash",
+    "Razor Wind"
+   ]
   },
   {
    "id": "flying-gust-burst",
@@ -2000,11 +2231,14 @@
     "hitFrame": 6,
     "hitStopMs": 40,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Gust"
+   ]
   },
   {
    "id": "flying-tornado",
-   "name": "Whirlwind",
+   "name": "Twister",
    "element": "flying",
    "kind": "area",
    "frameW": 96,
@@ -2047,7 +2281,10 @@
    },
    "gif": "fx/flying-tornado.gif",
    "durationMs": 1000,
-   "peakFrame": 2
+   "peakFrame": 2,
+   "moves": [
+    "Twister"
+   ]
   },
   {
    "id": "psychic-psy-beam",
@@ -2099,7 +2336,10 @@
     "hitFrame": 12,
     "hitStopMs": 40,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Psybeam"
+   ]
   },
   {
    "id": "psychic-psy-burst",
@@ -2153,7 +2393,11 @@
     "hitFrame": 0,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Psychic",
+    "Confusion"
+   ]
   },
   {
    "id": "psychic-mind-field",
@@ -2202,7 +2446,11 @@
    },
    "gif": "fx/psychic-mind-field.gif",
    "durationMs": 1000,
-   "peakFrame": 17
+   "peakFrame": 17,
+   "moves": [
+    "Psychic (held)",
+    "Kinesis"
+   ]
   },
   {
    "id": "bug-buzz-wave",
@@ -2247,7 +2495,11 @@
    },
    "gif": "fx/bug-buzz-wave.gif",
    "durationMs": 800,
-   "peakFrame": 5
+   "peakFrame": 5,
+   "moves": [
+    "Bug Buzz",
+    "Supersonic"
+   ]
   },
   {
    "id": "bug-sting-volley",
@@ -2292,7 +2544,10 @@
    },
    "gif": "fx/bug-sting-volley.gif",
    "durationMs": 800,
-   "peakFrame": 10
+   "peakFrame": 10,
+   "moves": [
+    "Pin Missile"
+   ]
   },
   {
    "id": "bug-sting-hit",
@@ -2342,11 +2597,15 @@
     "hitFrame": 2,
     "hitStopMs": 40,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Twineedle",
+    "Poison Sting"
+   ]
   },
   {
    "id": "bug-swarm",
-   "name": "Swarm",
+   "name": "Infestation",
    "element": "bug",
    "kind": "area",
    "frameW": 96,
@@ -2387,7 +2646,10 @@
    },
    "gif": "fx/bug-swarm.gif",
    "durationMs": 1000,
-   "peakFrame": 0
+   "peakFrame": 0,
+   "moves": [
+    "Infestation"
+   ]
   },
   {
    "id": "rock-boulder",
@@ -2435,7 +2697,10 @@
    },
    "gif": "fx/rock-boulder.gif",
    "durationMs": 800,
-   "peakFrame": 0
+   "peakFrame": 0,
+   "moves": [
+    "Rock Throw"
+   ]
   },
   {
    "id": "rock-smash",
@@ -2487,7 +2752,10 @@
     "hitFrame": 8,
     "hitStopMs": 80,
     "shakePx": 3
-   }
+   },
+   "moves": [
+    "Rock Slide"
+   ]
   },
   {
    "id": "rock-stone-spikes",
@@ -2539,7 +2807,11 @@
     "hitFrame": 2,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Stone Edge",
+    "Rock Tomb"
+   ]
   },
   {
    "id": "ghost-shadow-orb",
@@ -2588,7 +2860,10 @@
    },
    "gif": "fx/ghost-shadow-orb.gif",
    "durationMs": 800,
-   "peakFrame": 3
+   "peakFrame": 3,
+   "moves": [
+    "Shadow Ball"
+   ]
   },
   {
    "id": "ghost-hex-burst",
@@ -2642,7 +2917,12 @@
     "hitFrame": 3,
     "hitStopMs": 60,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Night Shade",
+    "Hex",
+    "Lick"
+   ]
   },
   {
    "id": "ghost-spirit-wisps",
@@ -2691,7 +2971,11 @@
    },
    "gif": "fx/ghost-spirit-wisps.gif",
    "durationMs": 1000,
-   "peakFrame": 18
+   "peakFrame": 18,
+   "moves": [
+    "Confuse Ray",
+    "Curse"
+   ]
   },
   {
    "id": "dragon-pulse-beam",
@@ -2743,7 +3027,11 @@
     "hitFrame": 13,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Dragon Rage",
+    "Dragon Pulse"
+   ]
   },
   {
    "id": "dragon-burst",
@@ -2795,7 +3083,11 @@
     "hitFrame": 0,
     "hitStopMs": 80,
     "shakePx": 3
-   }
+   },
+   "moves": [
+    "Dragon Rage (hit)",
+    "Outrage (hit)"
+   ]
   },
   {
    "id": "dragon-aura",
@@ -2843,7 +3135,10 @@
    },
    "gif": "fx/dragon-aura.gif",
    "durationMs": 1000,
-   "peakFrame": 24
+   "peakFrame": 24,
+   "moves": [
+    "Dragon Dance"
+   ]
   },
   {
    "id": "dark-night-claw",
@@ -2895,25 +3190,36 @@
     "hitFrame": 2,
     "hitStopMs": 60,
     "shakePx": 2
+   },
+   "moves": [
+    "Night Slash",
+    "Feint Attack"
+   ],
+   "contact": {
+    "windupFrames": 3,
+    "dashFrames": 5,
+    "returnFrames": 8,
+    "arcPx": 0,
+    "contactFrame": 2
    }
   },
   {
    "id": "dark-pulse",
    "name": "Dark Pulse",
    "element": "dark",
-   "kind": "area",
-   "frameW": 128,
-   "frameH": 96,
-   "frames": 30,
+   "kind": "beam",
+   "frameW": 192,
+   "frameH": 64,
+   "frames": 36,
    "fps": 30,
    "loop": false,
    "anchor": [
-    64,
-    86
+    10,
+    32
    ],
-   "layer": "ground",
-   "notes": "Black core swells, thick black rings with spiky pale rims spread on the floor, dark wisps peel up.",
-   "ground": 86,
+   "layer": "front",
+   "notes": "Rings of malice travel from the user to the target: dark bands with pale spiky leading rims, growing; a dark spiky burst at the target.",
+   "ground": 54,
    "material": "emissive",
    "palette": [
     "#0b0912",
@@ -2930,21 +3236,29 @@
    ],
    "sheet": {
     "image": "fx/dark-pulse.png",
-    "columns": 8,
-    "rows": 4,
-    "width": 1024,
-    "height": 384
+    "columns": 5,
+    "rows": 8,
+    "width": 960,
+    "height": 512
    },
    "light": {
     "image": "fx/dark-pulse.light.png",
     "blend": "additive",
     "premultiplied": true,
-    "columns": 8,
-    "rows": 4
+    "columns": 5,
+    "rows": 8
    },
    "gif": "fx/dark-pulse.gif",
-   "durationMs": 1000,
-   "peakFrame": 21
+   "durationMs": 1200,
+   "peakFrame": 19,
+   "battle": {
+    "hitFrame": 15,
+    "hitStopMs": 60,
+    "shakePx": 2
+   },
+   "moves": [
+    "Dark Pulse"
+   ]
   },
   {
    "id": "dark-orb",
@@ -2993,7 +3307,11 @@
    },
    "gif": "fx/dark-orb.gif",
    "durationMs": 800,
-   "peakFrame": 3
+   "peakFrame": 3,
+   "moves": [
+    "Dark Pulse (orb)",
+    "Shadow-style orb"
+   ]
   },
   {
    "id": "steel-beam",
@@ -3045,7 +3363,10 @@
     "hitFrame": 13,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Flash Cannon"
+   ]
   },
   {
    "id": "steel-metal-spark",
@@ -3099,7 +3420,10 @@
     "hitFrame": 0,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Metal Claw (hit)"
+   ]
   },
   {
    "id": "steel-iron-spikes",
@@ -3151,7 +3475,11 @@
     "hitFrame": 2,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Steelsurge (G-Max)",
+    "steel spikes from the ground"
+   ]
   },
   {
    "id": "steel-slash",
@@ -3205,7 +3533,10 @@
     "hitFrame": 4,
     "hitStopMs": 60,
     "shakePx": 2
-   }
+   },
+   "moves": [
+    "Iron Tail"
+   ]
   },
   {
    "id": "fairy-moon-orb",
@@ -3253,7 +3584,10 @@
    },
    "gif": "fx/fairy-moon-orb.gif",
    "durationMs": 800,
-   "peakFrame": 12
+   "peakFrame": 12,
+   "moves": [
+    "Moonblast"
+   ]
   },
   {
    "id": "fairy-sparkle-burst",
@@ -3307,7 +3641,11 @@
     "hitFrame": 0,
     "hitStopMs": 50,
     "shakePx": 1
-   }
+   },
+   "moves": [
+    "Disarming Voice",
+    "Charm"
+   ]
   },
   {
    "id": "fairy-ring-aura",
@@ -3354,7 +3692,11 @@
    },
    "gif": "fx/fairy-ring-aura.gif",
    "durationMs": 1000,
-   "peakFrame": 3
+   "peakFrame": 3,
+   "moves": [
+    "Moonlight",
+    "Fairy Wind"
+   ]
   },
   {
    "id": "hit-spark",
@@ -3408,6 +3750,18 @@
     "hitFrame": 0,
     "hitStopMs": 40,
     "shakePx": 1
+   },
+   "moves": [
+    "Tackle",
+    "Scratch",
+    "Pound"
+   ],
+   "contact": {
+    "windupFrames": 3,
+    "dashFrames": 5,
+    "returnFrames": 8,
+    "arcPx": 0,
+    "contactFrame": 0
    }
   },
   {
@@ -3462,7 +3816,10 @@
     "hitFrame": 0,
     "hitStopMs": 120,
     "shakePx": 4
-   }
+   },
+   "moves": [
+    "critical hit"
+   ]
   },
   {
    "id": "crit-cutin",
@@ -3511,7 +3868,10 @@
    },
    "gif": "fx/crit-cutin.gif",
    "durationMs": 267,
-   "peakFrame": 1
+   "peakFrame": 1,
+   "moves": [
+    "critical hit (cut-in)"
+   ]
   },
   {
    "id": "miss",
@@ -3560,7 +3920,10 @@
    },
    "gif": "fx/miss.gif",
    "durationMs": 800,
-   "peakFrame": 6
+   "peakFrame": 6,
+   "moves": [
+    "miss / dodge"
+   ]
   },
   {
    "id": "shield",
@@ -3607,7 +3970,12 @@
    },
    "gif": "fx/shield.gif",
    "durationMs": 1000,
-   "peakFrame": 16
+   "peakFrame": 16,
+   "moves": [
+    "Light Screen",
+    "Reflect",
+    "Protect"
+   ]
   },
   {
    "id": "heal",
@@ -3656,7 +4024,12 @@
    },
    "gif": "fx/heal.gif",
    "durationMs": 1000,
-   "peakFrame": 29
+   "peakFrame": 29,
+   "moves": [
+    "Recover",
+    "Synthesis",
+    "Softboiled"
+   ]
   },
   {
    "id": "stat-up",
@@ -3705,7 +4078,12 @@
    },
    "gif": "fx/stat-up.gif",
    "durationMs": 1000,
-   "peakFrame": 25
+   "peakFrame": 25,
+   "moves": [
+    "Swords Dance",
+    "Growth",
+    "Agility"
+   ]
   },
   {
    "id": "stat-down",
@@ -3754,7 +4132,12 @@
    },
    "gif": "fx/stat-down.gif",
    "durationMs": 1000,
-   "peakFrame": 12
+   "peakFrame": 12,
+   "moves": [
+    "Growl",
+    "Tail Whip",
+    "Leer"
+   ]
   },
   {
    "id": "status-burn",
@@ -3802,7 +4185,10 @@
    },
    "gif": "fx/status-burn.gif",
    "durationMs": 1000,
-   "peakFrame": 26
+   "peakFrame": 26,
+   "moves": [
+    "burn status"
+   ]
   },
   {
    "id": "status-poison",
@@ -3851,7 +4237,10 @@
    },
    "gif": "fx/status-poison.gif",
    "durationMs": 1000,
-   "peakFrame": 16
+   "peakFrame": 16,
+   "moves": [
+    "poison status"
+   ]
   },
   {
    "id": "status-paralysis",
@@ -3896,7 +4285,10 @@
    },
    "gif": "fx/status-paralysis.gif",
    "durationMs": 1000,
-   "peakFrame": 21
+   "peakFrame": 21,
+   "moves": [
+    "paralysis status"
+   ]
   },
   {
    "id": "status-sleep",
@@ -3945,7 +4337,10 @@
    },
    "gif": "fx/status-sleep.gif",
    "durationMs": 933,
-   "peakFrame": 11
+   "peakFrame": 11,
+   "moves": [
+    "sleep status"
+   ]
   },
   {
    "id": "status-freeze",
@@ -3994,11 +4389,14 @@
    },
    "gif": "fx/status-freeze.gif",
    "durationMs": 1000,
-   "peakFrame": 1
+   "peakFrame": 1,
+   "moves": [
+    "freeze status"
+   ]
   },
   {
    "id": "status-confusion",
-   "name": "Confusion",
+   "name": "Confused",
    "element": "normal",
    "kind": "status",
    "frameW": 64,
@@ -4041,7 +4439,10 @@
    },
    "gif": "fx/status-confusion.gif",
    "durationMs": 1000,
-   "peakFrame": 2
+   "peakFrame": 2,
+   "moves": [
+    "confusion status"
+   ]
   },
   {
    "id": "faint-vanish",
@@ -4090,7 +4491,10 @@
    },
    "gif": "fx/faint-vanish.gif",
    "durationMs": 1200,
-   "peakFrame": 16
+   "peakFrame": 16,
+   "moves": [
+    "fainting"
+   ]
   },
   {
    "id": "level-up",
@@ -4139,7 +4543,10 @@
    },
    "gif": "fx/level-up.gif",
    "durationMs": 1500,
-   "peakFrame": 17
+   "peakFrame": 17,
+   "moves": [
+    "level up (not a move)"
+   ]
   },
   {
    "id": "evolve-glow",
@@ -4188,7 +4595,10 @@
    },
    "gif": "fx/evolve-glow.gif",
    "durationMs": 2000,
-   "peakFrame": 32
+   "peakFrame": 32,
+   "moves": [
+    "evolution (not a move)"
+   ]
   },
   {
    "id": "recall-beam",
@@ -4237,7 +4647,10 @@
    },
    "gif": "fx/recall-beam.gif",
    "durationMs": 1200,
-   "peakFrame": 0
+   "peakFrame": 0,
+   "moves": [
+    "return to the ball (not a move)"
+   ]
   },
   {
    "id": "send-out",
@@ -4286,7 +4699,10 @@
    },
    "gif": "fx/send-out.gif",
    "durationMs": 1000,
-   "peakFrame": 5
+   "peakFrame": 5,
+   "moves": [
+    "send-out (not a move)"
+   ]
   },
   {
    "id": "charge-up",
@@ -4335,7 +4751,10 @@
    },
    "gif": "fx/charge-up.gif",
    "durationMs": 800,
-   "peakFrame": 20
+   "peakFrame": 20,
+   "moves": [
+    "Solar Beam / Sky Attack / Skull Bash charge"
+   ]
   },
   {
    "id": "unit-idle",
@@ -4384,7 +4803,10 @@
    },
    "gif": "fx/unit-idle.gif",
    "durationMs": 800,
-   "peakFrame": 14
+   "peakFrame": 14,
+   "moves": [
+    "idle (not a move)"
+   ]
   },
   {
    "id": "unit-lunge",
@@ -4436,7 +4858,11 @@
    "peakFrame": 8,
    "battle": {
     "hitFrame": 9
-   }
+   },
+   "moves": [
+    "Tackle",
+    "Take Down (the user dashes)"
+   ]
   },
   {
    "id": "unit-recoil",
@@ -4488,7 +4914,10 @@
    "peakFrame": 12,
    "battle": {
     "hitFrame": 0
-   }
+   },
+   "moves": [
+    "being hit"
+   ]
   },
   {
    "id": "unit-faint",
@@ -4537,7 +4966,10 @@
    },
    "gif": "fx/unit-faint.gif",
    "durationMs": 1200,
-   "peakFrame": 0
+   "peakFrame": 0,
+   "moves": [
+    "fainting"
+   ]
   }
  ]
 }

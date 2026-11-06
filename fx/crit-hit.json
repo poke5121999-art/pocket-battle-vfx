@@ -50,5 +50,8 @@
   "hitFrame": 0,
   "hitStopMs": 120,
   "shakePx": 4
- }
+ },
+ "moves": [
+  "critical hit"
+ ]
 }

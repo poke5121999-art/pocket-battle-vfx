@@ -45,5 +45,8 @@
  },
  "gif": "fx/status-poison.gif",
  "durationMs": 1000,
- "peakFrame": 16
+ "peakFrame": 16,
+ "moves": [
+  "poison status"
+ ]
 }

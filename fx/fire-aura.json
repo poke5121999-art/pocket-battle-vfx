@@ -2,19 +2,19 @@
  "id": "fire-aura",
  "name": "Flame Wheel",
  "element": "fire",
- "kind": "aura",
- "frameW": 64,
- "frameH": 96,
- "frames": 30,
+ "kind": "rush",
+ "frameW": 176,
+ "frameH": 80,
+ "frames": 32,
  "fps": 30,
- "loop": true,
+ "loop": false,
  "anchor": [
-  32,
-  86
+  136,
+  72
  ],
  "layer": "front",
- "notes": "The unit wrapped in a spinning wheel of fire, tongues trailing against the spin (Flame Wheel / Fire Punch charge).",
- "ground": 86,
+ "notes": "Flame Wheel: a wheel of fire forms around the caster, which charges into the target leaving a fire trail, then bursts into flame with embers. Caster-attached: move the caster by rush.dashPx.",
+ "ground": 72,
  "material": "emissive",
  "palette": [
   "#4a0921",
@@ -31,19 +31,34 @@
  ],
  "sheet": {
   "image": "fx/fire-aura.png",
-  "columns": 16,
-  "rows": 2,
-  "width": 1024,
-  "height": 192
+  "columns": 5,
+  "rows": 7,
+  "width": 880,
+  "height": 560
  },
  "light": {
   "image": "fx/fire-aura.light.png",
   "blend": "additive",
   "premultiplied": true,
-  "columns": 16,
-  "rows": 2
+  "columns": 5,
+  "rows": 7
  },
  "gif": "fx/fire-aura.gif",
- "durationMs": 1000,
- "peakFrame": 26
+ "durationMs": 1067,
+ "peakFrame": 15,
+ "battle": {
+  "hitFrame": 15,
+  "hitStopMs": 60,
+  "shakePx": 2
+ },
+ "moves": [
+  "Flame Wheel"
+ ],
+ "rush": {
+  "windupFrames": 10,
+  "dashFrames": 6,
+  "contactFrame": 15,
+  "dashPx": 120,
+  "returnFrames": 8
+ }
 }

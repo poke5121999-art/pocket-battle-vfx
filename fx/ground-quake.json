@@ -49,5 +49,9 @@
  "battle": {
   "hitFrame": 0,
   "shakePx": 4
- }
+ },
+ "moves": [
+  "Earthquake",
+  "Fissure"
+ ]
 }
