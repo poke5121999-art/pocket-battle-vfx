@@ -13,8 +13,9 @@
   86
  ],
  "layer": "ground",
- "notes": "Dark broken rings spread from a black core with wisps (a ring by design).",
+ "notes": "Black core swells, thick black rings with spiky pale rims spread on the floor, dark wisps peel up.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#0b0912",
   "#1f1a2c",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/dark-pulse.gif",
  "durationMs": 1000,
- "peakFrame": 8
+ "peakFrame": 21
 }

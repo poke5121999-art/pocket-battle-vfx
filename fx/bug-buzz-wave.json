@@ -1,6 +1,6 @@
 {
  "id": "bug-buzz-wave",
- "name": "Buzz Wave",
+ "name": "Bug Buzz",
  "element": "bug",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   32
  ],
  "layer": "front",
- "notes": "Thin tapered sound crescents with buzzing motes.",
+ "notes": "Vibrating sound arcs whose edges zig-zag every frame, expanding and thinning, with buzz ticks.",
  "ground": 54,
+ "material": "material",
  "palette": [
   "#0d3802",
   "#306e05",

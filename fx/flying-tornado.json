@@ -1,6 +1,6 @@
 {
  "id": "flying-tornado",
- "name": "Tornado",
+ "name": "Whirlwind",
  "element": "flying",
  "kind": "area",
  "frameW": 96,
@@ -13,8 +13,9 @@
   120
  ],
  "layer": "front",
- "notes": "Wind streaks riding a rising helix, dust at the base.",
+ "notes": "Funnel of broken wind lines widening upward, rocks, leaves and dust orbiting, dust churning at the base.",
  "ground": 120,
+ "material": "material",
  "palette": [
   "#2f226a",
   "#4544b0",

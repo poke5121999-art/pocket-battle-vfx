@@ -1,6 +1,6 @@
 {
  "id": "electric-static-aura",
- "name": "Static Aura",
+ "name": "Thunder Wave",
  "element": "electric",
  "kind": "aura",
  "frameW": 64,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Sparks crawl up the body edges.",
+ "notes": "Jagged electric rings squeeze around the unit's middle with arcs jumping to the body (Thunder Wave / static).",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#4a1000",
   "#b04a00",

@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Flickering hot head; flame blobs shed backwards cool white > yellow > red > smoke; embers.",
+ "notes": "Flame-bodied fireball: hot core, tongues streaming back, embers and smoke shed. Ember-size variant: fire-embers.",
  "ground": 38,
+ "material": "emissive",
  "palette": [
   "#4a0921",
   "#a80920",
@@ -43,5 +44,5 @@
  },
  "gif": "fx/fire-fireball.gif",
  "durationMs": 800,
- "peakFrame": 13
+ "peakFrame": 15
 }

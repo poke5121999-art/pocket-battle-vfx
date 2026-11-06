@@ -53,13 +53,21 @@ def curl(x, y, seed):
 class Light:
     """Additive light at half resolution. add() splats a soft radial falloff."""
 
-    def __init__(self, w, h, scale=2):
+    def __init__(self, w, h, scale=2, material=False):
+        # material=True: the substance does not emit light (water, rock, leaves...). Only explicit glints
+        # (add(..., glint=True)) reach the layer, scaled down; everything else is dropped.
+        self.material = material
         self.s = scale
         self.w, self.h = (w + scale - 1) // scale, (h + scale - 1) // scale
         self.W, self.H = w, h
         self.buf = [[0.0, 0.0, 0.0] for _ in range(self.w * self.h)]
 
-    def add(self, x, y, radius, col, intensity=1.0):
+    def add(self, x, y, radius, col, intensity=1.0, glint=False):
+        if self.material:
+            if not glint:
+                return
+            intensity *= 0.6
+            radius = min(radius, 8)
         if intensity <= 0.01 or radius <= 0:
             return
         s = self.s

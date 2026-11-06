@@ -1,6 +1,6 @@
 {
  "id": "steel-beam",
- "name": "Steel Beam",
+ "name": "Flash Cannon",
  "element": "steel",
  "kind": "beam",
  "frameW": 192,
@@ -13,8 +13,9 @@
   32
  ],
  "layer": "front",
- "notes": "Silver jittering beam throwing metal sparks.",
+ "notes": "Light gathers at the mouth, then a wide hard-edged silver beam with a specular stripe, metal flakes, white star at the target.",
  "ground": 54,
+ "material": "emissive",
  "palette": [
   "#262438",
   "#474a66",
@@ -42,7 +43,7 @@
  },
  "gif": "fx/steel-beam.gif",
  "durationMs": 1333,
- "peakFrame": 25,
+ "peakFrame": 23,
  "battle": {
   "hitFrame": 13,
   "hitStopMs": 60,

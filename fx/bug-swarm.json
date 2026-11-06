@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Bugs ride a curl-noise flow around the centre.",
+ "notes": "Little insects with flicking wings circle the target on looping paths, in front and behind.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#0d3802",
   "#306e05",
@@ -40,5 +41,5 @@
  },
  "gif": "fx/bug-swarm.gif",
  "durationMs": 1000,
- "peakFrame": 1
+ "peakFrame": 0
 }

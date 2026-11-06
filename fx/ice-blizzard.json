@@ -1,6 +1,6 @@
 {
  "id": "ice-blizzard",
- "name": "Blizzard Field",
+ "name": "Blizzard",
  "element": "ice",
  "kind": "area",
  "frameW": 128,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Diagonal snow on wind streaks over a frosted floor line.",
+ "notes": "Driving snow in three depth layers on a hard diagonal wind, wind streaks, gust bands, frost on the floor.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/ice-blizzard.gif",
  "durationMs": 1000,
- "peakFrame": 23
+ "peakFrame": 19
 }

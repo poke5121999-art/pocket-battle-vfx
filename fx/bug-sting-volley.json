@@ -1,6 +1,6 @@
 {
  "id": "bug-sting-volley",
- "name": "Sting Volley",
+ "name": "Pin Missile",
  "element": "bug",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Sharp green core with tiny bugs shed behind.",
+ "notes": "Five thin needles (pale shaft, dark tip, green fletch) fly straight and fast in a staggered burst.",
  "ground": 38,
+ "material": "material",
  "palette": [
   "#0d3802",
   "#306e05",
@@ -40,5 +41,5 @@
  },
  "gif": "fx/bug-sting-volley.gif",
  "durationMs": 800,
- "peakFrame": 8
+ "peakFrame": 10
 }

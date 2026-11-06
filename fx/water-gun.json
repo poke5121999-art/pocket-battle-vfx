@@ -1,0 +1,52 @@
+{
+ "id": "water-gun",
+ "name": "Water Gun",
+ "element": "water",
+ "kind": "beam",
+ "frameW": 192,
+ "frameH": 64,
+ "frames": 24,
+ "fps": 30,
+ "loop": false,
+ "anchor": [
+  10,
+  32
+ ],
+ "layer": "front",
+ "notes": "The small water move: a narrow dotted stream of drops, specks shed off, quick, small splash at the end.",
+ "ground": 54,
+ "material": "material",
+ "palette": [
+  "#0c065c",
+  "#0c25b8",
+  "#3488e6",
+  "#6cd6fc",
+  "#b6fcff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RB-11",
+  "RC-12"
+ ],
+ "sheet": {
+  "image": "fx/water-gun.png",
+  "columns": 5,
+  "rows": 5,
+  "width": 960,
+  "height": 320
+ },
+ "light": {
+  "image": "fx/water-gun.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 5,
+  "rows": 5
+ },
+ "gif": "fx/water-gun.gif",
+ "durationMs": 800,
+ "peakFrame": 16,
+ "battle": {
+  "hitFrame": 7,
+  "hitStopMs": 30
+ }
+}

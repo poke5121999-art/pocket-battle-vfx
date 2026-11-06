@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Wisps writhe up and fade to smoke.",
+ "notes": "Three will-o'-wisps with curled tails drift around the unit (Confuse Ray / Curse).",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#130c30",
   "#2b1c68",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/ghost-spirit-wisps.gif",
  "durationMs": 1000,
- "peakFrame": 27
+ "peakFrame": 18
 }

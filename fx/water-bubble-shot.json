@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Glossy head with droplets and mist shed behind.",
+ "notes": "Cluster of 7 bubbles (3-10 px) wobbling forward at different rates, small ones trailing. Pair with Bubble Pop.",
  "ground": 38,
+ "material": "material",
  "palette": [
   "#0c065c",
   "#0c25b8",
@@ -24,9 +25,9 @@
   "#ffffff"
  ],
  "refs": [
+  "RB-12",
   "RC-12",
-  "RB-11",
-  "RB-12"
+  "RB-11"
  ],
  "sheet": {
   "image": "fx/water-bubble-shot.png",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/water-bubble-shot.gif",
  "durationMs": 800,
- "peakFrame": 7
+ "peakFrame": 14
 }

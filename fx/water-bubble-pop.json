@@ -1,0 +1,53 @@
+{
+ "id": "water-bubble-pop",
+ "name": "Bubble Pop",
+ "element": "water",
+ "kind": "impact",
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
+ "loop": false,
+ "anchor": [
+  64,
+  64
+ ],
+ "layer": "front",
+ "notes": "Bubbles arrive and pop one after another: broken ring flash, 3-5 falling droplets each.",
+ "ground": 86,
+ "material": "material",
+ "palette": [
+  "#0c065c",
+  "#0c25b8",
+  "#3488e6",
+  "#6cd6fc",
+  "#b6fcff",
+  "#ffffff"
+ ],
+ "refs": [
+  "RC-12",
+  "RB-11",
+  "RB-12"
+ ],
+ "sheet": {
+  "image": "fx/water-bubble-pop.png",
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/water-bubble-pop.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
+ },
+ "gif": "fx/water-bubble-pop.gif",
+ "durationMs": 1000,
+ "peakFrame": 0,
+ "battle": {
+  "hitFrame": 2,
+  "hitStopMs": 30
+ }
+}

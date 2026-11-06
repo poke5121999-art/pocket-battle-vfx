@@ -13,8 +13,9 @@
   32
  ],
  "layer": "front",
- "notes": "Smallest hit, 400 ms: jagged spark + streaks + light.",
+ "notes": "Tackle contact: small white-yellow 5-point star, 4 flick lines, 400 ms.",
  "ground": 56,
+ "material": "emissive",
  "palette": [
   "#3c384a",
   "#7c788e",
@@ -44,7 +45,7 @@
  },
  "gif": "fx/hit-spark.gif",
  "durationMs": 400,
- "peakFrame": 1,
+ "peakFrame": 0,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 40,

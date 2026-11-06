@@ -1,6 +1,6 @@
 {
  "id": "dragon-pulse-beam",
- "name": "Dragon Beam",
+ "name": "Dragon Rage",
  "element": "dragon",
  "kind": "beam",
  "frameW": 192,
@@ -13,8 +13,9 @@
   32
  ],
  "layer": "front",
- "notes": "Thick blue-teal jittering beam shedding cold flames.",
+ "notes": "String of pearls: round blue-violet flame puffs in a line, head biggest, yellow sparks; flame burst at the target.",
  "ground": 54,
+ "material": "emissive",
  "palette": [
   "#1a0e4a",
   "#281c9c",

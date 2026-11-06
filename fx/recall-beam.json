@@ -15,6 +15,7 @@
  "layer": "front",
  "notes": "Jittering red beam; unit turns red, shrinks and lifts away in motes.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#3a0422",
   "#8a0635",

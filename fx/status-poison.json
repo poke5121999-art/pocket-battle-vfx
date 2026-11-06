@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Tiny bubbles rise, drips fall.",
+ "notes": "Purple bubbles rise off the unit and pop, drips, a sickly puddle at the feet.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#160d38",
   "#411978",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/status-poison.gif",
  "durationMs": 1000,
- "peakFrame": 24
+ "peakFrame": 16
 }

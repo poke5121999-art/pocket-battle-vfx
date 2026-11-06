@@ -1,11 +1,11 @@
 {
  "id": "water-splash",
- "name": "Water Splash",
+ "name": "Surf Wave",
  "element": "water",
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 40,
+ "frames": 45,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Droplets on gravity arcs bouncing on the floor, mist, light flash.",
+ "notes": "A wave arrives (curved crest, white foam, dark-to-light body), then crashes over the target in foam and spray, leaving a puddle.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#0c065c",
   "#0c25b8",
@@ -31,23 +32,23 @@
  "sheet": {
   "image": "fx/water-splash.png",
   "columns": 8,
-  "rows": 5,
+  "rows": 6,
   "width": 1024,
-  "height": 480
+  "height": 576
  },
  "light": {
   "image": "fx/water-splash.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 5
+  "rows": 6
  },
  "gif": "fx/water-splash.gif",
- "durationMs": 1333,
- "peakFrame": 2,
+ "durationMs": 1500,
+ "peakFrame": 10,
  "battle": {
-  "hitFrame": 0,
+  "hitFrame": 13,
   "hitStopMs": 50,
-  "shakePx": 1
+  "shakePx": 2
  }
 }

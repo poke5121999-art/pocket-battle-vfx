@@ -1,0 +1,52 @@
+{
+ "id": "electric-thunderbolt",
+ "name": "Thunderbolt",
+ "element": "electric",
+ "kind": "impact",
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 24,
+ "fps": 30,
+ "loop": false,
+ "anchor": [
+  64,
+  64
+ ],
+ "layer": "front",
+ "notes": "Thin zig-zag bolts thrown at the target from the upper left, three quick strikes with flashes, then crackle on the body.",
+ "ground": 86,
+ "material": "emissive",
+ "palette": [
+  "#4a1000",
+  "#b04a00",
+  "#f2b114",
+  "#ffed4a",
+  "#fff6a8",
+  "#ffffff"
+ ],
+ "refs": [
+  "RB-02"
+ ],
+ "sheet": {
+  "image": "fx/electric-thunderbolt.png",
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 288
+ },
+ "light": {
+  "image": "fx/electric-thunderbolt.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 3
+ },
+ "gif": "fx/electric-thunderbolt.gif",
+ "durationMs": 800,
+ "peakFrame": 2,
+ "battle": {
+  "hitFrame": 2,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

@@ -1,11 +1,11 @@
 {
  "id": "fighting-power-hit",
- "name": "Power Hit",
+ "name": "Mega Punch",
  "element": "fighting",
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 40,
+ "frames": 36,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Big jagged burst, long streak sparks, dust and smoke on the floor.",
+ "notes": "A big glove drives in with speed lines, lands with a white comic contact star and hit-lines, pulls back; dust at the feet.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#4a0920",
   "#920918",
@@ -42,10 +43,10 @@
   "rows": 5
  },
  "gif": "fx/fighting-power-hit.gif",
- "durationMs": 1333,
- "peakFrame": 29,
+ "durationMs": 1200,
+ "peakFrame": 6,
  "battle": {
-  "hitFrame": 0,
+  "hitFrame": 5,
   "hitStopMs": 100,
   "shakePx": 4
  }

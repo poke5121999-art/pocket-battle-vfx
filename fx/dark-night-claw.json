@@ -1,6 +1,6 @@
 {
  "id": "dark-night-claw",
- "name": "Night Claw",
+ "name": "Night Slash",
  "element": "dark",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Three tapered rakes, hot edge cooling to plum, sparks.",
+ "notes": "A dark band flicks across, then three black claw gashes with pale lilac rims rake the target and shrink away.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#0b0912",
   "#1f1a2c",
@@ -42,7 +43,7 @@
  },
  "gif": "fx/dark-night-claw.gif",
  "durationMs": 800,
- "peakFrame": 5,
+ "peakFrame": 9,
  "battle": {
   "hitFrame": 2,
   "hitStopMs": 60,

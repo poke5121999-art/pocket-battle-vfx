@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Tumbling clod with a dust trail.",
+ "notes": "Lumpy brown clod with pebbles, tumbling, shedding crumbs of dirt that drop away; no glow.",
  "ground": 38,
+ "material": "material",
  "palette": [
   "#3a0e0b",
   "#6e3019",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/ground-mud-ball.gif",
  "durationMs": 800,
- "peakFrame": 6
+ "peakFrame": 1
 }

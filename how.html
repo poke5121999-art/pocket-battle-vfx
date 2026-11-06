@@ -37,9 +37,11 @@
       beam, burst, explosion, splash, debris, pillar, vortex, pulse rings, cloud, spikes, cracks, swarm, aura…) and
       one table that turns archetype × element ramp × timing into <span id="n"></span> effects.
       <code>python3 src/build.py</code> rebuilds every sheet, GIF and JSON in under a minute, byte-identical each run.
-      Since the art pass, every effect runs through a seeded particle simulation (120 Hz, sampled at 30 fps:
-      gravity, drag, curl-noise turbulence, colour and size over life, floor bounce) and paints two layers: crisp
-      colour pixels and a soft additive light layer.</li>
+      Every effect paints two layers: crisp colour pixels and a soft additive light layer. Since art pass 4 each
+      effect is its own drawing, designed from the move it stands for (a water jet is a stream with foam, Razor
+      Leaf is real leaf shapes, Rock Slide is faceted boulders falling), and substances are split into
+      <b>emissive</b> (fire, lightning, energy: they light the scene) and <b>material</b> (water, rock, leaves,
+      metal, goo, dust: no glow, only small glints where they hit).</li>
     <li><b>Look and fix.</b> Each effect was rendered to a frame contact sheet, looked at, and the archetype adjusted.</li>
   </ol>
 
@@ -56,8 +58,10 @@
       squashed rings with orbiting bits.</li>
     <li><b>The body sells the hit.</b> Hit-stop (40–120 ms), a few pixels of shake, two white frames and a knockback on
       the target do more than a bigger sprite.</li>
-    <li><b>Shape first, colour second.</b> Fire is puffs and embers, water is crowns and ripples, electric is a
-      polyline redrawn every frame, ice is faceted shards, psychic is concentric rings.</li>
+    <li><b>Shape first, colour second.</b> Fire is flame tongues, water is a stream with foam, electric is a
+      zig-zag redrawn every frame, ice is faceted crystals, psychic is wavy ripples, a punch is a glove and a comic star.</li>
+    <li><b>Materials don't glow.</b> Water, rock, leaves, metal and goo are shaded from the top-left with a dark
+      outline and get light only as a glint at contact; only fire, lightning and energy light the scene.</li>
     <li><b>Pixel hygiene.</b> Whole pixels only, alpha 0 or 255, dither instead of transparency, frame sizes in
       multiples of 32, directional effects face right.</li>
   </ol>

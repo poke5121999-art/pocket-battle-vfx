@@ -1,7 +1,7 @@
 {
  "name": "Pocket Battle VFX",
  "license": "CC0-1.0",
- "count": 83,
+ "count": 90,
  "fps": 30,
  "elements": [
   "bug",
@@ -26,7 +26,7 @@
  "effects": [
   {
    "id": "normal-star-volley",
-   "name": "Star Volley",
+   "name": "Swift",
    "element": "normal",
    "kind": "projectile",
    "frameW": 96,
@@ -39,8 +39,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Three jagged stars bob in formation, shedding star motes.",
+   "notes": "Five five-pointed stars in a loose spread, each spinning at its own rate, tiny sparkle trails.",
    "ground": 38,
+   "material": "emissive",
    "palette": [
     "#32303d",
     "#686476",
@@ -70,11 +71,11 @@
    },
    "gif": "fx/normal-star-volley.gif",
    "durationMs": 800,
-   "peakFrame": 21
+   "peakFrame": 7
   },
   {
    "id": "normal-impact-burst",
-   "name": "Impact Burst",
+   "name": "Body Slam",
    "element": "normal",
    "kind": "impact",
    "frameW": 128,
@@ -87,8 +88,9 @@
     64
    ],
    "layer": "front",
-   "notes": "White jagged burst, streak sparks bouncing on the floor, dust puffs, light pulse.",
+   "notes": "Downward speed lines, a big squashed comic impact star, impact lines, dust billows thrown out both sides.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#32303d",
     "#686476",
@@ -118,11 +120,11 @@
    },
    "gif": "fx/normal-impact-burst.gif",
    "durationMs": 1333,
-   "peakFrame": 25,
+   "peakFrame": 5,
    "battle": {
-    "hitFrame": 0,
-    "hitStopMs": 60,
-    "shakePx": 2
+    "hitFrame": 4,
+    "hitStopMs": 80,
+    "shakePx": 3
    }
   },
   {
@@ -142,6 +144,7 @@
    "layer": "ground",
    "notes": "Two broken, uneven shock rings on the floor kicking up dust (a ring by design).",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#32303d",
     "#686476",
@@ -187,8 +190,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Flickering hot head; flame blobs shed backwards cool white > yellow > red > smoke; embers.",
+   "notes": "Flame-bodied fireball: hot core, tongues streaming back, embers and smoke shed. Ember-size variant: fire-embers.",
    "ground": 38,
+   "material": "emissive",
    "palette": [
     "#4a0921",
     "#a80920",
@@ -217,16 +221,118 @@
    },
    "gif": "fx/fire-fireball.gif",
    "durationMs": 800,
-   "peakFrame": 13
+   "peakFrame": 15
+  },
+  {
+   "id": "fire-embers",
+   "name": "Embers",
+   "element": "fire",
+   "kind": "projectile",
+   "frameW": 96,
+   "frameH": 48,
+   "frames": 24,
+   "fps": 30,
+   "loop": true,
+   "anchor": [
+    80,
+    24
+   ],
+   "layer": "front",
+   "notes": "Ember: four small separate fireballs with short flickering tails, low formation.",
+   "ground": 38,
+   "material": "emissive",
+   "palette": [
+    "#4a0921",
+    "#a80920",
+    "#e8461c",
+    "#ffa72e",
+    "#ffef5c",
+    "#fffac9"
+   ],
+   "refs": [
+    "BS-11",
+    "NG-01"
+   ],
+   "sheet": {
+    "image": "fx/fire-embers.png",
+    "columns": 10,
+    "rows": 3,
+    "width": 960,
+    "height": 144
+   },
+   "light": {
+    "image": "fx/fire-embers.light.png",
+    "blend": "additive",
+    "premultiplied": true,
+    "columns": 10,
+    "rows": 3
+   },
+   "gif": "fx/fire-embers.gif",
+   "durationMs": 800,
+   "peakFrame": 0
+  },
+  {
+   "id": "fire-flamethrower",
+   "name": "Flamethrower",
+   "element": "fire",
+   "kind": "beam",
+   "frameW": 192,
+   "frameH": 64,
+   "frames": 45,
+   "fps": 30,
+   "loop": false,
+   "anchor": [
+    10,
+    32
+   ],
+   "layer": "front",
+   "notes": "Wedge-shaped jet: narrow at the mouth, wide at the target, wavy edges, yellow-white core line; engulfs the target.",
+   "ground": 54,
+   "material": "emissive",
+   "palette": [
+    "#4a0921",
+    "#a80920",
+    "#e8461c",
+    "#ffa72e",
+    "#ffef5c",
+    "#fffac9"
+   ],
+   "refs": [
+    "RB-09",
+    "BS-11",
+    "NG-01"
+   ],
+   "sheet": {
+    "image": "fx/fire-flamethrower.png",
+    "columns": 5,
+    "rows": 9,
+    "width": 960,
+    "height": 576
+   },
+   "light": {
+    "image": "fx/fire-flamethrower.light.png",
+    "blend": "additive",
+    "premultiplied": true,
+    "columns": 5,
+    "rows": 9
+   },
+   "gif": "fx/fire-flamethrower.gif",
+   "durationMs": 1500,
+   "peakFrame": 23,
+   "battle": {
+    "hitFrame": 7,
+    "hitStopMs": 40,
+    "shakePx": 1
+   }
   },
   {
    "id": "fire-burst",
-   "name": "Fire Burst",
+   "name": "Fire Blast",
    "element": "fire",
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 50,
+   "frames": 36,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -234,8 +340,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Flash, jagged burst, flame blobs boil up and turn to drifting smoke, embers fall.",
+   "notes": "Five-armed star of flame bursts from a white-hot core, flash, then flickers down shedding embers and smoke.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a0921",
     "#a80920",
@@ -252,20 +359,20 @@
    "sheet": {
     "image": "fx/fire-burst.png",
     "columns": 8,
-    "rows": 7,
+    "rows": 5,
     "width": 1024,
-    "height": 672
+    "height": 480
    },
    "light": {
     "image": "fx/fire-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 7
+    "rows": 5
    },
    "gif": "fx/fire-burst.gif",
-   "durationMs": 1667,
-   "peakFrame": 2,
+   "durationMs": 1200,
+   "peakFrame": 5,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 80,
@@ -274,21 +381,22 @@
   },
   {
    "id": "fire-pillar",
-   "name": "Flame Pillar",
+   "name": "Fire Spin",
    "element": "fire",
    "kind": "area",
-   "frameW": 64,
-   "frameH": 128,
-   "frames": 45,
+   "frameW": 96,
+   "frameH": 96,
+   "frames": 30,
    "fps": 30,
-   "loop": false,
+   "loop": true,
    "anchor": [
-    32,
-    120
+    48,
+    86
    ],
    "layer": "front",
-   "notes": "Floor flicker, then a column of rising flame blobs and tongues, sparks at the base, smoke off the top.",
-   "ground": 120,
+   "notes": "Flame tongues circle the target on a tilted ellipse and rise, front half over the body (trap loop).",
+   "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a0921",
     "#a80920",
@@ -304,25 +412,25 @@
    ],
    "sheet": {
     "image": "fx/fire-pillar.png",
-    "columns": 16,
+    "columns": 10,
     "rows": 3,
-    "width": 1024,
-    "height": 384
+    "width": 960,
+    "height": 288
    },
    "light": {
     "image": "fx/fire-pillar.light.png",
     "blend": "additive",
     "premultiplied": true,
-    "columns": 16,
+    "columns": 10,
     "rows": 3
    },
    "gif": "fx/fire-pillar.gif",
-   "durationMs": 1500,
-   "peakFrame": 28
+   "durationMs": 1000,
+   "peakFrame": 3
   },
   {
    "id": "fire-aura",
-   "name": "Flame Aura",
+   "name": "Flame Wheel",
    "element": "fire",
    "kind": "aura",
    "frameW": 64,
@@ -335,8 +443,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Flames and embers rise along the body edges.",
+   "notes": "The unit wrapped in a spinning wheel of fire, tongues trailing against the spin (Flame Wheel / Fire Punch charge).",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a0921",
     "#a80920",
@@ -366,7 +475,7 @@
    },
    "gif": "fx/fire-aura.gif",
    "durationMs": 1000,
-   "peakFrame": 6
+   "peakFrame": 26
   },
   {
    "id": "water-jet",
@@ -383,8 +492,9 @@
     32
    ],
    "layer": "front",
-   "notes": "Gather, then a jittering jet with ragged edges, spray leaving the stream, splash at the end.",
+   "notes": "Hydro Pump: pressure build, then a thick translucent stream (8-14 px) with foam running along the top, droplets peeling off, splash crown and water running down at the target; breaks into falling drops.",
    "ground": 54,
+   "material": "material",
    "palette": [
     "#0c065c",
     "#0c25b8",
@@ -394,7 +504,8 @@
     "#ffffff"
    ],
    "refs": [
-    "RB-11"
+    "RB-11",
+    "RC-12"
    ],
    "sheet": {
     "image": "fx/water-jet.png",
@@ -412,11 +523,63 @@
    },
    "gif": "fx/water-jet.gif",
    "durationMs": 1333,
-   "peakFrame": 25,
+   "peakFrame": 30,
    "battle": {
     "hitFrame": 13,
     "hitStopMs": 40,
     "shakePx": 1
+   }
+  },
+  {
+   "id": "water-gun",
+   "name": "Water Gun",
+   "element": "water",
+   "kind": "beam",
+   "frameW": 192,
+   "frameH": 64,
+   "frames": 24,
+   "fps": 30,
+   "loop": false,
+   "anchor": [
+    10,
+    32
+   ],
+   "layer": "front",
+   "notes": "The small water move: a narrow dotted stream of drops, specks shed off, quick, small splash at the end.",
+   "ground": 54,
+   "material": "material",
+   "palette": [
+    "#0c065c",
+    "#0c25b8",
+    "#3488e6",
+    "#6cd6fc",
+    "#b6fcff",
+    "#ffffff"
+   ],
+   "refs": [
+    "RB-11",
+    "RC-12"
+   ],
+   "sheet": {
+    "image": "fx/water-gun.png",
+    "columns": 5,
+    "rows": 5,
+    "width": 960,
+    "height": 320
+   },
+   "light": {
+    "image": "fx/water-gun.light.png",
+    "blend": "additive",
+    "premultiplied": true,
+    "columns": 5,
+    "rows": 5
+   },
+   "gif": "fx/water-gun.gif",
+   "durationMs": 800,
+   "peakFrame": 16,
+   "battle": {
+    "hitFrame": 7,
+    "hitStopMs": 30
    }
   },
   {
@@ -434,8 +597,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Glossy head with droplets and mist shed behind.",
+   "notes": "Cluster of 7 bubbles (3-10 px) wobbling forward at different rates, small ones trailing. Pair with Bubble Pop.",
    "ground": 38,
+   "material": "material",
    "palette": [
     "#0c065c",
     "#0c25b8",
@@ -445,9 +609,9 @@
     "#ffffff"
    ],
    "refs": [
+    "RB-12",
     "RC-12",
-    "RB-11",
-    "RB-12"
+    "RB-11"
    ],
    "sheet": {
     "image": "fx/water-bubble-shot.png",
@@ -465,16 +629,16 @@
    },
    "gif": "fx/water-bubble-shot.gif",
    "durationMs": 800,
-   "peakFrame": 7
+   "peakFrame": 14
   },
   {
-   "id": "water-splash",
-   "name": "Water Splash",
+   "id": "water-bubble-pop",
+   "name": "Bubble Pop",
    "element": "water",
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 40,
+   "frames": 30,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -482,8 +646,62 @@
     64
    ],
    "layer": "front",
-   "notes": "Droplets on gravity arcs bouncing on the floor, mist, light flash.",
+   "notes": "Bubbles arrive and pop one after another: broken ring flash, 3-5 falling droplets each.",
    "ground": 86,
+   "material": "material",
+   "palette": [
+    "#0c065c",
+    "#0c25b8",
+    "#3488e6",
+    "#6cd6fc",
+    "#b6fcff",
+    "#ffffff"
+   ],
+   "refs": [
+    "RC-12",
+    "RB-11",
+    "RB-12"
+   ],
+   "sheet": {
+    "image": "fx/water-bubble-pop.png",
+    "columns": 8,
+    "rows": 4,
+    "width": 1024,
+    "height": 384
+   },
+   "light": {
+    "image": "fx/water-bubble-pop.light.png",
+    "blend": "additive",
+    "premultiplied": true,
+    "columns": 8,
+    "rows": 4
+   },
+   "gif": "fx/water-bubble-pop.gif",
+   "durationMs": 1000,
+   "peakFrame": 0,
+   "battle": {
+    "hitFrame": 2,
+    "hitStopMs": 30
+   }
+  },
+  {
+   "id": "water-splash",
+   "name": "Surf Wave",
+   "element": "water",
+   "kind": "impact",
+   "frameW": 128,
+   "frameH": 96,
+   "frames": 45,
+   "fps": 30,
+   "loop": false,
+   "anchor": [
+    64,
+    64
+   ],
+   "layer": "front",
+   "notes": "A wave arrives (curved crest, white foam, dark-to-light body), then crashes over the target in foam and spray, leaving a puddle.",
+   "ground": 86,
+   "material": "material",
    "palette": [
     "#0c065c",
     "#0c25b8",
@@ -500,24 +718,24 @@
    "sheet": {
     "image": "fx/water-splash.png",
     "columns": 8,
-    "rows": 5,
+    "rows": 6,
     "width": 1024,
-    "height": 480
+    "height": 576
    },
    "light": {
     "image": "fx/water-splash.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 5
+    "rows": 6
    },
    "gif": "fx/water-splash.gif",
-   "durationMs": 1333,
-   "peakFrame": 2,
+   "durationMs": 1500,
+   "peakFrame": 10,
    "battle": {
-    "hitFrame": 0,
+    "hitFrame": 13,
     "hitStopMs": 50,
-    "shakePx": 1
+    "shakePx": 2
    }
   },
   {
@@ -525,18 +743,19 @@
    "name": "Whirlpool",
    "element": "water",
    "kind": "area",
-   "frameW": 96,
-   "frameH": 128,
+   "frameW": 128,
+   "frameH": 96,
    "frames": 30,
    "fps": 30,
    "loop": true,
    "anchor": [
-    48,
-    120
+    64,
+    86
    ],
    "layer": "front",
-   "notes": "Droplets riding a rising helix with streak tails; back half dimmer.",
-   "ground": 120,
+   "notes": "Water vortex on the floor around the target: translucent spiral arms with foam crests, churning rim wall, flung drops.",
+   "ground": 86,
+   "material": "material",
    "palette": [
     "#0c065c",
     "#0c25b8",
@@ -552,25 +771,25 @@
    ],
    "sheet": {
     "image": "fx/water-whirlpool.png",
-    "columns": 10,
-    "rows": 3,
-    "width": 960,
+    "columns": 8,
+    "rows": 4,
+    "width": 1024,
     "height": 384
    },
    "light": {
     "image": "fx/water-whirlpool.light.png",
     "blend": "additive",
     "premultiplied": true,
-    "columns": 10,
-    "rows": 3
+    "columns": 8,
+    "rows": 4
    },
    "gif": "fx/water-whirlpool.gif",
    "durationMs": 1000,
-   "peakFrame": 3
+   "peakFrame": 17
   },
   {
    "id": "grass-leaf-volley",
-   "name": "Leaf Volley",
+   "name": "Razor Leaf",
    "element": "grass",
    "kind": "projectile",
    "frameW": 96,
@@ -583,8 +802,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Small green core shedding tumbling leaves.",
+   "notes": "Five leaf shapes (centre vein, lit side, dark edge) in a staggered arc, each tumbling flat-to-edge.",
    "ground": 38,
+   "material": "material",
    "palette": [
     "#0d382b",
     "#1a703a",
@@ -614,16 +834,16 @@
    },
    "gif": "fx/grass-leaf-volley.gif",
    "durationMs": 800,
-   "peakFrame": 8
+   "peakFrame": 0
   },
   {
    "id": "grass-petal-burst",
-   "name": "Petal Burst",
+   "name": "Petal Dance",
    "element": "grass",
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 40,
+   "frames": 45,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -631,8 +851,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Green flash, leaves burst out and flutter down on turbulence.",
+   "notes": "Pink and white petals burst out of the target in a swirl, then flutter down swaying and turning.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#0d382b",
     "#1a703a",
@@ -649,20 +870,20 @@
    "sheet": {
     "image": "fx/grass-petal-burst.png",
     "columns": 8,
-    "rows": 5,
+    "rows": 6,
     "width": 1024,
-    "height": 480
+    "height": 576
    },
    "light": {
     "image": "fx/grass-petal-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 5
+    "rows": 6
    },
    "gif": "fx/grass-petal-burst.gif",
-   "durationMs": 1333,
-   "peakFrame": 2,
+   "durationMs": 1500,
+   "peakFrame": 25,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 50,
@@ -670,8 +891,60 @@
    }
   },
   {
+   "id": "grass-powder",
+   "name": "Sleep Powder",
+   "element": "grass",
+   "kind": "area",
+   "frameW": 128,
+   "frameH": 96,
+   "frames": 45,
+   "fps": 30,
+   "loop": false,
+   "anchor": [
+    64,
+    86
+   ],
+   "layer": "front",
+   "notes": "Soft cloud of tiny pale-green powder grains sprinkled over the target, twinkling specks, slow drift down.",
+   "ground": 86,
+   "material": "material",
+   "palette": [
+    "#0d382b",
+    "#1a703a",
+    "#3ea83a",
+    "#95d54b",
+    "#e8f27a",
+    "#fffbd8"
+   ],
+   "refs": [
+    "BS-14",
+    "NG-16",
+    "SG-07"
+   ],
+   "sheet": {
+    "image": "fx/grass-powder.png",
+    "columns": 8,
+    "rows": 6,
+    "width": 1024,
+    "height": 576
+   },
+   "light": {
+    "image": "fx/grass-powder.light.png",
+    "blend": "additive",
+    "premultiplied": true,
+    "columns": 8,
+    "rows": 6
+   },
+   "gif": "fx/grass-powder.gif",
+   "durationMs": 1500,
+   "peakFrame": 14,
+   "battle": {
+    "hitFrame": 12
+   }
+  },
+  {
    "id": "grass-leaf-spiral",
-   "name": "Leaf Spiral",
+   "name": "Leaf Storm",
    "element": "grass",
    "kind": "area",
    "frameW": 96,
@@ -684,8 +957,9 @@
     120
    ],
    "layer": "front",
-   "notes": "Leaves riding a rising helix.",
+   "notes": "Real leaf shapes (and a few petals) ride a rising helix around the target, tumbling.",
    "ground": 120,
+   "material": "material",
    "palette": [
     "#0d382b",
     "#1a703a",
@@ -713,7 +987,7 @@
    },
    "gif": "fx/grass-leaf-spiral.gif",
    "durationMs": 1000,
-   "peakFrame": 1
+   "peakFrame": 28
   },
   {
    "id": "electric-spark-ball",
@@ -730,8 +1004,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Crackling core with bolts redrawn every frame and sparks.",
+   "notes": "Thunder Shock shot: small round crackling ball, short jagged arcs leaping off it every frame, sparks hop behind.",
    "ground": 38,
+   "material": "emissive",
    "palette": [
     "#4a1000",
     "#b04a00",
@@ -761,11 +1036,63 @@
    },
    "gif": "fx/electric-spark-ball.gif",
    "durationMs": 800,
-   "peakFrame": 8
+   "peakFrame": 15
+  },
+  {
+   "id": "electric-thunderbolt",
+   "name": "Thunderbolt",
+   "element": "electric",
+   "kind": "impact",
+   "frameW": 128,
+   "frameH": 96,
+   "frames": 24,
+   "fps": 30,
+   "loop": false,
+   "anchor": [
+    64,
+    64
+   ],
+   "layer": "front",
+   "notes": "Thin zig-zag bolts thrown at the target from the upper left, three quick strikes with flashes, then crackle on the body.",
+   "ground": 86,
+   "material": "emissive",
+   "palette": [
+    "#4a1000",
+    "#b04a00",
+    "#f2b114",
+    "#ffed4a",
+    "#fff6a8",
+    "#ffffff"
+   ],
+   "refs": [
+    "RB-02"
+   ],
+   "sheet": {
+    "image": "fx/electric-thunderbolt.png",
+    "columns": 8,
+    "rows": 3,
+    "width": 1024,
+    "height": 288
+   },
+   "light": {
+    "image": "fx/electric-thunderbolt.light.png",
+    "blend": "additive",
+    "premultiplied": true,
+    "columns": 8,
+    "rows": 3
+   },
+   "gif": "fx/electric-thunderbolt.gif",
+   "durationMs": 800,
+   "peakFrame": 2,
+   "battle": {
+    "hitFrame": 2,
+    "hitStopMs": 60,
+    "shakePx": 2
+   }
   },
   {
    "id": "electric-thunder-strike",
-   "name": "Thunder Strike",
+   "name": "Thunder",
    "element": "electric",
    "kind": "impact",
    "frameW": 96,
@@ -778,8 +1105,9 @@
     96
    ],
    "layer": "front",
-   "notes": "Bolt flickers down from the sky, then ground crackle crawls out over a scorch while sparks hop.",
+   "notes": "Storm cloud darkens the top, a thick branching bolt falls from above and re-strikes, a disc of light and ground arcs spread.",
    "ground": 118,
+   "material": "emissive",
    "palette": [
     "#4a1000",
     "#b04a00",
@@ -807,16 +1135,16 @@
    },
    "gif": "fx/electric-thunder-strike.gif",
    "durationMs": 1500,
-   "peakFrame": 2,
+   "peakFrame": 10,
    "battle": {
-    "hitFrame": 0,
-    "hitStopMs": 80,
-    "shakePx": 3
+    "hitFrame": 8,
+    "hitStopMs": 100,
+    "shakePx": 4
    }
   },
   {
    "id": "electric-static-aura",
-   "name": "Static Aura",
+   "name": "Thunder Wave",
    "element": "electric",
    "kind": "aura",
    "frameW": 64,
@@ -829,8 +1157,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Sparks crawl up the body edges.",
+   "notes": "Jagged electric rings squeeze around the unit's middle with arcs jumping to the body (Thunder Wave / static).",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a1000",
     "#b04a00",
@@ -876,8 +1205,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Pale core shedding glinting shards and snow motes.",
+   "notes": "Icy Wind: four faceted crystals in a loose wedge, spinning so the facets swap light and dark; snow specks peel off.",
    "ground": 38,
+   "material": "material",
    "palette": [
     "#131a5e",
     "#2c53b0",
@@ -907,7 +1237,7 @@
    },
    "gif": "fx/ice-shards.gif",
    "durationMs": 800,
-   "peakFrame": 22
+   "peakFrame": 0
   },
   {
    "id": "ice-beam",
@@ -924,8 +1254,9 @@
     32
    ],
    "layer": "front",
-   "notes": "Jittering pale beam with crystals budding off the edges, shards breaking away.",
+   "notes": "Crisp straight pale beam with star glints; crystals grow on its path, stay, then fall; shards and flakes burst at the target.",
    "ground": 54,
+   "material": "emissive",
    "palette": [
     "#131a5e",
     "#2c53b0",
@@ -954,16 +1285,16 @@
    },
    "gif": "fx/ice-beam.gif",
    "durationMs": 1333,
-   "peakFrame": 29,
+   "peakFrame": 24,
    "battle": {
-    "hitFrame": 13,
+    "hitFrame": 11,
     "hitStopMs": 40,
     "shakePx": 1
    }
   },
   {
    "id": "ice-shatter",
-   "name": "Frost Shatter",
+   "name": "Ice Break",
    "element": "ice",
    "kind": "impact",
    "frameW": 128,
@@ -976,8 +1307,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Shards burst out, bounce and glint; snow drifts.",
+   "notes": "Target sealed in a faceted ice block, cracks run, it bursts into spinning crystal chunks that bounce and glint.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#131a5e",
     "#2c53b0",
@@ -1005,7 +1337,7 @@
    },
    "gif": "fx/ice-shatter.gif",
    "durationMs": 1333,
-   "peakFrame": 2,
+   "peakFrame": 4,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -1014,7 +1346,7 @@
   },
   {
    "id": "ice-blizzard",
-   "name": "Blizzard Field",
+   "name": "Blizzard",
    "element": "ice",
    "kind": "area",
    "frameW": 128,
@@ -1027,8 +1359,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Diagonal snow on wind streaks over a frosted floor line.",
+   "notes": "Driving snow in three depth layers on a hard diagonal wind, wind streaks, gust bands, frost on the floor.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#131a5e",
     "#2c53b0",
@@ -1058,7 +1391,7 @@
    },
    "gif": "fx/ice-blizzard.gif",
    "durationMs": 1000,
-   "peakFrame": 23
+   "peakFrame": 19
   },
   {
    "id": "fighting-force-wave",
@@ -1075,8 +1408,9 @@
     32
    ],
    "layer": "front",
-   "notes": "Tapered force crescents thinning as they travel.",
+   "notes": "Punch of compressed air: rigid edge-on pressure rings growing as they travel, speed lines, dust.",
    "ground": 54,
+   "material": "material",
    "palette": [
     "#4a0920",
     "#920918",
@@ -1106,16 +1440,16 @@
    },
    "gif": "fx/fighting-force-wave.gif",
    "durationMs": 800,
-   "peakFrame": 12
+   "peakFrame": 23
   },
   {
    "id": "fighting-power-hit",
-   "name": "Power Hit",
+   "name": "Mega Punch",
    "element": "fighting",
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 40,
+   "frames": 36,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1123,8 +1457,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Big jagged burst, long streak sparks, dust and smoke on the floor.",
+   "notes": "A big glove drives in with speed lines, lands with a white comic contact star and hit-lines, pulls back; dust at the feet.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#4a0920",
     "#920918",
@@ -1152,17 +1487,70 @@
     "rows": 5
    },
    "gif": "fx/fighting-power-hit.gif",
-   "durationMs": 1333,
-   "peakFrame": 29,
+   "durationMs": 1200,
+   "peakFrame": 6,
    "battle": {
-    "hitFrame": 0,
+    "hitFrame": 5,
     "hitStopMs": 100,
     "shakePx": 4
    }
   },
   {
+   "id": "fighting-chop",
+   "name": "Karate Chop",
+   "element": "fighting",
+   "kind": "impact",
+   "frameW": 128,
+   "frameH": 96,
+   "frames": 20,
+   "fps": 30,
+   "loop": false,
+   "anchor": [
+    64,
+    64
+   ],
+   "layer": "front",
+   "notes": "An open hand sweeps down across the target, leaves a curved white slash line for 2 frames, then a small contact star.",
+   "ground": 86,
+   "material": "material",
+   "palette": [
+    "#4a0920",
+    "#920918",
+    "#d23f22",
+    "#f2973c",
+    "#ffe078",
+    "#fffad0"
+   ],
+   "refs": [
+    "NG-07",
+    "DA-10"
+   ],
+   "sheet": {
+    "image": "fx/fighting-chop.png",
+    "columns": 8,
+    "rows": 3,
+    "width": 1024,
+    "height": 288
+   },
+   "light": {
+    "image": "fx/fighting-chop.light.png",
+    "blend": "additive",
+    "premultiplied": true,
+    "columns": 8,
+    "rows": 3
+   },
+   "gif": "fx/fighting-chop.gif",
+   "durationMs": 667,
+   "peakFrame": 4,
+   "battle": {
+    "hitFrame": 4,
+    "hitStopMs": 60,
+    "shakePx": 2
+   }
+  },
+  {
    "id": "fighting-power-aura",
-   "name": "Power Aura",
+   "name": "Focus Energy",
    "element": "fighting",
    "kind": "aura",
    "frameW": 64,
@@ -1175,8 +1563,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Fast rising streaks (power-up).",
+   "notes": "Upward flame-shaped energy shell hugging the body, inward rush lines in pulses, ring at the feet.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a0920",
     "#920918",
@@ -1206,11 +1595,11 @@
    },
    "gif": "fx/fighting-power-aura.gif",
    "durationMs": 1000,
-   "peakFrame": 8
+   "peakFrame": 20
   },
   {
    "id": "poison-sludge-glob",
-   "name": "Sludge Glob",
+   "name": "Sludge",
    "element": "poison",
    "kind": "projectile",
    "frameW": 96,
@@ -1223,8 +1612,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Heavy glob shedding drips that fall away, bubbles.",
+   "notes": "Three glossy purple globs in a heavy arc, wobbling, a sticky strand between them, drips beading off and falling.",
    "ground": 38,
+   "material": "material",
    "palette": [
     "#160d38",
     "#411978",
@@ -1252,16 +1642,16 @@
    },
    "gif": "fx/poison-sludge-glob.gif",
    "durationMs": 800,
-   "peakFrame": 22
+   "peakFrame": 1
   },
   {
    "id": "poison-toxic-splash",
-   "name": "Toxic Splash",
+   "name": "Acid Splat",
    "element": "poison",
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 40,
+   "frames": 45,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1269,8 +1659,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Goo drops bounce, bubbles rise, gas puffs.",
+   "notes": "Goo slaps the target and flattens, droplets fly on heavy arcs, strings drip, a puddle spreads with popping bubbles.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#160d38",
     "#411978",
@@ -1286,20 +1677,20 @@
    "sheet": {
     "image": "fx/poison-toxic-splash.png",
     "columns": 8,
-    "rows": 5,
+    "rows": 6,
     "width": 1024,
-    "height": 480
+    "height": 576
    },
    "light": {
     "image": "fx/poison-toxic-splash.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 5
+    "rows": 6
    },
    "gif": "fx/poison-toxic-splash.gif",
-   "durationMs": 1333,
-   "peakFrame": 2,
+   "durationMs": 1500,
+   "peakFrame": 16,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 50,
@@ -1308,7 +1699,7 @@
   },
   {
    "id": "poison-cloud",
-   "name": "Poison Cloud",
+   "name": "Poison Gas",
    "element": "poison",
    "kind": "area",
    "frameW": 128,
@@ -1321,8 +1712,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Translucent gas puffs drift and break apart; bubbles pop.",
+   "notes": "Billowing cloud of round see-through lobes over the target, purple with a sickly green tinge, wisps curling off.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#160d38",
     "#411978",
@@ -1352,7 +1744,7 @@
    },
    "gif": "fx/poison-cloud.gif",
    "durationMs": 1000,
-   "peakFrame": 25
+   "peakFrame": 11
   },
   {
    "id": "ground-mud-ball",
@@ -1369,8 +1761,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Tumbling clod with a dust trail.",
+   "notes": "Lumpy brown clod with pebbles, tumbling, shedding crumbs of dirt that drop away; no glow.",
    "ground": 38,
+   "material": "material",
    "palette": [
     "#3a0e0b",
     "#6e3019",
@@ -1400,11 +1793,11 @@
    },
    "gif": "fx/ground-mud-ball.gif",
    "durationMs": 800,
-   "peakFrame": 6
+   "peakFrame": 1
   },
   {
    "id": "ground-quake",
-   "name": "Quake Cracks",
+   "name": "Earthquake",
    "element": "ground",
    "kind": "area",
    "frameW": 160,
@@ -1417,8 +1810,9 @@
     86
    ],
    "layer": "ground",
-   "notes": "Forked cracks race out glowing then cool; chunks pop and bounce; dust.",
+   "notes": "Three jolts: a web of dark fissures spreads from under the target, rock chips pop up, dust rolls along the floor.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#3a0e0b",
     "#6e3019",
@@ -1448,20 +1842,20 @@
    },
    "gif": "fx/ground-quake.gif",
    "durationMs": 1200,
-   "peakFrame": 20,
+   "peakFrame": 28,
    "battle": {
-    "hitFrame": 3,
+    "hitFrame": 0,
     "shakePx": 4
    }
   },
   {
    "id": "ground-dust-burst",
-   "name": "Dust Burst",
+   "name": "Dig Burst",
    "element": "ground",
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 40,
+   "frames": 45,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1469,8 +1863,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Chunks bounce on the floor, dust rolls out and thins.",
+   "notes": "The floor bursts open: hole with a dirt rim, a fountain of clods, a dust cloud with form rolling out and up.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#3a0e0b",
     "#6e3019",
@@ -1487,20 +1882,20 @@
    "sheet": {
     "image": "fx/ground-dust-burst.png",
     "columns": 8,
-    "rows": 5,
+    "rows": 6,
     "width": 1024,
-    "height": 480
+    "height": 576
    },
    "light": {
     "image": "fx/ground-dust-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 5
+    "rows": 6
    },
    "gif": "fx/ground-dust-burst.gif",
-   "durationMs": 1333,
-   "peakFrame": 27,
+   "durationMs": 1500,
+   "peakFrame": 23,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -1509,12 +1904,12 @@
   },
   {
    "id": "flying-air-blade",
-   "name": "Air Blade",
+   "name": "Wing Blade",
    "element": "flying",
    "kind": "projectile",
    "frameW": 96,
    "frameH": 48,
-   "frames": 18,
+   "frames": 24,
    "fps": 30,
    "loop": true,
    "anchor": [
@@ -1522,8 +1917,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Tapered crescent of wind with streaks.",
+   "notes": "Wing Attack / Razor Wind: two pale crescent air blades, wind curls off the tips, a feather tumbling behind.",
    "ground": 38,
+   "material": "material",
    "palette": [
     "#2f226a",
     "#4544b0",
@@ -1539,24 +1935,24 @@
    "sheet": {
     "image": "fx/flying-air-blade.png",
     "columns": 10,
-    "rows": 2,
+    "rows": 3,
     "width": 960,
-    "height": 96
+    "height": 144
    },
    "light": {
     "image": "fx/flying-air-blade.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 10,
-    "rows": 2
+    "rows": 3
    },
    "gif": "fx/flying-air-blade.gif",
-   "durationMs": 600,
-   "peakFrame": 16
+   "durationMs": 800,
+   "peakFrame": 0
   },
   {
    "id": "flying-gust-burst",
-   "name": "Gust Burst",
+   "name": "Gust",
    "element": "flying",
    "kind": "impact",
    "frameW": 128,
@@ -1569,8 +1965,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Airy jagged burst with long wind streaks.",
+   "notes": "Wind curls sweep in from the attacker side and wrap around the target, carrying leaves and dust; dust at the base.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#2f226a",
     "#4544b0",
@@ -1598,16 +1995,16 @@
    },
    "gif": "fx/flying-gust-burst.gif",
    "durationMs": 1200,
-   "peakFrame": 2,
+   "peakFrame": 16,
    "battle": {
-    "hitFrame": 0,
+    "hitFrame": 6,
     "hitStopMs": 40,
     "shakePx": 1
    }
   },
   {
    "id": "flying-tornado",
-   "name": "Tornado",
+   "name": "Whirlwind",
    "element": "flying",
    "kind": "area",
    "frameW": 96,
@@ -1620,8 +2017,9 @@
     120
    ],
    "layer": "front",
-   "notes": "Wind streaks riding a rising helix, dust at the base.",
+   "notes": "Funnel of broken wind lines widening upward, rocks, leaves and dust orbiting, dust churning at the base.",
    "ground": 120,
+   "material": "material",
    "palette": [
     "#2f226a",
     "#4544b0",
@@ -1653,7 +2051,7 @@
   },
   {
    "id": "psychic-psy-beam",
-   "name": "Psy Beam",
+   "name": "Psybeam",
    "element": "psychic",
    "kind": "beam",
    "frameW": 192,
@@ -1666,8 +2064,9 @@
     32
    ],
    "layer": "front",
-   "notes": "Pink jittering beam shedding motes.",
+   "notes": "A band of tall rings travels a sine path, colours cycling pink/violet/blue/gold; ripples collapse at the target.",
    "ground": 54,
+   "material": "emissive",
    "palette": [
     "#3a094a",
     "#a01a95",
@@ -1695,16 +2094,16 @@
    },
    "gif": "fx/psychic-psy-beam.gif",
    "durationMs": 1333,
-   "peakFrame": 25,
+   "peakFrame": 22,
    "battle": {
-    "hitFrame": 13,
+    "hitFrame": 12,
     "hitStopMs": 40,
     "shakePx": 1
    }
   },
   {
    "id": "psychic-psy-burst",
-   "name": "Psy Burst",
+   "name": "Psychic",
    "element": "psychic",
    "kind": "impact",
    "frameW": 128,
@@ -1717,8 +2116,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Jagged pink burst, swirling motes, broken shock ring on the floor.",
+   "notes": "Wavy concentric ripples pulse out from the target in three beats, the air over it bends, pink motes and glints.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#3a094a",
     "#a01a95",
@@ -1748,7 +2148,7 @@
    },
    "gif": "fx/psychic-psy-burst.gif",
    "durationMs": 1333,
-   "peakFrame": 2,
+   "peakFrame": 16,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -1770,8 +2170,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Motes float up and swirl around the unit.",
+   "notes": "Two wavy rings counter-rotate around the unit, shimmer lines rise inside, motes drift up.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#3a094a",
     "#a01a95",
@@ -1801,11 +2202,11 @@
    },
    "gif": "fx/psychic-mind-field.gif",
    "durationMs": 1000,
-   "peakFrame": 11
+   "peakFrame": 17
   },
   {
    "id": "bug-buzz-wave",
-   "name": "Buzz Wave",
+   "name": "Bug Buzz",
    "element": "bug",
    "kind": "projectile",
    "frameW": 96,
@@ -1818,8 +2219,9 @@
     32
    ],
    "layer": "front",
-   "notes": "Thin tapered sound crescents with buzzing motes.",
+   "notes": "Vibrating sound arcs whose edges zig-zag every frame, expanding and thinning, with buzz ticks.",
    "ground": 54,
+   "material": "material",
    "palette": [
     "#0d3802",
     "#306e05",
@@ -1849,7 +2251,7 @@
   },
   {
    "id": "bug-sting-volley",
-   "name": "Sting Volley",
+   "name": "Pin Missile",
    "element": "bug",
    "kind": "projectile",
    "frameW": 96,
@@ -1862,8 +2264,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Sharp green core with tiny bugs shed behind.",
+   "notes": "Five thin needles (pale shaft, dark tip, green fletch) fly straight and fast in a staggered burst.",
    "ground": 38,
+   "material": "material",
    "palette": [
     "#0d3802",
     "#306e05",
@@ -1889,11 +2292,11 @@
    },
    "gif": "fx/bug-sting-volley.gif",
    "durationMs": 800,
-   "peakFrame": 8
+   "peakFrame": 10
   },
   {
    "id": "bug-sting-hit",
-   "name": "Sting Hit",
+   "name": "Twineedle Hit",
    "element": "bug",
    "kind": "impact",
    "frameW": 128,
@@ -1906,8 +2309,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Small sharp burst, bugs scatter.",
+   "notes": "Two needles jab in and quiver, white contact puffs, a small purple poison puff bubbles up; needles drop.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#0d3802",
     "#306e05",
@@ -1933,9 +2337,9 @@
    },
    "gif": "fx/bug-sting-hit.gif",
    "durationMs": 1200,
-   "peakFrame": 2,
+   "peakFrame": 20,
    "battle": {
-    "hitFrame": 0,
+    "hitFrame": 2,
     "hitStopMs": 40,
     "shakePx": 1
    }
@@ -1955,8 +2359,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Bugs ride a curl-noise flow around the centre.",
+   "notes": "Little insects with flicking wings circle the target on looping paths, in front and behind.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#0d3802",
     "#306e05",
@@ -1982,11 +2387,11 @@
    },
    "gif": "fx/bug-swarm.gif",
    "durationMs": 1000,
-   "peakFrame": 1
+   "peakFrame": 0
   },
   {
    "id": "rock-boulder",
-   "name": "Boulder Throw",
+   "name": "Rock Throw",
    "element": "rock",
    "kind": "projectile",
    "frameW": 96,
@@ -1999,8 +2404,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Faceted rock tumbling, outlined, dust trail and speed streaks.",
+   "notes": "One big faceted boulder tumbling, cracks on it, speed lines, pebbles and a dust puff peeling off.",
    "ground": 38,
+   "material": "material",
    "palette": [
     "#2e1815",
     "#5a3d2d",
@@ -2029,11 +2435,11 @@
    },
    "gif": "fx/rock-boulder.gif",
    "durationMs": 800,
-   "peakFrame": 4
+   "peakFrame": 0
   },
   {
    "id": "rock-smash",
-   "name": "Rock Smash",
+   "name": "Rock Slide",
    "element": "rock",
    "kind": "impact",
    "frameW": 128,
@@ -2046,8 +2452,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Heavy chips bounce twice, dust and smoke roll.",
+   "notes": "Four angular boulders fall onto the target one after another, bounce, dust and chips; the pile crumbles.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#2e1815",
     "#5a3d2d",
@@ -2075,16 +2482,16 @@
    },
    "gif": "fx/rock-smash.gif",
    "durationMs": 1667,
-   "peakFrame": 29,
+   "peakFrame": 23,
    "battle": {
-    "hitFrame": 0,
+    "hitFrame": 8,
     "hitStopMs": 80,
     "shakePx": 3
    }
   },
   {
    "id": "rock-stone-spikes",
-   "name": "Stone Spikes",
+   "name": "Stone Edge",
    "element": "rock",
    "kind": "area",
    "frameW": 160,
@@ -2097,8 +2504,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Noise-edged stone shards stab up in sequence, chips and dust, crumble back.",
+   "notes": "Angular stone blades burst up around the target in sequence with chips and dust, hold, crack and crumble.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#2e1815",
     "#5a3d2d",
@@ -2126,7 +2534,7 @@
    },
    "gif": "fx/rock-stone-spikes.gif",
    "durationMs": 1500,
-   "peakFrame": 18,
+   "peakFrame": 10,
    "battle": {
     "hitFrame": 2,
     "hitStopMs": 60,
@@ -2135,7 +2543,7 @@
   },
   {
    "id": "ghost-shadow-orb",
-   "name": "Shadow Orb",
+   "name": "Shadow Ball",
    "element": "ghost",
    "kind": "projectile",
    "frameW": 96,
@@ -2148,8 +2556,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Dark-cored orb trailing wisps that smoke out.",
+   "notes": "Dark swirling orb: near-black core, purple swirl arms inside, thin pink rim (the only bright part), smoke trailing.",
    "ground": 38,
+   "material": "emissive",
    "palette": [
     "#130c30",
     "#2b1c68",
@@ -2179,11 +2588,11 @@
    },
    "gif": "fx/ghost-shadow-orb.gif",
    "durationMs": 800,
-   "peakFrame": 7
+   "peakFrame": 3
   },
   {
    "id": "ghost-hex-burst",
-   "name": "Hex Burst",
+   "name": "Night Shade",
    "element": "ghost",
    "kind": "impact",
    "frameW": 128,
@@ -2196,8 +2605,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Purple burst, wisps writhe up and smoke away.",
+   "notes": "Purple fog creeps, the target is tinted dark violet, ghostly flames rise, slanted eyes open above it, pink orb flash.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#130c30",
     "#2b1c68",
@@ -2227,9 +2637,9 @@
    },
    "gif": "fx/ghost-hex-burst.gif",
    "durationMs": 1333,
-   "peakFrame": 2,
+   "peakFrame": 22,
    "battle": {
-    "hitFrame": 0,
+    "hitFrame": 3,
     "hitStopMs": 60,
     "shakePx": 1
    }
@@ -2249,8 +2659,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Wisps writhe up and fade to smoke.",
+   "notes": "Three will-o'-wisps with curled tails drift around the unit (Confuse Ray / Curse).",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#130c30",
     "#2b1c68",
@@ -2280,11 +2691,11 @@
    },
    "gif": "fx/ghost-spirit-wisps.gif",
    "durationMs": 1000,
-   "peakFrame": 27
+   "peakFrame": 18
   },
   {
    "id": "dragon-pulse-beam",
-   "name": "Dragon Beam",
+   "name": "Dragon Rage",
    "element": "dragon",
    "kind": "beam",
    "frameW": 192,
@@ -2297,8 +2708,9 @@
     32
    ],
    "layer": "front",
-   "notes": "Thick blue-teal jittering beam shedding cold flames.",
+   "notes": "String of pearls: round blue-violet flame puffs in a line, head biggest, yellow sparks; flame burst at the target.",
    "ground": 54,
+   "material": "emissive",
    "palette": [
     "#1a0e4a",
     "#281c9c",
@@ -2340,7 +2752,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 50,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -2348,8 +2760,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Cold-flame burst boiling up, embers.",
+   "notes": "Blue-violet flame burst with angular draconic shards spinning out and yellow sparks (Dragon Rage hit / Outrage).",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#1a0e4a",
     "#281c9c",
@@ -2364,20 +2777,20 @@
    "sheet": {
     "image": "fx/dragon-burst.png",
     "columns": 8,
-    "rows": 7,
+    "rows": 5,
     "width": 1024,
-    "height": 672
+    "height": 480
    },
    "light": {
     "image": "fx/dragon-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 7
+    "rows": 5
    },
    "gif": "fx/dragon-burst.gif",
-   "durationMs": 1667,
-   "peakFrame": 2,
+   "durationMs": 1333,
+   "peakFrame": 11,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 80,
@@ -2386,7 +2799,7 @@
   },
   {
    "id": "dragon-aura",
-   "name": "Dragon Aura",
+   "name": "Dragon Dance",
    "element": "dragon",
    "kind": "aura",
    "frameW": 64,
@@ -2399,8 +2812,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Blue flames rise along the body.",
+   "notes": "A serpentine ribbon of blue-violet energy coils up around the unit with flame tufts on its spine.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#1a0e4a",
     "#281c9c",
@@ -2429,11 +2843,11 @@
    },
    "gif": "fx/dragon-aura.gif",
    "durationMs": 1000,
-   "peakFrame": 1
+   "peakFrame": 24
   },
   {
    "id": "dark-night-claw",
-   "name": "Night Claw",
+   "name": "Night Slash",
    "element": "dark",
    "kind": "impact",
    "frameW": 128,
@@ -2446,8 +2860,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Three tapered rakes, hot edge cooling to plum, sparks.",
+   "notes": "A dark band flicks across, then three black claw gashes with pale lilac rims rake the target and shrink away.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#0b0912",
     "#1f1a2c",
@@ -2475,7 +2890,7 @@
    },
    "gif": "fx/dark-night-claw.gif",
    "durationMs": 800,
-   "peakFrame": 5,
+   "peakFrame": 9,
    "battle": {
     "hitFrame": 2,
     "hitStopMs": 60,
@@ -2497,8 +2912,9 @@
     86
    ],
    "layer": "ground",
-   "notes": "Dark broken rings spread from a black core with wisps (a ring by design).",
+   "notes": "Black core swells, thick black rings with spiky pale rims spread on the floor, dark wisps peel up.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#0b0912",
     "#1f1a2c",
@@ -2528,11 +2944,11 @@
    },
    "gif": "fx/dark-pulse.gif",
    "durationMs": 1000,
-   "peakFrame": 8
+   "peakFrame": 21
   },
   {
    "id": "dark-orb",
-   "name": "Dark Orb",
+   "name": "Malice Orb",
    "element": "dark",
    "kind": "projectile",
    "frameW": 96,
@@ -2545,8 +2961,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Black-plum orb trailing writhing wisps.",
+   "notes": "Spiky black ball whose spikes grow and retract, pale lilac rim, tight pulsing ring, dark shreds trailing.",
    "ground": 38,
+   "material": "emissive",
    "palette": [
     "#0b0912",
     "#1f1a2c",
@@ -2576,11 +2993,11 @@
    },
    "gif": "fx/dark-orb.gif",
    "durationMs": 800,
-   "peakFrame": 8
+   "peakFrame": 3
   },
   {
    "id": "steel-beam",
-   "name": "Steel Beam",
+   "name": "Flash Cannon",
    "element": "steel",
    "kind": "beam",
    "frameW": 192,
@@ -2593,8 +3010,9 @@
     32
    ],
    "layer": "front",
-   "notes": "Silver jittering beam throwing metal sparks.",
+   "notes": "Light gathers at the mouth, then a wide hard-edged silver beam with a specular stripe, metal flakes, white star at the target.",
    "ground": 54,
+   "material": "emissive",
    "palette": [
     "#262438",
     "#474a66",
@@ -2622,7 +3040,7 @@
    },
    "gif": "fx/steel-beam.gif",
    "durationMs": 1333,
-   "peakFrame": 25,
+   "peakFrame": 23,
    "battle": {
     "hitFrame": 13,
     "hitStopMs": 60,
@@ -2631,7 +3049,7 @@
   },
   {
    "id": "steel-metal-spark",
-   "name": "Metal Spark",
+   "name": "Metal Clang",
    "element": "steel",
    "kind": "impact",
    "frameW": 128,
@@ -2644,8 +3062,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Clang: many streak sparks arc down and bounce.",
+   "notes": "Silver strike arc, two-frame white star clang, a shower of orange sparks off metal arcing down and bouncing.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#262438",
     "#474a66",
@@ -2675,7 +3094,7 @@
    },
    "gif": "fx/steel-metal-spark.gif",
    "durationMs": 1333,
-   "peakFrame": 2,
+   "peakFrame": 0,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -2697,8 +3116,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Polished noise-edged spikes rise in sequence.",
+   "notes": "Thin mirror-shaded steel blades shoot up in sequence, a glint runs up each, then they retract cleanly.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#262438",
     "#474a66",
@@ -2726,7 +3146,7 @@
    },
    "gif": "fx/steel-iron-spikes.gif",
    "durationMs": 1500,
-   "peakFrame": 25,
+   "peakFrame": 30,
    "battle": {
     "hitFrame": 2,
     "hitStopMs": 60,
@@ -2735,7 +3155,7 @@
   },
   {
    "id": "steel-slash",
-   "name": "Steel Slash",
+   "name": "Iron Tail",
    "element": "steel",
    "kind": "impact",
    "frameW": 128,
@@ -2748,8 +3168,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Tapered crescent sweep, hot edge, sparks off the tip.",
+   "notes": "One heavy polished-metal arc swings down with motion smears, clang star and orange sparks.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#262438",
     "#474a66",
@@ -2779,16 +3200,16 @@
    },
    "gif": "fx/steel-slash.gif",
    "durationMs": 800,
-   "peakFrame": 3,
+   "peakFrame": 4,
    "battle": {
-    "hitFrame": 1,
+    "hitFrame": 4,
     "hitStopMs": 60,
     "shakePx": 2
    }
   },
   {
    "id": "fairy-moon-orb",
-   "name": "Moon Orb",
+   "name": "Moonblast",
    "element": "fairy",
    "kind": "projectile",
    "frameW": 96,
@@ -2801,8 +3222,9 @@
     24
    ],
    "layer": "front",
-   "notes": "Pink orb leaving twinkling stars.",
+   "notes": "Pale pink full-moon disc with soft craters and a lit rim, sparkles orbiting and trailing.",
    "ground": 38,
+   "material": "emissive",
    "palette": [
     "#450e4a",
     "#a82d91",
@@ -2831,11 +3253,11 @@
    },
    "gif": "fx/fairy-moon-orb.gif",
    "durationMs": 800,
-   "peakFrame": 8
+   "peakFrame": 12
   },
   {
    "id": "fairy-sparkle-burst",
-   "name": "Sparkle Burst",
+   "name": "Charm Burst",
    "element": "fairy",
    "kind": "impact",
    "frameW": 128,
@@ -2848,8 +3270,9 @@
     64
    ],
    "layer": "front",
-   "notes": "Soft jagged burst, stars and hearts drift.",
+   "notes": "Soft pink ring pops, hearts burst out and float up wobbling, 4-point sparkles twinkle (Disarming Voice / Charm).",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#450e4a",
     "#a82d91",
@@ -2879,7 +3302,7 @@
    },
    "gif": "fx/fairy-sparkle-burst.gif",
    "durationMs": 1333,
-   "peakFrame": 2,
+   "peakFrame": 10,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 50,
@@ -2888,7 +3311,7 @@
   },
   {
    "id": "fairy-ring-aura",
-   "name": "Fairy Ring",
+   "name": "Moonlight",
    "element": "fairy",
    "kind": "aura",
    "frameW": 64,
@@ -2901,8 +3324,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Stars and hearts rise around the unit.",
+   "notes": "Crescent moon above the unit, a see-through column of moonlight, sparkles circling the feet.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#450e4a",
     "#a82d91",
@@ -2930,7 +3354,7 @@
    },
    "gif": "fx/fairy-ring-aura.gif",
    "durationMs": 1000,
-   "peakFrame": 27
+   "peakFrame": 3
   },
   {
    "id": "hit-spark",
@@ -2947,8 +3371,9 @@
     32
    ],
    "layer": "front",
-   "notes": "Smallest hit, 400 ms: jagged spark + streaks + light.",
+   "notes": "Tackle contact: small white-yellow 5-point star, 4 flick lines, 400 ms.",
    "ground": 56,
+   "material": "emissive",
    "palette": [
     "#3c384a",
     "#7c788e",
@@ -2978,7 +3403,7 @@
    },
    "gif": "fx/hit-spark.gif",
    "durationMs": 400,
-   "peakFrame": 1,
+   "peakFrame": 0,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 40,
@@ -3002,6 +3427,7 @@
    "layer": "front",
    "notes": "Two-beat crit: big jagged burst, then a second pop.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a0f02",
     "#9a3700",
@@ -3055,6 +3481,7 @@
    "layer": "screen",
    "notes": "Opaque screen plate with tapered speed lines for a few frames on crits and K.O.s.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#3c384a",
     "#7c788e",
@@ -3103,6 +3530,7 @@
    "layer": "front",
    "notes": "After-images slide off, dust, MISS pops.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#3c384a",
     "#7c788e",
@@ -3151,6 +3579,7 @@
    "layer": "front",
    "notes": "Broken shimmering barrier edge, hex glints, motes sliding along it.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#050a48",
     "#0d358a",
@@ -3197,6 +3626,7 @@
    "layer": "front",
    "notes": "Plus glyphs and sparkles rise.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#09373a",
     "#117a5f",
@@ -3245,6 +3675,7 @@
    "layer": "front",
    "notes": "Chevrons and streaks flow up.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#3a0422",
     "#8a0635",
@@ -3293,6 +3724,7 @@
    "layer": "front",
    "notes": "Chevrons and streaks sink.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#110548",
     "#0f0d9a",
@@ -3341,6 +3773,7 @@
    "layer": "front",
    "notes": "Small flames and embers on the body.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a0921",
     "#a80920",
@@ -3386,8 +3819,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Tiny bubbles rise, drips fall.",
+   "notes": "Purple bubbles rise off the unit and pop, drips, a sickly puddle at the feet.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#160d38",
     "#411978",
@@ -3417,7 +3851,7 @@
    },
    "gif": "fx/status-poison.gif",
    "durationMs": 1000,
-   "peakFrame": 24
+   "peakFrame": 16
   },
   {
    "id": "status-paralysis",
@@ -3436,6 +3870,7 @@
    "layer": "front",
    "notes": "Tiny bolts and sparks, off-beat every third frame.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a1000",
     "#b04a00",
@@ -3480,6 +3915,7 @@
    "layer": "front",
    "notes": "Z glyphs drift up and grow.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#110548",
     "#0f0d9a",
@@ -3526,8 +3962,9 @@
     86
    ],
    "layer": "front",
-   "notes": "Ice crust at the feet, falling frost motes, a glint sweeping across.",
+   "notes": "A faceted see-through ice shell over the lower body, a glint sweeping across, frost specks.",
    "ground": 86,
+   "material": "material",
    "palette": [
     "#131a5e",
     "#2c53b0",
@@ -3557,7 +3994,7 @@
    },
    "gif": "fx/status-freeze.gif",
    "durationMs": 1000,
-   "peakFrame": 19
+   "peakFrame": 1
   },
   {
    "id": "status-confusion",
@@ -3576,6 +4013,7 @@
    "layer": "front",
    "notes": "Three tiny stars circle above the head with trails.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a0f02",
     "#9a3700",
@@ -3622,6 +4060,7 @@
    "layer": "front",
    "notes": "Dust puff and rising motes; play over the faint animation.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#3c384a",
     "#7c788e",
@@ -3670,6 +4109,7 @@
    "layer": "front",
    "notes": "Light flash, rising streaks and stars, LV UP stamp.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#4a0f02",
     "#9a3700",
@@ -3718,6 +4158,7 @@
    "layer": "front",
    "notes": "Silhouette beats white faster and faster in rising light, ends in a flash.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#3c384a",
     "#7c788e",
@@ -3766,6 +4207,7 @@
    "layer": "front",
    "notes": "Jittering red beam; unit turns red, shrinks and lifts away in motes.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#3a0422",
     "#8a0635",
@@ -3814,6 +4256,7 @@
    "layer": "front",
    "notes": "Light flash and stars bursting as a unit appears.",
    "ground": 86,
+   "material": "emissive",
    "palette": [
     "#3c384a",
     "#7c788e",
@@ -3862,6 +4305,7 @@
    "layer": "front",
    "notes": "Streaks spiral into a flickering core with growing light.",
    "ground": 56,
+   "material": "emissive",
    "palette": [
     "#4a0f02",
     "#9a3700",
@@ -3910,6 +4354,7 @@
    "layer": "front",
    "notes": "Breathing squash/stretch, blink.",
    "ground": 56,
+   "material": "emissive",
    "palette": [
     "#1c1a24",
     "#4a4858",
@@ -3958,6 +4403,7 @@
    "layer": "front",
    "notes": "Crouch wind-up held 7f, dash 2f with smear ghosts, contact freeze 4f, recover.",
    "ground": 56,
+   "material": "emissive",
    "palette": [
     "#1c1a24",
     "#4a4858",
@@ -4009,6 +4455,7 @@
    "layer": "front",
    "notes": "3 white frames, 3 frozen frames, knockback with shake, blinks, settle.",
    "ground": 56,
+   "material": "emissive",
    "palette": [
     "#1c1a24",
     "#4a4858",
@@ -4060,6 +4507,7 @@
    "layer": "front",
    "notes": "Wobble, flatten, dissolve.",
    "ground": 56,
+   "material": "emissive",
    "palette": [
     "#1c1a24",
     "#4a4858",

@@ -15,6 +15,7 @@
  "layer": "front",
  "notes": "3 white frames, 3 frozen frames, knockback with shake, blinks, settle.",
  "ground": 56,
+ "material": "emissive",
  "palette": [
   "#1c1a24",
   "#4a4858",

@@ -1,11 +1,11 @@
 {
  "id": "poison-toxic-splash",
- "name": "Toxic Splash",
+ "name": "Acid Splat",
  "element": "poison",
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 40,
+ "frames": 45,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Goo drops bounce, bubbles rise, gas puffs.",
+ "notes": "Goo slaps the target and flattens, droplets fly on heavy arcs, strings drip, a puddle spreads with popping bubbles.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#160d38",
   "#411978",
@@ -30,20 +31,20 @@
  "sheet": {
   "image": "fx/poison-toxic-splash.png",
   "columns": 8,
-  "rows": 5,
+  "rows": 6,
   "width": 1024,
-  "height": 480
+  "height": 576
  },
  "light": {
   "image": "fx/poison-toxic-splash.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 5
+  "rows": 6
  },
  "gif": "fx/poison-toxic-splash.gif",
- "durationMs": 1333,
- "peakFrame": 2,
+ "durationMs": 1500,
+ "peakFrame": 16,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 50,

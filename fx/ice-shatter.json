@@ -1,6 +1,6 @@
 {
  "id": "ice-shatter",
- "name": "Frost Shatter",
+ "name": "Ice Break",
  "element": "ice",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Shards burst out, bounce and glint; snow drifts.",
+ "notes": "Target sealed in a faceted ice block, cracks run, it bursts into spinning crystal chunks that bounce and glint.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -42,7 +43,7 @@
  },
  "gif": "fx/ice-shatter.gif",
  "durationMs": 1333,
- "peakFrame": 2,
+ "peakFrame": 4,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

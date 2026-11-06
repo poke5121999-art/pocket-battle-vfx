@@ -1,6 +1,6 @@
 {
  "id": "rock-stone-spikes",
- "name": "Stone Spikes",
+ "name": "Stone Edge",
  "element": "rock",
  "kind": "area",
  "frameW": 160,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Noise-edged stone shards stab up in sequence, chips and dust, crumble back.",
+ "notes": "Angular stone blades burst up around the target in sequence with chips and dust, hold, crack and crumble.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#2e1815",
   "#5a3d2d",
@@ -42,7 +43,7 @@
  },
  "gif": "fx/rock-stone-spikes.gif",
  "durationMs": 1500,
- "peakFrame": 18,
+ "peakFrame": 10,
  "battle": {
   "hitFrame": 2,
   "hitStopMs": 60,

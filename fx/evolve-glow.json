@@ -15,6 +15,7 @@
  "layer": "front",
  "notes": "Silhouette beats white faster and faster in rising light, ends in a flash.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#3c384a",
   "#7c788e",

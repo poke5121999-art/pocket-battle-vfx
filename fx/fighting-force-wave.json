@@ -13,8 +13,9 @@
   32
  ],
  "layer": "front",
- "notes": "Tapered force crescents thinning as they travel.",
+ "notes": "Punch of compressed air: rigid edge-on pressure rings growing as they travel, speed lines, dust.",
  "ground": 54,
+ "material": "material",
  "palette": [
   "#4a0920",
   "#920918",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/fighting-force-wave.gif",
  "durationMs": 800,
- "peakFrame": 12
+ "peakFrame": 23
 }

@@ -1,6 +1,6 @@
 {
  "id": "normal-impact-burst",
- "name": "Impact Burst",
+ "name": "Body Slam",
  "element": "normal",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "White jagged burst, streak sparks bouncing on the floor, dust puffs, light pulse.",
+ "notes": "Downward speed lines, a big squashed comic impact star, impact lines, dust billows thrown out both sides.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#32303d",
   "#686476",
@@ -44,10 +45,10 @@
  },
  "gif": "fx/normal-impact-burst.gif",
  "durationMs": 1333,
- "peakFrame": 25,
+ "peakFrame": 5,
  "battle": {
-  "hitFrame": 0,
-  "hitStopMs": 60,
-  "shakePx": 2
+  "hitFrame": 4,
+  "hitStopMs": 80,
+  "shakePx": 3
  }
 }

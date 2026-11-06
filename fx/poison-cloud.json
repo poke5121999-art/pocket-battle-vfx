@@ -1,6 +1,6 @@
 {
  "id": "poison-cloud",
- "name": "Poison Cloud",
+ "name": "Poison Gas",
  "element": "poison",
  "kind": "area",
  "frameW": 128,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Translucent gas puffs drift and break apart; bubbles pop.",
+ "notes": "Billowing cloud of round see-through lobes over the target, purple with a sickly green tinge, wisps curling off.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#160d38",
   "#411978",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/poison-cloud.gif",
  "durationMs": 1000,
- "peakFrame": 25
+ "peakFrame": 11
 }

@@ -1,6 +1,6 @@
 {
  "id": "electric-thunder-strike",
- "name": "Thunder Strike",
+ "name": "Thunder",
  "element": "electric",
  "kind": "impact",
  "frameW": 96,
@@ -13,8 +13,9 @@
   96
  ],
  "layer": "front",
- "notes": "Bolt flickers down from the sky, then ground crackle crawls out over a scorch while sparks hop.",
+ "notes": "Storm cloud darkens the top, a thick branching bolt falls from above and re-strikes, a disc of light and ground arcs spread.",
  "ground": 118,
+ "material": "emissive",
  "palette": [
   "#4a1000",
   "#b04a00",
@@ -42,10 +43,10 @@
  },
  "gif": "fx/electric-thunder-strike.gif",
  "durationMs": 1500,
- "peakFrame": 2,
+ "peakFrame": 10,
  "battle": {
-  "hitFrame": 0,
-  "hitStopMs": 80,
-  "shakePx": 3
+  "hitFrame": 8,
+  "hitStopMs": 100,
+  "shakePx": 4
  }
 }

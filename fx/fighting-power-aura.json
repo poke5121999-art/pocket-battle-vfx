@@ -1,6 +1,6 @@
 {
  "id": "fighting-power-aura",
- "name": "Power Aura",
+ "name": "Focus Energy",
  "element": "fighting",
  "kind": "aura",
  "frameW": 64,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Fast rising streaks (power-up).",
+ "notes": "Upward flame-shaped energy shell hugging the body, inward rush lines in pulses, ring at the feet.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#4a0920",
   "#920918",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/fighting-power-aura.gif",
  "durationMs": 1000,
- "peakFrame": 8
+ "peakFrame": 20
 }

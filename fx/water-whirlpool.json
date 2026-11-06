@@ -3,18 +3,19 @@
  "name": "Whirlpool",
  "element": "water",
  "kind": "area",
- "frameW": 96,
- "frameH": 128,
+ "frameW": 128,
+ "frameH": 96,
  "frames": 30,
  "fps": 30,
  "loop": true,
  "anchor": [
-  48,
-  120
+  64,
+  86
  ],
  "layer": "front",
- "notes": "Droplets riding a rising helix with streak tails; back half dimmer.",
- "ground": 120,
+ "notes": "Water vortex on the floor around the target: translucent spiral arms with foam crests, churning rim wall, flung drops.",
+ "ground": 86,
+ "material": "material",
  "palette": [
   "#0c065c",
   "#0c25b8",
@@ -30,19 +31,19 @@
  ],
  "sheet": {
   "image": "fx/water-whirlpool.png",
-  "columns": 10,
-  "rows": 3,
-  "width": 960,
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
   "height": 384
  },
  "light": {
   "image": "fx/water-whirlpool.light.png",
   "blend": "additive",
   "premultiplied": true,
-  "columns": 10,
-  "rows": 3
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/water-whirlpool.gif",
  "durationMs": 1000,
- "peakFrame": 3
+ "peakFrame": 17
 }

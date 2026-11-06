@@ -1,20 +1,21 @@
 {
  "id": "fire-pillar",
- "name": "Flame Pillar",
+ "name": "Fire Spin",
  "element": "fire",
  "kind": "area",
- "frameW": 64,
- "frameH": 128,
- "frames": 45,
+ "frameW": 96,
+ "frameH": 96,
+ "frames": 30,
  "fps": 30,
- "loop": false,
+ "loop": true,
  "anchor": [
-  32,
-  120
+  48,
+  86
  ],
  "layer": "front",
- "notes": "Floor flicker, then a column of rising flame blobs and tongues, sparks at the base, smoke off the top.",
- "ground": 120,
+ "notes": "Flame tongues circle the target on a tilted ellipse and rise, front half over the body (trap loop).",
+ "ground": 86,
+ "material": "emissive",
  "palette": [
   "#4a0921",
   "#a80920",
@@ -30,19 +31,19 @@
  ],
  "sheet": {
   "image": "fx/fire-pillar.png",
-  "columns": 16,
+  "columns": 10,
   "rows": 3,
-  "width": 1024,
-  "height": 384
+  "width": 960,
+  "height": 288
  },
  "light": {
   "image": "fx/fire-pillar.light.png",
   "blend": "additive",
   "premultiplied": true,
-  "columns": 16,
+  "columns": 10,
   "rows": 3
  },
  "gif": "fx/fire-pillar.gif",
- "durationMs": 1500,
- "peakFrame": 28
+ "durationMs": 1000,
+ "peakFrame": 3
 }

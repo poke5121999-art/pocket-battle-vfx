@@ -1,6 +1,6 @@
 {
  "id": "ghost-shadow-orb",
- "name": "Shadow Orb",
+ "name": "Shadow Ball",
  "element": "ghost",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Dark-cored orb trailing wisps that smoke out.",
+ "notes": "Dark swirling orb: near-black core, purple swirl arms inside, thin pink rim (the only bright part), smoke trailing.",
  "ground": 38,
+ "material": "emissive",
  "palette": [
   "#130c30",
   "#2b1c68",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/ghost-shadow-orb.gif",
  "durationMs": 800,
- "peakFrame": 7
+ "peakFrame": 3
 }

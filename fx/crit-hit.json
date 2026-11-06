@@ -15,6 +15,7 @@
  "layer": "front",
  "notes": "Two-beat crit: big jagged burst, then a second pop.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#4a0f02",
   "#9a3700",

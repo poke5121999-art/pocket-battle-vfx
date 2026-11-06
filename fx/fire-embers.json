@@ -1,0 +1,48 @@
+{
+ "id": "fire-embers",
+ "name": "Embers",
+ "element": "fire",
+ "kind": "projectile",
+ "frameW": 96,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
+ "loop": true,
+ "anchor": [
+  80,
+  24
+ ],
+ "layer": "front",
+ "notes": "Ember: four small separate fireballs with short flickering tails, low formation.",
+ "ground": 38,
+ "material": "emissive",
+ "palette": [
+  "#4a0921",
+  "#a80920",
+  "#e8461c",
+  "#ffa72e",
+  "#ffef5c",
+  "#fffac9"
+ ],
+ "refs": [
+  "BS-11",
+  "NG-01"
+ ],
+ "sheet": {
+  "image": "fx/fire-embers.png",
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/fire-embers.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
+ },
+ "gif": "fx/fire-embers.gif",
+ "durationMs": 800,
+ "peakFrame": 0
+}

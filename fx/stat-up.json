@@ -15,6 +15,7 @@
  "layer": "front",
  "notes": "Chevrons and streaks flow up.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#3a0422",
   "#8a0635",

@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Motes float up and swirl around the unit.",
+ "notes": "Two wavy rings counter-rotate around the unit, shimmer lines rise inside, motes drift up.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#3a094a",
   "#a01a95",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/psychic-mind-field.gif",
  "durationMs": 1000,
- "peakFrame": 11
+ "peakFrame": 17
 }

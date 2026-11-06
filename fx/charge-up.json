@@ -15,6 +15,7 @@
  "layer": "front",
  "notes": "Streaks spiral into a flickering core with growing light.",
  "ground": 56,
+ "material": "emissive",
  "palette": [
   "#4a0f02",
   "#9a3700",

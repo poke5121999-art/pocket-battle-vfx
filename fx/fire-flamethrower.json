@@ -1,0 +1,54 @@
+{
+ "id": "fire-flamethrower",
+ "name": "Flamethrower",
+ "element": "fire",
+ "kind": "beam",
+ "frameW": 192,
+ "frameH": 64,
+ "frames": 45,
+ "fps": 30,
+ "loop": false,
+ "anchor": [
+  10,
+  32
+ ],
+ "layer": "front",
+ "notes": "Wedge-shaped jet: narrow at the mouth, wide at the target, wavy edges, yellow-white core line; engulfs the target.",
+ "ground": 54,
+ "material": "emissive",
+ "palette": [
+  "#4a0921",
+  "#a80920",
+  "#e8461c",
+  "#ffa72e",
+  "#ffef5c",
+  "#fffac9"
+ ],
+ "refs": [
+  "RB-09",
+  "BS-11",
+  "NG-01"
+ ],
+ "sheet": {
+  "image": "fx/fire-flamethrower.png",
+  "columns": 5,
+  "rows": 9,
+  "width": 960,
+  "height": 576
+ },
+ "light": {
+  "image": "fx/fire-flamethrower.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 5,
+  "rows": 9
+ },
+ "gif": "fx/fire-flamethrower.gif",
+ "durationMs": 1500,
+ "peakFrame": 23,
+ "battle": {
+  "hitFrame": 7,
+  "hitStopMs": 40,
+  "shakePx": 1
+ }
+}

@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Polished noise-edged spikes rise in sequence.",
+ "notes": "Thin mirror-shaded steel blades shoot up in sequence, a glint runs up each, then they retract cleanly.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#262438",
   "#474a66",
@@ -42,7 +43,7 @@
  },
  "gif": "fx/steel-iron-spikes.gif",
  "durationMs": 1500,
- "peakFrame": 25,
+ "peakFrame": 30,
  "battle": {
   "hitFrame": 2,
   "hitStopMs": 60,

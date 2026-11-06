@@ -1,6 +1,6 @@
 # Pocket Battle VFX
 
-83 pixel-art battle effects for top-down monster-battle / auto-battle games: projectiles, beams, impacts, areas
+90 pixel-art battle effects for top-down monster-battle / auto-battle games: projectiles, beams, impacts, areas
 and auras for 18 elements, plus hit sparks, crits, a crit cut-in, miss, shield, heal, stat up/down, six status
 loops, faint, level up, evolve glow, recall beam, send-out, and four unit animations on a neutral dummy creature.
 
@@ -50,9 +50,10 @@ src/pxfx/core.py            pixel canvas: whole-pixel discs, rings, ellipses, li
 src/pxfx/palettes.py        6-step colour ramp per element and for generic effects
 src/pxfx/sim.py             v3 core: value/curl noise, 120 Hz particle sim, half-res additive light layer,
                             noise-broken shapes (ragged blobs, flame tongues, jagged bursts, tapered crescents)
-src/pxfx/fx3.py             v3 archetypes (all current effects): projectile, blade, waves, beam, impact,
-                            slash, pillar, vortex, cloud, weather, quake, spikes, shockwave, swarm, aura,
-                            status, generic systems, unit acting
+src/pxfx/fx3.py             one drawing function per move (Hydro Pump, Flamethrower, Thunder, Razor Leaf,
+                            Ice Beam, Earthquake, Shadow Ball, ...) built from shared shapes (leaf, petal,
+                            crystal, goo, rock chunk, dust billow, wind curl, feather, needle, glove,
+                            comic star, heart, wavy ring, flame tongue) + status, generic systems, unit acting
 src/pxfx/fxlib.py           v2 archetypes (kept for reference, unused): orb, boulder, volley, waves, beam, bolt, burst, splash, explosion,
                             debris, slash, aura, pillar, vortex, pulse rings, cloud, rain, cracks, spikes, swarm, shield
 src/pxfx/generic.py         hit spark, crit, cut-in, miss, heal, stat arrows, status loops, faint, level up,
@@ -80,6 +81,7 @@ src/refs-index.json         reference id → YouTube link with timestamp (used b
 | `gif`, `durationMs` | preview path and length |
 | `light` | light sheet: `image`, `blend` (additive), `premultiplied`, grid |
 | `ground` | y of the floor line inside a frame (units stand on it, debris bounces on it) |
+| `material` | `material` (water, rock, leaves, metal...: no glow, only contact glints in the light layer) or `emissive` (fire, lightning, energy) |
 | `peakFrame` | the frame with the most pixels (used for thumbnails) |
 | `battle` | optional `hitFrame`, `hitStopMs`, `shakePx` for wiring the hit |
 

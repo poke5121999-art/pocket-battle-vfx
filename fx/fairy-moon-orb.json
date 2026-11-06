@@ -1,6 +1,6 @@
 {
  "id": "fairy-moon-orb",
- "name": "Moon Orb",
+ "name": "Moonblast",
  "element": "fairy",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Pink orb leaving twinkling stars.",
+ "notes": "Pale pink full-moon disc with soft craters and a lit rim, sparkles orbiting and trailing.",
  "ground": 38,
+ "material": "emissive",
  "palette": [
   "#450e4a",
   "#a82d91",
@@ -43,5 +44,5 @@
  },
  "gif": "fx/fairy-moon-orb.gif",
  "durationMs": 800,
- "peakFrame": 8
+ "peakFrame": 12
 }

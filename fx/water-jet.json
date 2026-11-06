@@ -13,8 +13,9 @@
   32
  ],
  "layer": "front",
- "notes": "Gather, then a jittering jet with ragged edges, spray leaving the stream, splash at the end.",
+ "notes": "Hydro Pump: pressure build, then a thick translucent stream (8-14 px) with foam running along the top, droplets peeling off, splash crown and water running down at the target; breaks into falling drops.",
  "ground": 54,
+ "material": "material",
  "palette": [
   "#0c065c",
   "#0c25b8",
@@ -24,7 +25,8 @@
   "#ffffff"
  ],
  "refs": [
-  "RB-11"
+  "RB-11",
+  "RC-12"
  ],
  "sheet": {
   "image": "fx/water-jet.png",
@@ -42,7 +44,7 @@
  },
  "gif": "fx/water-jet.gif",
  "durationMs": 1333,
- "peakFrame": 25,
+ "peakFrame": 30,
  "battle": {
   "hitFrame": 13,
   "hitStopMs": 40,

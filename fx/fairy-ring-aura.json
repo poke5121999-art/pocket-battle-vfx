@@ -1,6 +1,6 @@
 {
  "id": "fairy-ring-aura",
- "name": "Fairy Ring",
+ "name": "Moonlight",
  "element": "fairy",
  "kind": "aura",
  "frameW": 64,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Stars and hearts rise around the unit.",
+ "notes": "Crescent moon above the unit, a see-through column of moonlight, sparkles circling the feet.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#450e4a",
   "#a82d91",
@@ -42,5 +43,5 @@
  },
  "gif": "fx/fairy-ring-aura.gif",
  "durationMs": 1000,
- "peakFrame": 27
+ "peakFrame": 3
 }

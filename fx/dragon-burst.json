@@ -5,7 +5,7 @@
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 50,
+ "frames": 40,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Cold-flame burst boiling up, embers.",
+ "notes": "Blue-violet flame burst with angular draconic shards spinning out and yellow sparks (Dragon Rage hit / Outrage).",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#1a0e4a",
   "#281c9c",
@@ -29,20 +30,20 @@
  "sheet": {
   "image": "fx/dragon-burst.png",
   "columns": 8,
-  "rows": 7,
+  "rows": 5,
   "width": 1024,
-  "height": 672
+  "height": 480
  },
  "light": {
   "image": "fx/dragon-burst.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 7
+  "rows": 5
  },
  "gif": "fx/dragon-burst.gif",
- "durationMs": 1667,
- "peakFrame": 2,
+ "durationMs": 1333,
+ "peakFrame": 11,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 80,

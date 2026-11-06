@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Crackling core with bolts redrawn every frame and sparks.",
+ "notes": "Thunder Shock shot: small round crackling ball, short jagged arcs leaping off it every frame, sparks hop behind.",
  "ground": 38,
+ "material": "emissive",
  "palette": [
   "#4a1000",
   "#b04a00",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/electric-spark-ball.gif",
  "durationMs": 800,
- "peakFrame": 8
+ "peakFrame": 15
 }

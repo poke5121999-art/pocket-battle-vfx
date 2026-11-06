@@ -1,6 +1,6 @@
 {
  "id": "ground-quake",
- "name": "Quake Cracks",
+ "name": "Earthquake",
  "element": "ground",
  "kind": "area",
  "frameW": 160,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "ground",
- "notes": "Forked cracks race out glowing then cool; chunks pop and bounce; dust.",
+ "notes": "Three jolts: a web of dark fissures spreads from under the target, rock chips pop up, dust rolls along the floor.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#3a0e0b",
   "#6e3019",
@@ -44,9 +45,9 @@
  },
  "gif": "fx/ground-quake.gif",
  "durationMs": 1200,
- "peakFrame": 20,
+ "peakFrame": 28,
  "battle": {
-  "hitFrame": 3,
+  "hitFrame": 0,
   "shakePx": 4
  }
 }

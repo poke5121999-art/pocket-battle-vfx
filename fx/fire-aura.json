@@ -1,6 +1,6 @@
 {
  "id": "fire-aura",
- "name": "Flame Aura",
+ "name": "Flame Wheel",
  "element": "fire",
  "kind": "aura",
  "frameW": 64,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Flames and embers rise along the body edges.",
+ "notes": "The unit wrapped in a spinning wheel of fire, tongues trailing against the spin (Flame Wheel / Fire Punch charge).",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#4a0921",
   "#a80920",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/fire-aura.gif",
  "durationMs": 1000,
- "peakFrame": 6
+ "peakFrame": 26
 }

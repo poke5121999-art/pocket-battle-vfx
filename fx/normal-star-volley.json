@@ -1,6 +1,6 @@
 {
  "id": "normal-star-volley",
- "name": "Star Volley",
+ "name": "Swift",
  "element": "normal",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Three jagged stars bob in formation, shedding star motes.",
+ "notes": "Five five-pointed stars in a loose spread, each spinning at its own rate, tiny sparkle trails.",
  "ground": 38,
+ "material": "emissive",
  "palette": [
   "#32303d",
   "#686476",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/normal-star-volley.gif",
  "durationMs": 800,
- "peakFrame": 21
+ "peakFrame": 7
 }

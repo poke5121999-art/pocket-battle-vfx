@@ -1,6 +1,6 @@
 {
  "id": "steel-slash",
- "name": "Steel Slash",
+ "name": "Iron Tail",
  "element": "steel",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Tapered crescent sweep, hot edge, sparks off the tip.",
+ "notes": "One heavy polished-metal arc swings down with motion smears, clang star and orange sparks.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#262438",
   "#474a66",
@@ -44,9 +45,9 @@
  },
  "gif": "fx/steel-slash.gif",
  "durationMs": 800,
- "peakFrame": 3,
+ "peakFrame": 4,
  "battle": {
-  "hitFrame": 1,
+  "hitFrame": 4,
   "hitStopMs": 60,
   "shakePx": 2
  }

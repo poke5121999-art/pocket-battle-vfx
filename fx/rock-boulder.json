@@ -1,6 +1,6 @@
 {
  "id": "rock-boulder",
- "name": "Boulder Throw",
+ "name": "Rock Throw",
  "element": "rock",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Faceted rock tumbling, outlined, dust trail and speed streaks.",
+ "notes": "One big faceted boulder tumbling, cracks on it, speed lines, pebbles and a dust puff peeling off.",
  "ground": 38,
+ "material": "material",
  "palette": [
   "#2e1815",
   "#5a3d2d",
@@ -43,5 +44,5 @@
  },
  "gif": "fx/rock-boulder.gif",
  "durationMs": 800,
- "peakFrame": 4
+ "peakFrame": 0
 }

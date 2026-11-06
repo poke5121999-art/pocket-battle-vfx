@@ -1,6 +1,6 @@
 {
  "id": "steel-metal-spark",
- "name": "Metal Spark",
+ "name": "Metal Clang",
  "element": "steel",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Clang: many streak sparks arc down and bounce.",
+ "notes": "Silver strike arc, two-frame white star clang, a shower of orange sparks off metal arcing down and bouncing.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#262438",
   "#474a66",
@@ -44,7 +45,7 @@
  },
  "gif": "fx/steel-metal-spark.gif",
  "durationMs": 1333,
- "peakFrame": 2,
+ "peakFrame": 0,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

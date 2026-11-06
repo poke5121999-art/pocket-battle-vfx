@@ -1,6 +1,6 @@
 {
  "id": "dark-orb",
- "name": "Dark Orb",
+ "name": "Malice Orb",
  "element": "dark",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Black-plum orb trailing writhing wisps.",
+ "notes": "Spiky black ball whose spikes grow and retract, pale lilac rim, tight pulsing ring, dark shreds trailing.",
  "ground": 38,
+ "material": "emissive",
  "palette": [
   "#0b0912",
   "#1f1a2c",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/dark-orb.gif",
  "durationMs": 800,
- "peakFrame": 8
+ "peakFrame": 3
 }

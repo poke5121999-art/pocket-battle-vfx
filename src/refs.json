@@ -33,12 +33,13 @@
 "DA-02"
 ],
 "water-jet": [
-"RB-11"
+"RB-11",
+"RC-12"
 ],
 "water-bubble-shot": [
+"RB-12",
 "RC-12",
-"RB-11",
-"RB-12"
+"RB-11"
 ],
 "water-splash": [
 "RC-12",
@@ -346,5 +347,35 @@
 "RC-01",
 "RC-03",
 "RC-06"
+],
+"water-bubble-pop": [
+"RC-12",
+"RB-11",
+"RB-12"
+],
+"water-gun": [
+"RB-11",
+"RC-12"
+],
+"fire-embers": [
+"BS-11",
+"NG-01"
+],
+"fire-flamethrower": [
+"RB-09",
+"BS-11",
+"NG-01"
+],
+"electric-thunderbolt": [
+"RB-02"
+],
+"grass-powder": [
+"BS-14",
+"NG-16",
+"SG-07"
+],
+"fighting-chop": [
+"NG-07",
+"DA-10"
 ]
 }

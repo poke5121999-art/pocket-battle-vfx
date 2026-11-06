@@ -15,6 +15,7 @@
  "layer": "front",
  "notes": "Crouch wind-up held 7f, dash 2f with smear ghosts, contact freeze 4f, recover.",
  "ground": 56,
+ "material": "emissive",
  "palette": [
   "#1c1a24",
   "#4a4858",

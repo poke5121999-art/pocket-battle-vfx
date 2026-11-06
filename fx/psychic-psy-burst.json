@@ -1,6 +1,6 @@
 {
  "id": "psychic-psy-burst",
- "name": "Psy Burst",
+ "name": "Psychic",
  "element": "psychic",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Jagged pink burst, swirling motes, broken shock ring on the floor.",
+ "notes": "Wavy concentric ripples pulse out from the target in three beats, the air over it bends, pink motes and glints.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#3a094a",
   "#a01a95",
@@ -44,7 +45,7 @@
  },
  "gif": "fx/psychic-psy-burst.gif",
  "durationMs": 1333,
- "peakFrame": 2,
+ "peakFrame": 16,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

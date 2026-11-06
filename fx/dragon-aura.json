@@ -1,6 +1,6 @@
 {
  "id": "dragon-aura",
- "name": "Dragon Aura",
+ "name": "Dragon Dance",
  "element": "dragon",
  "kind": "aura",
  "frameW": 64,
@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Blue flames rise along the body.",
+ "notes": "A serpentine ribbon of blue-violet energy coils up around the unit with flame tufts on its spine.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#1a0e4a",
   "#281c9c",
@@ -43,5 +44,5 @@
  },
  "gif": "fx/dragon-aura.gif",
  "durationMs": 1000,
- "peakFrame": 1
+ "peakFrame": 24
 }

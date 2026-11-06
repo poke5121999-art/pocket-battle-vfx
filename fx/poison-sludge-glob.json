@@ -1,6 +1,6 @@
 {
  "id": "poison-sludge-glob",
- "name": "Sludge Glob",
+ "name": "Sludge",
  "element": "poison",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Heavy glob shedding drips that fall away, bubbles.",
+ "notes": "Three glossy purple globs in a heavy arc, wobbling, a sticky strand between them, drips beading off and falling.",
  "ground": 38,
+ "material": "material",
  "palette": [
   "#160d38",
   "#411978",
@@ -42,5 +43,5 @@
  },
  "gif": "fx/poison-sludge-glob.gif",
  "durationMs": 800,
- "peakFrame": 22
+ "peakFrame": 1
 }

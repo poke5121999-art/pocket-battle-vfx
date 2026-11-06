@@ -15,6 +15,7 @@
  "layer": "screen",
  "notes": "Opaque screen plate with tapered speed lines for a few frames on crits and K.O.s.",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#3c384a",
   "#7c788e",

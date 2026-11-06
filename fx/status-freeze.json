@@ -13,8 +13,9 @@
   86
  ],
  "layer": "front",
- "notes": "Ice crust at the feet, falling frost motes, a glint sweeping across.",
+ "notes": "A faceted see-through ice shell over the lower body, a glint sweeping across, frost specks.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/status-freeze.gif",
  "durationMs": 1000,
- "peakFrame": 19
+ "peakFrame": 1
 }

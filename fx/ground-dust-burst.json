@@ -1,11 +1,11 @@
 {
  "id": "ground-dust-burst",
- "name": "Dust Burst",
+ "name": "Dig Burst",
  "element": "ground",
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 40,
+ "frames": 45,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Chunks bounce on the floor, dust rolls out and thins.",
+ "notes": "The floor bursts open: hole with a dirt rim, a fountain of clods, a dust cloud with form rolling out and up.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#3a0e0b",
   "#6e3019",
@@ -31,20 +32,20 @@
  "sheet": {
   "image": "fx/ground-dust-burst.png",
   "columns": 8,
-  "rows": 5,
+  "rows": 6,
   "width": 1024,
-  "height": 480
+  "height": 576
  },
  "light": {
   "image": "fx/ground-dust-burst.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 5
+  "rows": 6
  },
  "gif": "fx/ground-dust-burst.gif",
- "durationMs": 1333,
- "peakFrame": 27,
+ "durationMs": 1500,
+ "peakFrame": 23,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

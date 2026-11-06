@@ -1,11 +1,11 @@
 {
  "id": "flying-air-blade",
- "name": "Air Blade",
+ "name": "Wing Blade",
  "element": "flying",
  "kind": "projectile",
  "frameW": 96,
  "frameH": 48,
- "frames": 18,
+ "frames": 24,
  "fps": 30,
  "loop": true,
  "anchor": [
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Tapered crescent of wind with streaks.",
+ "notes": "Wing Attack / Razor Wind: two pale crescent air blades, wind curls off the tips, a feather tumbling behind.",
  "ground": 38,
+ "material": "material",
  "palette": [
   "#2f226a",
   "#4544b0",
@@ -30,18 +31,18 @@
  "sheet": {
   "image": "fx/flying-air-blade.png",
   "columns": 10,
-  "rows": 2,
+  "rows": 3,
   "width": 960,
-  "height": 96
+  "height": 144
  },
  "light": {
   "image": "fx/flying-air-blade.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 10,
-  "rows": 2
+  "rows": 3
  },
  "gif": "fx/flying-air-blade.gif",
- "durationMs": 600,
- "peakFrame": 16
+ "durationMs": 800,
+ "peakFrame": 0
 }

@@ -1,11 +1,11 @@
 {
  "id": "grass-petal-burst",
- "name": "Petal Burst",
+ "name": "Petal Dance",
  "element": "grass",
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 40,
+ "frames": 45,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Green flash, leaves burst out and flutter down on turbulence.",
+ "notes": "Pink and white petals burst out of the target in a swirl, then flutter down swaying and turning.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#0d382b",
   "#1a703a",
@@ -31,20 +32,20 @@
  "sheet": {
   "image": "fx/grass-petal-burst.png",
   "columns": 8,
-  "rows": 5,
+  "rows": 6,
   "width": 1024,
-  "height": 480
+  "height": 576
  },
  "light": {
   "image": "fx/grass-petal-burst.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 5
+  "rows": 6
  },
  "gif": "fx/grass-petal-burst.gif",
- "durationMs": 1333,
- "peakFrame": 2,
+ "durationMs": 1500,
+ "peakFrame": 25,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 50,

@@ -1,6 +1,6 @@
 {
  "id": "rock-smash",
- "name": "Rock Smash",
+ "name": "Rock Slide",
  "element": "rock",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Heavy chips bounce twice, dust and smoke roll.",
+ "notes": "Four angular boulders fall onto the target one after another, bounce, dust and chips; the pile crumbles.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#2e1815",
   "#5a3d2d",
@@ -42,9 +43,9 @@
  },
  "gif": "fx/rock-smash.gif",
  "durationMs": 1667,
- "peakFrame": 29,
+ "peakFrame": 23,
  "battle": {
-  "hitFrame": 0,
+  "hitFrame": 8,
   "hitStopMs": 80,
   "shakePx": 3
  }

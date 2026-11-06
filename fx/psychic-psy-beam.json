@@ -1,6 +1,6 @@
 {
  "id": "psychic-psy-beam",
- "name": "Psy Beam",
+ "name": "Psybeam",
  "element": "psychic",
  "kind": "beam",
  "frameW": 192,
@@ -13,8 +13,9 @@
   32
  ],
  "layer": "front",
- "notes": "Pink jittering beam shedding motes.",
+ "notes": "A band of tall rings travels a sine path, colours cycling pink/violet/blue/gold; ripples collapse at the target.",
  "ground": 54,
+ "material": "emissive",
  "palette": [
   "#3a094a",
   "#a01a95",
@@ -42,9 +43,9 @@
  },
  "gif": "fx/psychic-psy-beam.gif",
  "durationMs": 1333,
- "peakFrame": 25,
+ "peakFrame": 22,
  "battle": {
-  "hitFrame": 13,
+  "hitFrame": 12,
   "hitStopMs": 40,
   "shakePx": 1
  }

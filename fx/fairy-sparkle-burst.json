@@ -1,6 +1,6 @@
 {
  "id": "fairy-sparkle-burst",
- "name": "Sparkle Burst",
+ "name": "Charm Burst",
  "element": "fairy",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Soft jagged burst, stars and hearts drift.",
+ "notes": "Soft pink ring pops, hearts burst out and float up wobbling, 4-point sparkles twinkle (Disarming Voice / Charm).",
  "ground": 86,
+ "material": "emissive",
  "palette": [
   "#450e4a",
   "#a82d91",
@@ -44,7 +45,7 @@
  },
  "gif": "fx/fairy-sparkle-burst.gif",
  "durationMs": 1333,
- "peakFrame": 2,
+ "peakFrame": 10,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 50,

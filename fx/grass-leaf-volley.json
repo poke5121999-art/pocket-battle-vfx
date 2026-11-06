@@ -1,6 +1,6 @@
 {
  "id": "grass-leaf-volley",
- "name": "Leaf Volley",
+ "name": "Razor Leaf",
  "element": "grass",
  "kind": "projectile",
  "frameW": 96,
@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Small green core shedding tumbling leaves.",
+ "notes": "Five leaf shapes (centre vein, lit side, dark edge) in a staggered arc, each tumbling flat-to-edge.",
  "ground": 38,
+ "material": "material",
  "palette": [
   "#0d382b",
   "#1a703a",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/grass-leaf-volley.gif",
  "durationMs": 800,
- "peakFrame": 8
+ "peakFrame": 0
 }

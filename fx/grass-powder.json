@@ -1,0 +1,52 @@
+{
+ "id": "grass-powder",
+ "name": "Sleep Powder",
+ "element": "grass",
+ "kind": "area",
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 45,
+ "fps": 30,
+ "loop": false,
+ "anchor": [
+  64,
+  86
+ ],
+ "layer": "front",
+ "notes": "Soft cloud of tiny pale-green powder grains sprinkled over the target, twinkling specks, slow drift down.",
+ "ground": 86,
+ "material": "material",
+ "palette": [
+  "#0d382b",
+  "#1a703a",
+  "#3ea83a",
+  "#95d54b",
+  "#e8f27a",
+  "#fffbd8"
+ ],
+ "refs": [
+  "BS-14",
+  "NG-16",
+  "SG-07"
+ ],
+ "sheet": {
+  "image": "fx/grass-powder.png",
+  "columns": 8,
+  "rows": 6,
+  "width": 1024,
+  "height": 576
+ },
+ "light": {
+  "image": "fx/grass-powder.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 6
+ },
+ "gif": "fx/grass-powder.gif",
+ "durationMs": 1500,
+ "peakFrame": 14,
+ "battle": {
+  "hitFrame": 12
+ }
+}

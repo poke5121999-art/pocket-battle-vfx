@@ -1,0 +1,53 @@
+{
+ "id": "fighting-chop",
+ "name": "Karate Chop",
+ "element": "fighting",
+ "kind": "impact",
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 20,
+ "fps": 30,
+ "loop": false,
+ "anchor": [
+  64,
+  64
+ ],
+ "layer": "front",
+ "notes": "An open hand sweeps down across the target, leaves a curved white slash line for 2 frames, then a small contact star.",
+ "ground": 86,
+ "material": "material",
+ "palette": [
+  "#4a0920",
+  "#920918",
+  "#d23f22",
+  "#f2973c",
+  "#ffe078",
+  "#fffad0"
+ ],
+ "refs": [
+  "NG-07",
+  "DA-10"
+ ],
+ "sheet": {
+  "image": "fx/fighting-chop.png",
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 288
+ },
+ "light": {
+  "image": "fx/fighting-chop.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 3
+ },
+ "gif": "fx/fighting-chop.gif",
+ "durationMs": 667,
+ "peakFrame": 4,
+ "battle": {
+  "hitFrame": 4,
+  "hitStopMs": 60,
+  "shakePx": 2
+ }
+}

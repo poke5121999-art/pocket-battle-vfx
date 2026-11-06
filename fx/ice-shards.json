@@ -13,8 +13,9 @@
   24
  ],
  "layer": "front",
- "notes": "Pale core shedding glinting shards and snow motes.",
+ "notes": "Icy Wind: four faceted crystals in a loose wedge, spinning so the facets swap light and dark; snow specks peel off.",
  "ground": 38,
+ "material": "material",
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -44,5 +45,5 @@
  },
  "gif": "fx/ice-shards.gif",
  "durationMs": 800,
- "peakFrame": 22
+ "peakFrame": 0
 }

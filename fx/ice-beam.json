@@ -13,8 +13,9 @@
   32
  ],
  "layer": "front",
- "notes": "Jittering pale beam with crystals budding off the edges, shards breaking away.",
+ "notes": "Crisp straight pale beam with star glints; crystals grow on its path, stay, then fall; shards and flakes burst at the target.",
  "ground": 54,
+ "material": "emissive",
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -43,9 +44,9 @@
  },
  "gif": "fx/ice-beam.gif",
  "durationMs": 1333,
- "peakFrame": 29,
+ "peakFrame": 24,
  "battle": {
-  "hitFrame": 13,
+  "hitFrame": 11,
   "hitStopMs": 40,
   "shakePx": 1
  }

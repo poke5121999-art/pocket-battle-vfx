@@ -1,6 +1,6 @@
 {
  "id": "flying-gust-burst",
- "name": "Gust Burst",
+ "name": "Gust",
  "element": "flying",
  "kind": "impact",
  "frameW": 128,
@@ -13,8 +13,9 @@
   64
  ],
  "layer": "front",
- "notes": "Airy jagged burst with long wind streaks.",
+ "notes": "Wind curls sweep in from the attacker side and wrap around the target, carrying leaves and dust; dust at the base.",
  "ground": 86,
+ "material": "material",
  "palette": [
   "#2f226a",
   "#4544b0",
@@ -42,9 +43,9 @@
  },
  "gif": "fx/flying-gust-burst.gif",
  "durationMs": 1200,
- "peakFrame": 2,
+ "peakFrame": 16,
  "battle": {
-  "hitFrame": 0,
+  "hitFrame": 6,
   "hitStopMs": 40,
   "shakePx": 1
  }

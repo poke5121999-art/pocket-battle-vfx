@@ -1,6 +1,6 @@
 {
  "id": "grass-leaf-spiral",
- "name": "Leaf Spiral",
+ "name": "Leaf Storm",
  "element": "grass",
  "kind": "area",
  "frameW": 96,
@@ -13,8 +13,9 @@
   120
  ],
  "layer": "front",
- "notes": "Leaves riding a rising helix.",
+ "notes": "Real leaf shapes (and a few petals) ride a rising helix around the target, tumbling.",
  "ground": 120,
+ "material": "material",
  "palette": [
   "#0d382b",
   "#1a703a",
@@ -42,5 +43,5 @@
  },
  "gif": "fx/grass-leaf-spiral.gif",
  "durationMs": 1000,
- "peakFrame": 1
+ "peakFrame": 28
 }

@@ -45,7 +45,8 @@ class State:
         self.feet = e["ground"]
         self.anchor = tuple(e["anchor"])
         self.frames = [Canvas(self.w, self.h) for _ in range(self.n)]
-        self.lights = [Light(self.w, self.h) for _ in range(self.n)]
+        self.material = e["material"] == "material"
+        self.lights = [Light(self.w, self.h, material=self.material) for _ in range(self.n)]
 
 
 def sheet_layout(e):
@@ -123,6 +124,7 @@ def entry_json(e, cols, rows):
     d = {k: e[k] for k in ("id", "name", "element", "kind", "frameW", "frameH", "frames", "fps", "loop",
                            "anchor", "layer", "notes")}
     d["ground"] = e["ground"]
+    d["material"] = e["material"]
     d["palette"] = ramp_hex(e["ramp"])
     d["refs"] = REFS.get(e["id"], [])
     d["sheet"] = {"image": "fx/%s.png" % e["id"], "columns": cols, "rows": rows,
