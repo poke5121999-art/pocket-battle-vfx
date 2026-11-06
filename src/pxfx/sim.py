@@ -85,7 +85,8 @@ class Light:
         """Premultiplied RGBA at full size: rgb = light, a = max(rgb)."""
         im = Image.new("RGB", (self.w, self.h))
         # soft tone curve: light adds up without clipping to flat white (keeps the hue of hot spots)
-        tm = lambda v: int(255 * 0.8 * (1 - math.exp(-1.6 * v)))
+        # capped at ~60 % so light never hides the colour pixels under it
+        tm = lambda v: int(255 * 0.6 * (1 - math.exp(-1.6 * v)))
         im.putdata([(tm(p[0]), tm(p[1]), tm(p[2])) for p in self.buf])
         im = im.resize((self.w * self.s, self.h * self.s), Image.BILINEAR).crop((0, 0, self.W, self.H))
         r, g, b = im.split()

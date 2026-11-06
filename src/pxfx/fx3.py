@@ -277,7 +277,7 @@ def projectile(S, el, head=3.0, trail=1.0, kind=None):
     def draw(cv, L, sim, i, t, rng):
         ph = i / S.n
         draw_parts(cv, L, sim.parts, rng)
-        L.add(hx, hy, head * 4.5, pal[3], 0.45)
+        L.add(hx, hy, head * 4, pal[3], 0.3)
         L.add(hx - 10, hy, head * 4, pal[2], 0.18)
         if kind in ("rock", "ground"):
             s = head + 2
@@ -296,7 +296,7 @@ def projectile(S, el, head=3.0, trail=1.0, kind=None):
                 r = 3 - (k > 0)
                 x, y = hx + dx, hy + dy + math.sin((ph + k * 0.3) * TAU) * 1.5
                 jag_star(cv, x, y, r + 2 + (i + k) % 2, 4, [pal[3], pal[4], pal[5]], rng, inner=0.3, rot=ph * 2)
-                L.add(x, y, 8, pal[4], 0.5)
+                L.add(x, y, 6, pal[4], 0.18)
             return
         if kind == "electric":
             for k in range(3):
@@ -450,22 +450,38 @@ def impact(S, el, power=1.0, ring=False):
 
     def tick(sim, i, t, rng):
         if i == 0:
-            spawn(sim, el, pal, int(24 * power), cx, cy, ang=-math.pi / 2, spread=TAU * 0.9, speed=(50, 160),
-                  rng=rng, scale=power * 1.15)
-            spawn(sim, el, pal, int(8 * power), cx, cy, ang=-math.pi / 2, spread=TAU, speed=(25, 80), rng=rng,
-                  secondary=True, scale=power)
+            for p in spawn(sim, el, pal, int(24 * power), cx, cy, ang=-math.pi / 2, spread=TAU * 0.9, speed=(50, 160),
+                           rng=rng, scale=power * 1.15):
+                p.life *= 1.6
+                p.bounce = max(p.bounce, 0.3)
+            for p in spawn(sim, el, pal, int(10 * power), cx, cy, ang=-math.pi / 2, spread=TAU, speed=(25, 80), rng=rng,
+                           secondary=True, scale=power):
+                p.life *= 1.7
+            # slow lingering motes that hang in the air and settle (pixelfx "blunt hit" tail)
+            sim.emit(int(8 * power), cx, cy, ang=-math.pi / 2, spread=TAU, speed=(8, 30), life=(0.9, 1.4),
+                     size=(1, 1.4), kind="px", ramp=life_ramp(pal), g=25, drag=2.2, turb=25, flick=0.15,
+                     bounce=0.2, rng=rng, light=(2, 0.05))
             sim.emit(int(10 * power), cx, cy, ang=-math.pi / 2, spread=TAU, speed=(90, 220), life=(0.15, 0.35),
                      size=(1, 1.6), kind="streak", ramp=life_ramp(pal), drag=4, g=120, rng=rng, light=(3, 0.13))
         if i == 2 and el in ("fire", "dragon", "normal", "fighting", "rock", "ground", "steel", "poison", "dark",
                              "ghost"):
             nsm = 10 if el in ("fire", "dragon") else 6
             sim.emit(int(nsm * power), cx + rng.uniform(-6, 6), cy + 4, ang=-math.pi / 2, spread=1.6, speed=(14, 40),
-                     life=(0.9, 1.5), size=(2.0 * power, 3.4 * power), kind="smoke", ramp=SMOKE, g=-18, drag=1.2,
+                     life=(1.3, 1.9), size=(2.0 * power, 3.4 * power), kind="smoke", ramp=SMOKE, g=-18, drag=1.2,
                      turb=35, grow=0.4, rng=rng)
         if i == 1 and el in ("water", "poison"):
             r = [pal[5], pal[3], pal[2], pal[1]]
             sim.emit(int(18 * power), cx, gy - 1, ang=-math.pi / 2, spread=1.3, speed=(70, 150), life=(0.5, 0.9),
                      size=(1, 2), kind="drop", ramp=r, g=300, drag=0.4, bounce=0.2, rng=rng, area=4, area_y=0)
+        if el == "electric" and S.h >= 128 and 6 <= i < 36 and i % 5 == 0:
+            # residual sparks hopping off the scorch
+            sim.emit(2, cx + rng.uniform(-10, 10), gy - 1, ang=-math.pi / 2, spread=1.4, speed=(30, 70),
+                     life=(0.2, 0.4), size=(1, 1.3), kind="streak", ramp=life_ramp(pal), g=260, drag=1, bounce=0.3,
+                     rng=rng, light=(3, 0.06))
+        if ring and i % 2 == 0 and i < S.n * 0.7:
+            for p in spawn(sim, el, pal, 3, cx + rng.uniform(-14, 14), cy + rng.uniform(-10, 8), ang=-math.pi / 2,
+                           spread=TAU, speed=(6, 22), rng=rng, light=False):
+                p.life *= 1.5
         if 0 < i < 8 and el in ("fire", "dragon"):
             spawn(sim, el, pal, 2, cx + rng.uniform(-6, 6), cy + rng.uniform(-4, 4), rng=rng, speed=(10, 40),
                   scale=power)
@@ -473,8 +489,9 @@ def impact(S, el, power=1.0, ring=False):
     def draw(cv, L, sim, i, t, rng):
         # light pulse: very bright on contact, decays fast
         k = math.exp(-t * 7)
-        L.add(cx, cy, 26 * power, pal[3], 0.85 * k)
-        L.add(cx, gy, 24 * power, pal[2], 0.35 * k)
+        k2 = math.exp(-t * 2.2)
+        L.add(cx, cy, 26 * power, pal[3], 0.7 * k + 0.08 * k2)
+        L.add(cx, gy, 24 * power, pal[2], 0.3 * k + 0.08 * k2)
         if i == 0:
             jag_star(cv, cx, cy, 10 * power, 8, [pal[3], pal[4], pal[5]], rs, inner=0.32)
         elif i <= 4:
@@ -482,6 +499,25 @@ def impact(S, el, power=1.0, ring=False):
             rag_blob(cv, cx, cy, (7 - i * 1.4) * power, pal[3], 77 + i, t=i * 0.1, rough=0.5, edge=pal[2],
                      holes=0.1 * i)
             jag_star(cv, cx, cy, r, 9, [pal[2], pal[3], pal[4], pal[5]], rs, inner=0.22, rot=i * 0.4)
+        if el == "electric" and S.h >= 128:
+            ft = i / S.fps
+            # scorch: noisy dark patch on the floor, shrinking
+            sc = clamp(1 - ft / 1.6)
+            if i >= 1 and sc > 0:
+                hw = 14 * (0.5 + 0.5 * sc)
+                for x in range(int(cx - hw), int(cx + hw) + 1):
+                    if noise2(x * 0.5, 3.3, 41) > -0.2 - sc * 0.5:
+                        cv.under(x, gy, SCORCH[1])
+                        if abs(x - cx) < hw * 0.5:
+                            cv.under(x, gy - 1, SCORCH[2])
+            # ground crackle crawling outwards for ~1 s
+            if 3 <= i and ft < 1.2 and i % 2 == 0:
+                for side in (-1, 1):
+                    d0 = 4 + ft * 18 + rng.uniform(-3, 3)
+                    x0 = cx + side * d0
+                    bolt(cv, rng, x0, gy - 1, x0 + side * rng.uniform(4, 9), gy - rng.uniform(1, 5),
+                         [pal[3], pal[5]], segs=3, amp=1.5)
+                L.add(cx, gy - 2, 18, pal[3], 0.18 * sc)
         if el == "electric" and S.h >= 128 and (i <= 4 or i in (6, 8)):
             for _ in range(2 if i < 3 else 1):
                 bolt(cv, rng, cx + rng.uniform(-10, 10), -2, cx, cy, [pal[3], pal[5]], segs=9, amp=7,
@@ -498,6 +534,19 @@ def impact(S, el, power=1.0, ring=False):
             f = out_cubic(i / 12)
             broken_ring(cv, cx, gy, 6 + f * 40 * power, 3 * (1 - f) + 1, [pal[2], pal[3], pal[4]], 21, t,
                         squash=0.3)
+        if ring and 2 <= i <= S.n - 4:
+            # floor sigil: four tapered arcs on a slowly turning squashed circle, rune ticks between, fading
+            fa = clamp(1 - (i - 2) / (S.n - 6))
+            rr = 20 * power
+            rot = t * 1.6
+            for q in range(4):
+                a0 = rot + q * TAU / 4 + 0.25
+                crescent(cv, cx, gy - 1, rr, a0, a0 + 1.0, 2.6 * fa + 0.6, [pal[1], pal[3], pal[4]], squash=0.32,
+                         taper=0.8)
+                ta = a0 + 1.28
+                for j in range(3):
+                    cv.px(cx + math.cos(ta) * (rr - 2 + j), gy - 1 + math.sin(ta) * (rr - 2 + j) * 0.32, pal[4])
+            L.add(cx, gy - 1, rr, pal[2], 0.18 * fa)
         if i in (1, 2):
             for a in range(6):
                 ang = rs.uniform(0, TAU)
@@ -816,10 +865,10 @@ def shockwave(S, el, dark=False):
                 r = 6 + out_cubic(f) * (S.w / 2 - 8)
                 cols = [pal[0], pal[2], pal[4]] if dark else [pal[2], pal[3], pal[5] if f < 0.3 else pal[4]]
                 broken_ring(cv, cx, gy, r, 4 * (1 - f) + 1, cols, 7 + k, t, squash=0.32, keep=0.7 - f * 0.25)
-                L.add(cx, gy, r * 0.8, pal[3], 0.4 * (1 - f))
+                L.add(cx, gy, r * 0.6, pal[3], 0.2 * (1 - f))
         if dark:
             rag_blob(cv, cx, gy - 1, 4 * clamp(1 - t * 1.5), pal[0], 3, t=t, edge=pal[3])
-        L.add(cx, gy, 20, pal[4], math.exp(-t * 8))
+        L.add(cx, gy, 16, pal[4], 0.6 * math.exp(-t * 8))
         draw_parts(cv, L, sim.parts, rng)
 
     run(S, tick, draw, ground=S.ground)
@@ -886,94 +935,162 @@ def aura_v3(S, el, rate=3, spread_x=11, lift=(25, 55), kind=None):
 
 
 def status_v3(S, what):
-    """Character-scale status loops: small motes drifting near the body / above the head."""
+    """Character-scale status loops sized for the 32 px dummy (feet at S.ground, body centre ~10 px up, head top
+    ~25 px up). Each reads at 1x on its own: burn = tongues licking the body + embers + flicker; poison = bubbles
+    that rise and pop + drips; sleep = 2-3 Z letters drifting up and growing; paralysis = sparks crawling on the
+    body + a twitch flash every 2/3 s; freeze = ice crust shards on the body + frost motes + glint; confusion =
+    stars and a bird orbiting the head on a tilted ellipse made of separate motes."""
     pal = S.pal
     cx, fy = S.w / 2, S.ground
-    head = fy - 30
+    body_y = fy - 10
+    head = fy - 27
+    # points on the dummy silhouette (body ellipse rx 9 ry 8 + ears), used to anchor crawling effects
+    sil = [(cx + math.cos(a) * 9.5, body_y + math.sin(a) * 8.5) for a in [k * TAU / 20 for k in range(20)]]
+    sil += [(cx - 4, fy - 23), (cx - 3, fy - 25), (cx + 4, fy - 24), (cx + 5, fy - 26)]
+    upper = [p for p in sil if p[1] < body_y + 3]
 
     def tick(sim, i, t, rng):
         if what == "burn":
-            for _ in range(2):
-                spawn(sim, "fire", pal, 1, cx + rng.uniform(-9, 9), fy - rng.uniform(2, 20), rng=rng,
-                      speed=(15, 35), scale=0.7)
-            if rng.random() < 0.5:
-                spawn(sim, "fire", pal, 1, cx + rng.uniform(-8, 8), fy - 18, rng=rng, secondary=True)
+            if rng.random() < 0.8:
+                sim.emit(1, cx + rng.uniform(-8, 8), body_y - rng.uniform(0, 8), ang=-math.pi / 2, spread=0.6,
+                         speed=(18, 40), life=(0.5, 0.9), size=(1, 1.6), kind="px", ramp=life_ramp(pal), g=-25,
+                         drag=1.2, turb=50, flick=0.2, rng=rng, light=(3, 0.08))
+            if rng.random() < 0.25:
+                sim.emit(1, cx + rng.uniform(-5, 5), head + 2, ang=-math.pi / 2, spread=0.4, speed=(8, 16),
+                         life=(0.7, 1.1), size=(1.2, 2.0), kind="smoke", ramp=SMOKE, g=-10, drag=1, turb=30,
+                         grow=0.3, rng=rng)
         elif what == "poison":
-            if rng.random() < 0.6:
-                sim.emit(1, cx + rng.uniform(-10, 10), fy - rng.uniform(4, 22), ang=-math.pi / 2, spread=0.4,
-                         speed=(10, 22), life=(0.6, 1.0), size=(1, 2.4), kind="bubble",
-                         ramp=[pal[5], pal[3], pal[2]], turb=30, drag=1, rng=rng)
-            if rng.random() < 0.3:
-                sim.emit(1, cx + rng.uniform(-8, 8), fy - 16, ang=math.pi / 2, spread=0.2, speed=(5, 10),
-                         life=(0.4, 0.7), size=(1, 1.4), kind="drop", ramp=[pal[4], pal[3], pal[2]], g=90, rng=rng)
-        elif what == "paralysis":
-            if i % 3 != 2:
-                spawn(sim, "electric", pal, 2, cx + rng.uniform(-10, 10), fy - rng.uniform(4, 26), rng=rng,
-                      speed=(30, 70))
+            if i % 4 == 0:
+                x, y = rng.choice(upper)
+                p = sim.emit(1, x + rng.uniform(-2, 2), y, ang=-math.pi / 2, spread=0.5, speed=(10, 20),
+                             life=(0.7, 1.0), size=(1.6, 2.6), kind="pbubble", ramp=[pal[5], pal[4], pal[3], pal[2]],
+                             turb=25, drag=1, rng=rng)
+            if i % 6 == 3:
+                sim.emit(1, cx + rng.uniform(-7, 7), body_y + 6, ang=math.pi / 2, spread=0.1, speed=(2, 6),
+                         life=(0.5, 0.7), size=(1, 1.6), kind="drop", ramp=[pal[4], pal[3], pal[2], pal[1]], g=160,
+                         rng=rng)
+            if rng.random() < 0.4:
+                sim.emit(1, cx + rng.uniform(-10, 10), body_y + rng.uniform(-8, 6), ang=-math.pi / 2, spread=1,
+                         speed=(4, 10), life=(0.4, 0.7), size=(1, 1), kind="px", ramp=[pal[4], pal[3], pal[2]],
+                         turb=20, flick=0.3, rng=rng)
         elif what == "sleep":
-            if i % 14 == 0:
-                sim.emit(1, cx + 7, head, ang=-1.2, spread=0.1, speed=(14, 16), life=(1.3, 1.3), size=(1, 1),
-                         kind="glyph", ramp=[pal[5], pal[5], pal[4], pal[0]], data="Z", turb=0, drag=0.2, rng=rng,
-                         light=(6, 0.25))
+            if i % 10 == 0:
+                sim.emit(1, cx + 6, head + 2, ang=-1.0, spread=0.05, speed=(13, 13), life=(1.6, 1.6), size=(1, 1),
+                         kind="z", ramp=[pal[5], pal[4], pal[3]], drag=0.2, rng=rng)
+        elif what == "paralysis":
+            if i % 2 == 0:
+                x, y = rng.choice(sil)
+                sim.emit(2, x, y, ang=rng.uniform(0, TAU), spread=1.2, speed=(30, 70), life=(0.12, 0.25),
+                         size=(1, 1.3), kind="streak", ramp=[pal[5], pal[4], pal[3]], drag=3, g=120, rng=rng,
+                         light=(3, 0.08))
         elif what == "freeze":
-            if rng.random() < 0.5:
-                sim.emit(1, cx + rng.uniform(-14, 14), fy - rng.uniform(16, 36), ang=math.pi / 2, spread=0.6,
-                         speed=(4, 12), life=(0.7, 1.1), size=(1, 2), kind="snow", ramp=[pal[5], pal[4], pal[3]],
+            if rng.random() < 0.45:
+                sim.emit(1, cx + rng.uniform(-14, 14), head - rng.uniform(0, 10), ang=math.pi / 2, spread=0.6,
+                         speed=(4, 12), life=(0.8, 1.2), size=(1, 2), kind="snow", ramp=[pal[5], pal[4], pal[3]],
                          turb=20, rng=rng)
-        elif what == "confusion":
-            pass
+
+    rs = random.Random(9)
+    crust = []  # ice shards hugging the lower body and sides, plus two on the head
+    for k in range(9):
+        a = math.pi * (0.05 + 0.9 * k / 8)
+        x, y = cx + math.cos(a) * 9.5, body_y + math.sin(a) * 8.0
+        crust.append((x, y + 1, -math.pi / 2 + (x - cx) * 0.06 + rs.uniform(-0.25, 0.25), rs.uniform(4, 8)))
+    for (x, y) in ((cx - 9, body_y - 3), (cx + 9, body_y - 2), (cx - 3, fy - 23), (cx + 4, fy - 24)):
+        crust.append((x, y, -math.pi / 2 + (x - cx) * 0.08, rs.uniform(3, 5)))
 
     def draw(cv, L, sim, i, t, rng):
         ph = i / S.n
-        if what == "paralysis" and i % 3 != 2:
-            for k in range(2):
-                x0 = cx + rng.uniform(-10, 10)
-                y0 = fy - rng.uniform(6, 24)
-                bolt(cv, rng, x0, y0, x0 + rng.uniform(-6, 6), y0 + rng.uniform(-7, 7), [pal[3], pal[5]], segs=3,
-                     amp=2.5, light=L, lcol=pal[4])
-        if what == "freeze":
-            rs = random.Random(5)
-            for k in range(6):
-                x = cx + rs.uniform(-12, 12)
-                h = rs.uniform(5, 11)
-                lean = rs.uniform(-0.4, 0.4)
-                for j in range(int(h)):
-                    f = j / h
-                    hw = (1 - f) * 2
-                    for xx in range(int(x + lean * j - hw), int(x + lean * j + hw) + 1):
-                        cv.px(xx, fy - j, pal[4] if xx >= x + lean * j else pal[2])
-                cv.px(x + lean * h, fy - h, pal[5])
-            g = (ph * 1.5) % 1.5
-            L.add(cx - 14 + g * 28, fy - 6, 6, pal[5], 0.6 if g < 1 else 0)
-            L.add(cx, fy - 4, 18, pal[3], 0.3)
-        if what == "confusion":
-            for k in range(3):
-                a = (ph + k / 3) * TAU
-                x = cx + math.cos(a) * 12
-                y = head - 4 + math.sin(a) * 3.5
-                front = math.sin(a) > 0
-                for j in range(1, 5):
-                    aa = a - j * 0.18
-                    cv.px(cx + math.cos(aa) * 12, head - 4 + math.sin(aa) * 3.5, pal[2] if j < 3 else pal[1])
-                r = 2 if front else 1
-                for kk in range(1, r + 1):
-                    for (ax, ay) in ((kk, 0), (-kk, 0), (0, kk), (0, -kk)):
-                        cv.px(x + ax, y + ay, pal[4] if front else pal[3])
-                cv.px(x, y, pal[5])
-                L.add(x, y, 6, pal[4], 0.45 if front else 0.2)
         if what == "burn":
-            for k, (dx, ph0) in enumerate(((-7, 0.0), (5, 0.35), (-1, 0.7), (9, 0.55))):
-                f = (ph + ph0) % 1.0
-                hgt = (5 + 4 * math.sin(f * math.pi)) * (1.1 - f * 0.4)
-                tongue(cv, cx + dx, fy - 4 - f * 12, 2.2, hgt, [pal[2], pal[4], pal[5]], 30 + k, t,
-                       lean=noise2(t * 4, k, 9) * 0.15)
-            L.add(cx, fy - 10, 16, pal[3], 0.25 + 0.1 * noise2(i * 0.8, 2, 3))
+            tongues = [(-7, 0.0, 7), (-2, 0.4, 10), (4, 0.15, 9), (8, 0.65, 6), (1, 0.8, 7)]
+            for k, (dx, p0, hmax) in enumerate(tongues):
+                f = (ph * 2 + p0) % 1.0
+                h = hmax * math.sin(f * math.pi) ** 0.7 + 1
+                base = body_y + 2 - abs(dx) * 0.2 - f * 6
+                tongue(cv, cx + dx, base, 2.4 - f, h, [pal[2], pal[4], pal[5]], 30 + k, t,
+                       lean=noise2(t * 5, k, 9) * 0.25)
+            L.add(cx, body_y - 4, 14, pal[3], 0.22 + 0.12 * max(0, noise2(i * 0.9, 2, 3)))
+        if what == "paralysis":
+            for k in range(2 + (i % 2)):
+                a, b = rng.choice(sil), rng.choice(sil)
+                if math.hypot(a[0] - b[0], a[1] - b[1]) > 12:
+                    b = (a[0] + rng.uniform(-6, 6), a[1] + rng.uniform(-6, 6))
+                bolt(cv, rng, a[0], a[1], b[0], b[1], [pal[3], pal[5]], segs=4, amp=2.5)
+            L.add(cx, body_y - 3, 12, pal[3], 0.12)
+            if i % 20 in (0, 1):  # twitch flash: the silhouette edge lights up
+                for (x, y) in sil:
+                    cv.px(x, y, pal[5])
+                    cv.px(x + rng.choice((-1, 1)), y, pal[4])
+                L.add(cx, body_y - 4, 16, pal[4], 0.22)
+        if what == "freeze":
+            for (x, y, a, ln) in crust:
+                ca, sa = math.cos(a), math.sin(a)
+                for j in range(int(ln) + 1):
+                    w = (1 - j / (ln + 1)) * 1.6
+                    for o in range(-int(w), int(w) + 1):
+                        c = pal[4] if o <= 0 else pal[2]
+                        if j == int(ln):
+                            c = pal[5]
+                        cv.px(x + ca * j - sa * o, y + sa * j + ca * o, c)
+                cv.px(x - sa * 2, y + ca * 2, pal[1])
+            g = (ph * 1.4) % 1.4
+            if g < 1:
+                gx = cx - 12 + g * 24
+                for j in range(6):
+                    cv.px(gx + j * 0.5, body_y + 4 - j, pal[5])
+                L.add(gx, body_y, 6, pal[5], 0.35)
+            L.add(cx, body_y, 16, pal[3], 0.15)
+        if what == "confusion":
+            tilt = 0.25
+            items = []
+            for k in range(4):
+                a = (ph + k / 4) * TAU
+                for j in range(1, 7):  # dotted trail of separate motes
+                    aa = a - j * 0.13
+                    x = cx + math.cos(aa) * 13
+                    y = head - 3 + math.sin(aa) * 4 + math.cos(aa) * 13 * tilt
+                    if j % 2 == 0:
+                        cv.px(x, y, pal[2] if j < 4 else pal[1])
+                x = cx + math.cos(a) * 13
+                y = head - 3 + math.sin(a) * 4 + math.cos(a) * 13 * tilt
+                items.append((math.sin(a), x, y, k))
+            for (z, x, y, k) in sorted(items):
+                front = z > 0
+                if k == 3:  # a little bird
+                    c = pal[4] if front else pal[3]
+                    for (ax, ay) in ((-2, -1), (-1, 0), (0, 0), (1, 0), (2, -1)):
+                        cv.px(x + ax, y + ay - (i % 4 < 2), c)
+                    cv.px(x, y + 1, pal[2])
+                else:
+                    r = 2 if front else 1
+                    for kk in range(1, r + 1):
+                        for (ax, ay) in ((kk, 0), (-kk, 0), (0, kk), (0, -kk)):
+                            cv.px(x + ax, y + ay, pal[4] if front else pal[3])
+                    cv.px(x, y, pal[5])
+                L.add(x, y, 5, pal[4], 0.25 if front else 0.1)
+        for p in sim.parts:
+            if p.kind == "pbubble":
+                if p.t < 0.8:
+                    r = 1 if p.size < 2 else 2
+                    for (ax, ay) in ((r, 0), (-r, 0), (0, r), (0, -r)) + (((1, 1), (-1, 1), (1, -1), (-1, -1)) if r == 2 else ()):
+                        cv.px(p.x + ax, p.y + ay, pal[3])
+                    if r == 2:
+                        cv.px(p.x, p.y, pal[1])
+                    cv.px(p.x - 1, p.y - 1, pal[5])
+                else:  # pop: four specks fly out
+                    k = (p.t - 0.8) / 0.2 * 3 + 2
+                    for (ax, ay) in ((1, 1), (-1, 1), (1, -1), (-1, -1)):
+                        cv.px(p.x + ax * k, p.y + ay * k, pal[4])
+            elif p.kind == "z":
+                sc = 1 if p.t < 0.4 else 2
+                y = p.y - (p.t * 4)
+                x = p.x + math.sin(p.age * 4) * 1.5
+                cv.text("Z", x, y, life_col(p.ramp, p.t), outline=pal[0], scale=sc)
+                L.add(x, y + 3 * sc, 5 * sc, pal[3], 0.2 * (1 - p.t))
+        draw_parts(cv, L, [p for p in sim.parts if p.kind not in ("pbubble", "z")], rng)
         if what == "poison":
-            L.add(cx, fy - 8, 16, pal[3], 0.2)
-        draw_parts(cv, L, sim.parts, rng)
+            L.add(cx, body_y, 14, pal[3], 0.15)
 
-    run(S, tick, draw, loop=True, ground=fy, warm=45)
-
+    run(S, tick, draw, loop=True, ground=fy, warm=50)
 
 # ------------------------------------------------------------------ generic systems
 def heal_v3(S):
@@ -1040,11 +1157,12 @@ def burst_generic(S, power=1.0, kind="spark", second=False):
         if i == 0 or (second and i == 7):
             ox, oy = (0, 0) if i == 0 else (9 * power, -7 * power)
             sim.emit(int(14 * power), cx + ox, cy + oy, ang=0, spread=TAU, speed=(70 * power, 200 * power),
-                     life=(0.15, 0.4), size=(1, 1.8), kind="streak", ramp=life_ramp(pal), drag=4, g=150,
+                     life=(0.25, 0.6), size=(1, 1.8), kind="streak", ramp=life_ramp(pal), drag=4, g=150,
                      bounce=0.3, rng=rng, light=(4, 0.13))
-            sim.emit(int(6 * power), cx + ox, cy + oy, ang=-math.pi / 2, spread=TAU, speed=(15, 50),
-                     life=(0.3, 0.6), size=(1, 1.4), kind="px", ramp=life_ramp(pal), drag=3, g=40, flick=0.2,
-                     rng=rng)
+            # lingering motes: hang, drift and settle on the floor for ~1 s
+            sim.emit(int(10 * power), cx + ox, cy + oy, ang=-math.pi / 2, spread=TAU, speed=(10, 45),
+                     life=(0.7, 1.2), size=(1, 1.4), kind="px", ramp=life_ramp(pal), drag=2.2, g=30, flick=0.15,
+                     bounce=0.2, turb=20, rng=rng)
 
     def draw(cv, L, sim, i, t, rng):
         for (t0, ox, oy, pw) in ((0, 0, 0, power), (7, 9 * power, -7 * power, power * 0.6)):

@@ -5,7 +5,7 @@
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 36,
+ "frames": 50,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -31,19 +31,19 @@
  "sheet": {
   "image": "fx/fire-burst.png",
   "columns": 8,
-  "rows": 5,
+  "rows": 7,
   "width": 1024,
-  "height": 480
+  "height": 672
  },
  "light": {
   "image": "fx/fire-burst.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 5
+  "rows": 7
  },
  "gif": "fx/fire-burst.gif",
- "durationMs": 1200,
+ "durationMs": 1667,
  "peakFrame": 2,
  "battle": {
   "hitFrame": 0,

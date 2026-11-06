@@ -5,7 +5,7 @@
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 26,
+ "frames": 40,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -31,19 +31,19 @@
  "sheet": {
   "image": "fx/ghost-hex-burst.png",
   "columns": 8,
-  "rows": 4,
+  "rows": 5,
   "width": 1024,
-  "height": 384
+  "height": 480
  },
  "light": {
   "image": "fx/ghost-hex-burst.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 4
+  "rows": 5
  },
  "gif": "fx/ghost-hex-burst.gif",
- "durationMs": 867,
+ "durationMs": 1333,
  "peakFrame": 2,
  "battle": {
   "hitFrame": 0,

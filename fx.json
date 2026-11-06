@@ -79,7 +79,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -105,20 +105,20 @@
    "sheet": {
     "image": "fx/normal-impact-burst.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/normal-impact-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/normal-impact-burst.gif",
-   "durationMs": 867,
-   "peakFrame": 2,
+   "durationMs": 1333,
+   "peakFrame": 25,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -226,7 +226,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 36,
+   "frames": 50,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -252,19 +252,19 @@
    "sheet": {
     "image": "fx/fire-burst.png",
     "columns": 8,
-    "rows": 5,
+    "rows": 7,
     "width": 1024,
-    "height": 480
+    "height": 672
    },
    "light": {
     "image": "fx/fire-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 5
+    "rows": 7
    },
    "gif": "fx/fire-burst.gif",
-   "durationMs": 1200,
+   "durationMs": 1667,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -474,7 +474,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -500,19 +500,19 @@
    "sheet": {
     "image": "fx/water-splash.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/water-splash.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/water-splash.gif",
-   "durationMs": 867,
+   "durationMs": 1333,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -623,7 +623,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -649,19 +649,19 @@
    "sheet": {
     "image": "fx/grass-petal-burst.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/grass-petal-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/grass-petal-burst.gif",
-   "durationMs": 867,
+   "durationMs": 1333,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -770,7 +770,7 @@
    "kind": "impact",
    "frameW": 96,
    "frameH": 128,
-   "frames": 30,
+   "frames": 45,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -778,7 +778,7 @@
     96
    ],
    "layer": "front",
-   "notes": "Bolt flicker drawn by the impact core plus sparks; see combo for the strike.",
+   "notes": "Bolt flickers down from the sky, then ground crackle crawls out over a scorch while sparks hop.",
    "ground": 118,
    "palette": [
     "#4a1000",
@@ -794,19 +794,19 @@
    "sheet": {
     "image": "fx/electric-thunder-strike.png",
     "columns": 10,
-    "rows": 3,
+    "rows": 5,
     "width": 960,
-    "height": 384
+    "height": 640
    },
    "light": {
     "image": "fx/electric-thunder-strike.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 10,
-    "rows": 3
+    "rows": 5
    },
    "gif": "fx/electric-thunder-strike.gif",
-   "durationMs": 1000,
+   "durationMs": 1500,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -968,7 +968,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -992,19 +992,19 @@
    "sheet": {
     "image": "fx/ice-shatter.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/ice-shatter.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/ice-shatter.gif",
-   "durationMs": 867,
+   "durationMs": 1333,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -1115,7 +1115,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1140,20 +1140,20 @@
    "sheet": {
     "image": "fx/fighting-power-hit.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/fighting-power-hit.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/fighting-power-hit.gif",
-   "durationMs": 867,
-   "peakFrame": 2,
+   "durationMs": 1333,
+   "peakFrame": 29,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 100,
@@ -1261,7 +1261,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1286,19 +1286,19 @@
    "sheet": {
     "image": "fx/poison-toxic-splash.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/poison-toxic-splash.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/poison-toxic-splash.gif",
-   "durationMs": 867,
+   "durationMs": 1333,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -1461,7 +1461,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1487,20 +1487,20 @@
    "sheet": {
     "image": "fx/ground-dust-burst.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/ground-dust-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/ground-dust-burst.gif",
-   "durationMs": 867,
-   "peakFrame": 9,
+   "durationMs": 1333,
+   "peakFrame": 27,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 60,
@@ -1561,7 +1561,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 24,
+   "frames": 36,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1585,19 +1585,19 @@
    "sheet": {
     "image": "fx/flying-gust-burst.png",
     "columns": 8,
-    "rows": 3,
+    "rows": 5,
     "width": 1024,
-    "height": 288
+    "height": 480
    },
    "light": {
     "image": "fx/flying-gust-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 3
+    "rows": 5
    },
    "gif": "fx/flying-gust-burst.gif",
-   "durationMs": 800,
+   "durationMs": 1200,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -1709,7 +1709,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1735,19 +1735,19 @@
    "sheet": {
     "image": "fx/psychic-psy-burst.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/psychic-psy-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/psychic-psy-burst.gif",
-   "durationMs": 867,
+   "durationMs": 1333,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -1898,7 +1898,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 24,
+   "frames": 36,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -1920,19 +1920,19 @@
    "sheet": {
     "image": "fx/bug-sting-hit.png",
     "columns": 8,
-    "rows": 3,
+    "rows": 5,
     "width": 1024,
-    "height": 288
+    "height": 480
    },
    "light": {
     "image": "fx/bug-sting-hit.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 3
+    "rows": 5
    },
    "gif": "fx/bug-sting-hit.gif",
-   "durationMs": 800,
+   "durationMs": 1200,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -2038,7 +2038,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 36,
+   "frames": 50,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -2062,20 +2062,20 @@
    "sheet": {
     "image": "fx/rock-smash.png",
     "columns": 8,
-    "rows": 5,
+    "rows": 7,
     "width": 1024,
-    "height": 480
+    "height": 672
    },
    "light": {
     "image": "fx/rock-smash.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 5
+    "rows": 7
    },
    "gif": "fx/rock-smash.gif",
-   "durationMs": 1200,
-   "peakFrame": 14,
+   "durationMs": 1667,
+   "peakFrame": 29,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 80,
@@ -2188,7 +2188,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -2214,19 +2214,19 @@
    "sheet": {
     "image": "fx/ghost-hex-burst.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/ghost-hex-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/ghost-hex-burst.gif",
-   "durationMs": 867,
+   "durationMs": 1333,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -2340,7 +2340,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 36,
+   "frames": 50,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -2364,19 +2364,19 @@
    "sheet": {
     "image": "fx/dragon-burst.png",
     "columns": 8,
-    "rows": 5,
+    "rows": 7,
     "width": 1024,
-    "height": 480
+    "height": 672
    },
    "light": {
     "image": "fx/dragon-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 5
+    "rows": 7
    },
    "gif": "fx/dragon-burst.gif",
-   "durationMs": 1200,
+   "durationMs": 1667,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -2636,7 +2636,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -2662,19 +2662,19 @@
    "sheet": {
     "image": "fx/steel-metal-spark.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/steel-metal-spark.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/steel-metal-spark.gif",
-   "durationMs": 867,
+   "durationMs": 1333,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -2840,7 +2840,7 @@
    "kind": "impact",
    "frameW": 128,
    "frameH": 96,
-   "frames": 26,
+   "frames": 40,
    "fps": 30,
    "loop": false,
    "anchor": [
@@ -2866,19 +2866,19 @@
    "sheet": {
     "image": "fx/fairy-sparkle-burst.png",
     "columns": 8,
-    "rows": 4,
+    "rows": 5,
     "width": 1024,
-    "height": 384
+    "height": 480
    },
    "light": {
     "image": "fx/fairy-sparkle-burst.light.png",
     "blend": "additive",
     "premultiplied": true,
     "columns": 8,
-    "rows": 4
+    "rows": 5
    },
    "gif": "fx/fairy-sparkle-burst.gif",
-   "durationMs": 867,
+   "durationMs": 1333,
    "peakFrame": 2,
    "battle": {
     "hitFrame": 0,
@@ -3031,7 +3031,7 @@
    },
    "gif": "fx/crit-hit.gif",
    "durationMs": 800,
-   "peakFrame": 1,
+   "peakFrame": 8,
    "battle": {
     "hitFrame": 0,
     "hitStopMs": 120,
@@ -3084,7 +3084,7 @@
    },
    "gif": "fx/crit-cutin.gif",
    "durationMs": 267,
-   "peakFrame": 0
+   "peakFrame": 1
   },
   {
    "id": "miss",
@@ -3369,7 +3369,7 @@
    },
    "gif": "fx/status-burn.gif",
    "durationMs": 1000,
-   "peakFrame": 2
+   "peakFrame": 26
   },
   {
    "id": "status-poison",
@@ -3417,7 +3417,7 @@
    },
    "gif": "fx/status-poison.gif",
    "durationMs": 1000,
-   "peakFrame": 9
+   "peakFrame": 24
   },
   {
    "id": "status-paralysis",
@@ -3461,7 +3461,7 @@
    },
    "gif": "fx/status-paralysis.gif",
    "durationMs": 1000,
-   "peakFrame": 4
+   "peakFrame": 21
   },
   {
    "id": "status-sleep",
@@ -3509,7 +3509,7 @@
    },
    "gif": "fx/status-sleep.gif",
    "durationMs": 933,
-   "peakFrame": 18
+   "peakFrame": 11
   },
   {
    "id": "status-freeze",
@@ -3557,7 +3557,7 @@
    },
    "gif": "fx/status-freeze.gif",
    "durationMs": 1000,
-   "peakFrame": 11
+   "peakFrame": 19
   },
   {
    "id": "status-confusion",
@@ -3603,7 +3603,7 @@
    },
    "gif": "fx/status-confusion.gif",
    "durationMs": 1000,
-   "peakFrame": 4
+   "peakFrame": 2
   },
   {
    "id": "faint-vanish",
@@ -3747,7 +3747,7 @@
    },
    "gif": "fx/evolve-glow.gif",
    "durationMs": 2000,
-   "peakFrame": 52
+   "peakFrame": 32
   },
   {
    "id": "recall-beam",
@@ -3843,7 +3843,7 @@
    },
    "gif": "fx/send-out.gif",
    "durationMs": 1000,
-   "peakFrame": 0
+   "peakFrame": 5
   },
   {
    "id": "charge-up",

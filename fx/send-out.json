@@ -44,5 +44,5 @@
  },
  "gif": "fx/send-out.gif",
  "durationMs": 1000,
- "peakFrame": 0
+ "peakFrame": 5
 }

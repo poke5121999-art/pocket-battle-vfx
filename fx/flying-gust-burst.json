@@ -5,7 +5,7 @@
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 24,
+ "frames": 36,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -29,19 +29,19 @@
  "sheet": {
   "image": "fx/flying-gust-burst.png",
   "columns": 8,
-  "rows": 3,
+  "rows": 5,
   "width": 1024,
-  "height": 288
+  "height": 480
  },
  "light": {
   "image": "fx/flying-gust-burst.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 3
+  "rows": 5
  },
  "gif": "fx/flying-gust-burst.gif",
- "durationMs": 800,
+ "durationMs": 1200,
  "peakFrame": 2,
  "battle": {
   "hitFrame": 0,

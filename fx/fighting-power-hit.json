@@ -5,7 +5,7 @@
  "kind": "impact",
  "frameW": 128,
  "frameH": 96,
- "frames": 26,
+ "frames": 40,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -30,20 +30,20 @@
  "sheet": {
   "image": "fx/fighting-power-hit.png",
   "columns": 8,
-  "rows": 4,
+  "rows": 5,
   "width": 1024,
-  "height": 384
+  "height": 480
  },
  "light": {
   "image": "fx/fighting-power-hit.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 8,
-  "rows": 4
+  "rows": 5
  },
  "gif": "fx/fighting-power-hit.gif",
- "durationMs": 867,
- "peakFrame": 2,
+ "durationMs": 1333,
+ "peakFrame": 29,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 100,

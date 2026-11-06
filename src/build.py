@@ -59,8 +59,15 @@ def render(e):
     e["render"](S)
     colour = [c.img for c in S.frames]
     light = [L.image() for L in S.lights]
-    cov = [f.width * f.height - f.getchannel("A").histogram()[0] for f in colour]
-    e["peakFrame"] = cov.index(max(cov))
+    # thumbnail frame: most colour pixels, discounted where light dominates (so the colour layer reads)
+    score = []
+    for f, L in zip(colour, light):
+        n = f.width * f.height
+        cov = n - f.getchannel("A").histogram()[0]
+        hist = L.getchannel("A").histogram()
+        lmean = sum(v * c for v, c in enumerate(hist)) / (255.0 * n)
+        score.append(cov * (1 - min(0.9, max(0.0, 2.5 * (lmean - 0.06)))))
+    e["peakFrame"] = score.index(max(score))
     return colour, light
 
 

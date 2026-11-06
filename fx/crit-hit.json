@@ -44,7 +44,7 @@
  },
  "gif": "fx/crit-hit.gif",
  "durationMs": 800,
- "peakFrame": 1,
+ "peakFrame": 8,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 120,

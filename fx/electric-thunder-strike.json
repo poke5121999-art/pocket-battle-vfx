@@ -5,7 +5,7 @@
  "kind": "impact",
  "frameW": 96,
  "frameH": 128,
- "frames": 30,
+ "frames": 45,
  "fps": 30,
  "loop": false,
  "anchor": [
@@ -13,7 +13,7 @@
   96
  ],
  "layer": "front",
- "notes": "Bolt flicker drawn by the impact core plus sparks; see combo for the strike.",
+ "notes": "Bolt flickers down from the sky, then ground crackle crawls out over a scorch while sparks hop.",
  "ground": 118,
  "palette": [
   "#4a1000",
@@ -29,19 +29,19 @@
  "sheet": {
   "image": "fx/electric-thunder-strike.png",
   "columns": 10,
-  "rows": 3,
+  "rows": 5,
   "width": 960,
-  "height": 384
+  "height": 640
  },
  "light": {
   "image": "fx/electric-thunder-strike.light.png",
   "blend": "additive",
   "premultiplied": true,
   "columns": 10,
-  "rows": 3
+  "rows": 5
  },
  "gif": "fx/electric-thunder-strike.gif",
- "durationMs": 1000,
+ "durationMs": 1500,
  "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
