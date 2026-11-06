@@ -3,17 +3,18 @@
  "name": "Thunder Strike",
  "element": "electric",
  "kind": "impact",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 128,
- "frames": 12,
- "fps": 15,
+ "frames": 30,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  32,
-  114
+  48,
+  96
  ],
  "layer": "front",
- "notes": "1 pre-strike frame, bolt flickers 4 + 2 frames, ground ring.",
+ "notes": "Bolt flicker drawn by the impact core plus sparks; see combo for the strike.",
+ "ground": 118,
  "palette": [
   "#4a1000",
   "#b04a00",
@@ -27,16 +28,23 @@
  ],
  "sheet": {
   "image": "fx/electric-thunder-strike.png",
-  "columns": 12,
-  "rows": 1,
-  "width": 768,
-  "height": 128
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/electric-thunder-strike.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/electric-thunder-strike.gif",
- "durationMs": 800,
+ "durationMs": 1000,
  "peakFrame": 2,
  "battle": {
-  "hitFrame": 1,
+  "hitFrame": 0,
   "hitStopMs": 80,
   "shakePx": 3
  }

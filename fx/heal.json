@@ -4,16 +4,17 @@
  "element": "grass",
  "kind": "buff",
  "frameW": 64,
- "frameH": 64,
- "frames": 10,
- "fps": 12,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Plus signs and sparkles rise; soft ring pulse.",
+ "notes": "Plus glyphs and sparkles rise.",
+ "ground": 86,
  "palette": [
   "#09373a",
   "#117a5f",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/heal.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/heal.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/heal.gif",
- "durationMs": 833,
- "peakFrame": 8
+ "durationMs": 1000,
+ "peakFrame": 29
 }

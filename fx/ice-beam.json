@@ -3,17 +3,18 @@
  "name": "Ice Beam",
  "element": "ice",
  "kind": "beam",
- "frameW": 128,
+ "frameW": 192,
  "frameH": 64,
- "frames": 20,
- "fps": 15,
+ "frames": 40,
+ "fps": 30,
  "loop": false,
  "anchor": [
   10,
   32
  ],
  "layer": "front",
- "notes": "Pale beam with crystals budding off both edges.",
+ "notes": "Jittering pale beam with crystals budding off the edges, shards breaking away.",
+ "ground": 54,
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -28,16 +29,23 @@
  ],
  "sheet": {
   "image": "fx/ice-beam.png",
-  "columns": 8,
-  "rows": 3,
-  "width": 1024,
-  "height": 192
+  "columns": 5,
+  "rows": 8,
+  "width": 960,
+  "height": 512
+ },
+ "light": {
+  "image": "fx/ice-beam.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 5,
+  "rows": 8
  },
  "gif": "fx/ice-beam.gif",
  "durationMs": 1333,
- "peakFrame": 9,
+ "peakFrame": 29,
  "battle": {
-  "hitFrame": 9,
+  "hitFrame": 13,
   "hitStopMs": 40,
   "shakePx": 1
  }

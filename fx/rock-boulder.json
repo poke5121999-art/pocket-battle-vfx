@@ -4,16 +4,17 @@
  "element": "rock",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Faceted rock tumbling in 8 steps with an outline, dust trail.",
+ "notes": "Faceted rock tumbling, outlined, dust trail and speed streaks.",
+ "ground": 38,
  "palette": [
   "#2e1815",
   "#5a3d2d",
@@ -28,12 +29,19 @@
  ],
  "sheet": {
   "image": "fx/rock-boulder.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/rock-boulder.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/rock-boulder.gif",
- "durationMs": 533,
- "peakFrame": 7
+ "durationMs": 800,
+ "peakFrame": 4
 }

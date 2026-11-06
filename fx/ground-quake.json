@@ -3,17 +3,18 @@
  "name": "Quake Cracks",
  "element": "ground",
  "kind": "area",
- "frameW": 128,
- "frameH": 64,
- "frames": 14,
- "fps": 15,
+ "frameW": 160,
+ "frameH": 96,
+ "frames": 36,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  64,
-  32
+  80,
+  86
  ],
  "layer": "ground",
- "notes": "Cracks race out, rocks heave, dust; ground layer under units.",
+ "notes": "Forked cracks race out glowing then cool; chunks pop and bounce; dust.",
+ "ground": 86,
  "palette": [
   "#3a0e0b",
   "#6e3019",
@@ -29,14 +30,21 @@
  ],
  "sheet": {
   "image": "fx/ground-quake.png",
-  "columns": 8,
-  "rows": 2,
-  "width": 1024,
-  "height": 128
+  "columns": 6,
+  "rows": 6,
+  "width": 960,
+  "height": 576
+ },
+ "light": {
+  "image": "fx/ground-quake.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 6,
+  "rows": 6
  },
  "gif": "fx/ground-quake.gif",
- "durationMs": 933,
- "peakFrame": 0,
+ "durationMs": 1200,
+ "peakFrame": 20,
  "battle": {
   "hitFrame": 3,
   "shakePx": 4

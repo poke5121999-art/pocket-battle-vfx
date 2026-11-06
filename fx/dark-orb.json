@@ -4,16 +4,17 @@
  "element": "dark",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Black-plum orb with a tilted ring.",
+ "notes": "Black-plum orb trailing writhing wisps.",
+ "ground": 38,
  "palette": [
   "#0b0912",
   "#1f1a2c",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/dark-orb.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/dark-orb.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/dark-orb.gif",
- "durationMs": 533,
- "peakFrame": 4
+ "durationMs": 800,
+ "peakFrame": 8
 }

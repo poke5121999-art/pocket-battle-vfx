@@ -3,17 +3,18 @@
  "name": "Hex Burst",
  "element": "ghost",
  "kind": "impact",
- "frameW": 64,
- "frameH": 64,
- "frames": 12,
- "fps": 15,
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 26,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  32,
-  32
+  64,
+  64
  ],
  "layer": "front",
- "notes": "Dark core, purple rings.",
+ "notes": "Purple burst, wisps writhe up and smoke away.",
+ "ground": 86,
  "palette": [
   "#130c30",
   "#2b1c68",
@@ -29,14 +30,21 @@
  ],
  "sheet": {
   "image": "fx/ghost-hex-burst.png",
-  "columns": 12,
-  "rows": 1,
-  "width": 768,
-  "height": 64
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/ghost-hex-burst.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/ghost-hex-burst.gif",
- "durationMs": 800,
- "peakFrame": 5,
+ "durationMs": 867,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

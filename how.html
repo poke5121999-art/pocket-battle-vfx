@@ -36,7 +36,10 @@
       primitives (discs, rings, squashed ellipses, polylines, pointed shards, a 3×5 font), ~20 archetypes (orb,
       beam, burst, explosion, splash, debris, pillar, vortex, pulse rings, cloud, spikes, cracks, swarm, aura…) and
       one table that turns archetype × element ramp × timing into <span id="n"></span> effects.
-      <code>python3 src/build.py</code> rebuilds every sheet, GIF and JSON in a few seconds, byte-identical each run.</li>
+      <code>python3 src/build.py</code> rebuilds every sheet, GIF and JSON in under a minute, byte-identical each run.
+      Since the art pass, every effect runs through a seeded particle simulation (120 Hz, sampled at 30 fps:
+      gravity, drag, curl-noise turbulence, colour and size over life, floor bounce) and paints two layers: crisp
+      colour pixels and a soft additive light layer.</li>
     <li><b>Look and fix.</b> Each effect was rendered to a frame contact sheet, looked at, and the archetype adjusted.</li>
   </ol>
 

@@ -3,17 +3,18 @@
  "name": "Stone Spikes",
  "element": "rock",
  "kind": "area",
- "frameW": 128,
- "frameH": 64,
- "frames": 16,
- "fps": 15,
+ "frameW": 160,
+ "frameH": 96,
+ "frames": 45,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  64,
-  56
+  80,
+  86
  ],
  "layer": "front",
- "notes": "Spikes stab up left to right, hold, sink.",
+ "notes": "Noise-edged stone shards stab up in sequence, chips and dust, crumble back.",
+ "ground": 86,
  "palette": [
   "#2e1815",
   "#5a3d2d",
@@ -27,14 +28,21 @@
  ],
  "sheet": {
   "image": "fx/rock-stone-spikes.png",
-  "columns": 8,
-  "rows": 2,
-  "width": 1024,
-  "height": 128
+  "columns": 6,
+  "rows": 8,
+  "width": 960,
+  "height": 768
+ },
+ "light": {
+  "image": "fx/rock-stone-spikes.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 6,
+  "rows": 8
  },
  "gif": "fx/rock-stone-spikes.gif",
- "durationMs": 1067,
- "peakFrame": 10,
+ "durationMs": 1500,
+ "peakFrame": 18,
  "battle": {
   "hitFrame": 2,
   "hitStopMs": 60,

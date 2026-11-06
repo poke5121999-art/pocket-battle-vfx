@@ -4,16 +4,17 @@
  "element": "flying",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 6,
- "fps": 15,
+ "frameH": 48,
+ "frames": 18,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Crescent of wind with streaks behind.",
+ "notes": "Tapered crescent of wind with streaks.",
+ "ground": 38,
  "palette": [
   "#2f226a",
   "#4544b0",
@@ -28,12 +29,19 @@
  ],
  "sheet": {
   "image": "fx/flying-air-blade.png",
-  "columns": 6,
-  "rows": 1,
-  "width": 576,
-  "height": 32
+  "columns": 10,
+  "rows": 2,
+  "width": 960,
+  "height": 96
+ },
+ "light": {
+  "image": "fx/flying-air-blade.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 2
  },
  "gif": "fx/flying-air-blade.gif",
- "durationMs": 400,
- "peakFrame": 3
+ "durationMs": 600,
+ "peakFrame": 16
 }

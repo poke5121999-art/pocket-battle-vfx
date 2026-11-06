@@ -3,17 +3,18 @@
  "name": "Sting Hit",
  "element": "bug",
  "kind": "impact",
- "frameW": 64,
- "frameH": 64,
- "frames": 10,
- "fps": 20,
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 24,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  32,
-  32
+  64,
+  64
  ],
  "layer": "front",
- "notes": "Small sharp hit: 4 rays.",
+ "notes": "Small sharp burst, bugs scatter.",
+ "ground": 86,
  "palette": [
   "#0d3802",
   "#306e05",
@@ -25,14 +26,21 @@
  "refs": [],
  "sheet": {
   "image": "fx/bug-sting-hit.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 64
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 288
+ },
+ "light": {
+  "image": "fx/bug-sting-hit.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 3
  },
  "gif": "fx/bug-sting-hit.gif",
- "durationMs": 500,
- "peakFrame": 1,
+ "durationMs": 800,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 40,

@@ -3,17 +3,18 @@
  "name": "Steel Slash",
  "element": "steel",
  "kind": "impact",
- "frameW": 64,
- "frameH": 64,
- "frames": 10,
- "fps": 20,
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 24,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  32,
-  32
+  64,
+  64
  ],
  "layer": "front",
- "notes": "Single crescent sweep, two-frame whip.",
+ "notes": "Tapered crescent sweep, hot edge, sparks off the tip.",
+ "ground": 86,
  "palette": [
   "#262438",
   "#474a66",
@@ -29,14 +30,21 @@
  ],
  "sheet": {
   "image": "fx/steel-slash.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 64
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 288
+ },
+ "light": {
+  "image": "fx/steel-slash.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 3
  },
  "gif": "fx/steel-slash.gif",
- "durationMs": 500,
- "peakFrame": 2,
+ "durationMs": 800,
+ "peakFrame": 3,
  "battle": {
   "hitFrame": 1,
   "hitStopMs": 60,

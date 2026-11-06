@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "system",
  "frameW": 64,
- "frameH": 64,
- "frames": 14,
- "fps": 15,
+ "frameH": 96,
+ "frames": 36,
+ "fps": 30,
  "loop": false,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Thin red beam appears at full length; unit shrinks into it.",
+ "notes": "Jittering red beam; unit turns red, shrinks and lifts away in motes.",
+ "ground": 86,
  "palette": [
   "#3a0422",
   "#8a0635",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/recall-beam.png",
-  "columns": 14,
-  "rows": 1,
-  "width": 896,
-  "height": 64
+  "columns": 16,
+  "rows": 3,
+  "width": 1024,
+  "height": 288
+ },
+ "light": {
+  "image": "fx/recall-beam.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 3
  },
  "gif": "fx/recall-beam.gif",
- "durationMs": 933,
- "peakFrame": 2
+ "durationMs": 1200,
+ "peakFrame": 0
 }

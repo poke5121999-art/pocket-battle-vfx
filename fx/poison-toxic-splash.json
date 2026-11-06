@@ -3,17 +3,18 @@
  "name": "Toxic Splash",
  "element": "poison",
  "kind": "impact",
- "frameW": 64,
- "frameH": 64,
- "frames": 12,
- "fps": 15,
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 26,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  32,
-  52
+  64,
+  64
  ],
  "layer": "front",
- "notes": "The splash archetype in purple; reads as goo.",
+ "notes": "Goo drops bounce, bubbles rise, gas puffs.",
+ "ground": 86,
  "palette": [
   "#160d38",
   "#411978",
@@ -28,14 +29,21 @@
  ],
  "sheet": {
   "image": "fx/poison-toxic-splash.png",
-  "columns": 12,
-  "rows": 1,
-  "width": 768,
-  "height": 64
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/poison-toxic-splash.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/poison-toxic-splash.gif",
- "durationMs": 800,
- "peakFrame": 0,
+ "durationMs": 867,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 50,

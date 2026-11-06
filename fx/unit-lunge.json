@@ -5,15 +5,16 @@
  "kind": "unit",
  "frameW": 96,
  "frameH": 64,
- "frames": 12,
- "fps": 15,
+ "frames": 30,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  20,
+  22,
   56
  ],
  "layer": "front",
- "notes": "Lean back 3f, dash 2f with after-image, hold 2f, return.",
+ "notes": "Crouch wind-up held 7f, dash 2f with smear ghosts, contact freeze 4f, recover.",
+ "ground": 56,
  "palette": [
   "#1c1a24",
   "#4a4858",
@@ -30,11 +31,21 @@
  "sheet": {
   "image": "fx/unit-lunge.png",
   "columns": 10,
-  "rows": 2,
+  "rows": 3,
   "width": 960,
-  "height": 128
+  "height": 192
+ },
+ "light": {
+  "image": "fx/unit-lunge.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/unit-lunge.gif",
- "durationMs": 800,
- "peakFrame": 4
+ "durationMs": 1000,
+ "peakFrame": 8,
+ "battle": {
+  "hitFrame": 9
+ }
 }

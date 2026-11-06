@@ -4,16 +4,17 @@
  "element": "poison",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Heavy glob dripping blobs that fall away.",
+ "notes": "Heavy glob shedding drips that fall away, bubbles.",
+ "ground": 38,
  "palette": [
   "#160d38",
   "#411978",
@@ -27,12 +28,19 @@
  ],
  "sheet": {
   "image": "fx/poison-sludge-glob.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/poison-sludge-glob.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/poison-sludge-glob.gif",
- "durationMs": 533,
- "peakFrame": 5
+ "durationMs": 800,
+ "peakFrame": 22
 }

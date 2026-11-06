@@ -4,16 +4,17 @@
  "element": "fairy",
  "kind": "aura",
  "frameW": 64,
- "frameH": 64,
- "frames": 10,
- "fps": 12,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Sparkles rise inside a pink ground ring.",
+ "notes": "Stars and hearts rise around the unit.",
+ "ground": 86,
  "palette": [
   "#450e4a",
   "#a82d91",
@@ -27,12 +28,19 @@
  ],
  "sheet": {
   "image": "fx/fairy-ring-aura.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/fairy-ring-aura.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/fairy-ring-aura.gif",
- "durationMs": 833,
- "peakFrame": 8
+ "durationMs": 1000,
+ "peakFrame": 27
 }

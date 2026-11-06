@@ -4,16 +4,17 @@
  "element": "ghost",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Dark orb with a smoky, dithered tail.",
+ "notes": "Dark-cored orb trailing wisps that smoke out.",
+ "ground": 38,
  "palette": [
   "#130c30",
   "#2b1c68",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/ghost-shadow-orb.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/ghost-shadow-orb.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/ghost-shadow-orb.gif",
- "durationMs": 533,
+ "durationMs": 800,
  "peakFrame": 7
 }

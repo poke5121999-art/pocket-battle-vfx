@@ -4,16 +4,17 @@
  "element": "fairy",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Pink orb leaving twinkling sparkles.",
+ "notes": "Pink orb leaving twinkling stars.",
+ "ground": 38,
  "palette": [
   "#450e4a",
   "#a82d91",
@@ -28,12 +29,19 @@
  ],
  "sheet": {
   "image": "fx/fairy-moon-orb.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/fairy-moon-orb.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/fairy-moon-orb.gif",
- "durationMs": 533,
- "peakFrame": 7
+ "durationMs": 800,
+ "peakFrame": 8
 }

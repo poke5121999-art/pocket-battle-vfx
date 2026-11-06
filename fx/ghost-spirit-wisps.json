@@ -4,16 +4,17 @@
  "element": "ghost",
  "kind": "aura",
  "frameW": 64,
- "frameH": 64,
- "frames": 10,
- "fps": 10,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Wisps with dithered tails drift up.",
+ "notes": "Wisps writhe up and fade to smoke.",
+ "ground": 86,
  "palette": [
   "#130c30",
   "#2b1c68",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/ghost-spirit-wisps.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/ghost-spirit-wisps.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/ghost-spirit-wisps.gif",
  "durationMs": 1000,
- "peakFrame": 2
+ "peakFrame": 27
 }

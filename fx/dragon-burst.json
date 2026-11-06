@@ -3,17 +3,18 @@
  "name": "Dragon Burst",
  "element": "dragon",
  "kind": "impact",
- "frameW": 96,
+ "frameW": 128,
  "frameH": 96,
- "frames": 14,
- "fps": 15,
+ "frames": 36,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  48,
-  48
+  64,
+  64
  ],
  "layer": "front",
- "notes": "The explosion archetype in cold colours: shaded cluster, smoke, embers, scorch decal.",
+ "notes": "Cold-flame burst boiling up, embers.",
+ "ground": 86,
  "palette": [
   "#1a0e4a",
   "#281c9c",
@@ -27,14 +28,21 @@
  ],
  "sheet": {
   "image": "fx/dragon-burst.png",
-  "columns": 10,
-  "rows": 2,
-  "width": 960,
-  "height": 192
+  "columns": 8,
+  "rows": 5,
+  "width": 1024,
+  "height": 480
+ },
+ "light": {
+  "image": "fx/dragon-burst.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 5
  },
  "gif": "fx/dragon-burst.gif",
- "durationMs": 933,
- "peakFrame": 3,
+ "durationMs": 1200,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 80,

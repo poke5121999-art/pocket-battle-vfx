@@ -3,17 +3,18 @@
  "name": "Blizzard Field",
  "element": "ice",
  "kind": "area",
- "frameW": 96,
+ "frameW": 128,
  "frameH": 96,
- "frames": 12,
- "fps": 12,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  48,
-  48
+  64,
+  86
  ],
  "layer": "front",
- "notes": "Diagonal snow over a frosted ground ellipse with wind streaks.",
+ "notes": "Diagonal snow on wind streaks over a frosted floor line.",
+ "ground": 86,
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/ice-blizzard.png",
-  "columns": 10,
-  "rows": 2,
-  "width": 960,
-  "height": 192
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/ice-blizzard.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/ice-blizzard.gif",
  "durationMs": 1000,
- "peakFrame": 6
+ "peakFrame": 23
 }

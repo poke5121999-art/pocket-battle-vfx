@@ -4,16 +4,17 @@
  "element": "psychic",
  "kind": "aura",
  "frameW": 64,
- "frameH": 64,
- "frames": 8,
- "fps": 10,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
- "layer": "ground",
- "notes": "Ground rings pulsing under the unit (status-room / mind control).",
+ "layer": "front",
+ "notes": "Motes float up and swirl around the unit.",
+ "ground": 86,
  "palette": [
   "#3a094a",
   "#a01a95",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/psychic-mind-field.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/psychic-mind-field.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/psychic-mind-field.gif",
- "durationMs": 800,
- "peakFrame": 5
+ "durationMs": 1000,
+ "peakFrame": 11
 }

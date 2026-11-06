@@ -4,16 +4,17 @@
  "element": "ice",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Three faceted shards, light side up, white tips.",
+ "notes": "Pale core shedding glinting shards and snow motes.",
+ "ground": 38,
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/ice-shards.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/ice-shards.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/ice-shards.gif",
- "durationMs": 533,
- "peakFrame": 7
+ "durationMs": 800,
+ "peakFrame": 22
 }

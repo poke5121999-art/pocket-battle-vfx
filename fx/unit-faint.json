@@ -5,15 +5,16 @@
  "kind": "unit",
  "frameW": 64,
  "frameH": 64,
- "frames": 14,
- "fps": 12,
+ "frames": 36,
+ "fps": 30,
  "loop": false,
  "anchor": [
   32,
   56
  ],
  "layer": "front",
- "notes": "Stagger, flatten, dither out.",
+ "notes": "Wobble, flatten, dissolve.",
+ "ground": 56,
  "palette": [
   "#1c1a24",
   "#4a4858",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/unit-faint.png",
-  "columns": 14,
-  "rows": 1,
-  "width": 896,
-  "height": 64
+  "columns": 16,
+  "rows": 3,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/unit-faint.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 3
  },
  "gif": "fx/unit-faint.gif",
- "durationMs": 1167,
+ "durationMs": 1200,
  "peakFrame": 0
 }

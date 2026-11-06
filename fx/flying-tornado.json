@@ -3,17 +3,18 @@
  "name": "Tornado",
  "element": "flying",
  "kind": "area",
- "frameW": 64,
- "frameH": 96,
- "frames": 10,
- "fps": 12,
+ "frameW": 96,
+ "frameH": 128,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  32,
-  88
+  48,
+  120
  ],
  "layer": "front",
- "notes": "Broken rings spiralling up with wind ticks.",
+ "notes": "Wind streaks riding a rising helix, dust at the base.",
+ "ground": 120,
  "palette": [
   "#2f226a",
   "#4544b0",
@@ -28,11 +29,18 @@
  "sheet": {
   "image": "fx/flying-tornado.png",
   "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 96
+  "rows": 3,
+  "width": 960,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/flying-tornado.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/flying-tornado.gif",
- "durationMs": 833,
- "peakFrame": 9
+ "durationMs": 1000,
+ "peakFrame": 2
 }

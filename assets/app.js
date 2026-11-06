@@ -21,8 +21,42 @@
     return imgCache.get(src);
   };
 
+  // light sheets are premultiplied (rgb = light). Canvas treats PNGs as straight alpha, so divide by alpha once;
+  // drawn with globalCompositeOperation "lighter" that adds exactly the stored light.
+  const lightCache = new Map();
+  function loadLight(d) {
+    if (!d.light) return Promise.resolve(null);
+    if (!lightCache.has(d.id)) {
+      lightCache.set(d.id, loadImg(d.light.image).then((img) => {
+        const c = el("canvas", { width: img.width, height: img.height });
+        const x = c.getContext("2d");
+        x.drawImage(img, 0, 0);
+        const id = x.getImageData(0, 0, img.width, img.height), a = id.data;
+        for (let i = 0; i < a.length; i += 4) {
+          const al = a[i + 3];
+          if (al) { a[i] = Math.min(255, a[i] * 255 / al); a[i + 1] = Math.min(255, a[i + 1] * 255 / al); a[i + 2] = Math.min(255, a[i + 2] * 255 / al); }
+        }
+        x.putImageData(id, 0, 0);
+        return c;
+      }).catch(() => null));
+    }
+    return lightCache.get(d.id);
+  }
+  function drawStage(ctx, w, h, ground) {
+    ctx.fillStyle = "#15131d"; ctx.fillRect(0, 0, w, h);
+    if (ground < h) {
+      ctx.fillStyle = "#221e2c"; ctx.fillRect(0, ground + 1, w, h - ground - 1);
+      ctx.fillStyle = "#2f2a3c"; ctx.fillRect(0, ground + 1, w, 1);
+      ctx.fillStyle = "#1a1722";
+      for (let y = ground + 4; y < h; y += 4) for (let x = ((y - ground) / 4) % 2 ? 0 : 6; x < w; x += 12) ctx.fillRect(x, y, 1, 1);
+    }
+  }
+  function lighter(ctx, fn) {
+    ctx.save(); ctx.globalCompositeOperation = "lighter"; ctx.imageSmoothingEnabled = true; fn(); ctx.restore();
+  }
+
   // effects that already draw the creature themselves, or where it must be absent
-  const NO_DUMMY = new Set(["evolve-glow", "recall-beam", "faint-vanish", "send-out", "miss", "crit-cutin", "charge-up"]);
+  const NO_DUMMY = new Set(["evolve-glow", "recall-beam", "faint-vanish", "send-out", "miss", "crit-cutin", "charge-up", "hit-spark"]);
   const DUMMY_KINDS = new Set(["aura", "status", "buff", "debuff", "impact", "system"]);
   const ELEMENT_ORDER = ["normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison", "ground", "flying",
     "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"];
@@ -55,8 +89,7 @@
   }
   // where the dummy's feet go inside the effect frame
   function dummyFeet(d) {
-    if (d.kind === "impact") return [d.anchor[0], Math.min(d.frameH - 4, d.anchor[1] + 16)];
-    return [d.anchor[0], d.anchor[1]];
+    return [d.anchor[0], d.ground !== undefined ? d.ground : d.frameH - 10];
   }
   function drawDummy(ctx, fx, fy, flip) {
     const im = flip ? dummyFlip : dummy;
@@ -82,9 +115,11 @@
       if (this.travel || d.frameW >= 128) { this.w = Math.max(128, d.frameW); this.h = Math.max(this.w / 2, d.frameH); }
       else { this.w = this.h = Math.max(d.frameW, d.frameH); }
       this.ox = Math.round((this.w - d.frameW) / 2);
-      this.oy = d.kind === "impact" ? Math.round((this.h - d.frameH) / 2) : this.h - d.frameH;
-      canvas.width = this.w; canvas.height = this.h;
-      this.img = null;
+      this.oy = this.h - d.frameH;
+      this.k = 2; // internal resolution: colour stays nearest-neighbour, light is smoothed
+      canvas.width = this.w * this.k; canvas.height = this.h * this.k;
+      this.img = null; this.limg = null;
+      loadLight(d).then((c) => { this.limg = c; this.draw(); });
       // until it plays (off-screen, or before the first tick) a card shows its fullest frame, never an empty one
       this.forced = opts.idlePeak ? (d.peakFrame || 0) : null;
       loadImg(d.sheet.image).then((i) => { this.img = i; this.draw(); });
@@ -109,14 +144,19 @@
     }
     draw() {
       const { ctx, d } = this;
+      ctx.setTransform(this.k, 0, 0, this.k, 0, 0);
+      ctx.imageSmoothingEnabled = false;
       ctx.clearRect(0, 0, this.w, this.h);
-      if (this.showBg) fillBackdrop(ctx, this.w, this.h);
+      const g = (d.ground !== undefined ? d.ground : d.frameH - 10) + this.oy;
+      if (this.showBg) drawStage(ctx, this.w, this.h, this.travel ? this.h - 8 : g);
       if (!this.img) return;
       if (this.travel) {
         const speed = 90; // px per second across the card
         const span = this.w + d.frameW;
         const x = ((this.t * speed) % span) - d.frameW + (this.forced !== null ? span / 2 : 0);
-        drawFrame(ctx, d, this.img, this.frame, x, Math.round(this.h / 2 - d.anchor[1]));
+        const y = Math.round(this.h / 2 - d.anchor[1]);
+        drawFrame(ctx, d, this.img, this.frame, x, y);
+        if (this.limg) lighter(ctx, () => drawFrame(ctx, d, this.limg, this.frame, x, y));
         return;
       }
       const dm = this.showDummy && wantsDummy(d);
@@ -126,6 +166,7 @@
       if (dm && d.layer !== "ground") drawDummy(ctx, fx + ox, fy + oy, flip);
       drawFrame(ctx, d, this.img, this.frame, ox, oy);
       if (dm && d.layer === "ground") drawDummy(ctx, fx + ox, fy + oy, flip);
+      if (this.limg && this.showBg) lighter(ctx, () => drawFrame(ctx, d, this.limg, this.frame, ox, oy));
     }
   }
 
@@ -325,7 +366,7 @@
 
   // ------------------------------------------------------------------ combo preview
   const combo = { running: false, clock: 0, freeze: 0, actors: [], events: [], shake: 0, flash: 0, dmg: null, slow: false, crit: false };
-  const CASTER = [80, 132], TARGET = [240, 112];
+  const CASTER = [80, 150], TARGET = [236, 150];
   function fillSelect(sel, list, def, none) {
     const s = $(sel);
     if (none) s.append(el("option", { value: "", textContent: "— none —" }));
@@ -337,6 +378,7 @@
     if (!d) return null;
     const a = Object.assign({ d, x, y, start: combo.clock, loop: d.loop, flip: false, until: Infinity, img: null }, opts);
     loadImg(d.sheet.image).then((i) => (a.img = i));
+    loadLight(d).then((c) => (a.limg = c));
     combo.actors.push(a);
     return a;
   }
@@ -355,7 +397,7 @@
     const lunge = addActor("unit-lunge", CASTER[0] - lungeD.anchor[0] - 6, CASTER[1] - 56);
     lunge.until = lungeD.frames / lungeD.fps;
     at(lunge.until, () => addActor("unit-idle", CASTER[0] - 32, CASTER[1] - 56));
-    const release = 4 / lungeD.fps; // dash frame
+    const release = ((lungeD.battle && lungeD.battle.hitFrame) || 8) / lungeD.fps; // dash frame
     const sx = CASTER[0] + 14, sy = CASTER[1] - 18, tx = TARGET[0] - 4, ty = TARGET[1] - 18;
     const dist = Math.hypot(tx - sx, ty - sy), ang = Math.atan2(ty - sy, tx - sx);
     let hitAt;
@@ -378,10 +420,9 @@
       step("hit");
       if (combo.crit) addActor("crit-cutin", 0, 0, { screen: true, fps: 24, until: 0.24 });
       combo.freeze = stop; combo.shake = shake; combo.flash = 2;
-      const iy = imp.kind === "impact" ? TARGET[1] - 16 - imp.anchor[1] : TARGET[1] - imp.anchor[1];
-      const impD = combo.crit ? BYID["crit-hit"] : imp;
-      const imp2 = addActor(imp.id, TARGET[0] - imp.anchor[0], iy, { until: imp.frames / imp.fps, delay: true });
-      if (combo.crit) addActor(impD.id, TARGET[0] - impD.anchor[0], TARGET[1] - 16 - impD.anchor[1], { until: impD.frames / impD.fps });
+      const gl = (d) => (d.ground !== undefined ? d.ground : d.frameH - 10);
+      addActor(imp.id, TARGET[0] - imp.anchor[0], TARGET[1] - gl(imp), { until: imp.frames / imp.fps });
+      if (combo.crit) { const c = BYID["crit-hit"]; addActor(c.id, TARGET[0] - c.anchor[0], TARGET[1] - gl(c), { until: c.frames / c.fps }); }
       targetIdle.until = combo.clock;
       const rec = BYID["unit-recoil"];
       addActor("unit-recoil", TARGET[0] - 32, TARGET[1] - 56, { flip: true, until: rec.frames / rec.fps });
@@ -391,8 +432,8 @@
       if (st) {
         at(combo.clock + 0.6, () => {
           step("status");
-          const sy2 = st.layer === "ground" ? TARGET[1] - st.anchor[1] : TARGET[1] - st.anchor[1];
-          addActor(st.id, TARGET[0] - st.anchor[0], sy2, { until: 2.6, front: st.layer !== "ground" });
+          const g2 = st.ground !== undefined ? st.ground : st.frameH - 10;
+          addActor(st.id, TARGET[0] - st.anchor[0], TARGET[1] - g2, { until: 2.6, front: st.layer !== "ground" });
         });
       }
       at(combo.clock + 3.4, () => { combo.running = false; step(""); });
@@ -420,7 +461,9 @@
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.imageSmoothingEnabled = false;
     ctx.fillStyle = "#000"; ctx.fillRect(0, 0, cv.width, cv.height);
-    ctx.setTransform(1, 0, 0, 1, ox, oy);
+    const K = cv.width / 320;
+    ctx.setTransform(K, 0, 0, K, ox * K, oy * K);
+    ctx.imageSmoothingEnabled = false;
     if (backdrop) ctx.drawImage(backdropFull || backdrop, 0, 0);
     combo.actors = combo.actors.filter((a) => combo.clock - a.start <= a.until || !combo.running && a.until === Infinity);
     const layer = (a) => (a.screen ? 3 : a.d.layer === "ground" ? 0 : a.d.kind === "unit" ? 1 : 2);
@@ -445,6 +488,7 @@
         ctx.scale(a.beam.sx, 1);
         const [sx0, sy0, w, h] = frameRect(d, f);
         ctx.drawImage(a.img, sx0, sy0, w, h, -d.anchor[0], -d.anchor[1], w, h);
+        if (a.limg) { ctx.globalCompositeOperation = "lighter"; ctx.drawImage(a.limg, sx0, sy0, w, h, -d.anchor[0], -d.anchor[1], w, h); }
         ctx.restore();
         continue;
       }
@@ -452,9 +496,11 @@
         const u = Math.min(1, t / a.path.dur);
         const x = a.path.sx + (a.path.tx - a.path.sx) * u, y = a.path.sy + (a.path.ty - a.path.sy) * u;
         drawFrame(ctx, d, a.img, f, x - d.anchor[0], y - d.anchor[1]);
+        if (a.limg) lighter(ctx, () => drawFrame(ctx, d, a.limg, f, x - d.anchor[0], y - d.anchor[1]));
         continue;
       }
       drawFrame(ctx, d, a.img, f, a.x, a.y, a.flip);
+      if (a.limg) lighter(ctx, () => drawFrame(ctx, d, a.limg, f, a.x, a.y, a.flip));
     }
     // damage number: pops up with an overshoot, holds, drifts
     if (combo.dmg) {

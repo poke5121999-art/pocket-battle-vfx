@@ -3,17 +3,18 @@
  "name": "Whirlpool",
  "element": "water",
  "kind": "area",
- "frameW": 64,
- "frameH": 96,
- "frames": 10,
- "fps": 12,
+ "frameW": 96,
+ "frameH": 128,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  32,
-  88
+  48,
+  120
  ],
  "layer": "front",
- "notes": "Stacked squashed rings spiralling up with orbiting droplets.",
+ "notes": "Droplets riding a rising helix with streak tails; back half dimmer.",
+ "ground": 120,
  "palette": [
   "#0c065c",
   "#0c25b8",
@@ -30,11 +31,18 @@
  "sheet": {
   "image": "fx/water-whirlpool.png",
   "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 96
+  "rows": 3,
+  "width": 960,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/water-whirlpool.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/water-whirlpool.gif",
- "durationMs": 833,
- "peakFrame": 7
+ "durationMs": 1000,
+ "peakFrame": 3
 }

@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "buff",
  "frameW": 64,
- "frameH": 64,
- "frames": 8,
- "fps": 12,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Warm arrows stream up.",
+ "notes": "Chevrons and streaks flow up.",
+ "ground": 86,
  "palette": [
   "#3a0422",
   "#8a0635",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/stat-up.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/stat-up.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/stat-up.gif",
- "durationMs": 667,
- "peakFrame": 3
+ "durationMs": 1000,
+ "peakFrame": 25
 }

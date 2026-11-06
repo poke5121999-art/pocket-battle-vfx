@@ -3,17 +3,18 @@
  "name": "Force Wave",
  "element": "fighting",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 64,
- "frames": 8,
- "fps": 15,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  6,
+  4,
   32
  ],
  "layer": "front",
- "notes": "Thick arcs pushed forward from the fist.",
+ "notes": "Tapered force crescents thinning as they travel.",
+ "ground": 54,
  "palette": [
   "#4a0920",
   "#920918",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/fighting-force-wave.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/fighting-force-wave.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/fighting-force-wave.gif",
- "durationMs": 533,
- "peakFrame": 5
+ "durationMs": 800,
+ "peakFrame": 12
 }

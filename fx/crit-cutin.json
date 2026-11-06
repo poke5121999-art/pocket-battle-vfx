@@ -3,17 +3,18 @@
  "name": "Crit Cut-in",
  "element": "normal",
  "kind": "system",
- "frameW": 128,
- "frameH": 64,
- "frames": 6,
- "fps": 15,
+ "frameW": 160,
+ "frameH": 96,
+ "frames": 8,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  64,
-  32
+  0,
+  0
  ],
  "layer": "screen",
- "notes": "Opaque screen plate with radial speed lines for 4-6 frames on crits and K.O.s (reference clips).",
+ "notes": "Opaque screen plate with tapered speed lines for a few frames on crits and K.O.s.",
+ "ground": 86,
  "palette": [
   "#3c384a",
   "#7c788e",
@@ -30,11 +31,18 @@
  "sheet": {
   "image": "fx/crit-cutin.png",
   "columns": 6,
-  "rows": 1,
-  "width": 768,
-  "height": 64
+  "rows": 2,
+  "width": 960,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/crit-cutin.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 6,
+  "rows": 2
  },
  "gif": "fx/crit-cutin.gif",
- "durationMs": 400,
+ "durationMs": 267,
  "peakFrame": 0
 }

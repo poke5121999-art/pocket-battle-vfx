@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "system",
  "frameW": 64,
- "frameH": 64,
- "frames": 16,
- "fps": 15,
+ "frameH": 96,
+ "frames": 45,
+ "fps": 30,
  "loop": false,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Gold column, sparkles, chevron and LV UP stamp.",
+ "notes": "Light flash, rising streaks and stars, LV UP stamp.",
+ "ground": 86,
  "palette": [
   "#4a0f02",
   "#9a3700",
@@ -30,11 +31,18 @@
  "sheet": {
   "image": "fx/level-up.png",
   "columns": 16,
-  "rows": 1,
+  "rows": 3,
   "width": 1024,
-  "height": 64
+  "height": 288
+ },
+ "light": {
+  "image": "fx/level-up.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 3
  },
  "gif": "fx/level-up.gif",
- "durationMs": 1067,
- "peakFrame": 8
+ "durationMs": 1500,
+ "peakFrame": 17
 }

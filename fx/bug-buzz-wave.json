@@ -3,17 +3,18 @@
  "name": "Buzz Wave",
  "element": "bug",
  "kind": "projectile",
- "frameW": 64,
+ "frameW": 96,
  "frameH": 64,
- "frames": 8,
- "fps": 15,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  6,
+  4,
   32
  ],
  "layer": "front",
- "notes": "Thin sound arcs.",
+ "notes": "Thin tapered sound crescents with buzzing motes.",
+ "ground": 54,
  "palette": [
   "#0d3802",
   "#306e05",
@@ -25,12 +26,19 @@
  "refs": [],
  "sheet": {
   "image": "fx/bug-buzz-wave.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/bug-buzz-wave.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/bug-buzz-wave.gif",
- "durationMs": 533,
+ "durationMs": 800,
  "peakFrame": 5
 }

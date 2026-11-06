@@ -5,15 +5,16 @@
  "kind": "unit",
  "frameW": 64,
  "frameH": 64,
- "frames": 6,
- "fps": 6,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
   56
  ],
  "layer": "front",
- "notes": "Squash/stretch bob, blink on frame 2.",
+ "notes": "Breathing squash/stretch, blink.",
+ "ground": 56,
  "palette": [
   "#1c1a24",
   "#4a4858",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/unit-idle.png",
-  "columns": 6,
-  "rows": 1,
-  "width": 384,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 128
+ },
+ "light": {
+  "image": "fx/unit-idle.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/unit-idle.gif",
- "durationMs": 1000,
- "peakFrame": 0
+ "durationMs": 800,
+ "peakFrame": 14
 }

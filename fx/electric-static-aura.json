@@ -4,16 +4,17 @@
  "element": "electric",
  "kind": "aura",
  "frameW": 64,
- "frameH": 64,
- "frames": 8,
- "fps": 12,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Crackling sparks climbing the unit; flicker by skipping beats.",
+ "notes": "Sparks crawl up the body edges.",
+ "ground": 86,
  "palette": [
   "#4a1000",
   "#b04a00",
@@ -28,12 +29,19 @@
  ],
  "sheet": {
   "image": "fx/electric-static-aura.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/electric-static-aura.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/electric-static-aura.gif",
- "durationMs": 667,
- "peakFrame": 7
+ "durationMs": 1000,
+ "peakFrame": 15
 }

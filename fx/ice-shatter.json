@@ -3,17 +3,18 @@
  "name": "Frost Shatter",
  "element": "ice",
  "kind": "impact",
- "frameW": 64,
- "frameH": 64,
- "frames": 12,
- "fps": 15,
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 26,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  32,
-  32
+  64,
+  64
  ],
  "layer": "front",
- "notes": "Crystal fragments fly and fall; ring breaks into arcs.",
+ "notes": "Shards burst out, bounce and glint; snow drifts.",
+ "ground": 86,
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -27,14 +28,21 @@
  ],
  "sheet": {
   "image": "fx/ice-shatter.png",
-  "columns": 12,
-  "rows": 1,
-  "width": 768,
-  "height": 64
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/ice-shatter.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/ice-shatter.gif",
- "durationMs": 800,
- "peakFrame": 0,
+ "durationMs": 867,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

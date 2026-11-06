@@ -4,16 +4,17 @@
  "element": "ground",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Earth orb with a dust trail.",
+ "notes": "Tumbling clod with a dust trail.",
+ "ground": 38,
  "palette": [
   "#3a0e0b",
   "#6e3019",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/ground-mud-ball.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/ground-mud-ball.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/ground-mud-ball.gif",
- "durationMs": 533,
- "peakFrame": 4
+ "durationMs": 800,
+ "peakFrame": 6
 }

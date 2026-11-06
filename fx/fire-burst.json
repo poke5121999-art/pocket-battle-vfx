@@ -3,17 +3,18 @@
  "name": "Fire Burst",
  "element": "fire",
  "kind": "impact",
- "frameW": 96,
+ "frameW": 128,
  "frameH": 96,
- "frames": 14,
- "fps": 15,
+ "frames": 36,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  48,
-  48
+  64,
+  64
  ],
  "layer": "front",
- "notes": "Flash, shaded fireball cluster, cools into grey-violet smoke that rises; embers fall, scorch decal.",
+ "notes": "Flash, jagged burst, flame blobs boil up and turn to drifting smoke, embers fall.",
+ "ground": 86,
  "palette": [
   "#4a0921",
   "#a80920",
@@ -29,14 +30,21 @@
  ],
  "sheet": {
   "image": "fx/fire-burst.png",
-  "columns": 10,
-  "rows": 2,
-  "width": 960,
-  "height": 192
+  "columns": 8,
+  "rows": 5,
+  "width": 1024,
+  "height": 480
+ },
+ "light": {
+  "image": "fx/fire-burst.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 5
  },
  "gif": "fx/fire-burst.gif",
- "durationMs": 933,
- "peakFrame": 3,
+ "durationMs": 1200,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 80,

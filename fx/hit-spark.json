@@ -3,17 +3,18 @@
  "name": "Hit Spark",
  "element": "normal",
  "kind": "impact",
- "frameW": 32,
- "frameH": 32,
- "frames": 6,
- "fps": 20,
+ "frameW": 64,
+ "frameH": 64,
+ "frames": 12,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  16,
-  16
+  32,
+  32
  ],
  "layer": "front",
- "notes": "Smallest hit, 300 ms: use on every contact.",
+ "notes": "Smallest hit, 400 ms: jagged spark + streaks + light.",
+ "ground": 56,
  "palette": [
   "#3c384a",
   "#7c788e",
@@ -29,13 +30,20 @@
  ],
  "sheet": {
   "image": "fx/hit-spark.png",
-  "columns": 6,
+  "columns": 12,
   "rows": 1,
-  "width": 192,
-  "height": 32
+  "width": 768,
+  "height": 64
+ },
+ "light": {
+  "image": "fx/hit-spark.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 12,
+  "rows": 1
  },
  "gif": "fx/hit-spark.gif",
- "durationMs": 300,
+ "durationMs": 400,
  "peakFrame": 1,
  "battle": {
   "hitFrame": 0,

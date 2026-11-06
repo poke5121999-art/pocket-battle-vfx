@@ -3,17 +3,18 @@
  "name": "Water Splash",
  "element": "water",
  "kind": "impact",
- "frameW": 64,
- "frameH": 64,
- "frames": 12,
- "fps": 15,
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 26,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  32,
-  52
+  64,
+  64
  ],
  "layer": "front",
- "notes": "Crown splash, droplets on gravity arcs, flat ripple rings.",
+ "notes": "Droplets on gravity arcs bouncing on the floor, mist, light flash.",
+ "ground": 86,
  "palette": [
   "#0c065c",
   "#0c25b8",
@@ -29,14 +30,21 @@
  ],
  "sheet": {
   "image": "fx/water-splash.png",
-  "columns": 12,
-  "rows": 1,
-  "width": 768,
-  "height": 64
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/water-splash.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/water-splash.gif",
- "durationMs": 800,
- "peakFrame": 5,
+ "durationMs": 867,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 50,

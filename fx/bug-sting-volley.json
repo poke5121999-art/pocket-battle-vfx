@@ -4,16 +4,17 @@
  "element": "bug",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 6,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Three needles in formation.",
+ "notes": "Sharp green core with tiny bugs shed behind.",
+ "ground": 38,
  "palette": [
   "#0d3802",
   "#306e05",
@@ -25,12 +26,19 @@
  "refs": [],
  "sheet": {
   "image": "fx/bug-sting-volley.png",
-  "columns": 6,
-  "rows": 1,
-  "width": 576,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/bug-sting-volley.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/bug-sting-volley.gif",
- "durationMs": 400,
- "peakFrame": 2
+ "durationMs": 800,
+ "peakFrame": 8
 }

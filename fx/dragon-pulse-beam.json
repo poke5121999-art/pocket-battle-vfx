@@ -3,17 +3,18 @@
  "name": "Dragon Beam",
  "element": "dragon",
  "kind": "beam",
- "frameW": 128,
+ "frameW": 192,
  "frameH": 64,
- "frames": 20,
- "fps": 15,
+ "frames": 40,
+ "fps": 30,
  "loop": false,
  "anchor": [
   10,
   32
  ],
  "layer": "front",
- "notes": "Thick blue-teal beam with a white helix (beam language from the reference clips).",
+ "notes": "Thick blue-teal jittering beam shedding cold flames.",
+ "ground": 54,
  "palette": [
   "#1a0e4a",
   "#281c9c",
@@ -27,16 +28,23 @@
  ],
  "sheet": {
   "image": "fx/dragon-pulse-beam.png",
-  "columns": 8,
-  "rows": 3,
-  "width": 1024,
-  "height": 192
+  "columns": 5,
+  "rows": 8,
+  "width": 960,
+  "height": 512
+ },
+ "light": {
+  "image": "fx/dragon-pulse-beam.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 5,
+  "rows": 8
  },
  "gif": "fx/dragon-pulse-beam.gif",
  "durationMs": 1333,
- "peakFrame": 9,
+ "peakFrame": 25,
  "battle": {
-  "hitFrame": 9,
+  "hitFrame": 13,
   "hitStopMs": 60,
   "shakePx": 2
  }

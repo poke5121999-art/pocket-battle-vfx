@@ -3,17 +3,18 @@
  "name": "Night Claw",
  "element": "dark",
  "kind": "impact",
- "frameW": 64,
- "frameH": 64,
- "frames": 10,
- "fps": 20,
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 24,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  32,
-  32
+  64,
+  64
  ],
  "layer": "front",
- "notes": "Three diagonal rakes, white edge cools to plum.",
+ "notes": "Three tapered rakes, hot edge cooling to plum, sparks.",
+ "ground": 86,
  "palette": [
   "#0b0912",
   "#1f1a2c",
@@ -27,16 +28,23 @@
  ],
  "sheet": {
   "image": "fx/dark-night-claw.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 64
+  "columns": 8,
+  "rows": 3,
+  "width": 1024,
+  "height": 288
+ },
+ "light": {
+  "image": "fx/dark-night-claw.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 3
  },
  "gif": "fx/dark-night-claw.gif",
- "durationMs": 500,
- "peakFrame": 2,
+ "durationMs": 800,
+ "peakFrame": 5,
  "battle": {
-  "hitFrame": 1,
+  "hitFrame": 2,
   "hitStopMs": 60,
   "shakePx": 2
  }

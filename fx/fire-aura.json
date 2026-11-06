@@ -4,16 +4,17 @@
  "element": "fire",
  "kind": "aura",
  "frameW": 64,
- "frameH": 64,
- "frames": 8,
- "fps": 12,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Rising flame tongues around the unit; ground ring pulse.",
+ "notes": "Flames and embers rise along the body edges.",
+ "ground": 86,
  "palette": [
   "#4a0921",
   "#a80920",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/fire-aura.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/fire-aura.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/fire-aura.gif",
- "durationMs": 667,
- "peakFrame": 7
+ "durationMs": 1000,
+ "peakFrame": 6
 }

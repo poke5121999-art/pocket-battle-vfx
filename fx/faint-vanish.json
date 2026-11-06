@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "system",
  "frameW": 64,
- "frameH": 64,
- "frames": 14,
- "fps": 15,
+ "frameH": 96,
+ "frames": 36,
+ "fps": 30,
  "loop": false,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Dust ring and rising motes; play over the faint unit animation.",
+ "notes": "Dust puff and rising motes; play over the faint animation.",
+ "ground": 86,
  "palette": [
   "#3c384a",
   "#7c788e",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/faint-vanish.png",
-  "columns": 14,
-  "rows": 1,
-  "width": 896,
-  "height": 64
+  "columns": 16,
+  "rows": 3,
+  "width": 1024,
+  "height": 288
+ },
+ "light": {
+  "image": "fx/faint-vanish.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 3
  },
  "gif": "fx/faint-vanish.gif",
- "durationMs": 933,
- "peakFrame": 2
+ "durationMs": 1200,
+ "peakFrame": 16
 }

@@ -3,17 +3,18 @@
  "name": "Dark Pulse",
  "element": "dark",
  "kind": "area",
- "frameW": 96,
+ "frameW": 128,
  "frameH": 96,
- "frames": 10,
- "fps": 12,
- "loop": true,
+ "frames": 30,
+ "fps": 30,
+ "loop": false,
  "anchor": [
-  48,
-  48
+  64,
+  86
  ],
- "layer": "front",
- "notes": "Thick dark rings radiate from a black core.",
+ "layer": "ground",
+ "notes": "Dark broken rings spread from a black core with wisps (a ring by design).",
+ "ground": 86,
  "palette": [
   "#0b0912",
   "#1f1a2c",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/dark-pulse.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 960,
-  "height": 96
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/dark-pulse.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/dark-pulse.gif",
- "durationMs": 833,
- "peakFrame": 3
+ "durationMs": 1000,
+ "peakFrame": 8
 }

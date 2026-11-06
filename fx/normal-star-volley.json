@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Three spinning stars with dithered streaks; loop, move it with the engine.",
+ "notes": "Three jagged stars bob in formation, shedding star motes.",
+ "ground": 38,
  "palette": [
   "#32303d",
   "#686476",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/normal-star-volley.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/normal-star-volley.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/normal-star-volley.gif",
- "durationMs": 533,
- "peakFrame": 1
+ "durationMs": 800,
+ "peakFrame": 21
 }

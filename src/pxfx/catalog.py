@@ -1,223 +1,227 @@
-"""The effect list. One row per effect: id, display name, element, kind, frame size, frame count,
-fps, loop, anchor, layer, ramp, renderer, notes, and battle timing (hit frame, hit-stop, shake).
+"""The effect table (v3 art pass): id, display name, element, kind, frame size, frame count, fps, renderer,
+anchor, ground line, layer, notes, battle timing. Names describe element + shape only. All effects run at
+30 fps. `ground` is the y of the floor line inside the frame (units stand on it, debris bounces on it)."""
+from . import fx3 as X
 
-Names describe element + shape only. Kinds: projectile, beam, impact, aura, area, buff, debuff,
-status, system, unit.
-"""
-from . import fxlib as F
-from . import generic as G
+FPS = 30
 
 
-def E(id, name, element, kind, size, frames, fps, render, loop=False, anchor=None, layer="front",
-      ramp=None, notes="", hit=None, hitstop=0, shake=0, feet=None):
+def E(id, name, element, kind, size, frames, render, loop=False, anchor=None, ground=None, layer="front",
+      ramp=None, notes="", hit=None, hitstop=0, shake=0):
     w, h = size
+    g = ground if ground is not None else h - 10
     if anchor is None:
         if kind == "projectile":
-            anchor = [w - 15, h // 2]
+            anchor = [w - 16, h // 2]
         elif kind == "beam":
             anchor = [10, h // 2]
-        elif kind in ("aura", "status", "buff", "debuff", "unit", "system") and feet is not None:
-            anchor = [w // 2, feet]
+        elif kind == "impact":
+            anchor = [w // 2, g - 22]
         else:
-            anchor = [w // 2, h // 2]
-    return dict(id=id, name=name, element=element, kind=kind, frameW=w, frameH=h, frames=frames, fps=fps,
-                loop=loop, anchor=anchor, layer=layer, ramp=ramp or element, render=render, notes=notes,
-                hit=hit, hitstopMs=hitstop, shake=shake, feet=feet)
+            anchor = [w // 2, g]
+    return dict(id=id, name=name, element=element, kind=kind, frameW=w, frameH=h, frames=frames, fps=FPS,
+                loop=loop, anchor=anchor, ground=g, layer=layer, ramp=ramp or element, render=render, notes=notes,
+                hit=hit, hitstopMs=hitstop, shake=shake,
+                feet=g if kind in ("aura", "status", "buff", "debuff", "unit", "system", "impact") else None)
 
 
-FEET = 56  # feet line inside 64-tall unit-centred frames
+PRJ, BEAM, IMP, AURA = (96, 48), (192, 64), (128, 96), (64, 96)
+
+
+def proj(el, **k):
+    return lambda S: X.projectile(S, el, **k)
+
+
+def imp(el, power=1.0, ring=False):
+    return lambda S: X.impact(S, el, power=power, ring=ring)
+
 
 EFFECTS = [
-    # ---------------------------------------------------------------- normal
-    E("normal-star-volley", "Star Volley", "normal", "projectile", (96, 32), 8, 15, lambda S: F.volley(S, "star", 3), loop=True,
-      notes="Three spinning stars with dithered streaks; loop, move it with the engine."),
-    E("normal-impact-burst", "Impact Burst", "normal", "impact", (64, 64), 10, 20, lambda S: F.burst(S, rays=8, sparks=10),
-      notes="The default hit: white frame 0, 8-point star, ring, rays, sparks cooling.", hit=0, hitstop=60, shake=2),
-    E("normal-shock-ring", "Shock Ring", "normal", "area", (96, 64), 12, 15,
-      lambda S: F.pulse_rings(S, rings=3, thick=3, squash=0.4, loop=False), layer="ground",
-      notes="Ground shockwave: three squashed rings leave the caster's feet (roar / stomp)."),
-    # ---------------------------------------------------------------- fire
-    E("fire-fireball", "Fire Ball", "fire", "projectile", (96, 32), 8, 15, lambda S: F.orb(S, r=5, trail="flame"), loop=True,
-      notes="Hot white core, flame puffs that cool down the ramp along the trail."),
-    E("fire-burst", "Fire Burst", "fire", "impact", (96, 96), 14, 15, lambda S: F.explosion(S, puffs=11, embers=12),
-      notes="Flash, shaded fireball cluster, cools into grey-violet smoke that rises; embers fall, scorch decal.", hit=0, hitstop=80, shake=3),
-    E("fire-pillar", "Flame Pillar", "fire", "area", (64, 128), 14, 15, lambda S: F.pillar(S, "flame"),
-      anchor=[32, 120], notes="Column erupts from a ground glow, overshoots, holds, collapses."),
-    E("fire-aura", "Flame Aura", "fire", "aura", (64, 64), 8, 12, lambda S: F.aura(S, "flame"), loop=True, feet=FEET,
-      notes="Rising flame tongues around the unit; ground ring pulse."),
-    # ---------------------------------------------------------------- water
-    E("water-jet", "Water Jet", "water", "beam", (128, 64), 20, 15, lambda S: F.beam(S, style="wave", width=7),
-      notes="Charge 6f, shoots across in 3f, wavy body holds 8f, thins out.", hit=9, hitstop=40, shake=1),
-    E("water-bubble-shot", "Bubble Shot", "water", "projectile", (96, 32), 8, 15, lambda S: F.orb(S, r=4, trail="bubble"), loop=True,
-      notes="Glossy orb shedding ring bubbles."),
-    E("water-splash", "Water Splash", "water", "impact", (64, 64), 12, 15, lambda S: F.splash(S, drops=16),
-      anchor=[32, 52], notes="Crown splash, droplets on gravity arcs, flat ripple rings.", hit=0, hitstop=50, shake=1),
-    E("water-whirlpool", "Whirlpool", "water", "area", (64, 96), 10, 12, lambda S: F.vortex(S, "water", rings=6), loop=True,
-      anchor=[32, 88], notes="Stacked squashed rings spiralling up with orbiting droplets."),
-    # ---------------------------------------------------------------- grass
-    E("grass-leaf-volley", "Leaf Volley", "grass", "projectile", (96, 32), 8, 15, lambda S: F.volley(S, "leaf", 3), loop=True,
-      notes="Three tumbling two-tone leaves."),
-    E("grass-petal-burst", "Petal Burst", "grass", "impact", (64, 64), 12, 15,
-      lambda S: F.burst(S, rays=6, sparks=12, spark_kind="petal", gravity=0.08),
-      notes="Green flash, leaves burst out and drift down.", hit=0, hitstop=50, shake=1),
-    E("grass-leaf-spiral", "Leaf Spiral", "grass", "area", (64, 96), 10, 12, lambda S: F.vortex(S, "petal", rings=6), loop=True,
-      anchor=[32, 88], notes="Tornado of rings with orbiting leaves (spiral-ring language from the reference clips)."),
-    # ---------------------------------------------------------------- electric
-    E("electric-spark-ball", "Spark Ball", "electric", "projectile", (96, 32), 8, 15,
-      lambda S: F.orb(S, r=4, trail="electric", spark_tail=False), loop=True,
-      notes="Yellow orb with a jittering bolt tail, redrawn every frame."),
-    E("electric-thunder-strike", "Thunder Strike", "electric", "impact", (64, 128), 12, 15, lambda S: F.bolt_strike(S, 2),
-      anchor=[32, 114], notes="1 pre-strike frame, bolt flickers 4 + 2 frames, ground ring.", hit=1, hitstop=80, shake=3),
-    E("electric-static-aura", "Static Aura", "electric", "aura", (64, 64), 8, 12, lambda S: F.aura(S, "spark"), loop=True, feet=FEET,
-      notes="Crackling sparks climbing the unit; flicker by skipping beats."),
-    # ---------------------------------------------------------------- ice
-    E("ice-shards", "Ice Shards", "ice", "projectile", (96, 32), 8, 15, lambda S: F.volley(S, "shard", 3), loop=True,
-      notes="Three faceted shards, light side up, white tips."),
-    E("ice-beam", "Ice Beam", "ice", "beam", (128, 64), 20, 15, lambda S: F.beam(S, style="ice", width=6),
-      notes="Pale beam with crystals budding off both edges.", hit=9, hitstop=40, shake=1),
-    E("ice-shatter", "Frost Shatter", "ice", "impact", (64, 64), 12, 15,
-      lambda S: F.burst(S, rays=6, sparks=9, spark_kind="shard", gravity=0.12),
-      notes="Crystal fragments fly and fall; ring breaks into arcs.", hit=0, hitstop=60, shake=2),
-    E("ice-blizzard", "Blizzard Field", "ice", "area", (96, 96), 12, 12, lambda S: F.rain(S, "snow", 46, wind=0.9), loop=True,
-      notes="Diagonal snow over a frosted ground ellipse with wind streaks."),
-    # ---------------------------------------------------------------- fighting
-    E("fighting-force-wave", "Force Wave", "fighting", "projectile", (64, 64), 8, 15, lambda S: F.waves(S, arcs=3, thick=3), loop=True,
-      anchor=[6, 32], notes="Thick arcs pushed forward from the fist."),
-    E("fighting-power-hit", "Power Hit", "fighting", "impact", (96, 96), 12, 20,
-      lambda S: F.burst(S, rays=12, sparks=14, core_r=12), notes="Wide 8-point star, 12 rays: the heavy punch.",
-      hit=0, hitstop=100, shake=4),
-    E("fighting-power-aura", "Power Aura", "fighting", "aura", (64, 64), 8, 12, lambda S: F.aura(S, "line"), loop=True, feet=FEET,
-      notes="Fast vertical speed-lines rising (power-up)."),
-    # ---------------------------------------------------------------- poison
-    E("poison-sludge-glob", "Sludge Glob", "poison", "projectile", (96, 32), 8, 15, lambda S: F.orb(S, r=5, trail="drip"), loop=True,
-      notes="Heavy glob dripping blobs that fall away."),
-    E("poison-toxic-splash", "Toxic Splash", "poison", "impact", (64, 64), 12, 15, lambda S: F.splash(S, drops=14),
-      anchor=[32, 52], notes="The splash archetype in purple; reads as goo.", hit=0, hitstop=50, shake=1),
-    E("poison-cloud", "Poison Cloud", "poison", "area", (96, 64), 10, 10, lambda S: F.cloud(S, 9), loop=True,
-      notes="Lumpy dithered gas that churns; bubbles pop at the rim."),
-    # ---------------------------------------------------------------- ground
-    E("ground-mud-ball", "Mud Ball", "ground", "projectile", (96, 32), 8, 15, lambda S: F.orb(S, r=5, trail="dust"), loop=True,
-      notes="Earth orb with a dust trail."),
-    E("ground-quake", "Quake Cracks", "ground", "area", (128, 64), 14, 15, lambda S: F.cracks(S, 7), layer="ground",
-      notes="Cracks race out, rocks heave, dust; ground layer under units.", hit=3, hitstop=0, shake=4),
-    E("ground-dust-burst", "Dust Burst", "ground", "impact", (64, 64), 12, 15, lambda S: F.debris(S, 7),
-      anchor=[32, 50], notes="Chunks bounce, dust rolls outward.", hit=0, hitstop=60, shake=2),
-    # ---------------------------------------------------------------- flying
-    E("flying-air-blade", "Air Blade", "flying", "projectile", (96, 32), 6, 15, lambda S: F.crescent_loop(S), loop=True,
-      notes="Crescent of wind with streaks behind."),
-    E("flying-gust-burst", "Gust Burst", "flying", "impact", (64, 64), 10, 15,
-      lambda S: F.burst(S, rays=6, sparks=8, star=False), notes="Airy hit: no star, ring and rays only.", hit=0, hitstop=40, shake=1),
-    E("flying-tornado", "Tornado", "flying", "area", (64, 96), 10, 12, lambda S: F.vortex(S, "wind", rings=7), loop=True,
-      anchor=[32, 88], notes="Broken rings spiralling up with wind ticks."),
-    # ---------------------------------------------------------------- psychic
-    E("psychic-psy-beam", "Psy Beam", "psychic", "beam", (128, 64), 20, 15, lambda S: F.beam(S, style="rings", width=5),
-      notes="Pink beam with rings travelling along it.", hit=9, hitstop=40, shake=1),
-    E("psychic-psy-burst", "Psy Burst", "psychic", "impact", (96, 96), 12, 15,
-      lambda S: F.pulse_rings(S, rings=4, thick=2, loop=False), notes="Concentric rings blow outwards from the target.",
-      hit=0, hitstop=60, shake=2),
-    E("psychic-mind-field", "Mind Field", "psychic", "aura", (64, 64), 8, 10,
-      lambda S: F.pulse_rings(S, rings=3, thick=1, squash=0.35, loop=True), loop=True, feet=FEET, layer="ground",
-      notes="Ground rings pulsing under the unit (status-room / mind control)."),
-    # ---------------------------------------------------------------- bug
-    E("bug-buzz-wave", "Buzz Wave", "bug", "projectile", (64, 64), 8, 15, lambda S: F.waves(S, arcs=4, thick=2), loop=True,
-      anchor=[6, 32], notes="Thin sound arcs."),
-    E("bug-sting-volley", "Sting Volley", "bug", "projectile", (96, 32), 6, 15, lambda S: F.volley(S, "needle", 3), loop=True,
-      notes="Three needles in formation."),
-    E("bug-sting-hit", "Sting Hit", "bug", "impact", (64, 64), 10, 20, lambda S: F.burst(S, rays=4, sparks=8, core_r=6),
-      notes="Small sharp hit: 4 rays.", hit=0, hitstop=40, shake=1),
-    E("bug-swarm", "Swarm", "bug", "area", (64, 64), 8, 15, lambda S: F.swarm(S, 24), loop=True,
-      notes="Tiny bugs on noisy orbits with wing flicker."),
-    # ---------------------------------------------------------------- rock
-    E("rock-boulder", "Boulder Throw", "rock", "projectile", (96, 32), 8, 15, lambda S: F.boulder(S, r=7), loop=True,
-      notes="Faceted rock tumbling in 8 steps with an outline, dust trail."),
-    E("rock-smash", "Rock Smash", "rock", "impact", (64, 64), 14, 15, lambda S: F.debris(S, 10),
-      anchor=[32, 54], notes="Heavy chunks bounce twice.", hit=0, hitstop=80, shake=3),
-    E("rock-stone-spikes", "Stone Spikes", "rock", "area", (128, 64), 16, 15, lambda S: F.spikes(S, 6, "rock"),
-      anchor=[64, 56], notes="Spikes stab up left to right, hold, sink.", hit=2, hitstop=60, shake=2),
-    # ---------------------------------------------------------------- ghost
-    E("ghost-shadow-orb", "Shadow Orb", "ghost", "projectile", (96, 32), 8, 15, lambda S: F.orb(S, r=6, trail="smoke"), loop=True,
-      notes="Dark orb with a smoky, dithered tail."),
-    E("ghost-hex-burst", "Hex Burst", "ghost", "impact", (64, 64), 12, 15,
-      lambda S: F.pulse_rings(S, rings=3, thick=2, loop=False, dark_center=True),
-      notes="Dark core, purple rings.", hit=0, hitstop=60, shake=1),
-    E("ghost-spirit-wisps", "Spirit Wisps", "ghost", "aura", (64, 64), 10, 10, lambda S: F.aura(S, "wisp", ground=False), loop=True,
-      feet=FEET, notes="Wisps with dithered tails drift up."),
-    # ---------------------------------------------------------------- dragon
-    E("dragon-pulse-beam", "Dragon Beam", "dragon", "beam", (128, 64), 20, 15, lambda S: F.beam(S, style="spiral", width=8),
-      notes="Thick blue-teal beam with a white helix (beam language from the reference clips).", hit=9, hitstop=60, shake=2),
-    E("dragon-burst", "Dragon Burst", "dragon", "impact", (96, 96), 14, 15, lambda S: F.explosion(S, puffs=10, embers=8),
-      notes="The explosion archetype in cold colours: shaded cluster, smoke, embers, scorch decal.", hit=0, hitstop=80, shake=3),
-    E("dragon-aura", "Dragon Aura", "dragon", "aura", (64, 64), 8, 12, lambda S: F.aura(S, "flame"), loop=True, feet=FEET,
-      notes="Blue flame tongues."),
-    # ---------------------------------------------------------------- dark
-    E("dark-night-claw", "Night Claw", "dark", "impact", (64, 64), 10, 20, lambda S: F.slash(S, count=3, width=3, claw=True),
-      ramp="dark", notes="Three diagonal rakes, white edge cools to plum.", hit=1, hitstop=60, shake=2),
-    E("dark-pulse", "Dark Pulse", "dark", "area", (96, 96), 10, 12, lambda S: F.pulse_rings(S, rings=3, thick=3, loop=True, dark_center=True),
-      loop=True, notes="Thick dark rings radiate from a black core."),
-    E("dark-orb", "Dark Orb", "dark", "projectile", (96, 32), 8, 15, lambda S: F.orb(S, r=5, trail="smoke", ring=True), loop=True,
-      notes="Black-plum orb with a tilted ring."),
-    # ---------------------------------------------------------------- steel
-    E("steel-beam", "Steel Beam", "steel", "beam", (128, 64), 20, 15, lambda S: F.beam(S, style="spiral", width=6),
-      notes="Silver beam with a white helix.", hit=9, hitstop=60, shake=2),
-    E("steel-metal-spark", "Metal Spark", "steel", "impact", (64, 64), 10, 20, lambda S: F.burst(S, rays=8, sparks=16, gravity=0.15),
-      notes="Clang: many sparks that arc down.", hit=0, hitstop=60, shake=2),
-    E("steel-iron-spikes", "Iron Spikes", "steel", "area", (128, 64), 16, 15, lambda S: F.spikes(S, 5, "ice"),
-      anchor=[64, 56], notes="Polished spikes rise in sequence.", hit=2, hitstop=60, shake=2),
-    E("steel-slash", "Steel Slash", "steel", "impact", (64, 64), 10, 20, lambda S: F.slash(S, count=1, width=7),
-      notes="Single crescent sweep, two-frame whip.", hit=1, hitstop=60, shake=2),
-    # ---------------------------------------------------------------- fairy
-    E("fairy-moon-orb", "Moon Orb", "fairy", "projectile", (96, 32), 8, 15, lambda S: F.orb(S, r=5, trail="sparkle"), loop=True,
-      notes="Pink orb leaving twinkling sparkles."),
-    E("fairy-sparkle-burst", "Sparkle Burst", "fairy", "impact", (64, 64), 12, 15, G.fairy_burst,
-      notes="Hearts and stars fly out of a soft star.", hit=0, hitstop=50, shake=1),
-    E("fairy-ring-aura", "Fairy Ring", "fairy", "aura", (64, 64), 10, 12, lambda S: F.aura(S, "sparkle"), loop=True, feet=FEET,
-      notes="Sparkles rise inside a pink ground ring."),
-    # ---------------------------------------------------------------- generic
-    E("hit-spark", "Hit Spark", "normal", "impact", (32, 32), 6, 20, G.hit_spark, ramp="white",
-      notes="Smallest hit, 300 ms: use on every contact.", hit=0, hitstop=40, shake=1),
-    E("crit-hit", "Critical Hit", "normal", "impact", (96, 96), 14, 20, G.crit_hit, ramp="gold",
-      notes="Two-beat crit: white block, jagged starburst, broken ring, long rays.", hit=0, hitstop=120, shake=4),
-    E("crit-cutin", "Crit Cut-in", "normal", "system", (128, 64), 6, 15, G.cutin_lines, ramp="white", layer="screen",
-      notes="Opaque screen plate with radial speed lines for 4-6 frames on crits and K.O.s (reference clips)."),
-    E("miss", "Miss", "normal", "system", (64, 64), 12, 15, G.miss, ramp="white", feet=FEET,
-      notes="After-images slide off and MISS pops."),
-    E("shield", "Shield Dome", "steel", "buff", (64, 64), 8, 10, lambda S: F.ring_shield(S), loop=True, ramp="shield", feet=FEET,
-      notes="Hex-lattice dome with a sweeping highlight."),
-    E("heal", "Heal", "grass", "buff", (64, 64), 10, 12, G.heal, loop=True, ramp="heal", feet=FEET,
-      notes="Plus signs and sparkles rise; soft ring pulse."),
-    E("stat-up", "Stat Up", "normal", "buff", (64, 64), 8, 12, lambda S: G.stat_arrows(S, True), loop=True, ramp="red", feet=FEET,
-      notes="Warm arrows stream up."),
-    E("stat-down", "Stat Down", "normal", "debuff", (64, 64), 8, 12, lambda S: G.stat_arrows(S, False), loop=True, ramp="blue",
-      feet=FEET, notes="Cold arrows sink."),
-    E("status-burn", "Burn", "fire", "status", (64, 64), 8, 12, G.st_burn, loop=True, feet=FEET, notes="Small flames lick up the body."),
-    E("status-poison", "Poison", "poison", "status", (64, 64), 8, 10, G.st_poison, loop=True, feet=FEET, notes="Bubbles rise and pop."),
-    E("status-paralysis", "Paralysis", "electric", "status", (64, 64), 9, 15, G.st_paralysis, loop=True, feet=FEET,
-      notes="Random sparks with an off-beat every third frame."),
-    E("status-sleep", "Sleep", "normal", "status", (64, 64), 12, 8, G.st_sleep, loop=True, ramp="blue", feet=FEET,
-      notes="Z letters drift up and grow."),
-    E("status-freeze", "Freeze", "ice", "status", (64, 64), 8, 8, G.st_freeze, loop=True, feet=FEET,
-      notes="Ice crust with a glint sweeping across."),
-    E("status-confusion", "Confusion", "normal", "status", (64, 64), 9, 12, G.st_confusion, loop=True, ramp="gold", feet=FEET,
-      notes="Three stars orbit above the head, front ones bigger."),
-    E("faint-vanish", "Faint Vanish", "normal", "system", (64, 64), 14, 15, G.faint_vanish, ramp="white", feet=FEET,
-      notes="Dust ring and rising motes; play over the faint unit animation."),
-    E("level-up", "Level Up", "normal", "system", (64, 64), 16, 15, G.level_up, ramp="gold", feet=FEET,
-      notes="Gold column, sparkles, chevron and LV UP stamp."),
-    E("evolve-glow", "Evolve Glow", "normal", "system", (64, 64), 20, 15, G.evolve_glow, ramp="white", feet=FEET,
-      notes="Silhouette blinks white in quickening beats, then a flash hides the swap."),
-    E("recall-beam", "Recall Beam", "normal", "system", (64, 64), 14, 15, G.recall_beam, ramp="red", feet=FEET,
-      notes="Thin red beam appears at full length; unit shrinks into it."),
-    E("send-out", "Send-out Burst", "normal", "system", (64, 64), 12, 15, G.send_out, ramp="white", feet=FEET,
-      notes="Floor flash ring and sparkles as a unit appears."),
-    E("charge-up", "Charge Up", "normal", "buff", (64, 64), 8, 15, G.charge_up, loop=True, ramp="gold",
-      notes="Generic wind-up: particles stream into a pulsing core."),
-    # ---------------------------------------------------------------- unit animations
-    E("unit-idle", "Idle Bob", "normal", "unit", (64, 64), 6, 6, G.unit_idle, loop=True, ramp="creature", feet=FEET,
-      notes="Squash/stretch bob, blink on frame 2."),
-    E("unit-lunge", "Attack Lunge", "normal", "unit", (96, 64), 12, 15, G.unit_lunge, ramp="creature", feet=FEET,
-      anchor=[20, FEET], notes="Lean back 3f, dash 2f with after-image, hold 2f, return."),
-    E("unit-recoil", "Hit Recoil", "normal", "unit", (64, 64), 10, 15, G.unit_recoil, ramp="creature", feet=FEET,
-      notes="2 white frames, knockback 7px with jitter, 2 blinks, settle."),
-    E("unit-faint", "Faint", "normal", "unit", (64, 64), 14, 12, G.unit_faint, ramp="creature", feet=FEET,
-      notes="Stagger, flatten, dither out."),
+    # normal
+    E("normal-star-volley", "Star Volley", "normal", "projectile", PRJ, 24, proj("normal", kind="star"), loop=True,
+      notes="Three jagged stars bob in formation, shedding star motes."),
+    E("normal-impact-burst", "Impact Burst", "normal", "impact", IMP, 26, imp("normal", 1.0),
+      notes="White jagged burst, streak sparks bouncing on the floor, dust puffs, light pulse.", hit=0, hitstop=60, shake=2),
+    E("normal-shock-ring", "Shock Ring", "normal", "area", IMP, 30, lambda S: X.shockwave(S, "normal"), layer="ground",
+      notes="Two broken, uneven shock rings on the floor kicking up dust (a ring by design)."),
+    # fire
+    E("fire-fireball", "Fire Ball", "fire", "projectile", PRJ, 24, proj("fire", head=3.2, trail=1.3), loop=True,
+      notes="Flickering hot head; flame blobs shed backwards cool white > yellow > red > smoke; embers."),
+    E("fire-burst", "Fire Burst", "fire", "impact", IMP, 36, imp("fire", 1.25),
+      notes="Flash, jagged burst, flame blobs boil up and turn to drifting smoke, embers fall.", hit=0, hitstop=80, shake=3),
+    E("fire-pillar", "Flame Pillar", "fire", "area", (64, 128), 45, lambda S: X.pillar_v3(S, "fire"), ground=120,
+      notes="Floor flicker, then a column of rising flame blobs and tongues, sparks at the base, smoke off the top."),
+    E("fire-aura", "Flame Aura", "fire", "aura", AURA, 30, lambda S: X.aura_v3(S, "fire", rate=3), loop=True,
+      notes="Flames and embers rise along the body edges."),
+    # water
+    E("water-jet", "Water Jet", "water", "beam", BEAM, 40, lambda S: X.beam_v3(S, "water", width=4.2),
+      notes="Gather, then a jittering jet with ragged edges, spray leaving the stream, splash at the end.",
+      hit=13, hitstop=40, shake=1),
+    E("water-bubble-shot", "Bubble Shot", "water", "projectile", PRJ, 24, proj("water", head=3), loop=True,
+      notes="Glossy head with droplets and mist shed behind."),
+    E("water-splash", "Water Splash", "water", "impact", IMP, 26, imp("water", 1.2),
+      notes="Droplets on gravity arcs bouncing on the floor, mist, light flash.", hit=0, hitstop=50, shake=1),
+    E("water-whirlpool", "Whirlpool", "water", "area", (96, 128), 30, lambda S: X.vortex_v3(S, "water"), loop=True,
+      ground=120, notes="Droplets riding a rising helix with streak tails; back half dimmer."),
+    # grass
+    E("grass-leaf-volley", "Leaf Volley", "grass", "projectile", PRJ, 24, proj("grass", head=2.4, trail=1.2), loop=True,
+      notes="Small green core shedding tumbling leaves."),
+    E("grass-petal-burst", "Petal Burst", "grass", "impact", IMP, 26, imp("grass", 1.0),
+      notes="Green flash, leaves burst out and flutter down on turbulence.", hit=0, hitstop=50, shake=1),
+    E("grass-leaf-spiral", "Leaf Spiral", "grass", "area", (96, 128), 30, lambda S: X.vortex_v3(S, "grass"), loop=True,
+      ground=120, notes="Leaves riding a rising helix."),
+    # electric
+    E("electric-spark-ball", "Spark Ball", "electric", "projectile", PRJ, 24, proj("electric", head=2.8), loop=True,
+      notes="Crackling core with bolts redrawn every frame and sparks."),
+    E("electric-thunder-strike", "Thunder Strike", "electric", "impact", (96, 128), 30,
+      lambda S: X.impact(S, "electric", 1.1), ground=118,
+      notes="Bolt flicker drawn by the impact core plus sparks; see combo for the strike.", hit=0, hitstop=80, shake=3),
+    E("electric-static-aura", "Static Aura", "electric", "aura", AURA, 30, lambda S: X.aura_v3(S, "electric", rate=2),
+      loop=True, notes="Sparks crawl up the body edges."),
+    # ice
+    E("ice-shards", "Ice Shards", "ice", "projectile", PRJ, 24, proj("ice", head=2.6), loop=True,
+      notes="Pale core shedding glinting shards and snow motes."),
+    E("ice-beam", "Ice Beam", "ice", "beam", BEAM, 40, lambda S: X.beam_v3(S, "ice", width=3.6),
+      notes="Jittering pale beam with crystals budding off the edges, shards breaking away.", hit=13, hitstop=40, shake=1),
+    E("ice-shatter", "Frost Shatter", "ice", "impact", IMP, 26, imp("ice", 1.1),
+      notes="Shards burst out, bounce and glint; snow drifts.", hit=0, hitstop=60, shake=2),
+    E("ice-blizzard", "Blizzard Field", "ice", "area", IMP, 30, lambda S: X.weather_v3(S, "ice"), loop=True,
+      notes="Diagonal snow on wind streaks over a frosted floor line."),
+    # fighting
+    E("fighting-force-wave", "Force Wave", "fighting", "projectile", (96, 64), 24, lambda S: X.waves_v3(S, "fighting", 3),
+      loop=True, anchor=[4, 32], notes="Tapered force crescents thinning as they travel."),
+    E("fighting-power-hit", "Power Hit", "fighting", "impact", IMP, 26, imp("fighting", 1.4),
+      notes="Big jagged burst, long streak sparks, dust and smoke on the floor.", hit=0, hitstop=100, shake=4),
+    E("fighting-power-aura", "Power Aura", "fighting", "aura", AURA, 30,
+      lambda S: X.aura_v3(S, "fighting", rate=2, kind="line"), loop=True, notes="Fast rising streaks (power-up)."),
+    # poison
+    E("poison-sludge-glob", "Sludge Glob", "poison", "projectile", PRJ, 24, proj("poison", head=3.2), loop=True,
+      notes="Heavy glob shedding drips that fall away, bubbles."),
+    E("poison-toxic-splash", "Toxic Splash", "poison", "impact", IMP, 26, imp("poison", 1.1),
+      notes="Goo drops bounce, bubbles rise, gas puffs.", hit=0, hitstop=50, shake=1),
+    E("poison-cloud", "Poison Cloud", "poison", "area", IMP, 30, lambda S: X.cloud_v3(S, "poison"), loop=True,
+      notes="Translucent gas puffs drift and break apart; bubbles pop."),
+    # ground
+    E("ground-mud-ball", "Mud Ball", "ground", "projectile", PRJ, 24, proj("ground", head=3.6, kind="ground"), loop=True,
+      notes="Tumbling clod with a dust trail."),
+    E("ground-quake", "Quake Cracks", "ground", "area", (160, 96), 36, lambda S: X.quake_v3(S, "ground"), layer="ground",
+      notes="Forked cracks race out glowing then cool; chunks pop and bounce; dust.", hit=3, hitstop=0, shake=4),
+    E("ground-dust-burst", "Dust Burst", "ground", "impact", IMP, 26, imp("ground", 1.2),
+      notes="Chunks bounce on the floor, dust rolls out and thins.", hit=0, hitstop=60, shake=2),
+    # flying
+    E("flying-air-blade", "Air Blade", "flying", "projectile", PRJ, 18, lambda S: X.blade(S, "flying", 1), loop=True,
+      notes="Tapered crescent of wind with streaks."),
+    E("flying-gust-burst", "Gust Burst", "flying", "impact", IMP, 24, imp("flying", 1.0),
+      notes="Airy jagged burst with long wind streaks.", hit=0, hitstop=40, shake=1),
+    E("flying-tornado", "Tornado", "flying", "area", (96, 128), 30, lambda S: X.vortex_v3(S, "flying"), loop=True,
+      ground=120, notes="Wind streaks riding a rising helix, dust at the base."),
+    # psychic
+    E("psychic-psy-beam", "Psy Beam", "psychic", "beam", BEAM, 40, lambda S: X.beam_v3(S, "psychic", width=3.4),
+      notes="Pink jittering beam shedding motes.", hit=13, hitstop=40, shake=1),
+    E("psychic-psy-burst", "Psy Burst", "psychic", "impact", IMP, 26, imp("psychic", 1.1, ring=True),
+      notes="Jagged pink burst, swirling motes, broken shock ring on the floor.", hit=0, hitstop=60, shake=2),
+    E("psychic-mind-field", "Mind Field", "psychic", "aura", AURA, 30, lambda S: X.aura_v3(S, "psychic", rate=2),
+      loop=True, notes="Motes float up and swirl around the unit."),
+    # bug
+    E("bug-buzz-wave", "Buzz Wave", "bug", "projectile", (96, 64), 24, lambda S: X.waves_v3(S, "bug", 4), loop=True,
+      anchor=[4, 32], notes="Thin tapered sound crescents with buzzing motes."),
+    E("bug-sting-volley", "Sting Volley", "bug", "projectile", PRJ, 24, proj("bug", head=2.2), loop=True,
+      notes="Sharp green core with tiny bugs shed behind."),
+    E("bug-sting-hit", "Sting Hit", "bug", "impact", IMP, 24, imp("bug", 0.8),
+      notes="Small sharp burst, bugs scatter.", hit=0, hitstop=40, shake=1),
+    E("bug-swarm", "Swarm", "bug", "area", (96, 96), 30, lambda S: X.swarm_v3(S, "bug"), loop=True,
+      notes="Bugs ride a curl-noise flow around the centre."),
+    # rock
+    E("rock-boulder", "Boulder Throw", "rock", "projectile", PRJ, 24, proj("rock", head=4.5, kind="rock"), loop=True,
+      notes="Faceted rock tumbling, outlined, dust trail and speed streaks."),
+    E("rock-smash", "Rock Smash", "rock", "impact", IMP, 36, imp("rock", 1.3),
+      notes="Heavy chips bounce twice, dust and smoke roll.", hit=0, hitstop=80, shake=3),
+    E("rock-stone-spikes", "Stone Spikes", "rock", "area", (160, 96), 45, lambda S: X.spikes_v3(S, "rock"),
+      notes="Noise-edged stone shards stab up in sequence, chips and dust, crumble back.", hit=2, hitstop=60, shake=2),
+    # ghost
+    E("ghost-shadow-orb", "Shadow Orb", "ghost", "projectile", PRJ, 24, proj("ghost", head=3.2), loop=True,
+      notes="Dark-cored orb trailing wisps that smoke out."),
+    E("ghost-hex-burst", "Hex Burst", "ghost", "impact", IMP, 26, imp("ghost", 1.1),
+      notes="Purple burst, wisps writhe up and smoke away.", hit=0, hitstop=60, shake=1),
+    E("ghost-spirit-wisps", "Spirit Wisps", "ghost", "aura", AURA, 30, lambda S: X.aura_v3(S, "ghost", rate=2),
+      loop=True, notes="Wisps writhe up and fade to smoke."),
+    # dragon
+    E("dragon-pulse-beam", "Dragon Beam", "dragon", "beam", BEAM, 40, lambda S: X.beam_v3(S, "dragon", width=4.6),
+      notes="Thick blue-teal jittering beam shedding cold flames.", hit=13, hitstop=60, shake=2),
+    E("dragon-burst", "Dragon Burst", "dragon", "impact", IMP, 36, imp("dragon", 1.25),
+      notes="Cold-flame burst boiling up, embers.", hit=0, hitstop=80, shake=3),
+    E("dragon-aura", "Dragon Aura", "dragon", "aura", AURA, 30, lambda S: X.aura_v3(S, "dragon", rate=3), loop=True,
+      notes="Blue flames rise along the body."),
+    # dark
+    E("dark-night-claw", "Night Claw", "dark", "impact", IMP, 24, lambda S: X.slash_v3(S, "dark", count=3, claw=True),
+      notes="Three tapered rakes, hot edge cooling to plum, sparks.", hit=2, hitstop=60, shake=2),
+    E("dark-pulse", "Dark Pulse", "dark", "area", IMP, 30, lambda S: X.shockwave(S, "dark", dark=True), layer="ground",
+      notes="Dark broken rings spread from a black core with wisps (a ring by design)."),
+    E("dark-orb", "Dark Orb", "dark", "projectile", PRJ, 24, proj("dark", head=3), loop=True,
+      notes="Black-plum orb trailing writhing wisps."),
+    # steel
+    E("steel-beam", "Steel Beam", "steel", "beam", BEAM, 40, lambda S: X.beam_v3(S, "steel", width=4.0),
+      notes="Silver jittering beam throwing metal sparks.", hit=13, hitstop=60, shake=2),
+    E("steel-metal-spark", "Metal Spark", "steel", "impact", IMP, 26, imp("steel", 1.1),
+      notes="Clang: many streak sparks arc down and bounce.", hit=0, hitstop=60, shake=2),
+    E("steel-iron-spikes", "Iron Spikes", "steel", "area", (160, 96), 45, lambda S: X.spikes_v3(S, "steel"),
+      notes="Polished noise-edged spikes rise in sequence.", hit=2, hitstop=60, shake=2),
+    E("steel-slash", "Steel Slash", "steel", "impact", IMP, 24, lambda S: X.slash_v3(S, "steel", count=1),
+      notes="Tapered crescent sweep, hot edge, sparks off the tip.", hit=1, hitstop=60, shake=2),
+    # fairy
+    E("fairy-moon-orb", "Moon Orb", "fairy", "projectile", PRJ, 24, proj("fairy", head=3), loop=True,
+      notes="Pink orb leaving twinkling stars."),
+    E("fairy-sparkle-burst", "Sparkle Burst", "fairy", "impact", IMP, 26, imp("fairy", 1.0),
+      notes="Soft jagged burst, stars and hearts drift.", hit=0, hitstop=50, shake=1),
+    E("fairy-ring-aura", "Fairy Ring", "fairy", "aura", AURA, 30, lambda S: X.aura_v3(S, "fairy", rate=2), loop=True,
+      notes="Stars and hearts rise around the unit."),
+    # generic
+    E("hit-spark", "Hit Spark", "normal", "impact", (64, 64), 12, lambda S: X.burst_generic(S, 0.7), ramp="white",
+      anchor=[32, 32], ground=56, notes="Smallest hit, 400 ms: jagged spark + streaks + light.", hit=0, hitstop=40, shake=1),
+    E("crit-hit", "Critical Hit", "normal", "impact", IMP, 24, lambda S: X.burst_generic(S, 1.4, second=True),
+      ramp="gold", notes="Two-beat crit: big jagged burst, then a second pop.", hit=0, hitstop=120, shake=4),
+    E("crit-cutin", "Crit Cut-in", "normal", "system", (160, 96), 8, X.cutin_v3, ramp="white", layer="screen",
+      anchor=[0, 0], notes="Opaque screen plate with tapered speed lines for a few frames on crits and K.O.s."),
+    E("miss", "Miss", "normal", "system", AURA, 24, X.miss_v3, ramp="white", notes="After-images slide off, dust, MISS pops."),
+    E("shield", "Shield Dome", "steel", "buff", (96, 96), 30, X.shield_v3, loop=True, ramp="shield",
+      notes="Broken shimmering barrier edge, hex glints, motes sliding along it."),
+    E("heal", "Heal", "grass", "buff", AURA, 30, X.heal_v3, loop=True, ramp="heal", notes="Plus glyphs and sparkles rise."),
+    E("stat-up", "Stat Up", "normal", "buff", AURA, 30, lambda S: X.stat_v3(S, True), loop=True, ramp="red",
+      notes="Chevrons and streaks flow up."),
+    E("stat-down", "Stat Down", "normal", "debuff", AURA, 30, lambda S: X.stat_v3(S, False), loop=True, ramp="blue",
+      notes="Chevrons and streaks sink."),
+    E("status-burn", "Burn", "fire", "status", AURA, 30, lambda S: X.status_v3(S, "burn"), loop=True,
+      notes="Small flames and embers on the body."),
+    E("status-poison", "Poison", "poison", "status", AURA, 30, lambda S: X.status_v3(S, "poison"), loop=True,
+      notes="Tiny bubbles rise, drips fall."),
+    E("status-paralysis", "Paralysis", "electric", "status", AURA, 30, lambda S: X.status_v3(S, "paralysis"), loop=True,
+      notes="Tiny bolts and sparks, off-beat every third frame."),
+    E("status-sleep", "Sleep", "normal", "status", AURA, 28, lambda S: X.status_v3(S, "sleep"), loop=True, ramp="blue",
+      notes="Z glyphs drift up and grow."),
+    E("status-freeze", "Freeze", "ice", "status", AURA, 30, lambda S: X.status_v3(S, "freeze"), loop=True,
+      notes="Ice crust at the feet, falling frost motes, a glint sweeping across."),
+    E("status-confusion", "Confusion", "normal", "status", AURA, 30, lambda S: X.status_v3(S, "confusion"), loop=True,
+      ramp="gold", notes="Three tiny stars circle above the head with trails."),
+    E("faint-vanish", "Faint Vanish", "normal", "system", AURA, 36, X.faint_v3, ramp="white",
+      notes="Dust puff and rising motes; play over the faint animation."),
+    E("level-up", "Level Up", "normal", "system", AURA, 45, lambda S: X.sparkle_burst(S, text="LV UP", rise=True),
+      ramp="gold", notes="Light flash, rising streaks and stars, LV UP stamp."),
+    E("evolve-glow", "Evolve Glow", "normal", "system", AURA, 60, X.evolve_v3, ramp="white",
+      notes="Silhouette beats white faster and faster in rising light, ends in a flash."),
+    E("recall-beam", "Recall Beam", "normal", "system", AURA, 36, X.recall_v3, ramp="red",
+      notes="Jittering red beam; unit turns red, shrinks and lifts away in motes."),
+    E("send-out", "Send-out Burst", "normal", "system", AURA, 30, lambda S: X.sparkle_burst(S), ramp="white",
+      notes="Light flash and stars bursting as a unit appears."),
+    E("charge-up", "Charge Up", "normal", "buff", (64, 64), 24, lambda S: X.converge(S), loop=True, ramp="gold",
+      anchor=[32, 32], ground=56, notes="Streaks spiral into a flickering core with growing light."),
+    # unit animations
+    E("unit-idle", "Idle Bob", "normal", "unit", (64, 64), 24, lambda S: X.unit_v3(S, "idle"), loop=True,
+      ramp="creature", ground=56, notes="Breathing squash/stretch, blink."),
+    E("unit-lunge", "Attack Lunge", "normal", "unit", (96, 64), 30, lambda S: X.unit_v3(S, "lunge"), ramp="creature",
+      ground=56, anchor=[22, 56], notes="Crouch wind-up held 7f, dash 2f with smear ghosts, contact freeze 4f, recover.",
+      hit=9),
+    E("unit-recoil", "Hit Recoil", "normal", "unit", (64, 64), 24, lambda S: X.unit_v3(S, "recoil"), ramp="creature",
+      ground=56, notes="3 white frames, 3 frozen frames, knockback with shake, blinks, settle.", hit=0),
+    E("unit-faint", "Faint", "normal", "unit", (64, 64), 36, lambda S: X.unit_v3(S, "faint"), ramp="creature",
+      ground=56, notes="Wobble, flatten, dissolve."),
 ]

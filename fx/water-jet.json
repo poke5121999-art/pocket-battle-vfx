@@ -3,17 +3,18 @@
  "name": "Water Jet",
  "element": "water",
  "kind": "beam",
- "frameW": 128,
+ "frameW": 192,
  "frameH": 64,
- "frames": 20,
- "fps": 15,
+ "frames": 40,
+ "fps": 30,
  "loop": false,
  "anchor": [
   10,
   32
  ],
  "layer": "front",
- "notes": "Charge 6f, shoots across in 3f, wavy body holds 8f, thins out.",
+ "notes": "Gather, then a jittering jet with ragged edges, spray leaving the stream, splash at the end.",
+ "ground": 54,
  "palette": [
   "#0c065c",
   "#0c25b8",
@@ -27,16 +28,23 @@
  ],
  "sheet": {
   "image": "fx/water-jet.png",
-  "columns": 8,
-  "rows": 3,
-  "width": 1024,
-  "height": 192
+  "columns": 5,
+  "rows": 8,
+  "width": 960,
+  "height": 512
+ },
+ "light": {
+  "image": "fx/water-jet.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 5,
+  "rows": 8
  },
  "gif": "fx/water-jet.gif",
  "durationMs": 1333,
- "peakFrame": 11,
+ "peakFrame": 25,
  "battle": {
-  "hitFrame": 9,
+  "hitFrame": 13,
   "hitStopMs": 40,
   "shakePx": 1
  }

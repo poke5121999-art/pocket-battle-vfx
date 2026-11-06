@@ -5,15 +5,16 @@
  "kind": "unit",
  "frameW": 64,
  "frameH": 64,
- "frames": 10,
- "fps": 15,
+ "frames": 24,
+ "fps": 30,
  "loop": false,
  "anchor": [
   32,
   56
  ],
  "layer": "front",
- "notes": "2 white frames, knockback 7px with jitter, 2 blinks, settle.",
+ "notes": "3 white frames, 3 frozen frames, knockback with shake, blinks, settle.",
+ "ground": 56,
  "palette": [
   "#1c1a24",
   "#4a4858",
@@ -29,12 +30,22 @@
  ],
  "sheet": {
   "image": "fx/unit-recoil.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 640,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 128
+ },
+ "light": {
+  "image": "fx/unit-recoil.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/unit-recoil.gif",
- "durationMs": 667,
- "peakFrame": 6
+ "durationMs": 800,
+ "peakFrame": 12,
+ "battle": {
+  "hitFrame": 0
+ }
 }

@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "system",
  "frameW": 64,
- "frameH": 64,
- "frames": 20,
- "fps": 15,
+ "frameH": 96,
+ "frames": 60,
+ "fps": 30,
  "loop": false,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Silhouette blinks white in quickening beats, then a flash hides the swap.",
+ "notes": "Silhouette beats white faster and faster in rising light, ends in a flash.",
+ "ground": 86,
  "palette": [
   "#3c384a",
   "#7c788e",
@@ -30,11 +31,18 @@
  "sheet": {
   "image": "fx/evolve-glow.png",
   "columns": 16,
-  "rows": 2,
+  "rows": 4,
   "width": 1024,
-  "height": 128
+  "height": 384
+ },
+ "light": {
+  "image": "fx/evolve-glow.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 4
  },
  "gif": "fx/evolve-glow.gif",
- "durationMs": 1333,
- "peakFrame": 17
+ "durationMs": 2000,
+ "peakFrame": 52
 }

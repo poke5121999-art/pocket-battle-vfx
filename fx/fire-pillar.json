@@ -5,15 +5,16 @@
  "kind": "area",
  "frameW": 64,
  "frameH": 128,
- "frames": 14,
- "fps": 15,
+ "frames": 45,
+ "fps": 30,
  "loop": false,
  "anchor": [
   32,
   120
  ],
  "layer": "front",
- "notes": "Column erupts from a ground glow, overshoots, holds, collapses.",
+ "notes": "Floor flicker, then a column of rising flame blobs and tongues, sparks at the base, smoke off the top.",
+ "ground": 120,
  "palette": [
   "#4a0921",
   "#a80920",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/fire-pillar.png",
-  "columns": 14,
-  "rows": 1,
-  "width": 896,
-  "height": 128
+  "columns": 16,
+  "rows": 3,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/fire-pillar.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 3
  },
  "gif": "fx/fire-pillar.gif",
- "durationMs": 933,
- "peakFrame": 4
+ "durationMs": 1500,
+ "peakFrame": 28
 }

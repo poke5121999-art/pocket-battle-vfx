@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "status",
  "frameW": 64,
- "frameH": 64,
- "frames": 9,
- "fps": 12,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Three stars orbit above the head, front ones bigger.",
+ "notes": "Three tiny stars circle above the head with trails.",
+ "ground": 86,
  "palette": [
   "#4a0f02",
   "#9a3700",
@@ -27,12 +28,19 @@
  ],
  "sheet": {
   "image": "fx/status-confusion.png",
-  "columns": 9,
-  "rows": 1,
-  "width": 576,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/status-confusion.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/status-confusion.gif",
- "durationMs": 750,
- "peakFrame": 7
+ "durationMs": 1000,
+ "peakFrame": 4
 }

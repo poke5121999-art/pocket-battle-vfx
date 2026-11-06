@@ -3,17 +3,18 @@
  "name": "Poison Cloud",
  "element": "poison",
  "kind": "area",
- "frameW": 96,
- "frameH": 64,
- "frames": 10,
- "fps": 10,
+ "frameW": 128,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  48,
-  32
+  64,
+  86
  ],
  "layer": "front",
- "notes": "Lumpy dithered gas that churns; bubbles pop at the rim.",
+ "notes": "Translucent gas puffs drift and break apart; bubbles pop.",
+ "ground": 86,
  "palette": [
   "#160d38",
   "#411978",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/poison-cloud.png",
-  "columns": 10,
-  "rows": 1,
-  "width": 960,
-  "height": 64
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/poison-cloud.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/poison-cloud.gif",
  "durationMs": 1000,
- "peakFrame": 8
+ "peakFrame": 25
 }

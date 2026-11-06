@@ -3,17 +3,18 @@
  "name": "Shield Dome",
  "element": "steel",
  "kind": "buff",
- "frameW": 64,
- "frameH": 64,
- "frames": 8,
- "fps": 10,
+ "frameW": 96,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  32,
-  56
+  48,
+  86
  ],
  "layer": "front",
- "notes": "Hex-lattice dome with a sweeping highlight.",
+ "notes": "Broken shimmering barrier edge, hex glints, motes sliding along it.",
+ "ground": 86,
  "palette": [
   "#050a48",
   "#0d358a",
@@ -27,12 +28,19 @@
  ],
  "sheet": {
   "image": "fx/shield.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 288
+ },
+ "light": {
+  "image": "fx/shield.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/shield.gif",
- "durationMs": 800,
- "peakFrame": 3
+ "durationMs": 1000,
+ "peakFrame": 16
 }

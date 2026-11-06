@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "debuff",
  "frameW": 64,
- "frameH": 64,
- "frames": 8,
- "fps": 12,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Cold arrows sink.",
+ "notes": "Chevrons and streaks sink.",
+ "ground": 86,
  "palette": [
   "#110548",
   "#0f0d9a",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/stat-down.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/stat-down.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/stat-down.gif",
- "durationMs": 667,
- "peakFrame": 1
+ "durationMs": 1000,
+ "peakFrame": 12
 }

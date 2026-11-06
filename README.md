@@ -26,7 +26,7 @@ python3 -m http.server 8000   # then open http://localhost:8000/
 Needs Python 3.8+ and Pillow (`pip install pillow`). From the site root:
 
 ```sh
-python3 src/build.py              # rebuild everything (~3 s)
+python3 src/build.py              # rebuild everything (~45 s, 30 fps particle sims)
 python3 src/build.py fire         # re-render only ids containing "fire" (fx.json is still rewritten)
 ```
 
@@ -39,14 +39,21 @@ byte-identical sheets.
 index.html, how.html        gallery + combo, and the "how it's made" page
 assets/style.css, app.js    site styling and logic (plain JS)
 fx.json                     all effects in one file (the gallery reads this)
-fx/<id>.png                 transparent sprite sheet, frames left→right then top→bottom
+fx/<id>.png                 colour layer: transparent sprite sheet, frames left→right then top→bottom
+fx/<id>.light.png           light layer, same grid: premultiplied (rgb = light, alpha = max channel); draw it
+                            with additive blending (ONE, ONE) on top of everything, or skip it
 fx/<id>.json                one effect's entry (same fields as in fx.json)
-fx/<id>.gif                 2× preview over our backdrop
+fx/<id>.gif                 2× preview: colour + light composited on the dark stage
 img/backdrop.png            320×180 battle ground (our own), img/dummy.png the neutral creature
 src/build.py                the one command
 src/pxfx/core.py            pixel canvas: whole-pixel discs, rings, ellipses, lines, polygons, sparkles, 3×5 font
 src/pxfx/palettes.py        6-step colour ramp per element and for generic effects
-src/pxfx/fxlib.py           archetypes: orb, boulder, volley, waves, beam, bolt, burst, splash, explosion,
+src/pxfx/sim.py             v3 core: value/curl noise, 120 Hz particle sim, half-res additive light layer,
+                            noise-broken shapes (ragged blobs, flame tongues, jagged bursts, tapered crescents)
+src/pxfx/fx3.py             v3 archetypes (all current effects): projectile, blade, waves, beam, impact,
+                            slash, pillar, vortex, cloud, weather, quake, spikes, shockwave, swarm, aura,
+                            status, generic systems, unit acting
+src/pxfx/fxlib.py           v2 archetypes (kept for reference, unused): orb, boulder, volley, waves, beam, bolt, burst, splash, explosion,
                             debris, slash, aura, pillar, vortex, pulse rings, cloud, rain, cracks, spikes, swarm, shield
 src/pxfx/generic.py         hit spark, crit, cut-in, miss, heal, stat arrows, status loops, faint, level up,
                             evolve, recall, send-out, charge, unit idle/lunge/recoil/faint
@@ -71,6 +78,9 @@ src/refs-index.json         reference id → YouTube link with timestamp (used b
 | `refs` | ids of catalogued reference moments that informed it |
 | `sheet` | `image`, `columns`, `rows`, `width`, `height` |
 | `gif`, `durationMs` | preview path and length |
+| `light` | light sheet: `image`, `blend` (additive), `premultiplied`, grid |
+| `ground` | y of the floor line inside a frame (units stand on it, debris bounces on it) |
+| `peakFrame` | the frame with the most pixels (used for thumbnails) |
 | `battle` | optional `hitFrame`, `hitStopMs`, `shakePx` for wiring the hit |
 
 Projectiles are short loops facing right: move them with your engine and rotate to the travel direction. Beams

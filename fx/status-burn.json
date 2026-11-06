@@ -4,16 +4,17 @@
  "element": "fire",
  "kind": "status",
  "frameW": 64,
- "frameH": 64,
- "frames": 8,
- "fps": 12,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Small flames lick up the body.",
+ "notes": "Small flames and embers on the body.",
+ "ground": 86,
  "palette": [
   "#4a0921",
   "#a80920",
@@ -28,12 +29,19 @@
  ],
  "sheet": {
   "image": "fx/status-burn.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/status-burn.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/status-burn.gif",
- "durationMs": 667,
- "peakFrame": 4
+ "durationMs": 1000,
+ "peakFrame": 2
 }

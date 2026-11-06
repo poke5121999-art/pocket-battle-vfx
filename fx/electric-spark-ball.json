@@ -4,16 +4,17 @@
  "element": "electric",
  "kind": "projectile",
  "frameW": 96,
- "frameH": 32,
- "frames": 8,
- "fps": 15,
+ "frameH": 48,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
-  81,
-  16
+  80,
+  24
  ],
  "layer": "front",
- "notes": "Yellow orb with a jittering bolt tail, redrawn every frame.",
+ "notes": "Crackling core with bolts redrawn every frame and sparks.",
+ "ground": 38,
  "palette": [
   "#4a1000",
   "#b04a00",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/electric-spark-ball.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 768,
-  "height": 32
+  "columns": 10,
+  "rows": 3,
+  "width": 960,
+  "height": 144
+ },
+ "light": {
+  "image": "fx/electric-spark-ball.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 10,
+  "rows": 3
  },
  "gif": "fx/electric-spark-ball.gif",
- "durationMs": 533,
- "peakFrame": 6
+ "durationMs": 800,
+ "peakFrame": 8
 }

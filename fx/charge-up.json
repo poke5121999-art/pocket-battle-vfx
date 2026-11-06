@@ -5,15 +5,16 @@
  "kind": "buff",
  "frameW": 64,
  "frameH": 64,
- "frames": 8,
- "fps": 15,
+ "frames": 24,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
   32
  ],
  "layer": "front",
- "notes": "Generic wind-up: particles stream into a pulsing core.",
+ "notes": "Streaks spiral into a flickering core with growing light.",
+ "ground": 56,
  "palette": [
   "#4a0f02",
   "#9a3700",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/charge-up.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 128
+ },
+ "light": {
+  "image": "fx/charge-up.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/charge-up.gif",
- "durationMs": 533,
- "peakFrame": 1
+ "durationMs": 800,
+ "peakFrame": 20
 }

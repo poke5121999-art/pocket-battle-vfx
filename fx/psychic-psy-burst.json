@@ -3,17 +3,18 @@
  "name": "Psy Burst",
  "element": "psychic",
  "kind": "impact",
- "frameW": 96,
+ "frameW": 128,
  "frameH": 96,
- "frames": 12,
- "fps": 15,
+ "frames": 26,
+ "fps": 30,
  "loop": false,
  "anchor": [
-  48,
-  48
+  64,
+  64
  ],
  "layer": "front",
- "notes": "Concentric rings blow outwards from the target.",
+ "notes": "Jagged pink burst, swirling motes, broken shock ring on the floor.",
+ "ground": 86,
  "palette": [
   "#3a094a",
   "#a01a95",
@@ -29,14 +30,21 @@
  ],
  "sheet": {
   "image": "fx/psychic-psy-burst.png",
-  "columns": 10,
-  "rows": 2,
-  "width": 960,
-  "height": 192
+  "columns": 8,
+  "rows": 4,
+  "width": 1024,
+  "height": 384
+ },
+ "light": {
+  "image": "fx/psychic-psy-burst.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 8,
+  "rows": 4
  },
  "gif": "fx/psychic-psy-burst.gif",
- "durationMs": 800,
- "peakFrame": 6,
+ "durationMs": 867,
+ "peakFrame": 2,
  "battle": {
   "hitFrame": 0,
   "hitStopMs": 60,

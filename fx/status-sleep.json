@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "status",
  "frameW": 64,
- "frameH": 64,
- "frames": 12,
- "fps": 8,
+ "frameH": 96,
+ "frames": 28,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Z letters drift up and grow.",
+ "notes": "Z glyphs drift up and grow.",
+ "ground": 86,
  "palette": [
   "#110548",
   "#0f0d9a",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/status-sleep.png",
-  "columns": 12,
-  "rows": 1,
-  "width": 768,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/status-sleep.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/status-sleep.gif",
- "durationMs": 1500,
- "peakFrame": 11
+ "durationMs": 933,
+ "peakFrame": 18
 }

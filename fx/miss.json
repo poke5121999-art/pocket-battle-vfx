@@ -4,16 +4,17 @@
  "element": "normal",
  "kind": "system",
  "frameW": 64,
- "frameH": 64,
- "frames": 12,
- "fps": 15,
+ "frameH": 96,
+ "frames": 24,
+ "fps": 30,
  "loop": false,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "After-images slide off and MISS pops.",
+ "notes": "After-images slide off, dust, MISS pops.",
+ "ground": 86,
  "palette": [
   "#3c384a",
   "#7c788e",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/miss.png",
-  "columns": 12,
-  "rows": 1,
-  "width": 768,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/miss.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/miss.gif",
  "durationMs": 800,
- "peakFrame": 1
+ "peakFrame": 6
 }

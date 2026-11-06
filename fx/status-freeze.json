@@ -4,16 +4,17 @@
  "element": "ice",
  "kind": "status",
  "frameW": 64,
- "frameH": 64,
- "frames": 8,
- "fps": 8,
+ "frameH": 96,
+ "frames": 30,
+ "fps": 30,
  "loop": true,
  "anchor": [
   32,
-  56
+  86
  ],
  "layer": "front",
- "notes": "Ice crust with a glint sweeping across.",
+ "notes": "Ice crust at the feet, falling frost motes, a glint sweeping across.",
+ "ground": 86,
  "palette": [
   "#131a5e",
   "#2c53b0",
@@ -29,12 +30,19 @@
  ],
  "sheet": {
   "image": "fx/status-freeze.png",
-  "columns": 8,
-  "rows": 1,
-  "width": 512,
-  "height": 64
+  "columns": 16,
+  "rows": 2,
+  "width": 1024,
+  "height": 192
+ },
+ "light": {
+  "image": "fx/status-freeze.light.png",
+  "blend": "additive",
+  "premultiplied": true,
+  "columns": 16,
+  "rows": 2
  },
  "gif": "fx/status-freeze.gif",
  "durationMs": 1000,
- "peakFrame": 0
+ "peakFrame": 11
 }
